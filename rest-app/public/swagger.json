@@ -6,7 +6,7 @@
     },
     "host": "localhost:3000",
     "paths": {
-        "/users/userlist": {
+        "/axa/userlist": {
             "get": {
                 "description": "Gets `Person` objects.\nOptional query param of **size** determines\nsize of returned array\n",
                 "responses": {
