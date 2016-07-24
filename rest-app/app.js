@@ -11,10 +11,20 @@ var mongo = require('mongodb');
 var monk = require('monk');
 var db = monk('localhost:27017/rest-app');
 
+// CORS issues
+var cors = require('express-cors')
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
+
+app.use(cors({
+    allowedOrigins: [
+        'http://localhost:8080', 'http://127.0.0.1:8080'
+    ]
+}))
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -27,7 +37,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
 
 
 // Make our db accessible to our router
@@ -72,5 +81,3 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
-
-

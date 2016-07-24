@@ -34,3 +34,5 @@ stop
 
 # swagger documentation with nodejs, express
 * https://www.npmjs.com/package/swagger-node-express
+* http://stackoverflow.com/questions/33534488/generate-swagger-document-for-existing-nodejs-server
+* https://github.com/shawngong/Swagger-Node-Express-For-Existing-APIs

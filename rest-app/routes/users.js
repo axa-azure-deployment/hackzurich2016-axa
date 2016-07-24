@@ -13,9 +13,21 @@ router.get('/userlist', function(req, res) {
 });
 
 /*
+ * GET user.
+ */
+router.get('/userlist/:id', function(req, res) {
+    var db = req.db;
+    var collection = db.get('userlist');
+    var userToSearch = req.params.id;
+    collection.find({ '_id' : userToSearch},{},function(e,docs){
+        res.json(docs);
+    });
+});
+
+/*
  * POST to adduser.
  */
-router.post('/adduser', function(req, res) {
+router.post('/userlist', function(req, res) {
     var db = req.db;
     var collection = db.get('userlist');
     collection.insert(req.body, function(err, result){
@@ -28,7 +40,7 @@ router.post('/adduser', function(req, res) {
 /*
  * DELETE to deleteuser.
  */
-router.delete('/deleteuser/:id', function(req, res) {
+router.delete('/userlist/:id', function(req, res) {
     var db = req.db;
     var collection = db.get('userlist');
     var userToDelete = req.params.id;

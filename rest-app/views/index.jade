@@ -11,6 +11,9 @@ block content
         #userInfo
             h2 User Info
             p
+                strong ID:
+                |  <span id='userId'></span>
+                br
                 strong Name:
                 |  <span id='userInfoName'></span>
                 br
@@ -29,6 +32,7 @@ block content
         #userList
             table
                 thead
+                    th id
                     th UserName
                     th Email
                     th Delete?

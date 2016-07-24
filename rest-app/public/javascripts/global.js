@@ -26,6 +26,7 @@ function populateTable() {
         // For each item in our JSON, add a table row and cells to the content string
         $.each(data, function(){
             tableContent += '<tr>';
+            tableContent += '<td>' + this._id + ' <a target="_blank" href="/users/userlist/'+this._id+'">(json)</a></td>';
             tableContent += '<td><a href="#" class="linkshowuser" rel="' + this.username + '">' + this.username + '</a></td>';
             tableContent += '<td>' + this.email + '</td>';
             tableContent += '<td><a href="#" class="linkdeleteuser" rel="' + this._id + '">delete</a></td>';
@@ -53,6 +54,7 @@ function showUserInfo(event) {
     var thisUserObject = userListData[arrayPosition];
 
     //Populate Info Box
+    $('#userId').text(thisUserObject._id);
     $('#userInfoName').text(thisUserObject.fullname);
     $('#userInfoAge').text(thisUserObject.age);
     $('#userInfoGender').text(thisUserObject.gender);
@@ -95,7 +97,7 @@ function addUser(event) {
         $.ajax({
             type: 'POST',
             data: newUser,
-            url: '/users/adduser',
+            url: '/users/userlist',
             dataType: 'JSON'
         }).done(function( response ) {
 
@@ -138,7 +140,7 @@ function deleteUser(event) {
         // If they did, do our delete
         $.ajax({
             type: 'DELETE',
-            url: '/users/deleteuser/' + $(this).attr('rel')
+            url: '/users/userlist/' + $(this).attr('rel')
         }).done(function( response ) {
 
             // Check for a successful (blank) response
