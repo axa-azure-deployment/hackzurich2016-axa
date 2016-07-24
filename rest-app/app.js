@@ -9,7 +9,7 @@ var bodyParser = require('body-parser');
 // add mongo connection
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk('localhost:27017/rest-app');
+var db = monk('localhost:27017/hackzurich2016-axa');
 
 // CORS issues
 var cors = require('express-cors')
