@@ -18,7 +18,7 @@ function populateTable() {
     var tableContent = '';
 
     // jQuery AJAX call for JSON
-    $.getJSON( '/axa/users', function( data ) {
+    $.getJSON( '/test/users', function( data ) {
 
         // Stick our user data array into a userlist variable in the global object
         userListData = data;
@@ -26,7 +26,7 @@ function populateTable() {
         // For each item in our JSON, add a table row and cells to the content string
         $.each(data, function(){
             tableContent += '<tr>';
-            tableContent += '<td>' + this._id + ' <a target="_blank" href="/axa/users/'+this._id+'">(json)</a></td>';
+            tableContent += '<td>' + this._id + ' <a target="_blank" href="/test/users/'+this._id+'">(json)</a></td>';
             tableContent += '<td><a href="#" class="linkshowuser" rel="' + this.username + '">' + this.username + '</a></td>';
             tableContent += '<td>' + this.email + '</td>';
             tableContent += '<td><a href="#" class="linkdeleteuser" rel="' + this._id + '">delete</a></td>';
@@ -97,7 +97,7 @@ function addUser(event) {
         $.ajax({
             type: 'POST',
             data: newUser,
-            url: '/axa/users',
+            url: '/test/users',
             dataType: 'JSON'
         }).done(function( response ) {
 
@@ -140,7 +140,7 @@ function deleteUser(event) {
         // If they did, do our delete
         $.ajax({
             type: 'DELETE',
-            url: '/axa/users/' + $(this).attr('rel')
+            url: '/test/users/' + $(this).attr('rel')
         }).done(function( response ) {
 
             // Check for a successful (blank) response

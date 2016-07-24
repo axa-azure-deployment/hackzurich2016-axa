@@ -15,6 +15,7 @@ var db = monk('localhost:27017/hackzurich2016-axa');
 var cors = require('express-cors')
 
 var routes = require('./routes/index');
+var axa = require('./routes/axa');
 var users = require('./routes/users');
 
 var app = express();
@@ -46,7 +47,8 @@ app.use(function(req,res,next){
 });
 
 app.use('/', routes);
-app.use('/axa', users);
+app.use('/axa', axa);
+app.use('/test', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
