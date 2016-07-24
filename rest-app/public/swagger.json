@@ -6,39 +6,74 @@
     },
     "host": "localhost:3000",
     "paths": {
-        "/test/users": {
+        "/axa/customers": {
             "get": {
-                "description": "Gets `Person` objects.\nOptional query param of **size** determines\nsize of returned array\n",
+                "description": "get all customers using. max limit 100, using skip + limit ro range\n",
                 "responses": {
                     "200": {
                         "description": "Successful response",
                         "schema": {
                             "title": "Array of users",
-                            "type": "array",
-                            "items": {
-                                "title": "User",
-                                "type": "object",
-                                "properties": {
-                                    "_id": {
-                                        "type": "string"
-                                    },
-                                    "username": {
-                                        "type": "string"
-                                    },
-                                    "email": {
-                                        "type": "string"
-                                    },
-                                    "fullname": {
-                                        "type": "string"
-                                    },
-                                    "age": {
-                                        "type": "integer"
-                                    },
-                                    "location": {
-                                        "type": "string"
-                                    },
-                                    "gender": {
-                                        "type": "string"
+                            "type": "object",
+                            "properties": {
+                                "docs": {
+                                    "type": "array",
+                                    "items": {
+                                        "title": "customer",
+                                        "type": "object",
+                                        "properties": {
+                                            "_id": {
+                                                "type": "string"
+                                            },
+                                            "username": {
+                                                "type": "string"
+                                            },
+                                            "email": {
+                                                "type": "string"
+                                            },
+                                            "fullname": {
+                                                "type": "string"
+                                            },
+                                            "age": {
+                                                "type": "integer"
+                                            },
+                                            "location": {
+                                                "type": "string"
+                                            },
+                                            "gender": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                },
+                                "links": {
+                                    "type": "array",
+                                    "items": {
+                                        "title": "link",
+                                        "type": "object",
+                                        "properties": {
+                                            "cur": {
+                                                "type": "string"
+                                            },
+                                            "first": {
+                                                "type": "string"
+                                            },
+                                            "prev": {
+                                                "type": "string"
+                                            },
+                                            "next": {
+                                                "type": "string"
+                                            },
+                                            "last": {
+                                                "type": "string"
+                                            },
+                                            "count": {
+                                                "type": "integer"
+                                            },
+                                            "totalCount": {
+                                                "type": "integer"
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -47,17 +82,17 @@
                 }
             }
         },
-        "/persons": {
+        "/axa/customers/{id}": {
             "get": {
-                "description": "Gets `Person` objects.\nOptional query param of **size** determines\nsize of returned array\n",
+                "description": "gets 1 customer based his id\n",
                 "parameters": [
                     {
-                        "name": "size",
-                        "in": "query",
-                        "description": "Size of array",
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of customer",
                         "required": true,
                         "type": "number",
-                        "format": "double"
+                        "format": "integer"
                     }
                 ],
                 "responses": {
@@ -72,9 +107,6 @@
                                 "properties": {
                                     "name": {
                                         "type": "string"
-                                    },
-                                    "single": {
-                                        "type": "boolean"
                                     }
                                 }
                             }
