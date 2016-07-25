@@ -177,32 +177,4 @@ registerModelAPIs('truck', 'trucks', true, false);
 
 registerModelAPIs('customer', 'customers', false, true);
 
-/*
- * GET customers.
- */
-router.get('/customers11', function(req, res) {
-    var db = req.db;
-    var limit = req.param('limit');
-    var skip = req.param('skip');
-    if (!limit) { 
-        limit = 20; 
-        console.log("no limit - use 20 as limit");
-    }
-    if (limit > 100 || limit < -100 ) {
-        throw new Error('limit <'+limit+'> is too high. Use skip & limit to get data');
-    }
-    if (!skip) { 
-        skip = 0; 
-    }
-    var options = {
-        "limit": limit,
-        "skip": skip,
-        "sort": "id"
-    }
-    var collection = db.get('customers');
-    collection.find( {}, options, function(e,docs){
-        res.json(docs);
-    });
-});
-
 /************* end customers **************************/

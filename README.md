@@ -36,3 +36,8 @@ stop
 * https://www.npmjs.com/package/swagger-node-express
 * http://stackoverflow.com/questions/33534488/generate-swagger-document-for-existing-nodejs-server
 * https://github.com/shawngong/Swagger-Node-Express-For-Existing-APIs
+
+
+# install nodemon to detect changes
+* install nodemon from https://www.npmjs.com/package/nodemon
+* nodemon -e js,json --watch . --watch routes --exec npm start
