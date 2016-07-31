@@ -1,4 +1,9 @@
-function getTripOverview() {
+exports.trip4 = function () {
+    return {
+        name: function () {
+            return "trip4";
+        },
+        overview: function () {
 var s0 = {};
 var s1 = 0;
 s0.code = s1;
@@ -165,9 +170,8 @@ s0.totSeconds = s78;
 var s79 = null;
 s0.totTime = s79;
 return s0;
-}
-
-function getTrip() {
+        },
+        positions: function () {
 var s0 = {};
 var s1 = 0;
 s0.code = s1;
@@ -1258,4 +1262,6 @@ s541.y = s544;
 s4[134] = s541;
 s0.positions = s4;
 return s0;
-}
+        }
+    };
+};
