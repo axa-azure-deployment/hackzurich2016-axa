@@ -1,0 +1,101 @@
+[
+   {"customer":"18","amount":"704.00","date":"2016-07-28T23:00:00.000Z","business":"Hodel LLC","name":"Personal Loan Account 0021","type":"invoice","account":"54321084"}
+, 
+   {"customer":"5","amount":"44.00","date":"2016-07-03T23:00:00.000Z","business":"Erni, Winkler and Zimmermann","name":"Investment Account 2612","type":"payment","account":"80403820"}
+, 
+   {"customer":"12","amount":"658.00","date":"2016-07-16T23:00:00.000Z","business":"Frick - Gloor","name":"Auto Loan Account 5472","type":"deposit","account":"87645914"}
+, 
+   {"customer":"12","amount":"44.00","date":"2016-07-16T23:00:00.000Z","business":"Wettstein - Grob","name":"Credit Card Account 0016","type":"invoice","account":"73393402"}
+, 
+   {"customer":"9","amount":"772.00","date":"2016-07-14T23:00:00.000Z","business":"Marti, Furrer and Hermann","name":"Checking Account 8039","type":"deposit","account":"77398831"}
+, 
+   {"customer":"16","amount":"919.00","date":"2016-07-28T23:00:00.000Z","business":"Gut, Hartmann and Kessler","name":"Personal Loan Account 4538","type":"deposit","account":"30310785"}
+, 
+   {"customer":"4","amount":"796.00","date":"2016-07-02T23:00:00.000Z","business":"Scherrer - Kälin","name":"Home Loan Account 4728","type":"invoice","account":"56027370"}
+, 
+   {"customer":"4","amount":"200.00","date":"2016-07-02T23:00:00.000Z","business":"Hasler Inc.","name":"Savings Account 1145","type":"deposit","account":"38023424"}
+, 
+   {"customer":"1","amount":"789.00","date":"2016-07-01T23:00:00.000Z","business":"Weibel - Michel","name":"Credit Card Account 0771","type":"deposit","account":"40200975"}
+, 
+   {"customer":"8","amount":"106.00","date":"2016-07-14T23:00:00.000Z","business":"Wegmann - Stucki","name":"Checking Account 1382","type":"withdrawal","account":"60116749"}
+, 
+   {"customer":"15","amount":"428.00","date":"2016-07-27T23:00:00.000Z","business":"Schumacher Gruppe","name":"Savings Account 0631","type":"deposit","account":"60820078"}
+, 
+   {"customer":"15","amount":"203.00","date":"2016-07-27T23:00:00.000Z","business":"Schürch, Stettler and Mettler","name":"Home Loan Account 3566","type":"deposit","account":"06199336"}
+, 
+   {"customer":"12","amount":"114.00","date":"2016-07-16T23:00:00.000Z","business":"Michel, Hasler and Baumann","name":"Investment Account 0349","type":"withdrawal","account":"86042403"}
+, 
+   {"customer":"10","amount":"303.00","date":"2016-07-15T23:00:00.000Z","business":"Haas, Imhof and Wagner","name":"Savings Account 9048","type":"withdrawal","account":"67763623"}
+, 
+   {"customer":"17","amount":"956.00","date":"2016-07-28T23:00:00.000Z","business":"Schaub - Käser","name":"Personal Loan Account 9722","type":"deposit","account":"36451221"}
+, 
+   {"customer":"17","amount":"615.00","date":"2016-07-28T23:00:00.000Z","business":"Hauser & Co.","name":"Checking Account 5555","type":"withdrawal","account":"72927756"}
+, 
+   {"customer":"14","amount":"234.00","date":"2016-07-27T23:00:00.000Z","business":"Suter - Stocker","name":"Home Loan Account 1743","type":"invoice","account":"28519298"}
+, 
+   {"customer":"11","amount":"334.00","date":"2016-07-15T23:00:00.000Z","business":"Stocker LLC","name":"Home Loan Account 6770","type":"withdrawal","account":"64410216"}
+, 
+   {"customer":"18","amount":"703.00","date":"2016-07-28T23:00:00.000Z","business":"Scheidegger, Seiler and Rüegg","name":"Personal Loan Account 8687","type":"deposit","account":"85806551"}
+, 
+   {"customer":"18","amount":"213.00","date":"2016-07-28T23:00:00.000Z","business":"Friedli Inc.","name":"Money Market Account 3131","type":"payment","account":"27414524"}
+, 
+   {"customer":"5","amount":"557.00","date":"2016-07-03T23:00:00.000Z","business":"Stadelmann LLC","name":"Auto Loan Account 6470","type":"invoice","account":"43162595"}
+, 
+   {"customer":"13","amount":"496.00","date":"2016-07-16T23:00:00.000Z","business":"Hafner, Iten and Bader","name":"Checking Account 8290","type":"invoice","account":"89642023"}
+, 
+   {"customer":"10","amount":"961.00","date":"2016-07-15T23:00:00.000Z","business":"Hofmann, Schürch and Hartmann","name":"Checking Account 4614","type":"deposit","account":"58114771"}
+, 
+   {"customer":"10","amount":"532.00","date":"2016-07-15T23:00:00.000Z","business":"Betschart LLC","name":"Investment Account 8444","type":"payment","account":"84593395"}
+, 
+   {"customer":"7","amount":"28.00","date":"2016-07-03T23:00:00.000Z","business":"Leu, Zbinden and Schärer","name":"Auto Loan Account 0175","type":"payment","account":"80170255"}
+, 
+   {"customer":"4","amount":"396.00","date":"2016-07-02T23:00:00.000Z","business":"Lüthi, Maier and Bieri","name":"Savings Account 3066","type":"payment","account":"56256927"}
+, 
+   {"customer":"1","amount":"436.00","date":"2016-07-01T23:00:00.000Z","business":"Blaser, Iten and Aebi","name":"Auto Loan Account 4929","type":"payment","account":"53503752"}
+, 
+   {"customer":"1","amount":"130.00","date":"2016-07-01T23:00:00.000Z","business":"Widmer Gruppe","name":"Credit Card Account 0756","type":"payment","account":"69183854"}
+, 
+   {"customer":"18","amount":"22.00","date":"2016-07-29T23:00:00.000Z","business":"Flückiger Gruppe","name":"Checking Account 8810","type":"payment","account":"96221904"}
+, 
+   {"customer":"6","amount":"480.00","date":"2016-07-03T23:00:00.000Z","business":"Leunberger, Steiner and Tobler","name":"Credit Card Account 0941","type":"payment","account":"37726977"}
+, 
+   {"customer":"13","amount":"281.00","date":"2016-07-16T23:00:00.000Z","business":"Sidler, Schneider and Hauser","name":"Investment Account 4058","type":"deposit","account":"06770992"}
+, 
+   {"customer":"13","amount":"811.00","date":"2016-07-16T23:00:00.000Z","business":"Jäggi - Huber","name":"Savings Account 1383","type":"withdrawal","account":"74302082"}
+, 
+   {"customer":"20","amount":"250.00","date":"2016-07-29T23:00:00.000Z","business":"Giger - Gfeller","name":"Investment Account 1839","type":"deposit","account":"00996093"}
+, 
+   {"customer":"7","amount":"904.00","date":"2016-07-03T23:00:00.000Z","business":"Erni und Partner","name":"Savings Account 3854","type":"payment","account":"44389252"}
+, 
+   {"customer":"7","amount":"444.00","date":"2016-07-03T23:00:00.000Z","business":"Weber, Ritter and Hodel","name":"Personal Loan Account 9675","type":"payment","account":"63278810"}
+, 
+   {"customer":"4","amount":"438.00","date":"2016-07-02T23:00:00.000Z","business":"Walter, Zimmermann and Vogel","name":"Investment Account 9491","type":"deposit","account":"59871666"}
+, 
+   {"customer":"1","amount":"638.00","date":"2016-07-01T23:00:00.000Z","business":"Walter, Mettler and Bader","name":"Credit Card Account 9203","type":"payment","account":"73762979"}
+, 
+   {"customer":"19","amount":"313.00","date":"2016-07-29T23:00:00.000Z","business":"Ziegler - Küng","name":"Checking Account 7010","type":"withdrawal","account":"45942682"}
+, 
+   {"customer":"19","amount":"872.00","date":"2016-07-29T23:00:00.000Z","business":"Meier GmbH","name":"Auto Loan Account 3307","type":"withdrawal","account":"04522663"}
+, 
+   {"customer":"6","amount":"549.00","date":"2016-07-03T23:00:00.000Z","business":"Käser, Näf and Steiger","name":"Auto Loan Account 0509","type":"deposit","account":"98834711"}
+, 
+   {"customer":"13","amount":"425.00","date":"2016-07-16T23:00:00.000Z","business":"Hofmann, Mayer and Widmer","name":"Personal Loan Account 7295","type":"payment","account":"80232791"}
+, 
+   {"customer":"20","amount":"224.00","date":"2016-07-29T23:00:00.000Z","business":"Zehnder LLC","name":"Investment Account 2108","type":"withdrawal","account":"18187749"}
+, 
+   {"customer":"20","amount":"416.00","date":"2016-07-29T23:00:00.000Z","business":"Mäder - Zollinger","name":"Home Loan Account 1327","type":"payment","account":"31809710"}
+, 
+   {"customer":"17","amount":"417.00","date":"2016-07-28T23:00:00.000Z","business":"Ackermann, Egger and Stocker","name":"Savings Account 3940","type":"deposit","account":"15500170"}
+, 
+   {"customer":"14","amount":"293.00","date":"2016-07-27T23:00:00.000Z","business":"Stauffer Gruppe","name":"Savings Account 2959","type":"withdrawal","account":"18070588"}
+, 
+   {"customer":"2","amount":"653.00","date":"2016-07-01T23:00:00.000Z","business":"Furrer Gruppe","name":"Credit Card Account 9088","type":"invoice","account":"42465783"}
+, 
+   {"customer":"2","amount":"591.00","date":"2016-07-01T23:00:00.000Z","business":"Graf, Hofer and Betschart","name":"Credit Card Account 4445","type":"payment","account":"28541560"}
+, 
+   {"customer":"19","amount":"648.00","date":"2016-07-29T23:00:00.000Z","business":"Hug - Hermann","name":"Savings Account 0854","type":"deposit","account":"49314013"}
+, 
+   {"customer":"6","amount":"570.00","date":"2016-07-03T23:00:00.000Z","business":"Betschart AG","name":"Personal Loan Account 4089","type":"payment","account":"15752229"}
+, 
+   {"customer":"13","amount":"760.00","date":"2016-07-16T23:00:00.000Z","business":"Suter - Martin","name":"Personal Loan Account 7604","type":"invoice","account":"12989685"}
+]

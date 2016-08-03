@@ -1,0 +1,85 @@
+[
+    {
+        "productCd": "72010",
+        "subProductCd": null,
+        "links": [
+            {
+                "parameters": [
+                    {
+                        "name": "rblPolicyHolderSalutation",
+                        "constant": "$partner.salutationCd",
+                        "enabled": false
+                    },
+                    {
+                        "name": "txtPolicyHolderFirstname",
+                        "constant": "$partner.firstName",
+                        "enabled": false
+                    },
+                    {
+                        "name": "txtPolicyHolderLastname",
+                        "constant": "$partner.lastName",
+                        "enabled": false
+                    },
+                    {
+                        "name": "txtPolicyHolderStreet",
+                        "constant": "partner.STREET_AND_NUMBER",
+                        "enabled": false
+                    },
+                    {
+                        "name": "txtPolicyHolderPOB",
+                        "constant": "$partner.postOfficeBox",
+                        "enabled": false
+                    },
+                    {
+                        "name": "txtPolicyHolderZip",
+                        "constant": "$partner.postcode",
+                        "enabled": false
+                    },
+                    {
+                        "name": "txtPolicyHolderCity",
+                        "constant": "$partner.place",
+                        "enabled": false
+                    },
+                    {
+                        "name": "txtPolicyHolderPolicy",
+                        "constant": "POLICY_NUMBER_AND_BUSINESS_NUMBER_RANGE",
+                        "enabled": false
+                    },
+                    {
+                        "name": "txtPolicyHolderPhoneDayTime",
+                        "constant": "$partner.phonePrivate[0]",
+                        "enabled": false
+                    },
+                    {
+                        "name": "txtPolicyHolderEmail",
+                        "constant": "$partner.emailPrivate[0]",
+                        "enabled": false
+                    },
+                    {
+                        "name": "appMode",
+                        "constant": "$config.appIdentifier",
+                        "enabled": null
+                    },
+                    {
+                        "name": "UUID",
+                        "constant": "$currentRegistration.accountUuid",
+                        "enabled": null
+                    }
+                ],
+                "method": "POST",
+                "labelDe": "Schaden melden",
+                "labelFr": "Déclarer un sinistre",
+                "labelIt": "Notifica di sinistro",
+                "labelEn": "Report a claim",
+                "linkDe": "https://www.axa-winterthur.ch/de/kontakt-service/formulare/Seiten/schadenmeldung.aspx",
+                "linkFr": "https://www.axa-winterthur.ch/fr/contact-service/formulaires/Pages/declarer-sinistre.aspx",
+                "linkIt": "https://www.axa-winterthur.ch/it/contatto-servizi/moduli/Pagine/notifica-sinistro.aspx",
+                "linkEn": "https://www.axa-winterthur.ch/en/contact-service/forms/Pages/miscellaneous-claims.aspx",
+                "order": 1,
+                "isFilingClaim": true,
+                "isChargeable": false,
+                "isNewWindow": true
+            }
+        ]
+    }
+]

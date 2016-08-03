@@ -1,0 +1,211 @@
+[
+    {
+        "productCd": "99003",
+        "subProductCd": null,
+        "links": [
+            {
+                "parameters": [
+                    {
+                        "name": "rblSalutationInsuredPerson",
+                        "constant": "$partner.salutationCd",
+                        "enabled": false
+                    },
+                    {
+                        "name": "txtPolicy",
+                        "constant": "POLICY_NUMBER_AND_BUSINESS_NUMBER_RANGE",
+                        "enabled": false
+                    },
+                    {
+                        "name": "txtFirstname",
+                        "constant": "$partner.firstName",
+                        "enabled": false
+                    },
+                    {
+                        "name": "txtLastname",
+                        "constant": "$partner.lastName",
+                        "enabled": false
+                    },
+                    {
+                        "name": "txtStreet",
+                        "constant": "partner.STREET_AND_NUMBER",
+                        "enabled": false
+                    },
+                    {
+                        "name": "txtZip",
+                        "constant": "$partner.postcode",
+                        "enabled": false
+                    },
+                    {
+                        "name": "txtCity",
+                        "constant": "$partner.place",
+                        "enabled": false
+                    },
+                    {
+                        "name": "txtLicencePlate",
+                        "constant": "LICENSE_PLATE",
+                        "enabled": false
+                    },
+                    {
+                        "name": "appMode",
+                        "constant": "$config.appIdentifier",
+                        "enabled": null
+                    },
+                    {
+                        "name": "UUID",
+                        "constant": "$currentRegistration.accountUuid",
+                        "enabled": null
+                    }
+                ],
+                "method": "POST",
+                "labelDe": "Auto und Motorrad: Schaden melden",
+                "labelFr": "Véhicules automobiles et motocycles: Déclarer un sinistre",
+                "labelIt": "Auto e moto: Notifica di sinistro",
+                "labelEn": "Car and motorcycle: Report a claim",
+                "linkDe": "https://www.axa-winterthur.ch/de/kontakt-service/formulare/Seiten/schadenmeldung-motorfahrzeug.aspx",
+                "linkFr": "https://www.axa-winterthur.ch/fr/contact-service/formulaires/Pages/declarer-sinistre-vehicules-automobiles.aspx",
+                "linkIt": "https://www.axa-winterthur.ch/it/contatto-servizi/moduli/Pagine/notifica-sinistro-veicoli-motore.aspx",
+                "linkEn": "https://www.axa-winterthur.ch/en/contact-service/forms/Pages/motor-vehicle-claim.aspx",
+                "order": 1,
+                "isFilingClaim": true,
+                "isChargeable": false,
+                "isNewWindow": true
+            },
+            {
+                "parameters": [
+                    {
+                        "name": "txtPOB",
+                        "constant": "$partner.postOfficeBox",
+                        "enabled": false
+                    },
+                    {
+                        "name": "txtPolicy",
+                        "constant": "POLICY_NUMBER_AND_BUSINESS_NUMBER_RANGE",
+                        "enabled": false
+                    },
+                    {
+                        "name": "txtFirstname",
+                        "constant": "$partner.firstName",
+                        "enabled": false
+                    },
+                    {
+                        "name": "txtLastname",
+                        "constant": "$partner.lastName",
+                        "enabled": false
+                    },
+                    {
+                        "name": "txtStreet",
+                        "constant": "partner.STREET_AND_NUMBER",
+                        "enabled": false
+                    },
+                    {
+                        "name": "txtZip",
+                        "constant": "$partner.postcode",
+                        "enabled": false
+                    },
+                    {
+                        "name": "txtCity",
+                        "constant": "$partner.place",
+                        "enabled": false
+                    },
+                    {
+                        "name": "rblSalutation",
+                        "constant": "$partner.salutationCd",
+                        "enabled": false
+                    },
+                    {
+                        "name": "txtInsurantCarNumberPlate",
+                        "constant": "LICENSE_PLATE",
+                        "enabled": false
+                    },
+                    {
+                        "name": "appMode",
+                        "constant": "$config.appIdentifier",
+                        "enabled": null
+                    },
+                    {
+                        "name": "UUID",
+                        "constant": "$currentRegistration.accountUuid",
+                        "enabled": null
+                    }
+                ],
+                "method": "POST",
+                "labelDe": "Grüne Karte",
+                "labelFr": "Carte verte",
+                "labelIt": "Carta verde",
+                "labelEn": "Order Green Card",
+                "linkDe": "https://www.axa-winterthur.ch/de/kontakt-service/formulare/Seiten/gruene-karte.aspx",
+                "linkFr": "https://www.axa-winterthur.ch/fr/contact-service/formulaires/Pages/carte-verte.aspx",
+                "linkIt": "https://www.axa-winterthur.ch/it/contatto-servizi/moduli/Pagine/carta-verde.aspx",
+                "linkEn": "https://www.axa-winterthur.ch/en/contact-service/forms/Pages/order-green-card.aspx",
+                "order": 2,
+                "isFilingClaim": false,
+                "isChargeable": false,
+                "isNewWindow": true
+            },
+            {
+                "parameters": [],
+                "method": "POST",
+                "labelDe": "Parkscheibe bestellen",
+                "labelFr": "Commande d'un disque de stationnement",
+                "labelIt": "Ordinazione del disco orario",
+                "labelEn": "Ordering a parking disc",
+                "linkDe": "mailto:Info@axa-winterthur.ch?subject= Bestellung Parkscheibe über myAXA &body= Bitte geben Sie den Namen und die Adresse an, an die die Parkscheibe geschickt werden soll:",
+                "linkFr": "mailto:Info@axa-winterthur.ch?subject= Commande d’un disque de stationnement sur myAXA &body= Veuillez indiquer le nom et l’adresse auxquels le disque de stationnement doit être envoyé:",
+                "linkIt": "mailto:Info@axa-winterthur.ch?subject= Ordinazione del disco orario tramite myAXA &body= Si prega di indicare il nominativo e l’indirizzo a cui deve essere inviato il disco orario:",
+                "linkEn": "mailto:Info@axa.ch?subject= Ordering a parking disc via myAXA &body=Please enter the name and address to where the parking disc should be sent:",
+                "order": 3,
+                "isFilingClaim": false,
+                "isChargeable": false,
+                "isNewWindow": false
+            },
+            {
+                "parameters": [],
+                "method": "POST",
+                "labelDe": "Europäisches Unfallprotokoll",
+                "labelFr": "Constat européen d'accident",
+                "labelIt": "Relazione d'incidente europea",
+                "labelEn": "Ordering a European accident statement",
+                "linkDe": "mailto:info@axa-winterthur.ch?subject= Bestellung Europäisches Unfallprotokoll &body= Bitte Namen und Anschrift einfügen an die das europäische Unfallprotokoll geschickt werden soll:",
+                "linkFr": "mailto:Info@axa-winterthur.ch?subject= Commande d’un constat européen d’accident sur myAXA&body= Veuillez indiquer le nom et l’adresse auxquels le constat européen d’accident doit être envoyé:",
+                "linkIt": "mailto:info@axa-winterthur.ch?subject= Ordinazione della relazione d'incidente europea tramite myAXA&body= Si prega di indicare il nominativo e l'indirizzo a cui deve essere inviata la relazione d'incidente europea:",
+                "linkEn": "mailto:Info@axa.ch?subject= Ordering a European accident statement &body= Please enter the name and address to where the European accident statement should be sent:",
+                "order": 4,
+                "isFilingClaim": false,
+                "isChargeable": false,
+                "isNewWindow": false
+            },
+            {
+                "parameters": [],
+                "method": "POST",
+                "labelDe": "Versicherungsnachweis (Kantonswechsel)",
+                "labelFr": "Attestation d'assurance (changement de canton)",
+                "labelIt": "Attestato d’assicurazione (cambiamento di cantone)",
+                "labelEn": "Order proof of Insurance (changing cantons)",
+                "linkDe": "https://www.axa-winterthur.ch/de/kontakt-service/formulare/Seiten/versicherungsnachweis.aspx",
+                "linkFr": "https://www.axa-winterthur.ch/fr/contact-service/formulaires/Pages/attestation-assurance.aspx",
+                "linkIt": "https://www.axa-winterthur.ch/it/contatto-servizi/moduli/Pagine/attestato-assicurazione.aspx",
+                "linkEn": "https://www.axa-winterthur.ch/en/contact-service/forms/Pages/proof-of-insurance.aspx",
+                "order": 5,
+                "isFilingClaim": false,
+                "isChargeable": false,
+                "isNewWindow": true
+            },
+            {
+                "parameters": [],
+                "method": "POST",
+                "labelDe": "AXA Assistance App",
+                "labelFr": "Application AXA Assistance",
+                "labelIt": "App AXA Assistance",
+                "labelEn": "The AXA Assistance app",
+                "linkDe": "https://www.axa-winterthur.ch/de/kontakt-service/information/Seiten/assistance-app.aspx",
+                "linkFr": "https://www.axa-winterthur.ch/fr/contact-service/information/Pages/assistance-app.aspx",
+                "linkIt": "https://www.axa-winterthur.ch/it/contatto-servizi/informazioni/Pagine/assistance-app.aspx",
+                "linkEn": "https://www.axa-winterthur.ch/en/contact-service/information/Pages/assistance-app.aspx",
+                "order": 6,
+                "isFilingClaim": false,
+                "isChargeable": false,
+                "isNewWindow": true
+            }
+        ]
+    }
+]

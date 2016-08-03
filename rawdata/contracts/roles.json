@@ -1,0 +1,41 @@
+[
+    {
+        "statusCd": "2",
+        "businessNumberRange": "U01",
+        "policyNumber": "11088050",
+        "externalPolicyNumber": null,
+        "lifeBusinessCd": null,
+        "nonLifeBusinessCd": "72010",
+        "isLife": false,
+        "isCollective": false,
+        "productName": null,
+        "productType": null,
+        "controlByLawCd": null
+    },
+    {
+        "statusCd": "2",
+        "businessNumberRange": "U01",
+        "policyNumber": "17835508",
+        "externalPolicyNumber": null,
+        "lifeBusinessCd": null,
+        "nonLifeBusinessCd": "99003",
+        "isLife": false,
+        "isCollective": false,
+        "productName": null,
+        "productType": null,
+        "controlByLawCd": null
+    },
+    {
+        "statusCd": "2",
+        "businessNumberRange": "U01",
+        "policyNumber": "18280429",
+        "externalPolicyNumber": null,
+        "lifeBusinessCd": null,
+        "nonLifeBusinessCd": "93000",
+        "isLife": false,
+        "isCollective": false,
+        "productName": null,
+        "productType": null,
+        "controlByLawCd": null
+    }
+]

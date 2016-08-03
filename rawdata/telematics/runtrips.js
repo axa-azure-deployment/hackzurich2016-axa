@@ -6,11 +6,13 @@
     var t5 = require("./trip5");
     var t6 = require("./trip6");
     var t7 = require("./trip7");
+    var trips = all.trips();
     
-    all.trips().addTrip(t1.trip1());
-    all.trips().addTrip(t2.trip2());
-    all.trips().addTrip(t3.trip3());
-    all.trips().addTrip(t4.trip4());
-    all.trips().addTrip(t5.trip5());
-    all.trips().addTrip(t6.trip6());
-    all.trips().addTrip(t7.trip7());
+    trips.addTrip(t1.trip1());
+    trips.addTrip(t2.trip2());
+    trips.addTrip(t3.trip3());
+    trips.addTrip(t4.trip4());
+    trips.addTrip(t5.trip5());
+    trips.addTrip(t6.trip6());
+    trips.addTrip(t7.trip7());
+    console.log(JSON.stringify(trips.trips()))

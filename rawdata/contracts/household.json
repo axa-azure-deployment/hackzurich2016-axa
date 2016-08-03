@@ -1,0 +1,124 @@
+{
+    "nlContract": {
+        "statusCd": "2",
+        "policyNumber": "18280429",
+        "product": {
+            "household": {
+                "privathaftpflich": {
+                    "insuredPersonTypeCd": "2",
+                    "guaranteedSum": 5000000.0,
+                    "retentions": [
+                        {
+                            "retentionType": "1",
+                            "retentionSum": 200.0
+                        }
+                    ],
+                    "supplementalCoverages": []
+                },
+                "contents": {
+                    "utilizationType": "1",
+                    "canton": "25",
+                    "groupOfPeople": "0",
+                    "streetNumber": "",
+                    "postcode": "",
+                    "additionallyInsuredPerson": null,
+                    "supplementalCoverages": [
+                        {
+                            "productComponentNumber": "93010410",
+                            "insuranceSum": 5000.0
+                        }
+                    ],
+                    "coveragesAtHome": [
+                        {
+                            "productComponentNumber": "93010010",
+                            "insuranceSum": 107200.0,
+                            "retentions": [
+                                {
+                                    "retentionType": "12",
+                                    "retentionSum": 500.0
+                                },
+                                {
+                                    "retentionType": "1",
+                                    "retentionSum": 200.0
+                                }
+                            ]
+                        },
+                        {
+                            "productComponentNumber": "93010020",
+                            "insuranceSum": 107200.0,
+                            "retentions": [
+                                {
+                                    "retentionType": "4",
+                                    "retentionSum": 200.0
+                                }
+                            ]
+                        },
+                        {
+                            "productComponentNumber": "93010030",
+                            "insuranceSum": 107200.0,
+                            "retentions": [
+                                {
+                                    "retentionType": "1",
+                                    "retentionSum": 200.0
+                                }
+                            ]
+                        }
+                    ],
+                    "coveragesOutwards": [
+                        {
+                            "productComponentNumber": "93010075",
+                            "insuranceSum": 21440.0,
+                            "retentions": [
+                                {
+                                    "retentionType": "1",
+                                    "retentionSum": 200.0
+                                }
+                            ]
+                        },
+                        {
+                            "productComponentNumber": "93010232",
+                            "insuranceSum": 2000.0,
+                            "retentions": [
+                                {
+                                    "retentionType": "1",
+                                    "retentionSum": 200.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "personalLiability": {
+                    "insuredPersonTypeCd": "2",
+                    "guaranteedSum": 5000000.0,
+                    "retentions": [
+                        {
+                            "retentionType": "1",
+                            "retentionSum": 200.0
+                        }
+                    ],
+                    "supplementalCoverages": []
+                }
+            }
+        },
+        "productName": null,
+        "productType": null,
+        "productCd": "93000",
+        "productBrandCd": "3",
+        "termsOfContract": [
+            {
+                "termsOfContractEdition": "082010",
+                "publicationDocumentId": 130
+            },
+            {
+                "termsOfContractEdition": "082010",
+                "publicationDocumentId": 122
+            }
+        ],
+        "documentLanguageCd": "de",
+        "startDate": "2007-12-31T23:00:00.000Z",
+        "expirationDate": "2016-12-30T23:00:00.000Z",
+        "annualPremium": 438.2,
+        "balance": 0.0,
+        "paymentIntervalCd": "1"
+    }
+}

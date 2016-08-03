@@ -1,7 +1,7 @@
 exports.trip5 = function () {
     return {
         name: function () {
-            return "trip5";
+            return 5;
         },
         overview: function () {
             var s0 = {};

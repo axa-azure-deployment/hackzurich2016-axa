@@ -1,0 +1,406 @@
+{
+    "nlContract": {
+        "statusCd": "2",
+        "policyNumber": "17835508",
+        "product": {
+            "motorVehicle": {
+                "vehicles": [
+                    {
+                        "brandAndType": "Renault Grand Scenic 2.0",
+                        "coverages": [
+                            {
+                                "riskCd": "99013",
+                                "guaranteedSum": 1.0E8,
+                                "bonusProtection": true,
+                                "indemnityType": null,
+                                "bonusLevel": 0.36,
+                                "supplementalCoverages": []
+                            },
+                            {
+                                "riskCd": "99023",
+                                "guaranteedSum": null,
+                                "bonusProtection": true,
+                                "indemnityType": "2",
+                                "bonusLevel": 0.35,
+                                "supplementalCoverages": [
+                                    {
+                                        "label": {
+                                            "name": "99020001",
+                                            "bvb81": false,
+                                            "insuranceSum": null
+                                        },
+                                        "value": {
+                                            "isInsured": false,
+                                            "specialVehicleTypeCds": [],
+                                            "benefitFromQuantity": null,
+                                            "benefitFromEntityCode": null,
+                                            "benefitDurationQuantity": null,
+                                            "benefitDurationEntityCode": null,
+                                            "benefitFrameDurationCd": null,
+                                            "isDeathBenefit": null,
+                                            "calculationTypeInvSumCd": null,
+                                            "benefitSum": null,
+                                            "benefitFactor": null,
+                                            "insuranceSum": null,
+                                            "retentionSum": null,
+                                            "retentionFactor": null,
+                                            "isDefault": true
+                                        }
+                                    },
+                                    {
+                                        "label": {
+                                            "name": "99020002",
+                                            "bvb81": false,
+                                            "insuranceSum": null
+                                        },
+                                        "value": {
+                                            "isInsured": false,
+                                            "specialVehicleTypeCds": [
+                                                "99010004"
+                                            ],
+                                            "benefitFromQuantity": null,
+                                            "benefitFromEntityCode": null,
+                                            "benefitDurationQuantity": null,
+                                            "benefitDurationEntityCode": null,
+                                            "benefitFrameDurationCd": null,
+                                            "isDeathBenefit": null,
+                                            "calculationTypeInvSumCd": null,
+                                            "benefitSum": null,
+                                            "benefitFactor": null,
+                                            "insuranceSum": null,
+                                            "retentionSum": null,
+                                            "retentionFactor": null,
+                                            "isDefault": null
+                                        }
+                                    },
+                                    {
+                                        "label": {
+                                            "name": "99020003",
+                                            "bvb81": false,
+                                            "insuranceSum": null
+                                        },
+                                        "value": {
+                                            "isInsured": false,
+                                            "specialVehicleTypeCds": [],
+                                            "benefitFromQuantity": null,
+                                            "benefitFromEntityCode": null,
+                                            "benefitDurationQuantity": null,
+                                            "benefitDurationEntityCode": null,
+                                            "benefitFrameDurationCd": null,
+                                            "isDeathBenefit": null,
+                                            "calculationTypeInvSumCd": null,
+                                            "benefitSum": null,
+                                            "benefitFactor": null,
+                                            "insuranceSum": null,
+                                            "retentionSum": null,
+                                            "retentionFactor": null,
+                                            "isDefault": true
+                                        }
+                                    },
+                                    {
+                                        "label": {
+                                            "name": "99020004",
+                                            "bvb81": false,
+                                            "insuranceSum": null
+                                        },
+                                        "value": {
+                                            "isInsured": false,
+                                            "specialVehicleTypeCds": [
+                                                "99010006"
+                                            ],
+                                            "benefitFromQuantity": null,
+                                            "benefitFromEntityCode": null,
+                                            "benefitDurationQuantity": null,
+                                            "benefitDurationEntityCode": null,
+                                            "benefitFrameDurationCd": null,
+                                            "isDeathBenefit": null,
+                                            "calculationTypeInvSumCd": null,
+                                            "benefitSum": null,
+                                            "benefitFactor": null,
+                                            "insuranceSum": null,
+                                            "retentionSum": null,
+                                            "retentionFactor": null,
+                                            "isDefault": null
+                                        }
+                                    },
+                                    {
+                                        "label": {
+                                            "name": "99020005",
+                                            "bvb81": false,
+                                            "insuranceSum": null
+                                        },
+                                        "value": {
+                                            "isInsured": false,
+                                            "specialVehicleTypeCds": [],
+                                            "benefitFromQuantity": null,
+                                            "benefitFromEntityCode": null,
+                                            "benefitDurationQuantity": null,
+                                            "benefitDurationEntityCode": null,
+                                            "benefitFrameDurationCd": null,
+                                            "isDeathBenefit": null,
+                                            "calculationTypeInvSumCd": null,
+                                            "benefitSum": null,
+                                            "benefitFactor": null,
+                                            "insuranceSum": null,
+                                            "retentionSum": null,
+                                            "retentionFactor": null,
+                                            "isDefault": true
+                                        }
+                                    },
+                                    {
+                                        "label": {
+                                            "name": "99020006",
+                                            "bvb81": false,
+                                            "insuranceSum": null
+                                        },
+                                        "value": {
+                                            "isInsured": false,
+                                            "specialVehicleTypeCds": [],
+                                            "benefitFromQuantity": null,
+                                            "benefitFromEntityCode": null,
+                                            "benefitDurationQuantity": null,
+                                            "benefitDurationEntityCode": null,
+                                            "benefitFrameDurationCd": null,
+                                            "isDeathBenefit": null,
+                                            "calculationTypeInvSumCd": null,
+                                            "benefitSum": null,
+                                            "benefitFactor": null,
+                                            "insuranceSum": null,
+                                            "retentionSum": null,
+                                            "retentionFactor": null,
+                                            "isDefault": true
+                                        }
+                                    },
+                                    {
+                                        "label": {
+                                            "name": "99020007",
+                                            "bvb81": false,
+                                            "insuranceSum": null
+                                        },
+                                        "value": {
+                                            "isInsured": false,
+                                            "specialVehicleTypeCds": [],
+                                            "benefitFromQuantity": null,
+                                            "benefitFromEntityCode": null,
+                                            "benefitDurationQuantity": null,
+                                            "benefitDurationEntityCode": null,
+                                            "benefitFrameDurationCd": null,
+                                            "isDeathBenefit": null,
+                                            "calculationTypeInvSumCd": null,
+                                            "benefitSum": null,
+                                            "benefitFactor": null,
+                                            "insuranceSum": null,
+                                            "retentionSum": null,
+                                            "retentionFactor": null,
+                                            "isDefault": true
+                                        }
+                                    },
+                                    {
+                                        "label": {
+                                            "name": "99020008",
+                                            "bvb81": false,
+                                            "insuranceSum": null
+                                        },
+                                        "value": {
+                                            "isInsured": false,
+                                            "specialVehicleTypeCds": [],
+                                            "benefitFromQuantity": null,
+                                            "benefitFromEntityCode": null,
+                                            "benefitDurationQuantity": null,
+                                            "benefitDurationEntityCode": null,
+                                            "benefitFrameDurationCd": null,
+                                            "isDeathBenefit": null,
+                                            "calculationTypeInvSumCd": null,
+                                            "benefitSum": null,
+                                            "benefitFactor": null,
+                                            "insuranceSum": null,
+                                            "retentionSum": null,
+                                            "retentionFactor": null,
+                                            "isDefault": true
+                                        }
+                                    },
+                                    {
+                                        "label": {
+                                            "name": "99020009",
+                                            "bvb81": false,
+                                            "insuranceSum": null
+                                        },
+                                        "value": {
+                                            "isInsured": false,
+                                            "specialVehicleTypeCds": [],
+                                            "benefitFromQuantity": null,
+                                            "benefitFromEntityCode": null,
+                                            "benefitDurationQuantity": null,
+                                            "benefitDurationEntityCode": null,
+                                            "benefitFrameDurationCd": null,
+                                            "isDeathBenefit": null,
+                                            "calculationTypeInvSumCd": null,
+                                            "benefitSum": null,
+                                            "benefitFactor": null,
+                                            "insuranceSum": null,
+                                            "retentionSum": null,
+                                            "retentionFactor": null,
+                                            "isDefault": true
+                                        }
+                                    },
+                                    {
+                                        "label": {
+                                            "name": "99020010",
+                                            "bvb81": false,
+                                            "insuranceSum": null
+                                        },
+                                        "value": {
+                                            "isInsured": false,
+                                            "specialVehicleTypeCds": [
+                                                "99010008"
+                                            ],
+                                            "benefitFromQuantity": null,
+                                            "benefitFromEntityCode": null,
+                                            "benefitDurationQuantity": null,
+                                            "benefitDurationEntityCode": null,
+                                            "benefitFrameDurationCd": null,
+                                            "isDeathBenefit": null,
+                                            "calculationTypeInvSumCd": null,
+                                            "benefitSum": null,
+                                            "benefitFactor": null,
+                                            "insuranceSum": 2000.0,
+                                            "retentionSum": null,
+                                            "retentionFactor": null,
+                                            "isDefault": null
+                                        }
+                                    },
+                                    {
+                                        "label": {
+                                            "name": "99020018",
+                                            "bvb81": false,
+                                            "insuranceSum": null
+                                        },
+                                        "value": {
+                                            "isInsured": false,
+                                            "specialVehicleTypeCds": [],
+                                            "benefitFromQuantity": null,
+                                            "benefitFromEntityCode": null,
+                                            "benefitDurationQuantity": null,
+                                            "benefitDurationEntityCode": null,
+                                            "benefitFrameDurationCd": null,
+                                            "isDeathBenefit": null,
+                                            "calculationTypeInvSumCd": null,
+                                            "benefitSum": null,
+                                            "benefitFactor": null,
+                                            "insuranceSum": null,
+                                            "retentionSum": null,
+                                            "retentionFactor": null,
+                                            "isDefault": true
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "riskCd": "99030",
+                                "guaranteedSum": null,
+                                "bonusProtection": false,
+                                "indemnityType": null,
+                                "bonusLevel": null,
+                                "supplementalCoverages": [
+                                    {
+                                        "label": {
+                                            "name": "99010035",
+                                            "bvb81": false,
+                                            "insuranceSum": null
+                                        },
+                                        "value": {
+                                            "isInsured": false,
+                                            "specialVehicleTypeCds": [],
+                                            "benefitFromQuantity": null,
+                                            "benefitFromEntityCode": null,
+                                            "benefitDurationQuantity": null,
+                                            "benefitDurationEntityCode": null,
+                                            "benefitFrameDurationCd": null,
+                                            "isDeathBenefit": true,
+                                            "calculationTypeInvSumCd": null,
+                                            "benefitSum": 20000.0,
+                                            "benefitFactor": null,
+                                            "insuranceSum": null,
+                                            "retentionSum": null,
+                                            "retentionFactor": null,
+                                            "isDefault": null
+                                        }
+                                    },
+                                    {
+                                        "label": {
+                                            "name": "99010031",
+                                            "bvb81": false,
+                                            "insuranceSum": null
+                                        },
+                                        "value": {
+                                            "isInsured": false,
+                                            "specialVehicleTypeCds": [],
+                                            "benefitFromQuantity": null,
+                                            "benefitFromEntityCode": null,
+                                            "benefitDurationQuantity": null,
+                                            "benefitDurationEntityCode": null,
+                                            "benefitFrameDurationCd": null,
+                                            "isDeathBenefit": null,
+                                            "calculationTypeInvSumCd": "1",
+                                            "benefitSum": 100000.0,
+                                            "benefitFactor": null,
+                                            "insuranceSum": null,
+                                            "retentionSum": null,
+                                            "retentionFactor": null,
+                                            "isDefault": null
+                                        }
+                                    },
+                                    {
+                                        "label": {
+                                            "name": "99010034",
+                                            "bvb81": false,
+                                            "insuranceSum": null
+                                        },
+                                        "value": {
+                                            "isInsured": false,
+                                            "specialVehicleTypeCds": [],
+                                            "benefitFromQuantity": null,
+                                            "benefitFromEntityCode": null,
+                                            "benefitDurationQuantity": null,
+                                            "benefitDurationEntityCode": null,
+                                            "benefitFrameDurationCd": "8",
+                                            "isDeathBenefit": null,
+                                            "calculationTypeInvSumCd": null,
+                                            "benefitSum": null,
+                                            "benefitFactor": null,
+                                            "insuranceSum": null,
+                                            "retentionSum": null,
+                                            "retentionFactor": null,
+                                            "isDefault": null
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "licensePlate": {
+                    "supplement": "",
+                    "canton": "ZH",
+                    "number": "638871"
+                }
+            }
+        },
+        "productName": null,
+        "productType": null,
+        "productCd": "99003",
+        "productBrandCd": null,
+        "termsOfContract": [
+            {
+                "termsOfContractEdition": "122006",
+                "publicationDocumentId": 65
+            }
+        ],
+        "documentLanguageCd": "de",
+        "startDate": "2007-12-31T23:00:00.000Z",
+        "expirationDate": "2014-12-30T23:00:00.000Z",
+        "annualPremium": 1074.75,
+        "balance": 0.0,
+        "paymentIntervalCd": "1"
+    }
+}

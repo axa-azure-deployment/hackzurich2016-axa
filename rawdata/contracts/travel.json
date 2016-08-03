@@ -1,0 +1,41 @@
+{
+    "nlContract": {
+        "statusCd": "2",
+        "policyNumber": "11088050",
+        "product": {
+            "intertours": {
+                "coverages": [
+                    {
+                        "productComponentNumber": "72010010"
+                    },
+                    {
+                        "productComponentNumber": "72010020"
+                    }
+                ],
+                "insuredObjects": [
+                    {
+                        "furtherInsuredPersons": [],
+                        "additionallyInsuredPerson": null,
+                        "productComponentNumber": 72010001
+                    }
+                ]
+            }
+        },
+        "productName": null,
+        "productType": null,
+        "productCd": "72010",
+        "productBrandCd": null,
+        "termsOfContract": [
+            {
+                "termsOfContractEdition": "082006",
+                "publicationDocumentId": 135
+            }
+        ],
+        "documentLanguageCd": "de",
+        "startDate": "1996-09-22T22:00:00.000Z",
+        "expirationDate": "2017-09-29T22:00:00.000Z",
+        "annualPremium": 118.45,
+        "balance": 0.0,
+        "paymentIntervalCd": "1"
+    }
+}

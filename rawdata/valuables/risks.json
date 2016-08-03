@@ -1,0 +1,107 @@
+[
+    {
+        "id": "FIRE",
+        "value": "Fire",
+        "lineOfBusiness": "P&C"
+    },
+    {
+        "id": "ELEMENTARY",
+        "value": "Elementary",
+        "lineOfBusiness": "P&C"
+    },
+    {
+        "id": "WATER",
+        "value": "Water",
+        "lineOfBusiness": "P&C"
+    },
+    {
+        "id": "THEFT",
+        "value": "Simple Theft",
+        "lineOfBusiness": "P&C"
+    },
+    {
+        "id": "BURGLARY_ROBBERY",
+        "value": "Burglary and Robbery",
+        "lineOfBusiness": "P&C"
+    },
+    {
+        "id": "BROKEN_GLASS",
+        "value": "Broken glass",
+        "lineOfBusiness": "P&C"
+    },
+    {
+        "id": "LOST",
+        "value": "Lost",
+        "lineOfBusiness": "P&C"
+    },
+    {
+        "id": "PERSONAL_LIABILITY",
+        "value": "Personal liability",
+        "lineOfBusiness": "P&C"
+    },
+    {
+        "id": "CAR_LIABILITY",
+        "value": "Car liability",
+        "lineOfBusiness": "P&C"
+    },
+    {
+        "id": "CAR_COLLISION",
+        "value": "Car collision",
+        "lineOfBusiness": "P&C"
+    },
+    {
+        "id": "CAR_ELEMENTARY",
+        "value": "Car elementary",
+        "lineOfBusiness": "P&C"
+    },
+    {
+        "id": "ASSISTANCE",
+        "value": "Assistance",
+        "lineOfBusiness": "P&C"
+    },
+    {
+        "id": "PERSONAL_HEALTH",
+        "value": "Personal Health",
+        "lineOfBusiness": "Health"
+    },
+    {
+        "id": "COMMERCIAL_HEALTH",
+        "value": "Commercial Health",
+        "lineOfBusiness": "Health"
+    },
+    {
+        "id": "ACCIDENT",
+        "value": "Accident",
+        "lineOfBusiness": "Health"
+    },
+    {
+        "id": "HEALTH_HOSPITALITY",
+        "value": "Health hospitality",
+        "lineOfBusiness": "Health"
+    },
+    {
+        "id": "LEGAL_PROTECTION",
+        "value": "Legal protection",
+        "lineOfBusiness": "P&C"
+    },
+    {
+        "id": "DEATH",
+        "value": "Death",
+        "lineOfBusiness": "L&S"
+    },
+    {
+        "id": "INVALIDITY",
+        "value": "INVALIDITY",
+        "lineOfBusiness": "L&S"
+    },
+    {
+        "id": "DEATH",
+        "value": "Death",
+        "lineOfBusiness": "L&S"
+    },
+    {
+        "id": "MIXED_LIFE_AND_DEATH",
+        "value": "Mixed life and death",
+        "lineOfBusiness": "L&S"
+    }
+]

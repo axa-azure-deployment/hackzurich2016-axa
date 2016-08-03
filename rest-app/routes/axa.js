@@ -23,12 +23,12 @@ function fullUrl(req, dictionary) {
     if (index >= 0) {
         query = path.substr(index+1);
         path = path.substr(0, index);
-        var queryParams = querystring.parse(query);
-        for (item in dictionary) {
-            queryParams[item] = dictionary[item];
-        }
-        query = "?"+querystring.stringify(queryParams);
     }
+    var queryParams = querystring.parse(query);
+    for (item in dictionary) {
+        queryParams[item] = dictionary[item];
+    }
+    query = "?"+querystring.stringify(queryParams);
     var fullURL = req.protocol + '://' + req.get('host') + path + query;
     return fullURL;
 }
@@ -50,7 +50,7 @@ function linkURL(req, skip, limit, max, overwrite) {
     return fullUrl(req, { "skip" : skip, "limit" : limit});
 }
 
-function registerModelAPIs(type, typeMultiple, isIdInteger, hasLimitCollection) {
+function registerModelAPIs(type, typeMultiple, idName, isIdInteger, hasLimitCollection) {
 if (isIdInteger === undefined) isIdInteger = false; // default string
 
 /*
@@ -60,9 +60,7 @@ router.get('/'+typeMultiple, function(req, res) {
     var db = req.db;
     var collection = db.get(typeMultiple);
     var options = {
-        "limit": 20,
-        "skip": 0,
-        "sort": "id"
+        "sort": idName
     }
     if (hasLimitCollection) {
         var limit = parseInt(req.param('limit'));
@@ -77,10 +75,10 @@ router.get('/'+typeMultiple, function(req, res) {
         if (!skip) { 
             skip = 0; 
         }
-        var options = {
+        options = {
             "limit": limit,
             "skip": skip,
-            "sort": "id"
+            "sort": idName
         }
     }
     collection.count({}, function (e1, count) {
@@ -123,7 +121,7 @@ router.get('/'+typeMultiple+'/:id', function(req, res) {
         res.status(404).send('id '+req.params.id+'is not numeric');
     } else {
         var idToSearch = parseInt(req.params.id);
-        collection.findOne({ 'id' : idToSearch }, function(e,docs){
+        collection.findOne({ id : idToSearch }, function(e,docs){
             if (e || !docs) {
                 res.status(404).send('No '+type+' found with id '+idToSearch);
                 return;
@@ -142,13 +140,23 @@ router.get('/'+typeMultiple+'/:id', function(req, res) {
     var db = req.db;
     var collection = db.get(typeMultiple);
     var idToSearch = req.params.id;
-    collection.findOne({ 'id' : idToSearch }, function(e,docs){
-        if (e || !docs) {
-            res.status(404).send('No '+type+' found with id '+idToSearch);
-            return;
-        }
-        res.json(docs);
-    });
+    if (idName == "_id") {
+        collection.findOne({ _id : idToSearch }, function(e,docs){
+            if (e || !docs) {
+                res.status(404).send('No '+type+' found with id '+idToSearch);
+                return;
+            }
+            res.json(docs);
+        });
+    } else {
+        collection.findOne({ id : idToSearch }, function(e,docs){
+            if (e || !docs) {
+                res.status(404).send('No '+type+' found with id '+idToSearch);
+                return;
+            }
+            res.json(docs);
+        });
+    }
 });
 }
 
@@ -160,21 +168,67 @@ router.get('/'+typeMultiple+'/:id', function(req, res) {
 
 /************* start cars **************************/
 
-registerModelAPIs('car', 'cars', true, false);
+registerModelAPIs('car', 'cars', 'id', true, false);
 
 /************* end cars **************************/
 
 
 /************* start trucks **************************/
 
-registerModelAPIs('truck', 'trucks', true, false);
+registerModelAPIs('truck', 'trucks', 'id', true, false);
 
 /************* end trucks **************************/
 
 
-
 /************* start customers **************************/
 
-registerModelAPIs('customer', 'customers', false, true);
+registerModelAPIs('customer', 'customers', 'id', false, true);
+router.get('/customers/:id/transactions', function(req, res) {
+    var db = req.db;
+    var collection = db.get('transactions');
+    var idToSearch = req.params.id;
+    var options = {
+        "sort": "date"
+    }
+
+    collection.find({ customer : idToSearch }, options, function(e,docs){
+        res.json(docs)
+    });
+});
+
+router.get('/customers/:id/trips', function(req, res) {
+    var db = req.db;
+    var collection = db.get('trips');
+    var idToSearch = req.params.id;
+    var options = {
+        "sort": "id"
+    }
+
+    collection.find({ }, options, function(e,docs){
+        res.json(docs)
+    });
+});
+
 
 /************* end customers **************************/
+
+/************* start trips **************************/
+
+registerModelAPIs('trip', 'trips', 'id', true, false);
+
+/************* end trips **************************/
+
+/************* start trips **************************/
+
+registerModelAPIs('transaction', 'transactions', '_id', false, true);
+
+/************* end trips **************************/
+
+/************* start valuables **************************/
+
+registerModelAPIs('category', 'categories', 'id', false, false);
+registerModelAPIs('risk', 'risks', 'id', false, false);
+registerModelAPIs('insuranceType', 'insuranceTypes', 'id', false, false);
+registerModelAPIs('valuable', 'valuables', 'id', false, false);
+
+/************* end valuables **************************/
