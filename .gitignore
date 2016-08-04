@@ -1,1 +1,4 @@
 .settings/
+.idea/
+*.iml
+rest-app/node_modules
