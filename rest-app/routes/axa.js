@@ -252,6 +252,18 @@ router.get('/customers/search/fulltext/:pattern', function(req, res) {
 });
 
 
+router.get('/customers/search/query/:query', function(req, res) {
+    var db = req.db;
+    var collection = db.get('customers');
+    var options = {
+        "sort": "id"
+    }
+    var queryToSearch = JSON.parse(req.params.query);
+    findLimited(req, res, collection, "id", queryToSearch);
+});
+
+
+
 router.get('/customers/search/near/:longitude,:latitude/:meter', function(req, res) {
     var db = req.db;
     var collection = db.get('customers');
@@ -288,8 +300,6 @@ router.get('/customers/search/near/:longitude,:latitude/:meter', function(req, r
             res.json(docs);
     });
 });
-
-
 
 
 
