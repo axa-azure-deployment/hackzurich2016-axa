@@ -19,13 +19,13 @@ var users = require('./routes/users');
 
 var app = express();
 app.use(favicon(__dirname + '/public/favicon.ico'));
-app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(cors({
     allowedOrigins: [
         'http://localhost:8080', 'http://127.0.0.1:8080', '*'
     ]
 }))
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 // view engine setup
