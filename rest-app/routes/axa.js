@@ -50,6 +50,52 @@ function linkURL(req, skip, limit, max, overwrite) {
     return fullUrl(req, { "skip" : skip, "limit" : limit});
 }
 
+function findLimited(req, res, collection, idName, query) {
+    var limit = parseInt(req.param('limit'));
+    var skip = parseInt(req.param('skip')); 
+    if (!limit) { 
+        limit = 20; 
+        console.log("no limit - use 20 as limit");
+    }
+    if (limit > 100 || limit < -100 ) {
+        throw new Error('limit <'+limit+'> is too high. Use skip & limit to get data');
+    }
+    if (!skip) { 
+        skip = 0; 
+    }
+    var options = {
+        "limit": limit,
+        "skip": skip,
+        "sort": idName
+    }
+    collection.count(query, function (e1, count) {
+        collection.find(query, options, function(e, docs){
+            if (e || !docs) {
+                res.status(404).send('Not found'+e);
+                return;
+            }
+            var lastSkip = (Math.floor(count / limit)) * limit;
+            if (lastSkip == count) { lastSkip = lastSkip - limit; }
+            var prevSkip = skip - limit;
+            var nextSkip = skip + limit;
+            res.json({
+                "links" : {
+                    "cur" : linkURL(req, skip, limit, count, true),
+                    "first" : linkURL(req, 0, limit, count, true),
+                    "prev" : linkURL(req, prevSkip, limit, count, false),
+                    "next" : linkURL(req, nextSkip, limit, count, false),
+                    "last" : linkURL(req, lastSkip, limit, count, true),
+                    "count" : docs.length,
+                    "totalCount" : count
+                },
+                "data" : docs
+            })
+        });
+    });
+
+}
+
+
 function registerModelAPIs(type, typeMultiple, idName, isIdInteger, hasLimitCollection) {
 if (isIdInteger === undefined) isIdInteger = false; // default string
 
@@ -59,54 +105,7 @@ if (isIdInteger === undefined) isIdInteger = false; // default string
 router.get('/'+typeMultiple, function(req, res) {
     var db = req.db;
     var collection = db.get(typeMultiple);
-    var options = {
-        "sort": idName
-    }
-    if (hasLimitCollection) {
-        var limit = parseInt(req.param('limit'));
-        var skip = parseInt(req.param('skip')); 
-        if (!limit) { 
-            limit = 20; 
-            console.log("no limit - use 20 as limit");
-        }
-        if (limit > 100 || limit < -100 ) {
-            throw new Error('limit <'+limit+'> is too high. Use skip & limit to get data');
-        }
-        if (!skip) { 
-            skip = 0; 
-        }
-        options = {
-            "limit": limit,
-            "skip": skip,
-            "sort": idName
-        }
-    }
-    collection.count({}, function (e1, count) {
-        collection.find({}, options, function(e, docs){
-            if (hasLimitCollection) {
-                var lastSkip = (Math.floor(count / limit)) * limit;
-                if (lastSkip == count) { lastSkip = lastSkip - limit; }
-                var prevSkip = skip - limit;
-                var nextSkip = skip + limit;
-                res.json({
-                    "links" : {
-                        "cur" : linkURL(req, skip, limit, count, true),
-                        "first" : linkURL(req, 0, limit, count, true),
-                        "prev" : linkURL(req, prevSkip, limit, count, false),
-                        "next" : linkURL(req, nextSkip, limit, count, false),
-                        "last" : linkURL(req, lastSkip, limit, count, true),
-                        "count" : docs.length,
-                        "totalCount" : count
-                    },
-                    "data" : docs
-                })
-            } else {
-                res.json(docs);
-            }
-        });
-    });
-
-    
+    findLimited(req, res, collection, idName, {});
 });
 
 
@@ -220,13 +219,7 @@ router.get('/customers/search/zipCode/:zip', function(req, res) {
         res.status(404).send('zipCode '+req.params.zip+'is not numeric');
     } else {
         var zipToSearch = parseInt(req.params.zip);
-        collection.find({ zipCode : zipToSearch }, function(e,docs){
-            if (e || !docs) {
-                res.status(404).send('No '+type+' found with id '+idToSearch);
-                return;
-            }
-            res.json(docs)
-        });
+        findLimited(req, res, collection, "id", { zipCode : zipToSearch });
     } 
 });
 
@@ -237,17 +230,68 @@ router.get('/customers/search/byName/:name', function(req, res) {
         "sort": "id"
     }
     var nameToSearch = req.params.name;
-    collection.find( { $or: [
+    findLimited(req, res, collection, "id", 
+        { $or: [
             { surname : {'$regex': nameToSearch } },
             { givenName : {'$regex': nameToSearch } }
-        ]}, function(e,docs){
-        if (e || !docs) {
-            res.status(404).send('No customer found with name '+nameToSearch);
-            return;
-        }
-        res.json(docs)
+        ]});
+
+});
+
+
+
+router.get('/customers/search/fulltext/:pattern', function(req, res) {
+    var db = req.db;
+    var collection = db.get('customers');
+    var options = {
+        "sort": "id"
+    }
+    var patternToSearch = req.params.pattern;
+    findLimited(req, res, collection, "id", 
+        { "$text": { "$search": patternToSearch } });
+});
+
+
+router.get('/customers/search/near/:longitude,:latitude/:meter', function(req, res) {
+    var db = req.db;
+    var collection = db.get('customers');
+    if (!isNumeric(req.params.longitude)) {
+        res.status(404).send('longitude '+req.params.longitude+'is not numeric');
+    }
+    if (!isNumeric(req.params.latitude)) {
+        res.status(404).send('latitude '+req.params.latitude+'is not numeric');
+    }
+    if (!isNumeric(req.params.meter)) {
+        res.status(404).send('meter '+req.params.meter+'is not numeric');
+    }
+    var longitudeSearch = parseInt(req.params.longitude);
+    var latitudeSearch = parseInt(req.params.latitude);
+    var meterSearch = parseInt(req.params.meter);
+
+    var query = {
+            location: {
+                $nearSphere :
+                    {
+                        $geometry : {
+                        type : "Point" ,
+                        coordinates : [ longitudeSearch, latitudeSearch] },
+                        $minDistance : 100,
+                        $maxDistance : meterSearch
+                    }
+       }
+        };
+    collection.find(query, function(e,docs){
+            if (e || !docs) {
+                res.status(404).send('Not found '+e);
+                return;
+            }
+            res.json(docs);
     });
 });
+
+
+
+
 
 
 /************* end customers **************************/

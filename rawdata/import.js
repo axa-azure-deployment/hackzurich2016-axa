@@ -25,3 +25,5 @@ for (var i = 0, l = importMeta.length; i < l; i++){
     
     print(" done. imported "+db.getCollection(importMeta[i].collection).count()+ " objects");
 }
+
+db.customers.ensureIndex( { "location" : "2dsphere" } );
