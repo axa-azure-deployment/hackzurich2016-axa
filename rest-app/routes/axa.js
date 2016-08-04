@@ -210,6 +210,43 @@ router.get('/customers/:id/trips', function(req, res) {
 });
 
 
+router.get('/customers/search/zipCode/:zip', function(req, res) {
+    var db = req.db;
+    var collection = db.get('customers');
+    var options = {
+        "sort": "id"
+    }
+    if (!isNumeric(req.params.zip)) {
+        res.status(404).send('zipCode '+req.params.zip+'is not numeric');
+    } else {
+        var zipToSearch = parseInt(req.params.zip);
+        collection.find({ zipCode : zipToSearch }, function(e,docs){
+            if (e || !docs) {
+                res.status(404).send('No '+type+' found with id '+idToSearch);
+                return;
+            }
+            res.json(docs)
+        });
+    } 
+});
+
+router.get('/customers/search/lastName/:name', function(req, res) {
+    var db = req.db;
+    var collection = db.get('customers');
+    var options = {
+        "sort": "id"
+    }
+    var nameToSearch = req.params.name;
+    collection.find({ surname : nameToSearch }, function(e,docs){
+        if (e || !docs) {
+            res.status(404).send('No customer found with name '+nameToSearch);
+            return;
+        }
+        res.json(docs)
+    });
+});
+
+
 /************* end customers **************************/
 
 /************* start trips **************************/
@@ -227,8 +264,61 @@ registerModelAPIs('transaction', 'transactions', '_id', false, true);
 /************* start valuables **************************/
 
 registerModelAPIs('category', 'categories', 'id', false, false);
+
+router.get('/categories/:id/subcategories', function(req, res) {
+    var db = req.db;
+    var collection = db.get('categories');
+    var idToSearch = req.params.id;
+    var options = {
+        "sort": "id"
+    }
+    collection.find({ parent : idToSearch}, options, function(e,docs){
+        res.json(docs)
+    });
+});
+
 registerModelAPIs('risk', 'risks', 'id', false, false);
+router.get('/risks/:id/insuranceTypes', function(req, res) {
+    var db = req.db;
+    var collection = db.get('risks');
+    var collectionI = db.get('insuranceTypes');
+    var idToSearch = req.params.id;
+    var options = {
+        "sort": "id"
+    }
+    collection.findOne({ id : idToSearch}, options, function(e,docs){
+        if (e || !docs) {
+                res.status(404).send('No valuable found with id '+idToSearch);
+                return;
+            }
+            console.log(docs.category);
+            collectionI.find({ lineOfBusiness : docs.lineOfBusiness}, options, function(e2,docs2){
+                res.json(docs2)
+            });
+    });
+});
 registerModelAPIs('insuranceType', 'insuranceTypes', 'id', false, false);
 registerModelAPIs('valuable', 'valuables', 'id', false, false);
+
+router.get('/valuables/:id/category', function(req, res) {
+    var db = req.db;
+    var collection = db.get('valuables');
+    var collectionC = db.get('categories');
+    var idToSearch = req.params.id;
+    var options = {
+        "sort": "id"
+    }
+    collection.findOne({ id : idToSearch}, options, function(e,docs){
+        if (e || !docs) {
+                res.status(404).send('No valuable found with id '+idToSearch);
+                return;
+            }
+            console.log(docs.category);
+            collectionC.findOne({ id : docs.category}, options, function(e2,docs2){
+                res.json(docs2)
+            });
+    });
+});
+
 
 /************* end valuables **************************/
