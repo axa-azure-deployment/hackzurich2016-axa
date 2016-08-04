@@ -22,7 +22,7 @@ app.use(favicon(__dirname + '/public/favicon.ico'));
 
 app.use(cors({
     allowedOrigins: [
-        'http://localhost:8080', 'http://127.0.0.1:8080', '*'
+        'http://localhost:8080', 'http://127.0.0.1:8080', 'http://petstore.swagger.io'
     ]
 }))
 app.use(express.static(path.join(__dirname, 'public')));
