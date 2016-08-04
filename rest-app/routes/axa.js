@@ -258,7 +258,13 @@ router.get('/customers/search/query/:query', function(req, res) {
     var options = {
         "sort": "id"
     }
-    var queryToSearch = JSON.parse(req.params.query);
+    var queryToSearch = null;
+    try{
+        queryToSearch = JSON.parse(req.params.query);
+    } catch (e) {
+        res.status(500).send('query is not a valid JSON string <br>&nbsp;'+req.params.query);
+        return;
+    }
     findLimited(req, res, collection, "id", queryToSearch);
 });
 
