@@ -230,14 +230,17 @@ router.get('/customers/search/zipCode/:zip', function(req, res) {
     } 
 });
 
-router.get('/customers/search/lastName/:name', function(req, res) {
+router.get('/customers/search/byName/:name', function(req, res) {
     var db = req.db;
     var collection = db.get('customers');
     var options = {
         "sort": "id"
     }
     var nameToSearch = req.params.name;
-    collection.find({ surname : nameToSearch }, function(e,docs){
+    collection.find( { $or: [
+            { surname : {'$regex': nameToSearch } },
+            { givenName : {'$regex': nameToSearch } }
+        ]}, function(e,docs){
         if (e || !docs) {
             res.status(404).send('No customer found with name '+nameToSearch);
             return;
@@ -261,7 +264,7 @@ registerModelAPIs('transaction', 'transactions', '_id', false, true);
 
 /************* end trips **************************/
 
-/************* start valuables **************************/
+/************* start favorites **************************/
 
 registerModelAPIs('category', 'categories', 'id', false, false);
 
@@ -288,7 +291,7 @@ router.get('/risks/:id/insuranceTypes', function(req, res) {
     }
     collection.findOne({ id : idToSearch}, options, function(e,docs){
         if (e || !docs) {
-                res.status(404).send('No valuable found with id '+idToSearch);
+                res.status(404).send('No favorite found with id '+idToSearch);
                 return;
             }
             console.log(docs.category);
@@ -298,11 +301,11 @@ router.get('/risks/:id/insuranceTypes', function(req, res) {
     });
 });
 registerModelAPIs('insuranceType', 'insuranceTypes', 'id', false, false);
-registerModelAPIs('valuable', 'valuables', 'id', false, false);
+registerModelAPIs('favorite', 'favorites', 'id', false, false);
 
-router.get('/valuables/:id/category', function(req, res) {
+router.get('/favorites/:id/category', function(req, res) {
     var db = req.db;
-    var collection = db.get('valuables');
+    var collection = db.get('favorites');
     var collectionC = db.get('categories');
     var idToSearch = req.params.id;
     var options = {
@@ -310,7 +313,7 @@ router.get('/valuables/:id/category', function(req, res) {
     }
     collection.findOne({ id : idToSearch}, options, function(e,docs){
         if (e || !docs) {
-                res.status(404).send('No valuable found with id '+idToSearch);
+                res.status(404).send('No favorite found with id '+idToSearch);
                 return;
             }
             console.log(docs.category);
@@ -321,4 +324,4 @@ router.get('/valuables/:id/category', function(req, res) {
 });
 
 
-/************* end valuables **************************/
+/************* end favorites **************************/

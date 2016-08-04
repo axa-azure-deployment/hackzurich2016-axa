@@ -13,7 +13,7 @@ mongoimport --db hackzurich2016-axa --jsonArray --collection transactions < ./tr
 mongoimport --db hackzurich2016-axa --jsonArray --collection transactions < ./transactions/transactions31.json
 mongoimport --db hackzurich2016-axa --jsonArray --collection transactions < ./transactions/transactions41.json
 
-mongoimport --db hackzurich2016-axa --jsonArray --collection categories < ./valuables/categories.json
-mongoimport --db hackzurich2016-axa --jsonArray --collection insuranceTypes < ./valuables/insuranceTypes.json
-mongoimport --db hackzurich2016-axa --jsonArray --collection risks < ./valuables/risks.json
-mongoimport --db hackzurich2016-axa --jsonArray --collection valuables < ./valuables/valuables.json
+mongoimport --db hackzurich2016-axa --jsonArray --collection categories < ./favorites/categories.json
+mongoimport --db hackzurich2016-axa --jsonArray --collection insuranceTypes < ./favorites/insuranceTypes.json
+mongoimport --db hackzurich2016-axa --jsonArray --collection risks < ./favorites/risks.json
+mongoimport --db hackzurich2016-axa --jsonArray --collection favorites < ./favorites/favorites.json
