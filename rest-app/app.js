@@ -8,7 +8,9 @@ var bodyParser = require('body-parser');
 // add mongo connection
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk('localhost:27017/hackzurich2016-axa');
+
+// Connect to remote DB
+var db = monk('HackZurich2016-user:password@40.68.213.58:27018/hackzurich2016-axa');
 
 // CORS issues
 var cors = require('express-cors')
