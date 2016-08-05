@@ -1,9 +1,30 @@
 {
   "name": "rest-app",
-  "version": "0.0.0",
+  "version": "0.1.0",
+  "description": "hackurich 2016 by AXA - insurance as simple as a game - aka clash of claims",
+  "homepage": "https://github.com/lolo8304/hackzurich2016-axa",
+  "bugs": {
+    "url": "https://github.com/lolo8304/hackzurich2016-axa/issues",
+    "email": "lorenz.haenggi@axa-winterthur.ch"
+  },
   "private": true,
+  "author": {
+    "name": "Lorenz Hängg",
+    "email": "lorenz.haenggi@axa-winterthur.ch",
+    "url": "https://github.com/lolo8304"
+  },
+  "contributors": [
+    {
+      "name": "Patrick Schwab",
+      "email": "patrick.schwab@axa-winterthur.ch"
+    }
+  ],
   "scripts": {
     "start": "node ./bin/www"
+  },
+  "repository": {
+    "url": "https://github.com/lolo8304/hackzurich2016-axa.git",
+    "type": "git"
   },
   "dependencies": {
     "body-parser": "~1.15.1",
@@ -13,10 +34,8 @@
     "jade": "~1.11.0",
     "morgan": "~1.7.0",
     "serve-favicon": "~2.3.0",
-
     "mongodb": "^1.4.4",
     "monk": "^1.0.1",
-
     "express-cors": "^0.0.3"
   }
 }
