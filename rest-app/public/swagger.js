@@ -5,6 +5,41 @@
         "title": "hackzurich 2016 - AXA Winterthur - API"
     },
     "host": "localhost:3000",
+    "definitions": {
+        "Customer": {
+            "properties": {
+                "name": {
+                    "type": "string"
+                }
+            }
+        },
+        "Link": {
+            "title": "customer",
+            "properties": {
+                "cur": {
+                    "type": "string"
+                },
+                "first": {
+                    "type": "string"
+                },
+                "prev": {
+                    "type": "string"
+                },
+                "next": {
+                    "type": "string"
+                },
+                "last": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "integer"
+                },
+                "totalCount": {
+                    "type": "integer"
+                }
+            }
+        }
+    },
     "paths": {
         "/axa/customers": {
             "get": {
@@ -16,64 +51,16 @@
                             "title": "Array of users",
                             "type": "object",
                             "properties": {
-                                "docs": {
+                                "data": {
                                     "type": "array",
                                     "items": {
-                                        "title": "customer",
-                                        "type": "object",
-                                        "properties": {
-                                            "_id": {
-                                                "type": "string"
-                                            },
-                                            "username": {
-                                                "type": "string"
-                                            },
-                                            "email": {
-                                                "type": "string"
-                                            },
-                                            "fullname": {
-                                                "type": "string"
-                                            },
-                                            "age": {
-                                                "type": "integer"
-                                            },
-                                            "location": {
-                                                "type": "string"
-                                            },
-                                            "gender": {
-                                                "type": "string"
-                                            }
-                                        }
+                                        "$ref": "#/definitions/Customer"
                                     }
                                 },
                                 "links": {
-                                    "type": "array",
+                                    "type": "object",
                                     "items": {
-                                        "title": "link",
-                                        "type": "object",
-                                        "properties": {
-                                            "cur": {
-                                                "type": "string"
-                                            },
-                                            "first": {
-                                                "type": "string"
-                                            },
-                                            "prev": {
-                                                "type": "string"
-                                            },
-                                            "next": {
-                                                "type": "string"
-                                            },
-                                            "last": {
-                                                "type": "string"
-                                            },
-                                            "count": {
-                                                "type": "integer"
-                                            },
-                                            "totalCount": {
-                                                "type": "integer"
-                                            }
-                                        }
+                                        "$ref": "#/definitions/Link"
                                     }
                                 }
                             }
@@ -84,7 +71,7 @@
         },
         "/axa/customers/{id}": {
             "get": {
-                "description": "gets 1 customer based his id\n",
+                "description": "get customer based on id\n",
                 "parameters": [
                     {
                         "name": "id",
@@ -99,16 +86,10 @@
                     "200": {
                         "description": "Successful response",
                         "schema": {
-                            "title": "ArrayOfPersons",
+                            "title": "Array of customers",
                             "type": "array",
                             "items": {
-                                "title": "Person",
-                                "type": "object",
-                                "properties": {
-                                    "name": {
-                                        "type": "string"
-                                    }
-                                }
+                                "$ref": "#/definitions/Customer"
                             }
                         }
                     }

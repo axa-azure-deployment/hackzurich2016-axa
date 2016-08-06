@@ -5,6 +5,11 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+/*swagger
+var url = require("url");
+var swagger = require("swagger-node-express");
+*/
+
 // add mongo connection
 var mongo = require('mongodb');
 var monk = require('monk');
@@ -20,6 +25,13 @@ var axa = require('./routes/axa');
 var users = require('./routes/users');
 
 var app = express();
+
+/* swagger
+app.use(express.json());
+app.use(express.urlencoded());
+swagger.setAppHandler(app);
+*/
+
 app.use(favicon(__dirname + '/public/favicon.ico'));
 
 app.use(cors({
