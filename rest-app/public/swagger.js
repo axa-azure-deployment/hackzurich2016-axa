@@ -4,7 +4,7 @@
         "version": "0.1.0",
         "title": "hackzurich 2016 - AXA Winterthur - API"
     },
-    "host": "localhost:3000",
+    "host": "hackzurich16.azurewebsites.net",
     "definitions": {
         "Customer": {
             "properties": {
