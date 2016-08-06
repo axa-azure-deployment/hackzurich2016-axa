@@ -105,7 +105,16 @@ if (isIdInteger === undefined) isIdInteger = false; // default string
 router.get('/'+typeMultiple, function(req, res) {
     var db = req.db;
     var collection = db.get(typeMultiple);
-    findLimited(req, res, collection, idName, {});
+    if (hasLimitCollection) {
+        findLimited(req, res, collection, idName, {});
+    } else {
+        var options = {
+            "sort": idName
+        }
+        collection.find({ }, options, function(e,docs){
+            res.json(docs)
+        });
+    }
 });
 
 
