@@ -1,2 +1,1 @@
-PP=`lsof -iTCP -sTCP:LISTEN | grep mongo | cut -d ":" -f 2 | cut -d " " -f 1`
-mongo localhost:${PP}/hackzurich2016-axa import.js
+mongo 40.68.213.58:27018/hackzurich2016-axa -u HackZurich2016-admin -p import.js
