@@ -10,6 +10,85 @@
             "properties": {
                 "name": {
                     "type": "string"
+                },
+                "gender": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "givenName": {
+                    "type": "string"
+                },
+                "middleInitial": {
+                    "type": "string"
+                },
+                "surname": {
+                    "type": "string"
+                },
+                "streetAddress": {
+                    "type": "string"
+                },
+                "city": {
+                    "type": "string"
+                },
+                "zipCode": {
+                    "type": "string"
+                },
+                "country": {
+                    "type": "string"
+                },
+                "countryFull": {
+                    "type": "string"
+                },
+                "emailAddress": {
+                    "type": "string"
+                },
+                "username": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "telephoneNumber": {
+                    "type": "string"
+                },
+                "telephoneCountryCode": {
+                    "type": "string"
+                },
+                "birthday": {
+                    "type": "string"
+                },
+                "age": {
+                    "type": "string"
+                },
+                "occupation": {
+                    "type": "string"
+                },
+                "company": {
+                    "type": "string"
+                },
+                "vehicle": {
+                    "type": "string"
+                },
+                "kilograms": {
+                    "type": "string"
+                },
+                "centimeters": {
+                    "type": "integer"
+                },
+                "location": {
+                    "$ref": "#/definitions/2dsphere"
+                }
+            }
+        },
+        "2dsphere": {
+            "properties": {
+                "type": {
+                    "type": "string"
+                },
+                "coordinate": {
+                    "type": "object"
                 }
             }
         },
