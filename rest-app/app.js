@@ -55,6 +55,12 @@ swagger.setAppHandler(subpath);
 app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, '/dist/index.html'));
 });
+app.get('/swagger.json', function (req, res) {
+    res.sendFile(path.join(__dirname, '/public/swagger.json'));
+});
+app.get('/swagger.yaml', function (req, res) {
+    res.sendFile(path.join(__dirname, '/public/swagger.yaml'));
+});
 
 // Make our db accessible to our router
 app.use(function(req,res,next){
