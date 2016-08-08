@@ -25,16 +25,14 @@ var users = require('./routes/users');
 
 var app = express();
 
-app.use(favicon(__dirname + '/public/favicon.ico'));
-
 app.use(cors({
     "origin": false,
     "allowedOrigins" : [
         'http://localhost:8080', 'http://127.0.0.1:8080', 'http://petstore.swagger.io', '*'
     ]
 }))
-app.use(express.static(path.join(__dirname, 'dist')));
-
+app.use(express.static(path.join(__dirname, '/dist')));
+app.use(favicon(__dirname + '/dist/favicon.ico'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
