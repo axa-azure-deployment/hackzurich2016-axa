@@ -6,7 +6,6 @@ do
 	then
 	  echo "copy swagger.json file to git"
 	  mv $LOC/swagger.json $DLOC/swagger.json
-	  cp $DLOC/swagger.json $DLOC/swagger.js
 	fi
         if [ -f "$LOC/swagger.yaml" ]
         then

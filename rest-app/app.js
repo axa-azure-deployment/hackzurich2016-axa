@@ -5,10 +5,9 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-/*swagger
-var url = require("url");
+/*swagger */
+var argv = require('minimist')(process.argv.slice(2));
 var swagger = require("swagger-node-express");
-*/
 
 // add mongo connection
 var mongo = require('mongodb');
@@ -25,12 +24,6 @@ var axa = require('./routes/axa');
 var users = require('./routes/users');
 
 var app = express();
-
-/* swagger
-app.use(express.json());
-app.use(express.urlencoded());
-swagger.setAppHandler(app);
-*/
 
 app.use(favicon(__dirname + '/public/favicon.ico'));
 
@@ -53,6 +46,22 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+/* swagger */
+var subpath = express();
+app.use("/v1", subpath);
+swagger.setAppHandler(subpath);
+app.use(express.static('public/dist'));
+swagger.setApiInfo({
+        title: "example API",
+        description: "API to do something, manage something...",
+        termsOfServiceUrl: "",
+        contact: "yourname@something.com",
+        license: "",
+        licenseUrl: ""
+    });
+app.get('/', function (req, res) {
+    res.sendFile(path.join(path.join(__dirname, 'public'), '/dist/index.html'));
+});
 
 // Make our db accessible to our router
 app.use(function(req,res,next){
@@ -60,7 +69,9 @@ app.use(function(req,res,next){
     next();
 });
 
-app.use('/', routes);
+/* swagger - line removed */
+// app.use('/', routes);
+
 app.use('/axa', axa);
 app.use('/test', users);
 
@@ -98,3 +109,29 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
+
+
+/* Set api-doc path
+swagger.configureSwaggerPaths('', 'api-docs', '');
+
+// Configure the API domain
+var domain = 'localhost';
+if(argv.domain !== undefined)
+    domain = argv.domain;
+else
+    console.log('No --domain=xxx specified, taking default hostname "localhost".')
+
+// Configure the API port
+var port = 8080;
+if(argv.port !== undefined)
+    port = argv.port;
+else
+    console.log('No --port=xxx specified, taking default port ' + port + '.')
+*/
+
+// Set and display the application URL
+//var applicationUrl = 'http://' + domain + ':' + port;
+//console.log('snapJob API running on ' + applicationUrl);
+//swagger.configure(applicationUrl, '1.0.0');
+// Start the web server
+//app.listen(port);
