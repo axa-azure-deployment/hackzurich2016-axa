@@ -2,7 +2,8 @@
     "swagger": "2.0",
     "info": {
         "version": "0.1.0",
-        "title": "hackzurich 2016 - AXA Winterthur - API"
+        "title": "hackzurich 2016 - AXA Winterthur - API",
+        "description": "AXA Winterthur is Gold sponsor \"hackzurich\" http://hackzurich.ch in 2016.\nThe topic of AXA is \"insurance as simple as a Game\" aka \"Clash of claims\"\nthe current API represents the most used domain objects of an insurance. we provide 2 different types: static / configation data and dynamic data, based on 10'000 predefined customers\n***\n- **car + truck data**: some vehicle types and attributes, incl CO2 and energy attributes\n- **insurance types**: list of all types of insurances, group by L&S, P&C and health\n- **risk types**: risks possible to be able taken for the customer\n- **favorite risk object categories**: object categories to describe your favorite object\n***\n- **customer data**: most attributes of a customer eg naming, address, date of birth, ...\n- **profile data**: important profile data of the customer\n- **contracts**: insurance contracts of the customer\n- **trips**: telmatics data of some trips, locations and events\n- **transactions**: financial transactions issued to \n***\n"
     },
     "host": "hackzurich16.azurewebsites.net",
     "basePath": "/axa",
@@ -230,6 +231,12 @@
                         "schema": {
                             "$ref": "#/definitions/Customer"
                         }
+                    },
+                    "404": {
+                        "description": "customer not found"
+                    },
+                    "500": {
+                        "description": "technical server error"
                     }
                 }
             }
