@@ -50,7 +50,8 @@ app.use(cookieParser());
 var subpath = express();
 app.use("/v1", subpath);
 swagger.setAppHandler(subpath);
-app.use(express.static('public/dist'));
+app.use(express.static('dist'));
+
 swagger.setApiInfo({
         title: "example API",
         description: "API to do something, manage something...",
@@ -60,7 +61,7 @@ swagger.setApiInfo({
         licenseUrl: ""
     });
 app.get('/', function (req, res) {
-    res.sendFile(path.join(path.join(__dirname, 'public'), '/dist/index.html'));
+    res.sendFile(path.join(__dirname, '/dist/index.html'));
 });
 
 // Make our db accessible to our router
