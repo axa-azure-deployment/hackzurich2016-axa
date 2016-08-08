@@ -32,7 +32,6 @@ app.use(cors({
     ]
 }))
 app.use(express.static(path.join(__dirname, '/dist')));
-app.use(favicon(__dirname + '/dist/favicon.ico'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
