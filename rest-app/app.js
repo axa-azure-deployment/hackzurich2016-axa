@@ -34,6 +34,7 @@ app.use(cors({
     ]
 }))
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'dist')));
 
 
 // view engine setup
@@ -50,16 +51,7 @@ app.use(cookieParser());
 var subpath = express();
 app.use("/v1", subpath);
 swagger.setAppHandler(subpath);
-app.use(express.static('dist'));
 
-swagger.setApiInfo({
-        title: "example API",
-        description: "API to do something, manage something...",
-        termsOfServiceUrl: "",
-        contact: "yourname@something.com",
-        license: "",
-        licenseUrl: ""
-    });
 app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, '/dist/index.html'));
 });
