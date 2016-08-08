@@ -1,7 +1,7 @@
 while true
 do
 	LOC=$HOME/Downloads
-	DLOC=$HOME/git/hackzurich2016-axa/rest-app/public/
+	DLOC=$HOME/git/hackzurich2016-axa/rest-app/dist/
 	if [ -f "$LOC/swagger.json" ]
 	then
 	  echo "copy swagger.json file to git"

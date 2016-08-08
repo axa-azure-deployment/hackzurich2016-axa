@@ -33,7 +33,6 @@ app.use(cors({
         'http://localhost:8080', 'http://127.0.0.1:8080', 'http://petstore.swagger.io', '*'
     ]
 }))
-app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'dist')));
 
 
@@ -54,12 +53,6 @@ swagger.setAppHandler(subpath);
 
 app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, '/dist/index.html'));
-});
-app.get('/swagger.json', function (req, res) {
-    res.sendFile(path.join(__dirname, '/public/swagger.json'));
-});
-app.get('/swagger.yaml', function (req, res) {
-    res.sendFile(path.join(__dirname, '/public/swagger.yaml'));
 });
 
 // Make our db accessible to our router

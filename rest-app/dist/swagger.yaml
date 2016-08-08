@@ -5,7 +5,7 @@ info:
   description: |
     AXA Winterthur is Gold sponsor "hackzurich" http://hackzurich.ch in 2016.
     The topic of AXA is "insurance as simple as a Game" aka "Clash of claims"
-    the current API represents the most used domain objects of an insurance. we provide 2 different types: static / configation data and dynamic data, based on 10'000 predefined customers
+    the current API represents the most used domain objects of an insurance. we provide 2 different types: static / configation data and dynamic data, based on 10'000 predefined customers.
     ***
     dynamic data (prefilled with examples)
     - **customer data**: most attributes of a customer eg naming, address, date of birth, ...
