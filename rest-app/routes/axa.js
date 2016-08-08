@@ -6,7 +6,39 @@ var router = express.Router();
 
 module.exports = router;
 
-/************* start model **************************/
+function RestApiError(code, message) {
+    this.name = "RestApiError";
+    this.message = "["+code+"] "+(message || "");
+}
+RestApiError.prototype = Error.prototype;
+
+function getHttpErrorCode(e) {
+    var hasError = /^\[.*\].*$/.test(e.message);
+    if (hasError) {
+        var myRegexp = /^\[(.*)\].*$/;
+        var match = myRegexp.exec(e.message);
+        return match[1];
+    } else {
+        return "500";
+    }
+}
+
+function handleError(res, e, docs, defaultString) {
+    if (e && e.name == "RestApiError") {
+        console.log("handle error: e="+e+", docs="+docs+", str="+defaultString);
+        res.status(getHttpErrorCode(e)).send(e.message);
+        return true;
+    } else if (e && e.name != "RestApiError") {
+        console.log("handle error: e="+e+", docs="+docs+", str="+defaultString);
+        res.status(500).send(e.message);
+        return true;
+    } else if (!docs) {
+        console.log("handle error: e="+e+", docs="+docs+", str="+defaultString);
+        res.status(404).send(defaultString);
+        return true;
+    }
+    return false;
+}
 
 function isNumeric(obj) {
     // parseFloat NaNs numeric-cast false positives (null|true|false|"")
@@ -55,10 +87,9 @@ function findLimited(req, res, collection, idName, query) {
     var skip = parseInt(req.param('skip')); 
     if (!limit) { 
         limit = 20; 
-        console.log("no limit - use 20 as limit");
     }
     if (limit > 100 || limit < -100 ) {
-        throw new Error('limit <'+limit+'> is too high. Use skip & limit to get data');
+        throw new RestApiError("400", 'limit <'+limit+'> is too high. Use skip (max +/-100) & limit to get data');
     }
     if (!skip) { 
         skip = 0; 
@@ -70,8 +101,7 @@ function findLimited(req, res, collection, idName, query) {
     }
     collection.count(query, function (e1, count) {
         collection.find(query, options, function(e, docs){
-            if (e || !docs) {
-                res.status(404).send('Not found'+e);
+            if (handleError(res, e, docs, "no results found")) {
                 return;
             }
             var lastSkip = (Math.floor(count / limit)) * limit;
@@ -95,6 +125,8 @@ function findLimited(req, res, collection, idName, query) {
 
 }
 
+/************* start model **************************/
+
 
 function registerModelAPIs(type, typeMultiple, idName, isIdInteger, hasLimitCollection) {
 if (isIdInteger === undefined) isIdInteger = false; // default string
@@ -106,7 +138,13 @@ router.get('/'+typeMultiple, function(req, res) {
     var db = req.db;
     var collection = db.get(typeMultiple);
     if (hasLimitCollection) {
-        findLimited(req, res, collection, idName, {});
+        try {
+            findLimited(req, res, collection, idName, {});
+        } catch (e) {
+            if (handleError(res, e, null, "no results found")) {
+                return;
+            }
+        }
     } else {
         var options = {
             "sort": idName
@@ -126,12 +164,12 @@ router.get('/'+typeMultiple+'/:id', function(req, res) {
     var db = req.db;
     var collection = db.get(typeMultiple);
     if (!isNumeric(req.params.id)) {
-        res.status(404).send('id '+req.params.id+'is not numeric');
+        return handleError(res,
+            new RestApiError("400", 'id '+req.params.id+'is not numeric'));
     } else {
         var idToSearch = parseInt(req.params.id);
         collection.findOne({ id : idToSearch }, function(e,docs){
-            if (e || !docs) {
-                res.status(404).send('No '+type+' found with id '+idToSearch);
+            if (handleError(res, e, docs, 'No '+type+' found with id '+idToSearch)) {
                 return;
             }
             res.json(docs)
@@ -150,16 +188,14 @@ router.get('/'+typeMultiple+'/:id', function(req, res) {
     var idToSearch = req.params.id;
     if (idName == "_id") {
         collection.findOne({ _id : idToSearch }, function(e,docs){
-            if (e || !docs) {
-                res.status(404).send('No '+type+' found with id '+idToSearch);
+            if (handleError(res, e, docs, 'No '+type+' found with _id '+idToSearch)) {
                 return;
             }
             res.json(docs);
         });
     } else {
         collection.findOne({ id : idToSearch }, function(e,docs){
-            if (e || !docs) {
-                res.status(404).send('No '+type+' found with id '+idToSearch);
+            if (handleError(res, e, docs, 'No '+type+' found with id '+idToSearch)) {
                 return;
             }
             res.json(docs);
@@ -176,14 +212,14 @@ router.get('/'+typeMultiple+'/:id', function(req, res) {
 
 /************* start cars **************************/
 
-registerModelAPIs('car', 'cars', 'id', true, false);
+registerModelAPIs('car', 'cars', 'id', true, true);
 
 /************* end cars **************************/
 
 
 /************* start trucks **************************/
 
-registerModelAPIs('truck', 'trucks', 'id', true, false);
+registerModelAPIs('truck', 'trucks', 'id', true, true);
 
 /************* end trucks **************************/
 
@@ -225,7 +261,8 @@ router.get('/customers/search/zipCode/:zip', function(req, res) {
         "sort": "id"
     }
     if (!isNumeric(req.params.zip)) {
-        res.status(404).send('zipCode '+req.params.zip+'is not numeric');
+        return handleError(res,
+            new RestApiError("400", 'zipCode '+req.params.zip+'is not numeric'));
     } else {
         var zipToSearch = parseInt(req.params.zip);
         findLimited(req, res, collection, "id", { zipCode : zipToSearch });
@@ -271,25 +308,28 @@ router.get('/customers/search/query/:query', function(req, res) {
     try{
         queryToSearch = JSON.parse(req.params.query);
     } catch (e) {
-        res.status(500).send('query is not a valid JSON string <br>&nbsp;'+req.params.query);
-        return;
+        return handleError(res,
+            new RestApiError("400", 'query is not a valid JSON string <br>&nbsp;'+req.params.query));
     }
     findLimited(req, res, collection, "id", queryToSearch);
 });
 
 
 
-router.get('/customers/search/near/:longitude,:latitude/:meter', function(req, res) {
+router.get('/customers/search/near/:longitude,:latitude,:meter', function(req, res) {
     var db = req.db;
     var collection = db.get('customers');
     if (!isNumeric(req.params.longitude)) {
-        res.status(404).send('longitude '+req.params.longitude+'is not numeric');
+        return handleError(res,
+            new RestApiError("400", 'longitude '+req.params.longitude+'is not numeric'));
     }
     if (!isNumeric(req.params.latitude)) {
-        res.status(404).send('latitude '+req.params.latitude+'is not numeric');
+        return handleError(res,
+            new RestApiError("400", 'latitude '+req.params.latitude+'is not numeric'));
     }
     if (!isNumeric(req.params.meter)) {
-        res.status(404).send('meter '+req.params.meter+'is not numeric');
+        return handleError(res,
+            new RestApiError("400", 'meter '+req.params.meter+'is not numeric'));
     }
     var longitudeSearch = parseInt(req.params.longitude);
     var latitudeSearch = parseInt(req.params.latitude);
@@ -359,14 +399,12 @@ router.get('/risks/:id/insuranceTypes', function(req, res) {
         "sort": "id"
     }
     collection.findOne({ id : idToSearch}, options, function(e,docs){
-        if (e || !docs) {
-                res.status(404).send('No favorite found with id '+idToSearch);
-                return;
-            }
-            console.log(docs.category);
-            collectionI.find({ lineOfBusiness : docs.lineOfBusiness}, options, function(e2,docs2){
-                res.json(docs2)
-            });
+        if (handleError(res, e, docs, 'No favorite found with id '+idToSearch)) {
+            return;
+        }
+        collectionI.find({ lineOfBusiness : docs.lineOfBusiness}, options, function(e2,docs2){
+            res.json(docs2)
+        });
     });
 });
 registerModelAPIs('insuranceType', 'insuranceTypes', 'id', false, false);
@@ -381,14 +419,12 @@ router.get('/favorites/:id/category', function(req, res) {
         "sort": "id"
     }
     collection.findOne({ id : idToSearch}, options, function(e,docs){
-        if (e || !docs) {
-                res.status(404).send('No favorite found with id '+idToSearch);
-                return;
-            }
-            console.log(docs.category);
-            collectionC.findOne({ id : docs.category}, options, function(e2,docs2){
-                res.json(docs2)
-            });
+        if (handleError(res, e, docs, 'No favorite found with id '+idToSearch)) {
+            return;
+        }
+        collectionC.findOne({ id : docs.category}, options, function(e2,docs2){
+            res.json(docs2)
+        });
     });
 });
 
