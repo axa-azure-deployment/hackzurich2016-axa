@@ -94,10 +94,9 @@ app.use(function(err, req, res, next) {
 
 module.exports = app;
 
-
 /* Set api-doc path
 swagger.configureSwaggerPaths('', 'api-docs', '');
-*/
+
 // Configure the API domain
 var domain = 'localhost';
 if(argv.domain !== undefined)
@@ -111,11 +110,12 @@ if(argv.port !== undefined)
     port = argv.port;
 else
     console.log('No --port=xxx specified, taking default port ' + port + '.')
+*/
 
-
-// Set and display the application URL
+/* Set and display the application URL
 var applicationUrl = 'http://' + domain + ':' + port;
 console.log('snapJob API running on ' + applicationUrl);
 swagger.configure(applicationUrl, '1.0.0');
 // Start the web server
 //app.listen(port);
+*/

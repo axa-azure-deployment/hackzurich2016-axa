@@ -27,8 +27,9 @@ function handleError(res, e, docs, defaultString) {
     if (e && e.name == "RestApiError") {
         console.log("handle error: e="+e+", docs="+docs+", str="+defaultString);
         res.status(getHttpErrorCode(e)).send(e.message);
+        //res.render('500', {error: err, stack: err.stack});
         return true;
-    } else if (e && e.name != "RestApiError") {
+    } else if (e) {
         console.log("handle error: e="+e+", docs="+docs+", str="+defaultString);
         res.status(500).send(e.message);
         return true;
@@ -90,12 +91,31 @@ function linkURL(req, skip, limit, max, overwrite) {
     return fullUrl(req, { "skip" : skip, "limit" : limit});
 }
 
-function findLimited(req, res, collection, idName, query, sortColumn) {
+function buildResponseLimited(req, res, skip, limit, e, docs, totalCount) {
+    if (handleError(res, e, docs, "no results found")) {
+        return;
+    }
+    var lastSkip = (Math.floor(totalCount / limit)) * limit;
+    if (lastSkip == totalCount) { lastSkip = Math.max(0, lastSkip - limit); }
+    var prevSkip = skip - limit;
+    var nextSkip = skip + limit;
+    res.json({
+        "links" : {
+            "cur" : linkURL(req, skip, limit, totalCount, true),
+            "first" : linkURL(req, 0, limit, totalCount, true),
+            "prev" : linkURL(req, prevSkip, limit, totalCount, false),
+            "next" : linkURL(req, nextSkip, limit, totalCount, false),
+            "last" : linkURL(req, lastSkip, limit, totalCount, true),
+            "count" : docs.length,
+            "totalCount" : totalCount
+        },
+        "data" : docs
+    })
+}
+
+function buildOptions(req, idName, sortColumn) {
     var limit = parseInt(req.param('limit'));
     var skip = parseInt(req.param('skip')); 
-    if (isEmpty(sortColumn)) {
-        sortColumn = { idName : 1 };
-    }
 
     if (!limit) { 
         limit = 10; 
@@ -106,32 +126,30 @@ function findLimited(req, res, collection, idName, query, sortColumn) {
     if (!skip) { 
         skip = 0; 
     }
-    var options = {
-        "limit": limit,
-        "skip": skip,
-        "sort": sortColumn
+    if (isEmpty(sortColumn)) {
+        var options = {
+            "limit": limit,
+            "skip": skip
+        }
+    } else {
+        var options = {
+            "limit": limit,
+            "skip": skip,
+            "sort": sortColumn
+        }
     }
-    collection.count(query, function (e1, count) {
+    return options;
+}
+function findLimited(req, res, collection, idName, query, sortColumn) {
+    var options = buildOptions(req, idName, sortColumn);
+    var limit = options.limit;
+    var skip = options.skip; 
+    collection.count(query, function (e1, totalCount) {
+        if (handleError(res, e1, totalCount, 'not found')) {
+            return;
+        }
         collection.find(query, options, function(e, docs){
-            if (handleError(res, e, docs, "no results found")) {
-                return;
-            }
-            var lastSkip = (Math.floor(count / limit)) * limit;
-            if (lastSkip == count) { lastSkip = Math.max(0, lastSkip - limit); }
-            var prevSkip = skip - limit;
-            var nextSkip = skip + limit;
-            res.json({
-                "links" : {
-                    "cur" : linkURL(req, skip, limit, count, true),
-                    "first" : linkURL(req, 0, limit, count, true),
-                    "prev" : linkURL(req, prevSkip, limit, count, false),
-                    "next" : linkURL(req, nextSkip, limit, count, false),
-                    "last" : linkURL(req, lastSkip, limit, count, true),
-                    "count" : docs.length,
-                    "totalCount" : count
-                },
-                "data" : docs
-            })
+            buildResponseLimited(req, res, skip, limit, e, docs, totalCount);
         });
     });
 
@@ -151,7 +169,9 @@ router.get('/'+typeMultiple, function(req, res) {
     var collection = db.get(typeMultiple);
     if (hasLimitCollection) {
         try {
-            findLimited(req, res, collection, idName, {});
+            var sortColumn = {};
+            sortColumn[idName] = "1";
+            findLimited(req, res, collection, idName, sortColumn);
         } catch (e) {
             if (handleError(res, e, null, "no results found")) {
                 return;
@@ -333,9 +353,6 @@ router.get('/customers/search/byWord/:text', function(req, res) {
 router.get('/customers/search/byQuery/:query/:sort', function(req, res) {
     var db = req.db;
     var collection = db.get('customers');
-    var options = {
-        "sort": "name"
-    }
     var queryStringToSearch = req.params.query;
     var sortString = req.params.sort;
     if (isEmpty(queryStringToSearch)) {
@@ -378,29 +395,23 @@ router.get('/customers/search/near/:longitude,:latitude,:meter', function(req, r
         return handleError(res,
             new RestApiError("400", 'meter '+req.params.meter+'is not numeric'));
     }
-    var longitudeSearch = parseInt(req.params.longitude);
-    var latitudeSearch = parseInt(req.params.latitude);
+    var longitudeSearch = parseFloat(req.params.longitude);
+    var latitudeSearch = parseFloat(req.params.latitude);
     var meterSearch = parseInt(req.params.meter);
 
     var query = {
-            location: {
-                $nearSphere :
-                    {
-                        $geometry : {
-                        type : "Point" ,
-                        coordinates : [ longitudeSearch, latitudeSearch] },
-                        $minDistance : 100,
-                        $maxDistance : meterSearch
-                    }
+        "location" : {
+            "$nearSphere" :
+                {
+                    "$geometry" : { 
+                        "type" : "Point", 
+                        "coordinates" : [ longitudeSearch, latitudeSearch ] },
+                    "$maxDistance" : meterSearch
+                }
        }
-        };
-    collection.find(query, function(e,docs){
-            if (e || !docs) {
-                res.status(404).send('Not found '+e);
-                return;
-            }
-            res.json(docs);
-    });
+    };
+
+    findLimited(req, res, collection, "id", query, {} );
 });
 
 

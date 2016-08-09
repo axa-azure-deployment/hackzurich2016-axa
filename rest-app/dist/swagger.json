@@ -5,7 +5,7 @@
         "title": "hackzurich 2016 - AXA Winterthur - API",
         "description": "AXA Winterthur is Gold sponsor \"hackzurich\" http://hackzurich.ch in 2016.\nThe topic of AXA is \"insurance as simple as a Game\" aka \"Clash of claims\"\nthe current API represents the most used domain objects of an insurance. we provide 2 different types: static / configation data and dynamic data, based on 10'000 predefined customers.\n***\ndynamic data (prefilled with examples)\n- **customer data**: most attributes of a customer eg naming, address, date of birth, ...\n- **profile data**: important profile data of the customer\n- **contracts**: insurance contracts of the customer\n- **trips**: telmatics data of some trips, locations and events\n- **transactions**: financial transactions issued to \n***\nstatic / configuration data\n- **car + truck data**: some vehicle types and attributes, incl CO2 and energy attributes\n- **insurance types**: list of all types of insurances, group by L&S, P&C and health\n- **risk types**: risks possible to be able taken for the customer\n- **favorite risk object categories**: object categories to describe your favorite object\n***\n"
     },
-    "host": "hackzurich16.azurewebsites.net",
+    "host": "localhost:3000",
     "basePath": "/axa",
     "definitions": {
         "Trips": {
@@ -36,7 +36,7 @@
         },
         "Transaction": {
             "properties": {
-                "id": {
+                "_id": {
                     "type": "string",
                     "format": "integer",
                     "description": "id of transaction"
@@ -45,6 +45,47 @@
                     "type": "string",
                     "format": "integer",
                     "description": "id of customer"
+                },
+                "amount": {
+                    "type": "string",
+                    "format": "double",
+                    "description": "amount of transaction in EUR"
+                },
+                "date": {
+                    "type": "string",
+                    "format": "date",
+                    "description": "timestamp of transaction"
+                },
+                "lineOfBusiness": {
+                    "type": "string",
+                    "format": "string",
+                    "description": "insurance line of business where payment took place",
+                    "enum": [
+                        "P&C",
+                        "L&C",
+                        "Health"
+                    ]
+                },
+                "name": {
+                    "type": "string",
+                    "format": "string",
+                    "description": "name of receiver, receiver"
+                },
+                "type": {
+                    "type": "string",
+                    "format": "string",
+                    "description": "type of transaction.",
+                    "enum": [
+                        "deposit",
+                        "invoice",
+                        "payment",
+                        "withdrawal"
+                    ]
+                },
+                "account": {
+                    "type": "string",
+                    "format": "string",
+                    "description": "account no of receiver"
                 }
             }
         },
@@ -74,7 +115,11 @@
                 },
                 "gender": {
                     "type": "string",
-                    "description": "gender (male, female)"
+                    "description": "gender",
+                    "enum": [
+                        "male",
+                        "female"
+                    ]
                 },
                 "title": {
                     "type": "string",
@@ -172,7 +217,10 @@
                 "type": {
                     "description": "type of 2D representation. here always point",
                     "default": "Point",
-                    "type": "string"
+                    "type": "string",
+                    "enum": [
+                        "Point"
+                    ]
                 },
                 "coordinate": {
                     "description": "array of 2 integer values with longitude and latitude",
@@ -473,6 +521,7 @@
                         "description": "longitude of given location to search",
                         "required": true,
                         "type": "number",
+                        "default": 46.731947,
                         "format": "double"
                     },
                     {
@@ -481,6 +530,7 @@
                         "description": "latitude of given location to search",
                         "required": true,
                         "type": "number",
+                        "default": 6.962926,
                         "format": "double"
                     },
                     {
