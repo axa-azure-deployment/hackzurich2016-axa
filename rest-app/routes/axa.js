@@ -40,6 +40,14 @@ function handleError(res, e, docs, defaultString) {
     return false;
 }
 
+function isEmpty(obj) {
+    return !Array.isArray(obj) && obj.length == 0;
+}
+function isInvalidWildcard(obj) {
+    return /^.*[\.\*].*$/.test(obj);
+}
+
+
 function isNumeric(obj) {
     // parseFloat NaNs numeric-cast false positives (null|true|false|"")
     // ...but misinterprets leading-number strings, particularly hex literals ("0x...")
@@ -254,7 +262,7 @@ router.get('/customers/:id/trips', function(req, res) {
 });
 
 
-router.get('/customers/search/zipCode/:zip', function(req, res) {
+router.get('/customers/search/byZip/:zip', function(req, res) {
     var db = req.db;
     var collection = db.get('customers');
     var options = {
@@ -262,7 +270,7 @@ router.get('/customers/search/zipCode/:zip', function(req, res) {
     }
     if (!isNumeric(req.params.zip)) {
         return handleError(res,
-            new RestApiError("400", 'zipCode '+req.params.zip+'is not numeric'));
+            new RestApiError("400", 'parameter zip '+req.params.zip+'is not numeric'));
     } else {
         var zipToSearch = parseInt(req.params.zip);
         findLimited(req, res, collection, "id", { zipCode : zipToSearch });
@@ -276,11 +284,19 @@ router.get('/customers/search/byName/:name', function(req, res) {
         "sort": "id"
     }
     var nameToSearch = req.params.name;
-    findLimited(req, res, collection, "id", 
-        { $or: [
-            { surname : {'$regex': nameToSearch } },
-            { givenName : {'$regex': nameToSearch } }
-        ]});
+    if (isEmpty(nameToSearch)) {
+        return handleError(res,
+            new RestApiError("400", 'parameter name is empty'));
+    } else if (isInvalidWildcard(nameToSearch)) {
+        return handleError(res,
+            new RestApiError("400", 'parameter name '+req.params.name+' is not a valid wildcard. Neither can contain a * nor a .'));
+    } else {
+        findLimited(req, res, collection, "id", 
+            { $or: [
+                { surname : {'$regex': nameToSearch } },
+                { givenName : {'$regex': nameToSearch } }
+            ]});
+    }
 
 });
 
