@@ -20,8 +20,8 @@ info:
     - **risk types**: risks possible to be able taken for the customer
     - **favorite risk object categories**: object categories to describe your favorite object
     ***
-#host: hackzurich16.azurewebsites.net
-host: localhost:3000
+host: hackzurich16.azurewebsites.net
+#host: localhost:3000
 
 basePath: /axa
 definitions:
