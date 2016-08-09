@@ -329,6 +329,114 @@
                 }
             }
         },
+        "/customers/search/byWord/{text}": {
+            "get": {
+                "summary": "search customers by any word in all indexed fields, use ranges",
+                "description": "search all customers by any word in all indexed fields using full text search. Splitted words with blanks used as OR operator. using max limit 100, using skip + limit to range\n",
+                "parameters": [
+                    {
+                        "name": "text",
+                        "in": "path",
+                        "description": "word to search",
+                        "required": true,
+                        "type": "string",
+                        "format": "string"
+                    },
+                    {
+                        "name": "skip",
+                        "in": "query",
+                        "description": "nof items skipped in result. Default = 0. Used with limit for paging",
+                        "required": false,
+                        "type": "integer",
+                        "format": "integer"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "limit no of responses. Default = 20. Used with skip for paging",
+                        "required": false,
+                        "type": "integer",
+                        "format": "integer"
+                    }
+                ],
+                "tags": [
+                    "Customer"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "$ref": "#/definitions/Customer"
+                        }
+                    },
+                    "400": {
+                        "description": "invalid text parameter"
+                    },
+                    "500": {
+                        "description": "technical server error"
+                    }
+                }
+            }
+        },
+        "/customers/search/byQuery/{query}/{sort}": {
+            "get": {
+                "summary": "search customers using mongodb query, use ranges",
+                "description": "search all customers using a mongodb query in JSON format - see http://bit.ly/2aI9Djk, using. max limit 100, using skip + limit to range\n",
+                "parameters": [
+                    {
+                        "name": "query",
+                        "in": "path",
+                        "description": "mongodb query in JSON format - see http://bit.ly/2aI9Djk",
+                        "required": true,
+                        "default": "{}",
+                        "type": "string",
+                        "format": "string"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "path",
+                        "description": "sort column in JSON format, use id as default - see http://bit.ly/2aIaK2I",
+                        "required": true,
+                        "default": "{\"id\" : 1}",
+                        "type": "string",
+                        "format": "string"
+                    },
+                    {
+                        "name": "skip",
+                        "in": "query",
+                        "description": "nof items skipped in result. Default = 0. Used with limit for paging",
+                        "required": false,
+                        "type": "integer",
+                        "format": "integer"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "limit no of responses. Default = 20. Used with skip for paging",
+                        "required": false,
+                        "type": "integer",
+                        "format": "integer"
+                    }
+                ],
+                "tags": [
+                    "Customer"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "$ref": "#/definitions/Customer"
+                        }
+                    },
+                    "400": {
+                        "description": "invalid query parameter"
+                    },
+                    "500": {
+                        "description": "technical server error"
+                    }
+                }
+            }
+        },
         "/customers/{id}": {
             "get": {
                 "summary": "get customer with id",

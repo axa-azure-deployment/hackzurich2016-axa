@@ -41,7 +41,7 @@ function handleError(res, e, docs, defaultString) {
 }
 
 function isEmpty(obj) {
-    return !Array.isArray(obj) && obj.length == 0;
+    return obj == undefined || obj.length == 0;
 }
 function isInvalidWildcard(obj) {
     return /^.*[\.\*].*$/.test(obj);
@@ -90,9 +90,13 @@ function linkURL(req, skip, limit, max, overwrite) {
     return fullUrl(req, { "skip" : skip, "limit" : limit});
 }
 
-function findLimited(req, res, collection, idName, query) {
+function findLimited(req, res, collection, idName, query, sortColumn) {
     var limit = parseInt(req.param('limit'));
     var skip = parseInt(req.param('skip')); 
+    if (isEmpty(sortColumn)) {
+        sortColumn = { idName : 1 };
+    }
+
     if (!limit) { 
         limit = 20; 
     }
@@ -105,7 +109,7 @@ function findLimited(req, res, collection, idName, query) {
     var options = {
         "limit": limit,
         "skip": skip,
-        "sort": idName
+        "sort": sortColumn
     }
     collection.count(query, function (e1, count) {
         collection.find(query, options, function(e, docs){
@@ -113,7 +117,7 @@ function findLimited(req, res, collection, idName, query) {
                 return;
             }
             var lastSkip = (Math.floor(count / limit)) * limit;
-            if (lastSkip == count) { lastSkip = lastSkip - limit; }
+            if (lastSkip == count) { lastSkip = Math.max(0, lastSkip - limit); }
             var prevSkip = skip - limit;
             var nextSkip = skip + limit;
             res.json({
@@ -302,32 +306,59 @@ router.get('/customers/search/byName/:name', function(req, res) {
 
 
 
-router.get('/customers/search/fulltext/:pattern', function(req, res) {
+router.get('/customers/search/byWord/:text', function(req, res) {
     var db = req.db;
     var collection = db.get('customers');
     var options = {
         "sort": "id"
     }
-    var patternToSearch = req.params.pattern;
-    findLimited(req, res, collection, "id", 
-        { "$text": { "$search": patternToSearch } });
+    var textToSearch = req.params.text;
+    if (isEmpty(textToSearch)) {
+        return handleError(res,
+            new RestApiError("400", 'parameter text is empty'));
+    } else if (isInvalidWildcard(textToSearch)) {
+        return handleError(res,
+            new RestApiError("400", 'parameter text '+req.params.name+' is not a valid wildcard. Neither can contain a * nor a .'));
+    } else {
+        findLimited(req, res, collection, "id", 
+//            { "$text": { "$search": textToSearch } });
+            { "$text": { 
+                "$search": textToSearch,
+                "$diacriticSensitive": true
+             } });
+    }
 });
 
 
-router.get('/customers/search/query/:query', function(req, res) {
+router.get('/customers/search/byQuery/:query/:sort', function(req, res) {
     var db = req.db;
     var collection = db.get('customers');
     var options = {
-        "sort": "id"
+        "sort": "name"
     }
-    var queryToSearch = null;
-    try{
-        queryToSearch = JSON.parse(req.params.query);
-    } catch (e) {
-        return handleError(res,
-            new RestApiError("400", 'query is not a valid JSON string <br>&nbsp;'+req.params.query));
+    var queryStringToSearch = req.params.query;
+    var sortString = req.params.sort;
+    if (isEmpty(queryStringToSearch)) {
+            return handleError(res,
+                new RestApiError("400", 'parameter query is empty'));
+    } else if (isEmpty(sortString)) {
+            return handleError(res,
+                new RestApiError("400", 'parameter sort is empty'));
+    } else {
+        try {
+            var queryToSearch = JSON.parse(queryStringToSearch);
+            try {
+                var sortToSearch = JSON.parse(sortString);
+                findLimited(req, res, collection, "id", queryToSearch, sortToSearch);
+            } catch (e) {
+                return handleError(res,
+                    new RestApiError("400", 'sort is not a valid JSON string <br>&nbsp;'+sortString));
+            }
+        } catch (e) {
+            return handleError(res,
+                new RestApiError("400", 'query is not a valid JSON string <br>&nbsp;'+queryStringToSearch));
+        }
     }
-    findLimited(req, res, collection, "id", queryToSearch);
 });
 
 
