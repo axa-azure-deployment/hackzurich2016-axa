@@ -19,6 +19,31 @@
                 "id": {
                     "type": "string",
                     "format": "integer",
+                    "description": "id of trip"
+                },
+                "customer": {
+                    "type": "string",
+                    "format": "integer",
+                    "description": "id of customer"
+                }
+            }
+        },
+        "Transactions": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Transaction"
+            }
+        },
+        "Transaction": {
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer",
+                    "description": "id of transaction"
+                },
+                "customer": {
+                    "type": "string",
+                    "format": "integer",
                     "description": "id of customer"
                 }
             }
@@ -558,6 +583,39 @@
                         "description": "Successful response",
                         "schema": {
                             "$ref": "#/definitions/Trips"
+                        }
+                    },
+                    "404": {
+                        "description": "customer not found"
+                    },
+                    "500": {
+                        "description": "technical server error"
+                    }
+                }
+            }
+        },
+        "/customers/{id}/transactions": {
+            "get": {
+                "summary": "get some financial transactions of this customer",
+                "description": "get all financial transactions of this customer\n",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of customer",
+                        "required": true,
+                        "type": "string",
+                        "format": "integer"
+                    }
+                ],
+                "tags": [
+                    "Customer"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "$ref": "#/definitions/Transactions"
                         }
                     },
                     "404": {
