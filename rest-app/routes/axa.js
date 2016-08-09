@@ -170,8 +170,8 @@ router.get('/'+typeMultiple, function(req, res) {
     if (hasLimitCollection) {
         try {
             var sortColumn = {};
-            sortColumn[idName] = "1";
-            findLimited(req, res, collection, idName, sortColumn);
+            sortColumn[idName] = 1;
+            findLimited(req, res, collection, idName, {}, sortColumn);
         } catch (e) {
             if (handleError(res, e, null, "no results found")) {
                 return;
@@ -297,7 +297,7 @@ router.get('/customers/search/byZip/:zip', function(req, res) {
             new RestApiError("400", 'parameter zip '+req.params.zip+'is not numeric'));
     } else {
         var zipToSearch = parseInt(req.params.zip);
-        findLimited(req, res, collection, "id", { zipCode : zipToSearch });
+        findLimited(req, res, collection, "id", { zipCode : zipToSearch }, { "id" : 1 });
     } 
 });
 
@@ -319,7 +319,7 @@ router.get('/customers/search/byName/:name', function(req, res) {
             { $or: [
                 { surname : {'$regex': nameToSearch } },
                 { givenName : {'$regex': nameToSearch } }
-            ]});
+            ]}, {"id" : 1});
     }
 
 });
@@ -345,7 +345,7 @@ router.get('/customers/search/byWord/:text', function(req, res) {
             { "$text": { 
                 "$search": textToSearch,
                 "$diacriticSensitive": true
-             } });
+             } }, { "id": 1});
     }
 });
 
