@@ -17,6 +17,9 @@ AXA Winterthur at hackzurich 2016 - topic: "insurance as simple as a game" aka "
 link nodejs with mongodb
 * add.js
 * var db = monk('localhost:27017/hackzurich2016-axa');
+* additional settings to keep alive connection see
+http://mongodb.github.io/node-mongodb-native/api-generated/server.html#server
+* driver settings: http://mongodb.github.io/node-mongodb-native/2.2/reference/connecting/connection-settings/
 * ... as in tutorial
 
 * restart npm

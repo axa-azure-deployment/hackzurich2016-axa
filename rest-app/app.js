@@ -13,7 +13,13 @@ var mongo = require('mongodb');
 var monk = require('monk');
 
 // Connect to remote DB
-var db = monk('HackZurich2016-user:password@40.68.213.58:27018/hackzurich2016-axa');
+var db = monk('HackZurich2016-user:password@40.68.213.58:27018/hackzurich2016-axa'
+    +'?'
+    +       'poolSize=10'
+    +'&'+   'keepAlive=60000'
+    +'&'+   'connectTimeoutMS=10000'
+    +'&'+   'reconnectTries=5'
+);
 
 // CORS issues
 var cors = require('express-cors')
