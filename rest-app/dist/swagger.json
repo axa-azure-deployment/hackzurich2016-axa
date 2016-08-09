@@ -437,6 +437,72 @@
                 }
             }
         },
+        "/customers/search/near/{longitude},{latitude},{meter}": {
+            "get": {
+                "summary": "search nearest customers in meter to a given location",
+                "description": "search nearest customers in meter to a given location. Max limit 100, using skip + limit to range\n",
+                "parameters": [
+                    {
+                        "name": "longitude",
+                        "in": "path",
+                        "description": "longitude of given location to search",
+                        "required": true,
+                        "type": "number",
+                        "format": "double"
+                    },
+                    {
+                        "name": "latitude",
+                        "in": "path",
+                        "description": "latitude of given location to search",
+                        "required": true,
+                        "type": "number",
+                        "format": "double"
+                    },
+                    {
+                        "name": "meter",
+                        "in": "path",
+                        "description": "define nearest area to location in meter",
+                        "required": true,
+                        "default": 1000,
+                        "type": "number",
+                        "format": "integer"
+                    },
+                    {
+                        "name": "skip",
+                        "in": "query",
+                        "description": "nof items skipped in result. Default = 0. Used with limit for paging",
+                        "required": false,
+                        "type": "integer",
+                        "format": "integer"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "limit no of responses. Default = 20. Used with skip for paging",
+                        "required": false,
+                        "type": "integer",
+                        "format": "integer"
+                    }
+                ],
+                "tags": [
+                    "Customer"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "$ref": "#/definitions/Customer"
+                        }
+                    },
+                    "400": {
+                        "description": "invalid query parameter"
+                    },
+                    "500": {
+                        "description": "technical server error"
+                    }
+                }
+            }
+        },
         "/customers/{id}": {
             "get": {
                 "summary": "get customer with id",
