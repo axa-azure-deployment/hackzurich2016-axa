@@ -20,15 +20,24 @@ info:
     - **risk types**: risks possible to be able taken for the customer
     - **favorite risk object categories**: object categories to describe your favorite object
     ***
-host: hackzurich16.azurewebsites.net
+#host: hackzurich16.azurewebsites.net
+host: localhost:3000
 
 basePath: /axa
 definitions:
 
-  Customers:
+  Trips:
     type: array
     items:
-      $ref: '#/definitions/Customer'
+      $ref: '#/definitions/Trip'
+
+  Trip:
+    properties:
+      id:
+        type: string
+        format: integer
+        description: id of customer
+
 
   CustomerResultList:
     type: object
@@ -38,6 +47,10 @@ definitions:
       links:
         $ref: '#/definitions/Link'
 
+  Customers:
+    type: array
+    items:
+      $ref: '#/definitions/Customer'
 
   Customer:
     properties:
@@ -161,7 +174,7 @@ paths:
     get:
       summary: list of all customers, use ranges
       description: |
-        get all customers using. max limit 100, using skip + limit ro range
+        get all customers using. max limit 100, using skip + limit to range
       tags:
         - Customer
       parameters:
@@ -169,13 +182,13 @@ paths:
           in: query
           description: nof items skipped in result. Default = 0. Used with limit for paging
           required: false
-          type: number
+          type: integer
           format: integer
         - name: limit
           in: query
           description: limit no of responses. Default = 20. Used with skip for paging
           required: false
-          type: number
+          type: integer
           format: integer
 
       responses:
@@ -184,6 +197,78 @@ paths:
           schema:
             $ref: '#/definitions/CustomerResultList'
             
+  /customers/search/byZip/{zip}:
+    get:
+      summary: search customers by zip code, use ranges
+      description: |
+        search all customers at their location by zip, using. max limit 100, using skip + limit to range
+      parameters:
+        - name: zip
+          in: path
+          description: zip code of location
+          required: true
+          type: integer
+          format: integer
+        - name: skip
+          in: query
+          description: nof items skipped in result. Default = 0. Used with limit for paging
+          required: false
+          type: integer
+          format: integer
+        - name: limit
+          in: query
+          description: limit no of responses. Default = 20. Used with skip for paging
+          required: false
+          type: integer
+          format: integer
+      tags:
+        - Customer
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/Customer'
+        '400':
+          description: invalid zip parameter
+        '500':
+          description: technical server error
+
+  /customers/search/byName/{name}:
+    get:
+      summary: search customers by lastname or firstname, using *wildcards*, use ranges
+      description: |
+        search all customers by their lastname or firstname using wildcards automatically, using. max limit 100, using skip + limit to range
+      parameters:
+        - name: name
+          in: path
+          description: part of name (first or last)
+          required: true
+          type: string
+          format: string
+        - name: skip
+          in: query
+          description: nof items skipped in result. Default = 0. Used with limit for paging
+          required: false
+          type: integer
+          format: integer
+        - name: limit
+          in: query
+          description: limit no of responses. Default = 20. Used with skip for paging
+          required: false
+          type: integer
+          format: integer
+      tags:
+        - Customer
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/Customer'
+        '400':
+          description: invalid name parameter
+        '500':
+          description: technical server error
+
   /customers/{id}:
     get:
       summary: get customer with id
@@ -203,6 +288,30 @@ paths:
           description: Successful response
           schema:
             $ref: '#/definitions/Customer'
+        '404':
+          description: customer not found
+        '500':
+          description: technical server error
+          
+  /customers/{id}/trips:
+    get:
+      summary: get all telematic trips and events
+      description: |
+        get all telematics events and positioning information of the customers trips
+      parameters:
+        - name: id
+          in: path
+          description: id of customer
+          required: true
+          type: string
+          format: integer
+      tags:
+        - Customer
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/Trips'
         '404':
           description: customer not found
         '500':

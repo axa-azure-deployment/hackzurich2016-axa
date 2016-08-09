@@ -41,3 +41,6 @@ stop
 # install nodemon to detect changes
 * install nodemon from https://www.npmjs.com/package/nodemon
 * nodemon -e js,json --watch . --watch routes --exec npm start
+
+# REST API tutorial - best practices
+* http://www.restapitutorial.com/httpstatuscodes.html
