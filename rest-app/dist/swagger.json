@@ -240,7 +240,7 @@
                     {
                         "name": "limit",
                         "in": "query",
-                        "description": "limit no of responses. Default = 20. Used with skip for paging",
+                        "description": "limit no of responses. Default = 10. Used with skip for paging",
                         "required": false,
                         "type": "integer",
                         "format": "integer"
@@ -280,7 +280,7 @@
                     {
                         "name": "limit",
                         "in": "query",
-                        "description": "limit no of responses. Default = 20. Used with skip for paging",
+                        "description": "limit no of responses. Default = 10. Used with skip for paging",
                         "required": false,
                         "type": "integer",
                         "format": "integer"
@@ -329,7 +329,7 @@
                     {
                         "name": "limit",
                         "in": "query",
-                        "description": "limit no of responses. Default = 20. Used with skip for paging",
+                        "description": "limit no of responses. Default = 10. Used with skip for paging",
                         "required": false,
                         "type": "integer",
                         "format": "integer"
@@ -378,7 +378,7 @@
                     {
                         "name": "limit",
                         "in": "query",
-                        "description": "limit no of responses. Default = 20. Used with skip for paging",
+                        "description": "limit no of responses. Default = 10. Used with skip for paging",
                         "required": false,
                         "type": "integer",
                         "format": "integer"
@@ -437,7 +437,7 @@
                     {
                         "name": "limit",
                         "in": "query",
-                        "description": "limit no of responses. Default = 20. Used with skip for paging",
+                        "description": "limit no of responses. Default = 10. Used with skip for paging",
                         "required": false,
                         "type": "integer",
                         "format": "integer"
@@ -503,7 +503,7 @@
                     {
                         "name": "limit",
                         "in": "query",
-                        "description": "limit no of responses. Default = 20. Used with skip for paging",
+                        "description": "limit no of responses. Default = 10. Used with skip for paging",
                         "required": false,
                         "type": "integer",
                         "format": "integer"

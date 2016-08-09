@@ -98,7 +98,7 @@ function findLimited(req, res, collection, idName, query, sortColumn) {
     }
 
     if (!limit) { 
-        limit = 20; 
+        limit = 10; 
     }
     if (limit > 100 || limit < -100 ) {
         throw new RestApiError("400", 'limit <'+limit+'> is too high. Use skip (max +/-100) & limit to get data');
