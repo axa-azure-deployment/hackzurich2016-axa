@@ -20,8 +20,8 @@ info:
     - **risk types**: risks possible to be able taken for the customer
     - **favorite risk object categories**: object categories to describe your favorite object
     ***
-host: hackzurich16.azurewebsites.net
-#host: localhost:3000
+#host: hackzurich16.azurewebsites.net
+host: localhost:3000
 
 basePath: /axa
 definitions:
@@ -37,11 +37,116 @@ definitions:
         type: string
         format: integer
         description: id of trip
-      customer:
+      data:
+        $ref: '#/definitions/TripData'
+
+  TripData:
+    properties:
+      events:
+        $ref: '#/definitions/TripEvents'
+      positions:
+        $ref: '#/definitions/TripPositions'
+
+  TripPositions:
+    properties:
+      data:
+        description: list of all measured GPS positions in trip
+        type: array
+        items: 
+          $ref: '#/definitions/TripPosition'
+
+  TripPosition:
+    description: stored GPS position during trip
+    properties:
+      id: 
+        description: id of position, used as a reference in event
         type: string
         format: integer
-        description: id of customer
+      longitude: 
+        description: longitude of position
+        type: number
+        format: float
+      latitude: 
+        description: latitude of position
+        type: number
+        format: float
 
+  TripEvents:
+    properties:
+      lengthUnit:
+        description: length unit
+        type: string
+        enum:
+          - Km
+          - M
+      speedUnit:
+        description: speed unit
+        type: string
+        enum:
+          - Km/h
+          - M/h
+      data:
+        description: list of all events in this trip
+        type: array
+        items: 
+          $ref: '#/definitions/TripEvent'
+
+  TripEvent:
+    description: captured event during trip, referencing to positions
+    properties:
+      quality: 
+        type: string
+        description: information message about signal quality
+      id_start: 
+        type: string
+        description: position reference id of start event
+      longitude: 
+        description: longitude of event
+        type: number
+        format: float
+      latitude:
+        description: latitude of event
+        type: number
+        format: float
+      summary: 
+        description: overview description of event
+        type: string
+      mark_type: 
+        type: string
+        description: event marker type of event, A=acceleration, V=Speeding, C=Cornering, Driving in curves
+        enum:
+          - A
+          - V
+          - C
+      id_deviation: 
+        type: string
+        description: position reference id where deviation took place
+      deviation_speed_limit: 
+        type: string
+        description: speed limit during deviation event
+      eventSeverity: 
+        type: string
+        description: level of event severity, 1=orange, 2=red
+        enum:
+          - 1
+          - 2
+      description: 
+        description: explanation of event
+        type: string
+      duration: 
+        description: duration of event, in Seconds, Minutes, Hours
+        type: string
+      deviation_speed: 
+        description: deviation to speed limit
+        type: string
+      time_start: 
+        description: start time of event in HH:MM
+        type: string
+        format: HH:MM
+      id_end:
+        description: position reference id of end event
+        type: string
+              
   Transactions:
     type: array
     items:
@@ -93,10 +198,20 @@ definitions:
 
 
   CustomerResultList:
+    description: result of customer search used for paging
     type: object
     properties:
       data:
         $ref: '#/definitions/Customers'
+      links:
+        $ref: '#/definitions/Link'
+
+  TransactionResultList:
+    description: result of transaction search used for paging
+    type: object
+    properties:
+      data:
+        $ref: '#/definitions/Transaction'
       links:
         $ref: '#/definitions/Link'
 
@@ -235,6 +350,7 @@ paths:
         get all customers using. max limit 100, using skip + limit to range
       tags:
         - Customer
+        - Customer search
       parameters:
         - name: skip
           in: query
@@ -280,7 +396,7 @@ paths:
           type: integer
           format: integer
       tags:
-        - Customer
+        - Customer search
       responses:
         '200':
           description: Successful response
@@ -316,7 +432,7 @@ paths:
           type: integer
           format: integer
       tags:
-        - Customer
+        - Customer search
       responses:
         '200':
           description: Successful response
@@ -352,7 +468,7 @@ paths:
           type: integer
           format: integer
       tags:
-        - Customer
+        - Customer search
       responses:
         '200':
           description: Successful response
@@ -396,7 +512,7 @@ paths:
           type: integer
           format: integer
       tags:
-        - Customer
+        - Customer search
       responses:
         '200':
           description: Successful response
@@ -409,7 +525,7 @@ paths:
 
   /customers/search/near/{longitude},{latitude},{meter}:
     get:
-      summary: search nearest customers in meter to a given location
+      summary: search nearest customers in meter to a given location, use ranges
       description: |
         search nearest customers in meter to a given location. Max limit 100, using skip + limit to range
       parameters:
@@ -447,7 +563,7 @@ paths:
           type: integer
           format: integer
       tags:
-        - Customer
+        - Customer search
       responses:
         '200':
           description: Successful response
@@ -485,7 +601,7 @@ paths:
           
   /customers/{id}/trips:
     get:
-      summary: get all telematic trips and events
+      summary: get all telematic trips and events of the customer
       description: |
         get all telematics events and positioning information of the customers trips
       parameters:
@@ -497,6 +613,7 @@ paths:
           format: integer
       tags:
         - Customer
+        - Trip
       responses:
         '200':
           description: Successful response
@@ -521,6 +638,7 @@ paths:
           format: integer
       tags:
         - Customer
+        - Transaction
       responses:
         '200':
           description: Successful response
@@ -530,3 +648,57 @@ paths:
           description: customer not found
         '500':
           description: technical server error
+
+  /transactions:
+    get:
+      summary: get all financial transactions 
+      description: |
+        get all financial transactions. max limit 100, using skip + limit to range
+      tags:
+        - Transaction
+      parameters:
+        - name: skip
+          in: query
+          description: nof items skipped in result. Default = 0. Used with limit for paging
+          required: false
+          type: integer
+          format: integer
+        - name: limit
+          in: query
+          description: limit no of responses. Default = 10. Used with skip for paging
+          required: false
+          type: integer
+          format: integer
+
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/TransactionResultList'
+            
+  /trips:
+    get:
+      summary: get all telematic trips and events
+      description: |
+        get all telematics events and positioning information of all trips
+      tags:
+        - Trip
+      parameters:
+        - name: skip
+          in: query
+          description: nof items skipped in result. Default = 0. Used with limit for paging
+          required: false
+          type: integer
+          format: integer
+        - name: limit
+          in: query
+          description: limit no of responses. Default = 10. Used with skip for paging
+          required: false
+          type: integer
+          format: integer
+
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/Trips'

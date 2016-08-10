@@ -5,7 +5,7 @@
         "title": "hackzurich 2016 - AXA Winterthur - API",
         "description": "AXA Winterthur is Gold sponsor \"hackzurich\" http://hackzurich.ch in 2016.\nThe topic of AXA is \"insurance as simple as a Game\" aka \"Clash of claims\"\nthe current API represents the most used domain objects of an insurance. we provide 2 different types: static / configation data and dynamic data, based on 10'000 predefined customers.\n***\ndynamic data (prefilled with examples)\n- **customer data**: most attributes of a customer eg naming, address, date of birth, ...\n- **profile data**: important profile data of the customer\n- **contracts**: insurance contracts of the customer\n- **trips**: telmatics data of some trips, locations and events\n- **transactions**: financial transactions issued to \n***\nstatic / configuration data\n- **car + truck data**: some vehicle types and attributes, incl CO2 and energy attributes\n- **insurance types**: list of all types of insurances, group by L&S, P&C and health\n- **risk types**: risks possible to be able taken for the customer\n- **favorite risk object categories**: object categories to describe your favorite object\n***\n"
     },
-    "host": "hackzurich16.azurewebsites.net",
+    "host": "localhost:3000",
     "basePath": "/axa",
     "definitions": {
         "Trips": {
@@ -21,10 +21,149 @@
                     "format": "integer",
                     "description": "id of trip"
                 },
-                "customer": {
+                "data": {
+                    "$ref": "#/definitions/TripData"
+                }
+            }
+        },
+        "TripData": {
+            "properties": {
+                "events": {
+                    "$ref": "#/definitions/TripEvents"
+                },
+                "positions": {
+                    "$ref": "#/definitions/TripPositions"
+                }
+            }
+        },
+        "TripPositions": {
+            "properties": {
+                "data": {
+                    "description": "list of all measured GPS positions in trip",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/TripPosition"
+                    }
+                }
+            }
+        },
+        "TripPosition": {
+            "description": "stored GPS position during trip",
+            "properties": {
+                "id": {
+                    "description": "id of position, used as a reference in event",
                     "type": "string",
-                    "format": "integer",
-                    "description": "id of customer"
+                    "format": "integer"
+                },
+                "longitude": {
+                    "description": "longitude of position",
+                    "type": "number",
+                    "format": "float"
+                },
+                "latitude": {
+                    "description": "latitude of position",
+                    "type": "number",
+                    "format": "float"
+                }
+            }
+        },
+        "TripEvents": {
+            "properties": {
+                "lengthUnit": {
+                    "description": "length unit",
+                    "type": "string",
+                    "enum": [
+                        "Km",
+                        "M"
+                    ]
+                },
+                "speedUnit": {
+                    "description": "speed unit",
+                    "type": "string",
+                    "enum": [
+                        "Km/h",
+                        "M/h"
+                    ]
+                },
+                "data": {
+                    "description": "list of all events in this trip",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/TripEvent"
+                    }
+                }
+            }
+        },
+        "TripEvent": {
+            "description": "captured event during trip, referencing to positions",
+            "properties": {
+                "quality": {
+                    "type": "string",
+                    "description": "information message about signal quality"
+                },
+                "id_start": {
+                    "type": "string",
+                    "description": "position reference id of start event"
+                },
+                "longitude": {
+                    "description": "longitude of event",
+                    "type": "number",
+                    "format": "float"
+                },
+                "latitude": {
+                    "description": "latitude of event",
+                    "type": "number",
+                    "format": "float"
+                },
+                "summary": {
+                    "description": "overview description of event",
+                    "type": "string"
+                },
+                "mark_type": {
+                    "type": "string",
+                    "description": "event marker type of event, A=acceleration, V=Speeding, C=Cornering, Driving in curves",
+                    "enum": [
+                        "A",
+                        "V",
+                        "C"
+                    ]
+                },
+                "id_deviation": {
+                    "type": "string",
+                    "description": "position reference id where deviation took place"
+                },
+                "deviation_speed_limit": {
+                    "type": "string",
+                    "description": "speed limit during deviation event"
+                },
+                "eventSeverity": {
+                    "type": "string",
+                    "description": "level of event severity, 1=orange, 2=red",
+                    "enum": [
+                        1,
+                        2
+                    ]
+                },
+                "description": {
+                    "description": "explanation of event",
+                    "type": "string"
+                },
+                "duration": {
+                    "description": "duration of event, in Seconds, Minutes, Hours",
+                    "type": "string"
+                },
+                "deviation_speed": {
+                    "description": "deviation to speed limit",
+                    "type": "string"
+                },
+                "time_start": {
+                    "description": "start time of event in HH:MM",
+                    "type": "string",
+                    "format": "HH:MM"
+                },
+                "id_end": {
+                    "description": "position reference id of end event",
+                    "type": "string"
                 }
             }
         },
@@ -90,10 +229,23 @@
             }
         },
         "CustomerResultList": {
+            "description": "result of customer search used for paging",
             "type": "object",
             "properties": {
                 "data": {
                     "$ref": "#/definitions/Customers"
+                },
+                "links": {
+                    "$ref": "#/definitions/Link"
+                }
+            }
+        },
+        "TransactionResultList": {
+            "description": "result of transaction search used for paging",
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/Transaction"
                 },
                 "links": {
                     "$ref": "#/definitions/Link"
@@ -274,7 +426,8 @@
                 "summary": "list of all customers, use ranges",
                 "description": "get all customers using. max limit 100, using skip + limit to range\n",
                 "tags": [
-                    "Customer"
+                    "Customer",
+                    "Customer search"
                 ],
                 "parameters": [
                     {
@@ -335,7 +488,7 @@
                     }
                 ],
                 "tags": [
-                    "Customer"
+                    "Customer search"
                 ],
                 "responses": {
                     "200": {
@@ -384,7 +537,7 @@
                     }
                 ],
                 "tags": [
-                    "Customer"
+                    "Customer search"
                 ],
                 "responses": {
                     "200": {
@@ -433,7 +586,7 @@
                     }
                 ],
                 "tags": [
-                    "Customer"
+                    "Customer search"
                 ],
                 "responses": {
                     "200": {
@@ -492,7 +645,7 @@
                     }
                 ],
                 "tags": [
-                    "Customer"
+                    "Customer search"
                 ],
                 "responses": {
                     "200": {
@@ -512,7 +665,7 @@
         },
         "/customers/search/near/{longitude},{latitude},{meter}": {
             "get": {
-                "summary": "search nearest customers in meter to a given location",
+                "summary": "search nearest customers in meter to a given location, use ranges",
                 "description": "search nearest customers in meter to a given location. Max limit 100, using skip + limit to range\n",
                 "parameters": [
                     {
@@ -560,7 +713,7 @@
                     }
                 ],
                 "tags": [
-                    "Customer"
+                    "Customer search"
                 ],
                 "responses": {
                     "200": {
@@ -613,7 +766,7 @@
         },
         "/customers/{id}/trips": {
             "get": {
-                "summary": "get all telematic trips and events",
+                "summary": "get all telematic trips and events of the customer",
                 "description": "get all telematics events and positioning information of the customers trips\n",
                 "parameters": [
                     {
@@ -626,7 +779,8 @@
                     }
                 ],
                 "tags": [
-                    "Customer"
+                    "Customer",
+                    "Trip"
                 ],
                 "responses": {
                     "200": {
@@ -659,7 +813,8 @@
                     }
                 ],
                 "tags": [
-                    "Customer"
+                    "Customer",
+                    "Transaction"
                 ],
                 "responses": {
                     "200": {
@@ -673,6 +828,76 @@
                     },
                     "500": {
                         "description": "technical server error"
+                    }
+                }
+            }
+        },
+        "/transactions": {
+            "get": {
+                "summary": "get all financial transactions",
+                "description": "get all financial transactions. max limit 100, using skip + limit to range\n",
+                "tags": [
+                    "Transaction"
+                ],
+                "parameters": [
+                    {
+                        "name": "skip",
+                        "in": "query",
+                        "description": "nof items skipped in result. Default = 0. Used with limit for paging",
+                        "required": false,
+                        "type": "integer",
+                        "format": "integer"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "limit no of responses. Default = 10. Used with skip for paging",
+                        "required": false,
+                        "type": "integer",
+                        "format": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "$ref": "#/definitions/TransactionResultList"
+                        }
+                    }
+                }
+            }
+        },
+        "/trips": {
+            "get": {
+                "summary": "get all telematic trips and events",
+                "description": "get all telematics events and positioning information of all trips\n",
+                "tags": [
+                    "Trip"
+                ],
+                "parameters": [
+                    {
+                        "name": "skip",
+                        "in": "query",
+                        "description": "nof items skipped in result. Default = 0. Used with limit for paging",
+                        "required": false,
+                        "type": "integer",
+                        "format": "integer"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "limit no of responses. Default = 10. Used with skip for paging",
+                        "required": false,
+                        "type": "integer",
+                        "format": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "$ref": "#/definitions/Trips"
+                        }
                     }
                 }
             }
