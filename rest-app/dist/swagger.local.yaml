@@ -1,27 +1,40 @@
 swagger: '2.0'
 info:
-  version: 0.1.0
+  version: 0.9.1
   title: "hackzurich 2016 - AXA Winterthur - insurance API"
   description: |
     AXA Winterthur is Gold sponsor "hackzurich" http://hackzurich.ch in 2016.
-    The topic of AXA is "insurance as simple as a Game" aka "Clash of claims"
-    the current API represents the most used domain objects of an insurance. we provide 2 different types: static / configation data and dynamic data, based on 10'000 predefined customers.
-    ***
-    Developers: get the full code, nodejs app and mongodb-load-data from our GIT repo https://github.com/lolo8304/hackzurich2016-axa 
+    
+    > Our topic is __"Insurance as simple as a Game" aka "Clash of claims"__. See more detailed information about the Workshop and the competition  here (TBD)
 
     ***
-    dynamic data (prefilled with examples)
-    - **customer data**: most attributes of a customer eg naming, address, date of birth, ...
+    __Data privacy__: all data are examples, partly generated, anonymized and cannot be linked with any existing customer or prospect of AXA
+
+    ***
+    The current API represents the most used domain objects of an insurance. We provide 2 different types: static / configation data and dynamic data, based on 10'000 predefined customers.
+    
+    __Developers:__ here you can get the full source code, nodejs app and mongodb-load-data from our GIT repo https://github.com/lolo8304/hackzurich2016-axa
+    
+    __Endpoint:__ use our SaaS REST services running on https://localhost:3000/axa/... (details see swagger documentation)
+    
+    __Swagger:__ use (this) swagger documentation on https://localhost:3000
+    - see our [JSON version](https://localhost:3000/swagger.json) and [YAML version](https://localhost:3000/swagger.yaml)
+    - see our special localhost:3000 swagger [YAML version](https://localhost:3000/swagger.local.yaml) and [JSON version](https://localhost:3000/swagger.local.json) to support local development without need of a swagger web distribution
+
+    ***
+    __Dynamic data__ (prefilled with examples)
+    - **customer data**: most attributes of a customer eg naming, address, date of birth, ... (10'000 customers)
     - **profile data**: important profile data of the customer
     - **contracts**: insurance contracts of the customer
-    - **trips**: telmatics data of some trips, locations and events
-    - **transactions**: financial transactions issued to 
-    ***
-    static / configuration data
-    - **car + truck data**: some vehicle types and attributes, incl CO2 and energy attributes
-    - **insurance types**: list of all types of insurances, group by L&S, P&C and health
-    - **risk types**: risks possible to be able taken for the customer
-    - **favorite risk object categories**: object categories to describe your favorite object
+    - **trips**: telmatics data of some real trips, locations and events an (only 7 trips, >25 events, > 650 GPS positions)
+    - **transactions**: financial transactions issued to (>1000 transactions)
+
+    __Static / configuration data__
+    - **car + truck data**: some vehicle types and attributes, incl CO2 and energy attributes (>1700 cars, >350 trucks)
+    - **insurance types**: list of all types of insurances, group by L&S, P&C and health (>20 types)
+    - **risk types**: risks possible to be able taken for the customer (>20 risks)
+    - **favorite risk object categories**: object categories to describe your favorite object (>20 categories)
+
 host: localhost:3000
 #host: localhost:3000
 
