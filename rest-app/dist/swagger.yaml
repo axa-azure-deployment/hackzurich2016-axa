@@ -8,7 +8,7 @@ info:
     > Our topic is __"Insurance as simple as a Game" aka "Clash of claims"__. See more detailed information about the Workshop and the competition  here (TBD)
 
     ***
-    __Data privacy__: all data are examples, partly generated, anonymized and cannot be linked with any existing customer or prospect of AXA
+    __Data privacy__: all data are examples, partly generated, anonymized and cannot be linked with any existing customer or prospect of AXA. Some data is generated using [Random Point Generator](http://www.geomidpoint.com/random/). 
 
     ***
     The current API represents the most used domain objects of an insurance. We provide 2 different types: static / configation data and dynamic data, based on 10'000 predefined customers.
@@ -40,6 +40,183 @@ host: hackzurich16.azurewebsites.net
 
 basePath: /axa
 definitions:
+
+  CarResultList:
+    description: result of cars search used for paging
+    type: object
+    properties:
+      data:
+        $ref: '#/definitions/Cars'
+      links:
+        $ref: '#/definitions/Link'
+
+  Cars:
+    type: array
+    items:
+      $ref: '#/definitions/Car'
+
+  Car:
+    properties:
+      id:
+        type: string
+        format: integer
+        description: id of car
+      brand:
+          type: string
+      model:
+          type: string
+      type:
+          type: string
+      name:
+          type: string
+      price:
+          type: number
+          format: integer
+      body:
+          type: string
+      seats:
+          type: number
+          format: integer
+      ccm:
+          type: number
+          format: integer
+      power_KW:
+          type: number
+          format: integer
+      power_PS:
+          type: number
+          format: float
+      gear:
+          type: string
+      noise:
+          type: number
+          format: integer
+      fuel:
+          type: string
+      consumption:
+          type: number
+          format: float
+      CO2:
+          type: number
+          format: integer
+      E_class:
+          type: string
+      P_greenhouse:
+          type: number
+          format: float
+      P_noise:
+          type: number
+          format: integer
+      P_human:
+          type: number
+          format: float
+      P_nature:
+          type: number
+          format: float
+      P_total:
+          type: number
+          format: float
+      stars:
+          type: string
+      stars_no:
+          type: number
+          format: integer
+      E_label:
+          type: string
+      E_label_no:
+          type: number
+          format: integer
+      KLASSE:
+          type: string
+
+
+  TruckResultList:
+    description: result of trucks search used for paging
+    type: object
+    properties:
+      data:
+        $ref: '#/definitions/Trucks'
+      links:
+        $ref: '#/definitions/Link'
+
+  Trucks:
+    type: array
+    items:
+      $ref: '#/definitions/Truck'
+
+  Truck:
+    properties:
+      id:
+        type: number
+        format: integer
+      make:
+        type: string
+      model:
+        type: string
+      type:
+        type: string
+      name:
+        type: string
+      price:
+        type: number
+        format: integer
+      body:
+        type: string
+      seats:
+        type: number
+        format: integer
+      load_capacity:
+        type: number
+        format: integer
+      ccm:
+        type: number
+        format: integer
+      power_KW:
+        type: number
+        format: integer
+      power_PS:
+        type: number
+        format: float
+      gear:
+        type: string
+      noise:
+        type: number
+        format: float
+      fuel:
+        type: string
+      consumption:
+        type: number
+        format: float
+      CO2:
+        type: number
+        format: integer
+      E_class:
+        type: string
+      P_greenhouse:
+        type: number
+        format: float
+      P_noise:
+        type: number
+        format: float
+      P_human:
+        type: number
+        format: integer
+      P_nature:
+        type: number
+        format: integer
+      P_total:
+        type: number
+        format: integer
+      stars:
+        type: string
+      stars_no:
+        type: number
+        format: integer
+      E_label:
+        type: string
+      E_label_no:
+        type: number
+        format: integer
 
   Trips:
     type: array
@@ -717,3 +894,59 @@ paths:
           description: Successful response
           schema:
             $ref: '#/definitions/Trips'
+
+  /cars:
+    get:
+      summary: get all cars
+      description: |
+        get all cars including CO2, E scores
+      tags:
+        - Static
+      parameters:
+        - name: skip
+          in: query
+          description: nof items skipped in result. Default = 0. Used with limit for paging
+          required: false
+          type: integer
+          format: integer
+        - name: limit
+          in: query
+          description: limit no of responses. Default = 10. Used with skip for paging
+          required: false
+          type: integer
+          format: integer
+
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/CarResultList'
+
+
+  /trucks:
+    get:
+      summary: get all trucks
+      description: |
+        get all trucks including CO2, E scores
+      tags:
+        - Static
+      parameters:
+        - name: skip
+          in: query
+          description: nof items skipped in result. Default = 0. Used with limit for paging
+          required: false
+          type: integer
+          format: integer
+        - name: limit
+          in: query
+          description: limit no of responses. Default = 10. Used with skip for paging
+          required: false
+          type: integer
+          format: integer
+
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/TruckResultList'
+

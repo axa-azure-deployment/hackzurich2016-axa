@@ -3,11 +3,251 @@
     "info": {
         "version": "0.9.2",
         "title": "hackzurich 2016 - AXA Winterthur - insurance API",
-        "description": "AXA Winterthur is Gold sponsor \"hackzurich\" http://hackzurich.ch in 2016.\n\n> Our topic is __\"Insurance as simple as a Game\" aka \"Clash of claims\"__. See more detailed information about the Workshop and the competition  here (TBD)\n\n***\n__Data privacy__: all data are examples, partly generated, anonymized and cannot be linked with any existing customer or prospect of AXA\n\n***\nThe current API represents the most used domain objects of an insurance. We provide 2 different types: static / configation data and dynamic data, based on 10'000 predefined customers.\n\n__Developers:__ here you can get the full source code, nodejs app and mongodb-load-data from our GIT repo https://github.com/lolo8304/hackzurich2016-axa\n\n__Endpoint:__ use our SaaS REST services running on https://localhost:3000/axa/... (details see swagger documentation)\n\n__Swagger:__ use (this) swagger documentation on https://localhost:3000\n- see our [JSON version](https://localhost:3000/swagger.json) and [YAML version](https://localhost:3000/swagger.yaml)\n- see our special localhost:3000 swagger [YAML version](https://localhost:3000/swagger.local.yaml) and [JSON version](https://localhost:3000/swagger.local.json) to support local development without need of a swagger web distribution\n\n***\n__Dynamic data__ (prefilled with examples)\n- **customer data**: most attributes of a customer eg naming, address, date of birth, ... (10'000 customers)\n- **profile data**: important profile data of the customer\n- **contracts**: insurance contracts of the customer\n- **trips**: telmatics data of some real trips, locations and events an (only 7 trips, >25 events, > 650 GPS positions)\n- **transactions**: financial transactions issued to (>1000 transactions)\n\n__Static / configuration data__\n- **car + truck data**: some vehicle types and attributes, incl CO2 and energy attributes (>1700 cars, >350 trucks)\n- **insurance types**: list of all types of insurances, group by L&S, P&C and health (>20 types)\n- **risk types**: risks possible to be able taken for the customer (>20 risks)\n- **favorite risk object categories**: object categories to describe your favorite object (>20 categories)\n"
+        "description": "AXA Winterthur is Gold sponsor \"hackzurich\" http://hackzurich.ch in 2016.\n\n> Our topic is __\"Insurance as simple as a Game\" aka \"Clash of claims\"__. See more detailed information about the Workshop and the competition  here (TBD)\n\n***\n__Data privacy__: all data are examples, partly generated, anonymized and cannot be linked with any existing customer or prospect of AXA. Some data is generated using [Random Point Generator](http://www.geomidpoint.com/random/). \n\n***\nThe current API represents the most used domain objects of an insurance. We provide 2 different types: static / configation data and dynamic data, based on 10'000 predefined customers.\n\n__Developers:__ here you can get the full source code, nodejs app and mongodb-load-data from our GIT repo https://github.com/lolo8304/hackzurich2016-axa\n\n__Endpoint:__ use our SaaS REST services running on https://localhost:3000/axa/... (details see swagger documentation)\n\n__Swagger:__ use (this) swagger documentation on https://localhost:3000\n- see our [JSON version](https://localhost:3000/swagger.json) and [YAML version](https://localhost:3000/swagger.yaml)\n- see our special localhost:3000 swagger [YAML version](https://localhost:3000/swagger.local.yaml) and [JSON version](https://localhost:3000/swagger.local.json) to support local development without need of a swagger web distribution\n\n***\n__Dynamic data__ (prefilled with examples)\n- **customer data**: most attributes of a customer eg naming, address, date of birth, ... (10'000 customers)\n- **profile data**: important profile data of the customer\n- **contracts**: insurance contracts of the customer\n- **trips**: telmatics data of some real trips, locations and events an (only 7 trips, >25 events, > 650 GPS positions)\n- **transactions**: financial transactions issued to (>1000 transactions)\n\n__Static / configuration data__\n- **car + truck data**: some vehicle types and attributes, incl CO2 and energy attributes (>1700 cars, >350 trucks)\n- **insurance types**: list of all types of insurances, group by L&S, P&C and health (>20 types)\n- **risk types**: risks possible to be able taken for the customer (>20 risks)\n- **favorite risk object categories**: object categories to describe your favorite object (>20 categories)\n"
     },
     "host": "localhost:3000",
     "basePath": "/axa",
     "definitions": {
+        "CarResultList": {
+            "description": "result of cars search used for paging",
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/Cars"
+                },
+                "links": {
+                    "$ref": "#/definitions/Link"
+                }
+            }
+        },
+        "Cars": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Car"
+            }
+        },
+        "Car": {
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer",
+                    "description": "id of car"
+                },
+                "brand": {
+                    "type": "string"
+                },
+                "model": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "price": {
+                    "type": "number",
+                    "format": "integer"
+                },
+                "body": {
+                    "type": "string"
+                },
+                "seats": {
+                    "type": "number",
+                    "format": "integer"
+                },
+                "ccm": {
+                    "type": "number",
+                    "format": "integer"
+                },
+                "power_KW": {
+                    "type": "number",
+                    "format": "integer"
+                },
+                "power_PS": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "gear": {
+                    "type": "string"
+                },
+                "noise": {
+                    "type": "number",
+                    "format": "integer"
+                },
+                "fuel": {
+                    "type": "string"
+                },
+                "consumption": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "CO2": {
+                    "type": "number",
+                    "format": "integer"
+                },
+                "E_class": {
+                    "type": "string"
+                },
+                "P_greenhouse": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "P_noise": {
+                    "type": "number",
+                    "format": "integer"
+                },
+                "P_human": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "P_nature": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "P_total": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "stars": {
+                    "type": "string"
+                },
+                "stars_no": {
+                    "type": "number",
+                    "format": "integer"
+                },
+                "E_label": {
+                    "type": "string"
+                },
+                "E_label_no": {
+                    "type": "number",
+                    "format": "integer"
+                },
+                "KLASSE": {
+                    "type": "string"
+                }
+            }
+        },
+        "TruckResultList": {
+            "description": "result of trucks search used for paging",
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/Trucks"
+                },
+                "links": {
+                    "$ref": "#/definitions/Link"
+                }
+            }
+        },
+        "Trucks": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Truck"
+            }
+        },
+        "Truck": {
+            "properties": {
+                "id": {
+                    "type": "number",
+                    "format": "integer"
+                },
+                "make": {
+                    "type": "string"
+                },
+                "model": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "price": {
+                    "type": "number",
+                    "format": "integer"
+                },
+                "body": {
+                    "type": "string"
+                },
+                "seats": {
+                    "type": "number",
+                    "format": "integer"
+                },
+                "load_capacity": {
+                    "type": "number",
+                    "format": "integer"
+                },
+                "ccm": {
+                    "type": "number",
+                    "format": "integer"
+                },
+                "power_KW": {
+                    "type": "number",
+                    "format": "integer"
+                },
+                "power_PS": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "gear": {
+                    "type": "string"
+                },
+                "noise": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "fuel": {
+                    "type": "string"
+                },
+                "consumption": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "CO2": {
+                    "type": "number",
+                    "format": "integer"
+                },
+                "E_class": {
+                    "type": "string"
+                },
+                "P_greenhouse": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "P_noise": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "P_human": {
+                    "type": "number",
+                    "format": "integer"
+                },
+                "P_nature": {
+                    "type": "number",
+                    "format": "integer"
+                },
+                "P_total": {
+                    "type": "number",
+                    "format": "integer"
+                },
+                "stars": {
+                    "type": "string"
+                },
+                "stars_no": {
+                    "type": "number",
+                    "format": "integer"
+                },
+                "E_label": {
+                    "type": "string"
+                },
+                "E_label_no": {
+                    "type": "number",
+                    "format": "integer"
+                }
+            }
+        },
         "Trips": {
             "type": "array",
             "items": {
@@ -897,6 +1137,76 @@
                         "description": "Successful response",
                         "schema": {
                             "$ref": "#/definitions/Trips"
+                        }
+                    }
+                }
+            }
+        },
+        "/cars": {
+            "get": {
+                "summary": "get all cars",
+                "description": "get all cars including CO2, E scores\n",
+                "tags": [
+                    "Static"
+                ],
+                "parameters": [
+                    {
+                        "name": "skip",
+                        "in": "query",
+                        "description": "nof items skipped in result. Default = 0. Used with limit for paging",
+                        "required": false,
+                        "type": "integer",
+                        "format": "integer"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "limit no of responses. Default = 10. Used with skip for paging",
+                        "required": false,
+                        "type": "integer",
+                        "format": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "$ref": "#/definitions/CarResultList"
+                        }
+                    }
+                }
+            }
+        },
+        "/trucks": {
+            "get": {
+                "summary": "get all trucks",
+                "description": "get all trucks including CO2, E scores\n",
+                "tags": [
+                    "Static"
+                ],
+                "parameters": [
+                    {
+                        "name": "skip",
+                        "in": "query",
+                        "description": "nof items skipped in result. Default = 0. Used with limit for paging",
+                        "required": false,
+                        "type": "integer",
+                        "format": "integer"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "limit no of responses. Default = 10. Used with skip for paging",
+                        "required": false,
+                        "type": "integer",
+                        "format": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "$ref": "#/definitions/TruckResultList"
                         }
                     }
                 }
