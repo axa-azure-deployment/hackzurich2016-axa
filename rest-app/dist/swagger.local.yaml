@@ -362,7 +362,7 @@ paths:
     get:
       summary: list of all customers, use ranges
       description: |
-        get all customers using. max limit 100, using skip + limit to range
+        get all customers using. max limit 25, using skip + limit to range
       tags:
         - Customer
         - Customer search
@@ -390,7 +390,7 @@ paths:
     get:
       summary: search customers by zip code, use ranges
       description: |
-        search all customers at their location by zip, using. max limit 100, using skip + limit to range
+        search all customers at their location by zip, using. max limit 25, using skip + limit to range
       parameters:
         - name: zip
           in: path
@@ -426,7 +426,7 @@ paths:
     get:
       summary: search customers by lastname or firstname, using *wildcards*, use ranges
       description: |
-        search all customers by their lastname or firstname using wildcards automatically, using. max limit 100, using skip + limit to range
+        search all customers by their lastname or firstname using wildcards automatically, using. max limit 25, using skip + limit to range
       parameters:
         - name: name
           in: path
@@ -462,7 +462,7 @@ paths:
     get:
       summary: search customers by any word in all indexed fields, use ranges
       description: |
-        search all customers by any word in all indexed fields using full text search. Splitted words with blanks used as OR operator. using max limit 100, using skip + limit to range
+        search all customers by any word in all indexed fields using full text search. Splitted words with blanks used as OR operator. using max limit 25, using skip + limit to range
       parameters:
         - name: text
           in: path
@@ -498,7 +498,7 @@ paths:
     get:
       summary: search customers using mongodb query, use ranges
       description: |
-        search all customers using a mongodb query in JSON format - see http://bit.ly/2aI9Djk, using. max limit 100, using skip + limit to range
+        search all customers using a mongodb query in JSON format - see http://bit.ly/2aI9Djk, using. max limit 25, using skip + limit to range
       parameters:
         - name: query
           in: path
@@ -542,7 +542,7 @@ paths:
     get:
       summary: search nearest customers in meter to a given location, use ranges
       description: |
-        search nearest customers in meter to a given location. Max limit 100, using skip + limit to range
+        search nearest customers in meter to a given location. max limit 25, using skip + limit to range
       parameters:
         - name: longitude 
           in: path
@@ -668,7 +668,7 @@ paths:
     get:
       summary: get all financial transactions 
       description: |
-        get all financial transactions. max limit 100, using skip + limit to range
+        get all financial transactions. max limit 25, using skip + limit to range
       tags:
         - Transaction
       parameters:

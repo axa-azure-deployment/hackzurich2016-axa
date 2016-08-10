@@ -424,7 +424,7 @@
         "/customers": {
             "get": {
                 "summary": "list of all customers, use ranges",
-                "description": "get all customers using. max limit 100, using skip + limit to range\n",
+                "description": "get all customers using. max limit 25, using skip + limit to range\n",
                 "tags": [
                     "Customer",
                     "Customer search"
@@ -460,7 +460,7 @@
         "/customers/search/byZip/{zip}": {
             "get": {
                 "summary": "search customers by zip code, use ranges",
-                "description": "search all customers at their location by zip, using. max limit 100, using skip + limit to range\n",
+                "description": "search all customers at their location by zip, using. max limit 25, using skip + limit to range\n",
                 "parameters": [
                     {
                         "name": "zip",
@@ -509,7 +509,7 @@
         "/customers/search/byName/{name}": {
             "get": {
                 "summary": "search customers by lastname or firstname, using *wildcards*, use ranges",
-                "description": "search all customers by their lastname or firstname using wildcards automatically, using. max limit 100, using skip + limit to range\n",
+                "description": "search all customers by their lastname or firstname using wildcards automatically, using. max limit 25, using skip + limit to range\n",
                 "parameters": [
                     {
                         "name": "name",
@@ -558,7 +558,7 @@
         "/customers/search/byWord/{text}": {
             "get": {
                 "summary": "search customers by any word in all indexed fields, use ranges",
-                "description": "search all customers by any word in all indexed fields using full text search. Splitted words with blanks used as OR operator. using max limit 100, using skip + limit to range\n",
+                "description": "search all customers by any word in all indexed fields using full text search. Splitted words with blanks used as OR operator. using max limit 25, using skip + limit to range\n",
                 "parameters": [
                     {
                         "name": "text",
@@ -607,7 +607,7 @@
         "/customers/search/byQuery/{query}/{sort}": {
             "get": {
                 "summary": "search customers using mongodb query, use ranges",
-                "description": "search all customers using a mongodb query in JSON format - see http://bit.ly/2aI9Djk, using. max limit 100, using skip + limit to range\n",
+                "description": "search all customers using a mongodb query in JSON format - see http://bit.ly/2aI9Djk, using. max limit 25, using skip + limit to range\n",
                 "parameters": [
                     {
                         "name": "query",
@@ -666,7 +666,7 @@
         "/customers/search/near/{longitude},{latitude},{meter}": {
             "get": {
                 "summary": "search nearest customers in meter to a given location, use ranges",
-                "description": "search nearest customers in meter to a given location. Max limit 100, using skip + limit to range\n",
+                "description": "search nearest customers in meter to a given location. max limit 25, using skip + limit to range\n",
                 "parameters": [
                     {
                         "name": "longitude",
@@ -835,7 +835,7 @@
         "/transactions": {
             "get": {
                 "summary": "get all financial transactions",
-                "description": "get all financial transactions. max limit 100, using skip + limit to range\n",
+                "description": "get all financial transactions. max limit 25, using skip + limit to range\n",
                 "tags": [
                     "Transaction"
                 ],

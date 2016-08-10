@@ -120,8 +120,8 @@ function buildOptions(req, idName, sortColumn) {
     if (!limit) { 
         limit = 10; 
     }
-    if (limit > 100 || limit < -100 ) {
-        throw new RestApiError("400", 'limit <'+limit+'> is too high. Use skip (max +/-100) & limit to get data');
+    if (limit > 25 || limit < -25 ) {
+        throw new RestApiError("400", 'limit <'+limit+'> is too high. Use skip (max +/-25) & limit to get data');
     }
     if (!skip) { 
         skip = 0; 

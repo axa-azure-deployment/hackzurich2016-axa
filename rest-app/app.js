@@ -15,9 +15,12 @@ var monk = require('monk');
 // Connect to remote DB
 var db = monk('HackZurich2016-user:password@40.68.213.58:27018/hackzurich2016-axa'
     +'?'
+    +       'maxPoolSize=10'
     +       'poolSize=10'
     +'&'+   'keepAlive=60000'
+    +'&'+   'socketOptions.keepAlive=60000'
     +'&'+   'connectTimeoutMS=10000'
+    +'&'+   'socketOptions.connectTimeoutMS=10000'
     +'&'+   'reconnectTries=5'
 );
 
