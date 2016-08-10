@@ -10,8 +10,6 @@ var swagger = require("swagger-node-express");
 
 // add mongo connection
 var mongo = require('mongodb');
-Logger = mongo.Logger;
-Logger.setLevel('debug');
 var monk = require('monk');
 
 // Connect to remote DB
