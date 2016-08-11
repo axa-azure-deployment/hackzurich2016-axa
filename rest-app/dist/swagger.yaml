@@ -46,9 +46,16 @@ definitions:
     type: object
     properties:
       data:
-        $ref: '#/definitions/Contact'
+        $ref: '#/definitions/Contacts'
       links:
         $ref: '#/definitions/Link'
+
+  ContactOpeningHours:
+    type: object
+    properties:
+      ranges:
+       description: key -> value pairs with key=startTime, value=endTime in form hh:mm
+       type: object
 
 
   Contacts:
@@ -57,96 +64,86 @@ definitions:
       $ref: '#/definitions/Contact'
       
   Contact:
+   description: details of AXA agency and its contacts, opening hours
    type: object
    properties:
     _id:
      type: string
-    type:
-     type: string
     city:
+     description: city name 
      type: string
     language:
+     description: main language of agency
      type: string
+     enum:
+      - de
+      - fr
+      - it
     location:
-     type: object
-     properties:
-      type:
-       type: string
-      coordinates:
-       type: array
-       items:
-        type: number
-        format: float
+      $ref: '#/definitions/Location2Dsphere'
     mail:
+     description: email address 
      type: string
     name:
+     description: public name 
      type: string
     phone:
+     description: main contact phone number 
      type: string
     street:
+     description: street and no 
      type: string
     zip:
+     description: zip code of city
      type: string
     openingHours:
+     description: opening hours of agency seperated by day of week
      type: object
      properties:
       days:
        type: object
        properties:
         Mo:
-         type: object
-         properties:
-          ranges:
-           description: key -> value pairs with key=startTime, value=endTime in form hh:mm
-           type: object
+          $ref: '#/definitions/ContactOpeningHours'
         Di:
-         type: object
-         properties:
-          ranges:
-           description: key -> value pairs with key=startTime, value=endTime in form hh:mm
-           type: object
+          $ref: '#/definitions/ContactOpeningHours'
         Mi:
-         type: object
-         properties:
-          ranges:
-           description: key -> value pairs with key=startTime, value=endTime in form hh:mm
-           type: object
+          $ref: '#/definitions/ContactOpeningHours'
         Do:
-         type: object
-         properties:
-          ranges:
-           description: key -> value pairs with key=startTime, value=endTime in form hh:mm
-           type: object
+          $ref: '#/definitions/ContactOpeningHours'
         Fr:
-         type: object
-         properties:
-          ranges:
-           description: key -> value pairs with key=startTime, value=endTime in form hh:mm
-           type: object
+          $ref: '#/definitions/ContactOpeningHours'
         Sa:
-         type: object
-         properties:
-          ranges:
-           description: key -> value pairs with key=startTime, value=endTime in form hh:mm
-           type: object
+          $ref: '#/definitions/ContactOpeningHours'
     agents:
+     description: list of agents
      type: array
      items:
       type: object
       properties:
        agentStatus:
+        description: position of agent in the agency. ID=Innendienst / internal, AD=Aussendienst
         type: string
+        enum:
+          - ID
+          - AD
        email:
+        description: email address to contact agent
         type: string
        firstname:
+        description: first name
         type: string
        lastname:
+        description: last name
         type: string
        mobile:
+        description: mobile phone number
         type: string
        phone:
+        description:  phone number
         type: string
     closedOnDays:
+     description:  describes the standard closed days of the agency
      type: object
      properties:
       days:
@@ -155,8 +152,10 @@ definitions:
         type: object
         properties:
          event:
+          description:  name of event
           type: string
          date:
+          description:  date of event
           type: string
 
 
