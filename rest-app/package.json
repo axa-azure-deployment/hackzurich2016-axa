@@ -34,6 +34,9 @@
     "mongodb": "~2.2.5",
     "monk": "~3.1.1",
     "express-cors": "~0.0.3",
+    
+    "morgan": "~1.7.0",
+    "mongo-morgan" : "~2.0.1",
 
     "swagger-node-express": "~2.1.3",
     "minimist": "~1.2.0"
