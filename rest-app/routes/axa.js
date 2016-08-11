@@ -143,8 +143,8 @@ function buildOptions(req, idName, sortColumn, fieldsFilter) {
     }
     return options;
 }
-function findLimited(req, res, collection, idName, query, sortColumn) {
-    var options = buildOptions(req, idName, sortColumn);
+function findLimited(req, res, collection, idName, query, sortColumn, fieldFilter) {
+    var options = buildOptions(req, idName, sortColumn, fieldFilter);
     var limit = options.limit;
     var skip = options.skip; 
     collection.count(query, function (e1, totalCount) {
@@ -239,11 +239,12 @@ function registerModelAPIs(type, typeMultiple, idName, isIdInteger, hasLimitColl
         });
     }
 
-    router.get('/'+typeMultiple+'/search/byQuery/:query/:sort', function(req, res) {
+    router.get('/'+typeMultiple+'/search/byQuery/:query/:sort/:filter', function(req, res) {
         var db = req.db;
         var collection = db.get(typeMultiple);
         var queryStringToSearch = req.params.query;
         var sortString = req.params.sort;
+        var filterString = req.params.filter;
         if (isEmpty(queryStringToSearch)) {
                 return handleError(res,
                     new RestApiError("400", 'parameter query is empty'));
@@ -255,7 +256,16 @@ function registerModelAPIs(type, typeMultiple, idName, isIdInteger, hasLimitColl
                 var queryToSearch = JSON.parse(queryStringToSearch);
                 try {
                     var sortToSearch = JSON.parse(sortString);
-                    findLimited(req, res, collection, idName, queryToSearch, sortToSearch);
+                    var filterToSearch = undefined;
+                    if (filterString != undefined && filterString != "" && filterString != "{}") {
+                        try {
+                            filterToSearch = JSON.parse(filterString);
+                        } catch (e) {
+                            return handleError(res,
+                                new RestApiError("400", 'filter is not a valid JSON string <br>&nbsp;'+filterString));
+                        }
+                    }
+                    findLimited(req, res, collection, idName, queryToSearch, sortToSearch, filterToSearch);
                 } catch (e) {
                     return handleError(res,
                         new RestApiError("400", 'sort is not a valid JSON string <br>&nbsp;'+sortString));

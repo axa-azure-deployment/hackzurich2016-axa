@@ -1004,7 +1004,7 @@ paths:
         '500':
           description: technical server error
           
-  /customers/search/byQuery/{query}/{sort}:
+  /customers/search/byQuery/{query}/{sort}/{filter}:
     get:
       summary: search customers using mongodb query, use ranges
       description: |
@@ -1022,6 +1022,13 @@ paths:
           description: sort column in JSON format, use id as default - see http://bit.ly/2aIaK2I
           required: true
           default: '{"id" : 1}'
+          type: string
+          format: string
+        - name: filter
+          in: path
+          description: filter columns in JSON format, use {} as default - see http://bit.ly/2aEfTdB
+          required: true
+          default: '{}'
           type: string
           format: string
         - name: skip
@@ -1254,7 +1261,7 @@ paths:
           schema:
             $ref: '#/definitions/ProfileResultList'
 
-  /profiles/search/byQuery/{query}/{sort}:
+  /profiles/search/byQuery/{query}/{sort}/{filter}:
     get:
       summary: search profiles using mongodb query, use ranges
       description: |
@@ -1272,6 +1279,13 @@ paths:
           description: sort column in JSON format, use id as default - see http://bit.ly/2aIaK2I
           required: true
           default: '{"id" : 1}'
+          type: string
+          format: string
+        - name: filter
+          in: path
+          description: filter columns in JSON format, use {} as default - see http://bit.ly/2aEfTdB
+          required: true
+          default: '{}'
           type: string
           format: string
         - name: skip
@@ -1351,7 +1365,7 @@ paths:
           schema:
             $ref: '#/definitions/TransactionResultList'
             
-  /transactions/search/byQuery/{query}/{sort}:
+  /transactions/search/byQuery/{query}/{sort}/{filter}:
     get:
       summary: search transactions using mongodb query, use ranges
       description: |
@@ -1371,6 +1385,13 @@ paths:
           default: '{"amount" : -1}'
           type: string
           format: string
+        - name: filter
+          in: path
+          description: filter columns in JSON format, use {} as default - see http://bit.ly/2aEfTdB
+          required: true
+          default: '{}'
+          type: string
+          format: string          
         - name: skip
           in: query
           description: nof items skipped in result. Default = 0. Used with limit for paging
@@ -1462,7 +1483,7 @@ paths:
           description: technical server error
 
 
-  /cars/search/byQuery/{query}/{sort}:
+  /cars/search/byQuery/{query}/{sort}/{filter}:
     get:
       summary: search cars using mongodb query, use ranges
       description: |
@@ -1482,6 +1503,13 @@ paths:
           default: '{"id" : 1}'
           type: string
           format: string
+        - name: filter
+          in: path
+          description: filter columns in JSON format, use {} as default - see http://bit.ly/2aEfTdB
+          required: true
+          default: '{}'
+          type: string
+          format: string          
         - name: skip
           in: query
           description: nof items skipped in result. Default = 0. Used with limit for paging
@@ -1575,7 +1603,7 @@ paths:
           description: technical server error
 
 
-  /trucks/search/byQuery/{query}/{sort}:
+  /trucks/search/byQuery/{query}/{sort}/{filter}:
     get:
       summary: search trucks using mongodb query, use ranges
       description: |
@@ -1593,6 +1621,13 @@ paths:
           description: sort column in JSON format, use id as default - see http://bit.ly/2aIaK2I
           required: true
           default: '{"id" : 1}'
+          type: string
+          format: string
+        - name: filter
+          in: path
+          description: filter columns in JSON format, use {} as default - see http://bit.ly/2aEfTdB
+          required: true
+          default: '{}'
           type: string
           format: string
         - name: skip
@@ -1773,7 +1808,7 @@ paths:
         '500':
           description: technical server error
           
-  /contacts/search/byQuery/{query}/{sort}:
+  /contacts/search/byQuery/{query}/{sort}/{filter}:
     get:
       summary: search AXA agencies and contacts using mongodb query, use ranges
       description: |
@@ -1791,6 +1826,13 @@ paths:
           description: sort column in JSON format, use id as default - see http://bit.ly/2aIaK2I
           required: true
           default: '{"id" : 1}'
+          type: string
+          format: string
+        - name: filter
+          in: path
+          description: filter columns in JSON format, use {} as default - see http://bit.ly/2aEfTdB
+          required: true
+          default: '{}'
           type: string
           format: string
         - name: skip
