@@ -1,11 +1,11 @@
 swagger: '2.0'
 info:
   version: 0.9.2
-  title: "hackzurich 2016 - AXA Winterthur - insurance API"
+  title: "hackzurich 2016 - AXA Winterthur - API"
   description: |
-    AXA Winterthur is Gold sponsor "hackzurich" http://hackzurich.ch in 2016.
+    AXA Winterthur is very proud to be Gold Sponsor of "hackzurich" http://hackzurich.ch in 2016 taken place at Technopark, Zürich, Switzerland.
     
-    > Our topic is __"Insurance as simple as a Game" aka "Clash of claims"__. See more detailed information about the Workshop and the competition  here (TBD)
+    Our topic is __"Insurance as simple as a Game" aka "Clash of claims"__. See more detailed information about the Workshop and the competition  here (TBD)
 
     ***
     __Data privacy__: all data are examples, partly generated, anonymized and cannot be linked with any existing customer or prospect of AXA. Some data is generated using [Random Point Generator](http://www.geomidpoint.com/random/). 
@@ -28,8 +28,10 @@ info:
     - **contracts**: insurance contracts of the customer
     - **trips**: telmatics data of some real trips, locations and events an (only 7 trips, >25 events, > 650 GPS positions)
     - **transactions**: financial transactions issued to (>1000 transactions)
+    - **favorites**: your most valuable objects to be insured by object or overall
 
     __Static / configuration data__
+    - **contacts**: all AXA agencies with GEO location, some attributes anonymized 
     - **car + truck data**: some vehicle types and attributes, incl CO2 and energy attributes (>1700 cars, >350 trucks)
     - **insurance types**: list of all types of insurances, group by L&S, P&C and health (>20 types)
     - **risk types**: risks possible to be able taken for the customer (>20 risks)
@@ -1511,7 +1513,7 @@ paths:
           type: integer
           format: integer
       tags:
-        - Contact
+        - Contact (static)
         - Static
       responses:
         '200':

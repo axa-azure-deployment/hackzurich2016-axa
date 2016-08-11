@@ -184,8 +184,8 @@
 .swagger-section .swagger-ui-wrap {
   line-height: 1;
   font-family: "Droid Sans", sans-serif;
-  min-width: 760px;
-  max-width: 960px;
+  min-width: 620px;
+  max-width: 95%;
   margin-left: auto;
   margin-right: auto;
   /* JSONEditor specific styling */
@@ -375,8 +375,8 @@
 }
 .swagger-section .swagger-ui-wrap .markdown ol li,
 .swagger-section .swagger-ui-wrap .markdown ul li {
-  padding: 3px 0px;
-  line-height: 1.4em;
+  padding: 1px 0px;
+  line-height: 1.1em;
   color: #333333;
 }
 .swagger-section .swagger-ui-wrap form.formtastic fieldset.inputs ol li.string input,
@@ -534,7 +534,9 @@
   font-weight: bold!important;
 }
 .swagger-section .swagger-ui-wrap input.parameter {
-  width: 300px;
+  min-width: 200px;
+  max-width: 300px;
+  width: 100%;
   border: 1px solid #aaa;
 }
 .swagger-section .swagger-ui-wrap h1 {
