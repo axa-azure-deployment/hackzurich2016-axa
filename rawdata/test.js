@@ -1,1 +1,1 @@
-print("counf of customers = "+db.customers.count());
+print("count of customers = "+db.customers.count());

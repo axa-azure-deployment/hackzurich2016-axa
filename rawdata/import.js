@@ -10,6 +10,7 @@ var importMeta = [
     { "collection" : "categories", "file" : "./favorites/categories.json"},
     { "collection" : "risks", "file" : "./favorites/risks.json"},
 
+    { "collection" : "contacts", "file" : "./contacts/contacts.json"},
     { "collection" : "favorites", "file" : "./favorites/favorites.json"}
 
 ];
@@ -27,3 +28,4 @@ for (var i = 0, l = importMeta.length; i < l; i++){
 }
 
 db.customers.ensureIndex( { "location" : "2dsphere" } );
+db.contacts.ensureIndex( { "location" : "2dsphere" } );

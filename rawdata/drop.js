@@ -11,3 +11,5 @@ db.insuranceTypes.drop();
 db.risks.drop();
 db.valuables.drop();
 db.favorites.drop();
+
+db.contacts.drop();
