@@ -8,6 +8,204 @@
     "host": "localhost:3000",
     "basePath": "/axa",
     "definitions": {
+        "ContactResultList": {
+            "description": "result of AXA agencies search used for paging",
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/Contact"
+                },
+                "links": {
+                    "$ref": "#/definitions/Link"
+                }
+            }
+        },
+        "Contacts": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Contact"
+            }
+        },
+        "Contact": {
+            "type": "object",
+            "properties": {
+                "_id": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "city": {
+                    "type": "string"
+                },
+                "language": {
+                    "type": "string"
+                },
+                "location": {
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string"
+                        },
+                        "coordinates": {
+                            "type": "array",
+                            "items": {
+                                "type": "number",
+                                "format": "float"
+                            }
+                        }
+                    }
+                },
+                "mail": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "phone": {
+                    "type": "string"
+                },
+                "street": {
+                    "type": "string"
+                },
+                "zip": {
+                    "type": "string"
+                },
+                "openingHours": {
+                    "type": "object",
+                    "properties": {
+                        "days": {
+                            "type": "object",
+                            "properties": {
+                                "Mo": {
+                                    "type": "object",
+                                    "properties": {
+                                        "ranges": {
+                                            "description": "key -> value pairs with key=startTime, value=endTime in form hh:mm",
+                                            "type": "object"
+                                        }
+                                    }
+                                },
+                                "Di": {
+                                    "type": "object",
+                                    "properties": {
+                                        "ranges": {
+                                            "description": "key -> value pairs with key=startTime, value=endTime in form hh:mm",
+                                            "type": "object"
+                                        }
+                                    }
+                                },
+                                "Mi": {
+                                    "type": "object",
+                                    "properties": {
+                                        "ranges": {
+                                            "description": "key -> value pairs with key=startTime, value=endTime in form hh:mm",
+                                            "type": "object"
+                                        }
+                                    }
+                                },
+                                "Do": {
+                                    "type": "object",
+                                    "properties": {
+                                        "ranges": {
+                                            "description": "key -> value pairs with key=startTime, value=endTime in form hh:mm",
+                                            "type": "object"
+                                        }
+                                    }
+                                },
+                                "Fr": {
+                                    "type": "object",
+                                    "properties": {
+                                        "ranges": {
+                                            "description": "key -> value pairs with key=startTime, value=endTime in form hh:mm",
+                                            "type": "object"
+                                        }
+                                    }
+                                },
+                                "Sa": {
+                                    "type": "object",
+                                    "properties": {
+                                        "ranges": {
+                                            "description": "key -> value pairs with key=startTime, value=endTime in form hh:mm",
+                                            "type": "object"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "agents": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "agentStatus": {
+                                "type": "string"
+                            },
+                            "email": {
+                                "type": "string"
+                            },
+                            "firstname": {
+                                "type": "string"
+                            },
+                            "lastname": {
+                                "type": "string"
+                            },
+                            "mobile": {
+                                "type": "string"
+                            },
+                            "phone": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "closedOnDays": {
+                    "type": "object",
+                    "properties": {
+                        "days": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "event": {
+                                        "type": "string"
+                                    },
+                                    "date": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "InsuranceTypes": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/InsuranceType"
+            }
+        },
+        "InsuranceType": {
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer",
+                    "description": "id of insurance type"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "lineOfBusiness": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                }
+            }
+        },
         "CarResultList": {
             "description": "result of cars search used for paging",
             "type": "object",
@@ -426,7 +624,7 @@
                     "description": "id of customer"
                 },
                 "amount": {
-                    "type": "string",
+                    "type": "number",
                     "format": "double",
                     "description": "amount of transaction in EUR"
                 },
@@ -734,7 +932,7 @@
                     "200": {
                         "description": "Successful response",
                         "schema": {
-                            "$ref": "#/definitions/Customer"
+                            "$ref": "#/definitions/CustomerResultList"
                         }
                     },
                     "400": {
@@ -783,7 +981,7 @@
                     "200": {
                         "description": "Successful response",
                         "schema": {
-                            "$ref": "#/definitions/Customer"
+                            "$ref": "#/definitions/CustomerResultList"
                         }
                     },
                     "400": {
@@ -832,7 +1030,7 @@
                     "200": {
                         "description": "Successful response",
                         "schema": {
-                            "$ref": "#/definitions/Customer"
+                            "$ref": "#/definitions/CustomerResultList"
                         }
                     },
                     "400": {
@@ -854,7 +1052,7 @@
                         "in": "path",
                         "description": "mongodb query in JSON format - see http://bit.ly/2aI9Djk",
                         "required": true,
-                        "default": "{}",
+                        "default": "{ \"kilograms\" : 100 }",
                         "type": "string",
                         "format": "string"
                     },
@@ -891,7 +1089,7 @@
                     "200": {
                         "description": "Successful response",
                         "schema": {
-                            "$ref": "#/definitions/Customer"
+                            "$ref": "#/definitions/CustomerResultList"
                         }
                     },
                     "400": {
@@ -959,7 +1157,7 @@
                     "200": {
                         "description": "Successful response",
                         "schema": {
-                            "$ref": "#/definitions/Customer"
+                            "$ref": "#/definitions/CustomerResultList"
                         }
                     },
                     "400": {
@@ -1107,6 +1305,65 @@
                 }
             }
         },
+        "/transactions/search/byQuery/{query}/{sort}": {
+            "get": {
+                "summary": "search transactions using mongodb query, use ranges",
+                "description": "search all transactions using a mongodb query in JSON format - see http://bit.ly/2aI9Djk, using. max limit 25, using skip + limit to range\n",
+                "parameters": [
+                    {
+                        "name": "query",
+                        "in": "path",
+                        "description": "mongodb query in JSON format - see http://bit.ly/2aI9Djk",
+                        "required": true,
+                        "default": "{ \"type\" : \"invoice\" }",
+                        "type": "string",
+                        "format": "string"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "path",
+                        "description": "sort column in JSON format, use id as default - see http://bit.ly/2aIaK2I",
+                        "required": true,
+                        "default": "{\"amount\" : -1}",
+                        "type": "string",
+                        "format": "string"
+                    },
+                    {
+                        "name": "skip",
+                        "in": "query",
+                        "description": "nof items skipped in result. Default = 0. Used with limit for paging",
+                        "required": false,
+                        "type": "integer",
+                        "format": "integer"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "limit no of responses. Default = 10. Used with skip for paging",
+                        "required": false,
+                        "type": "integer",
+                        "format": "integer"
+                    }
+                ],
+                "tags": [
+                    "Transaction"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "$ref": "#/definitions/TransactionResultList"
+                        }
+                    },
+                    "400": {
+                        "description": "invalid query parameter"
+                    },
+                    "500": {
+                        "description": "technical server error"
+                    }
+                }
+            }
+        },
         "/trips": {
             "get": {
                 "summary": "get all telematic trips and events",
@@ -1147,7 +1404,8 @@
                 "summary": "get all cars",
                 "description": "get all cars including CO2, E scores\n",
                 "tags": [
-                    "Static"
+                    "Static",
+                    "Car"
                 ],
                 "parameters": [
                     {
@@ -1177,12 +1435,123 @@
                 }
             }
         },
+        "/cars/search/byWord/{text}": {
+            "get": {
+                "summary": "search cars by any word in all indexed fields, use ranges",
+                "description": "search all cars by any word in all indexed fields using full text search. Splitted words with blanks used as OR operator. using max limit 25, using skip + limit to range\n",
+                "parameters": [
+                    {
+                        "name": "text",
+                        "in": "path",
+                        "description": "word to search",
+                        "required": true,
+                        "type": "string",
+                        "format": "string"
+                    },
+                    {
+                        "name": "skip",
+                        "in": "query",
+                        "description": "nof items skipped in result. Default = 0. Used with limit for paging",
+                        "required": false,
+                        "type": "integer",
+                        "format": "integer"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "limit no of responses. Default = 10. Used with skip for paging",
+                        "required": false,
+                        "type": "integer",
+                        "format": "integer"
+                    }
+                ],
+                "tags": [
+                    "Car",
+                    "Static"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "$ref": "#/definitions/CarResultList"
+                        }
+                    },
+                    "400": {
+                        "description": "invalid text parameter"
+                    },
+                    "500": {
+                        "description": "technical server error"
+                    }
+                }
+            }
+        },
+        "/cars/search/byQuery/{query}/{sort}": {
+            "get": {
+                "summary": "search cars using mongodb query, use ranges",
+                "description": "search all cars using a mongodb query in JSON format - see http://bit.ly/2aI9Djk, using. max limit 25, using skip + limit to range\n",
+                "parameters": [
+                    {
+                        "name": "query",
+                        "in": "path",
+                        "description": "mongodb query in JSON format - see http://bit.ly/2aI9Djk",
+                        "required": true,
+                        "default": "{ \"fuel\" : \"Benzin\" }",
+                        "type": "string",
+                        "format": "string"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "path",
+                        "description": "sort column in JSON format, use id as default - see http://bit.ly/2aIaK2I",
+                        "required": true,
+                        "default": "{\"id\" : 1}",
+                        "type": "string",
+                        "format": "string"
+                    },
+                    {
+                        "name": "skip",
+                        "in": "query",
+                        "description": "nof items skipped in result. Default = 0. Used with limit for paging",
+                        "required": false,
+                        "type": "integer",
+                        "format": "integer"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "limit no of responses. Default = 10. Used with skip for paging",
+                        "required": false,
+                        "type": "integer",
+                        "format": "integer"
+                    }
+                ],
+                "tags": [
+                    "Car",
+                    "Static"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "$ref": "#/definitions/CarResultList"
+                        }
+                    },
+                    "400": {
+                        "description": "invalid query parameter"
+                    },
+                    "500": {
+                        "description": "technical server error"
+                    }
+                }
+            }
+        },
         "/trucks": {
             "get": {
                 "summary": "get all trucks",
                 "description": "get all trucks including CO2, E scores\n",
                 "tags": [
-                    "Static"
+                    "Static",
+                    "Car"
                 ],
                 "parameters": [
                     {
@@ -1208,6 +1577,433 @@
                         "schema": {
                             "$ref": "#/definitions/TruckResultList"
                         }
+                    }
+                }
+            }
+        },
+        "/trucks/search/byWord/{text}": {
+            "get": {
+                "summary": "search trucks by any word in all indexed fields, use ranges",
+                "description": "search all trucks by any word in all indexed fields using full text search. Splitted words with blanks used as OR operator. using max limit 25, using skip + limit to range\n",
+                "parameters": [
+                    {
+                        "name": "text",
+                        "in": "path",
+                        "description": "word to search",
+                        "required": true,
+                        "type": "string",
+                        "format": "string"
+                    },
+                    {
+                        "name": "skip",
+                        "in": "query",
+                        "description": "nof items skipped in result. Default = 0. Used with limit for paging",
+                        "required": false,
+                        "type": "integer",
+                        "format": "integer"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "limit no of responses. Default = 10. Used with skip for paging",
+                        "required": false,
+                        "type": "integer",
+                        "format": "integer"
+                    }
+                ],
+                "tags": [
+                    "Car",
+                    "Static"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "$ref": "#/definitions/TruckResultList"
+                        }
+                    },
+                    "400": {
+                        "description": "invalid text parameter"
+                    },
+                    "500": {
+                        "description": "technical server error"
+                    }
+                }
+            }
+        },
+        "/trucks/search/byQuery/{query}/{sort}": {
+            "get": {
+                "summary": "search trucks using mongodb query, use ranges",
+                "description": "search all trucks using a mongodb query in JSON format - see http://bit.ly/2aI9Djk, using. max limit 25, using skip + limit to range\n",
+                "parameters": [
+                    {
+                        "name": "query",
+                        "in": "path",
+                        "description": "mongodb query in JSON format - see http://bit.ly/2aI9Djk",
+                        "required": true,
+                        "default": "{ \"body\" : \"Pickup\" }",
+                        "type": "string",
+                        "format": "string"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "path",
+                        "description": "sort column in JSON format, use id as default - see http://bit.ly/2aIaK2I",
+                        "required": true,
+                        "default": "{\"id\" : 1}",
+                        "type": "string",
+                        "format": "string"
+                    },
+                    {
+                        "name": "skip",
+                        "in": "query",
+                        "description": "nof items skipped in result. Default = 0. Used with limit for paging",
+                        "required": false,
+                        "type": "integer",
+                        "format": "integer"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "limit no of responses. Default = 10. Used with skip for paging",
+                        "required": false,
+                        "type": "integer",
+                        "format": "integer"
+                    }
+                ],
+                "tags": [
+                    "Car",
+                    "Static"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "$ref": "#/definitions/TruckResultList"
+                        }
+                    },
+                    "400": {
+                        "description": "invalid query parameter"
+                    },
+                    "500": {
+                        "description": "technical server error"
+                    }
+                }
+            }
+        },
+        "/insuranceTypes": {
+            "get": {
+                "summary": "get list of all types of insuance",
+                "description": "get all types of insurance\n",
+                "tags": [
+                    "Static",
+                    "Contract"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "$ref": "#/definitions/InsuranceTypes"
+                        }
+                    }
+                }
+            }
+        },
+        "/contacts": {
+            "get": {
+                "summary": "list of all AXA agencies and contacts, use ranges",
+                "description": "get all AXA agencies and contacts using. max limit 25, using skip + limit to range\n",
+                "tags": [
+                    "Contact",
+                    "Static"
+                ],
+                "parameters": [
+                    {
+                        "name": "skip",
+                        "in": "query",
+                        "description": "nof items skipped in result. Default = 0. Used with limit for paging",
+                        "required": false,
+                        "type": "integer",
+                        "format": "integer"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "limit no of responses. Default = 10. Used with skip for paging",
+                        "required": false,
+                        "type": "integer",
+                        "format": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "$ref": "#/definitions/ContactResultList"
+                        }
+                    }
+                }
+            }
+        },
+        "/contacts/search/byZip/{zip}": {
+            "get": {
+                "summary": "search AXA agencies and contacts by zip code, use ranges",
+                "description": "search all customers at their location by zip, using. max limit 25, using skip + limit to range\n",
+                "parameters": [
+                    {
+                        "name": "zip",
+                        "in": "path",
+                        "description": "zip code of location",
+                        "required": true,
+                        "type": "integer",
+                        "format": "integer"
+                    },
+                    {
+                        "name": "skip",
+                        "in": "query",
+                        "description": "nof items skipped in result. Default = 0. Used with limit for paging",
+                        "required": false,
+                        "type": "integer",
+                        "format": "integer"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "limit no of responses. Default = 10. Used with skip for paging",
+                        "required": false,
+                        "type": "integer",
+                        "format": "integer"
+                    }
+                ],
+                "tags": [
+                    "Contact",
+                    "Static"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "$ref": "#/definitions/ContactResultList"
+                        }
+                    },
+                    "400": {
+                        "description": "invalid zip parameter"
+                    },
+                    "500": {
+                        "description": "technical server error"
+                    }
+                }
+            }
+        },
+        "/contacts/search/byWord/{text}": {
+            "get": {
+                "summary": "search AXA agencies and contacts by any word in all indexed fields, use ranges",
+                "description": "search all AXA agencies and contacts by any word in all indexed fields using full text search. Splitted words with blanks used as OR operator. using max limit 25, using skip + limit to range\n",
+                "parameters": [
+                    {
+                        "name": "text",
+                        "in": "path",
+                        "description": "word to search",
+                        "required": true,
+                        "type": "string",
+                        "format": "string"
+                    },
+                    {
+                        "name": "skip",
+                        "in": "query",
+                        "description": "nof items skipped in result. Default = 0. Used with limit for paging",
+                        "required": false,
+                        "type": "integer",
+                        "format": "integer"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "limit no of responses. Default = 10. Used with skip for paging",
+                        "required": false,
+                        "type": "integer",
+                        "format": "integer"
+                    }
+                ],
+                "tags": [
+                    "Contact",
+                    "Static"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "$ref": "#/definitions/ContactResultList"
+                        }
+                    },
+                    "400": {
+                        "description": "invalid text parameter"
+                    },
+                    "500": {
+                        "description": "technical server error"
+                    }
+                }
+            }
+        },
+        "/contacts/search/byQuery/{query}/{sort}": {
+            "get": {
+                "summary": "search AXA agencies and contacts using mongodb query, use ranges",
+                "description": "search all AXA agencies and contacts using a mongodb query in JSON format - see http://bit.ly/2aI9Djk, using. max limit 25, using skip + limit to range\n",
+                "parameters": [
+                    {
+                        "name": "query",
+                        "in": "path",
+                        "description": "mongodb query in JSON format - see http://bit.ly/2aI9Djk",
+                        "required": true,
+                        "default": "{ \"kilograms\" : 100 }",
+                        "type": "string",
+                        "format": "string"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "path",
+                        "description": "sort column in JSON format, use id as default - see http://bit.ly/2aIaK2I",
+                        "required": true,
+                        "default": "{\"id\" : 1}",
+                        "type": "string",
+                        "format": "string"
+                    },
+                    {
+                        "name": "skip",
+                        "in": "query",
+                        "description": "nof items skipped in result. Default = 0. Used with limit for paging",
+                        "required": false,
+                        "type": "integer",
+                        "format": "integer"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "limit no of responses. Default = 10. Used with skip for paging",
+                        "required": false,
+                        "type": "integer",
+                        "format": "integer"
+                    }
+                ],
+                "tags": [
+                    "Contact",
+                    "Static"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "$ref": "#/definitions/ContactResultList"
+                        }
+                    },
+                    "400": {
+                        "description": "invalid query parameter"
+                    },
+                    "500": {
+                        "description": "technical server error"
+                    }
+                }
+            }
+        },
+        "/contacts/search/near/{longitude},{latitude},{meter}": {
+            "get": {
+                "summary": "search nearest AXA agencies in meter to a given location, use ranges",
+                "description": "search nearest AXA agencies in meter to a given location. max limit 25, using skip + limit to range\n",
+                "parameters": [
+                    {
+                        "name": "longitude",
+                        "in": "path",
+                        "description": "longitude of given location to search",
+                        "required": true,
+                        "type": "number",
+                        "default": 46.731947,
+                        "format": "double"
+                    },
+                    {
+                        "name": "latitude",
+                        "in": "path",
+                        "description": "latitude of given location to search",
+                        "required": true,
+                        "type": "number",
+                        "default": 6.962926,
+                        "format": "double"
+                    },
+                    {
+                        "name": "meter",
+                        "in": "path",
+                        "description": "define nearest area to location in meter",
+                        "required": true,
+                        "default": 1000,
+                        "type": "number",
+                        "format": "integer"
+                    },
+                    {
+                        "name": "skip",
+                        "in": "query",
+                        "description": "nof items skipped in result. Default = 0. Used with limit for paging",
+                        "required": false,
+                        "type": "integer",
+                        "format": "integer"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "limit no of responses. Default = 10. Used with skip for paging",
+                        "required": false,
+                        "type": "integer",
+                        "format": "integer"
+                    }
+                ],
+                "tags": [
+                    "Contact",
+                    "Static"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "$ref": "#/definitions/ContactResultList"
+                        }
+                    },
+                    "400": {
+                        "description": "invalid query parameter"
+                    },
+                    "500": {
+                        "description": "technical server error"
+                    }
+                }
+            }
+        },
+        "/contacts/{id}": {
+            "get": {
+                "summary": "get AXA agencies and contacts with id",
+                "description": "get all attributes of a AXA agencies and contacts based on id\n",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of contact",
+                        "required": true,
+                        "type": "string",
+                        "format": "integer"
+                    }
+                ],
+                "tags": [
+                    "Contact",
+                    "Static"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "$ref": "#/definitions/Contact"
+                        }
+                    },
+                    "404": {
+                        "description": "customer not found"
+                    },
+                    "500": {
+                        "description": "technical server error"
                     }
                 }
             }

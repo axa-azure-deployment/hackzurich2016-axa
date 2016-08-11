@@ -33,7 +33,7 @@ function handleError(res, e, docs, defaultString) {
         console.log("handle error: e="+e+", docs="+docs+", str="+defaultString);
         res.status(500).send(e.message);
         return true;
-    } else if (!docs) {
+    } else if (!docs && defaultString != undefined) {
         console.log("handle error: e="+e+", docs="+docs+", str="+defaultString);
         res.status(404).send(defaultString);
         return true;
@@ -92,7 +92,7 @@ function linkURL(req, skip, limit, max, overwrite) {
 }
 
 function buildResponseLimited(req, res, skip, limit, e, docs, totalCount) {
-    if (handleError(res, e, docs, "no results found")) {
+    if (handleError(res, e, docs, undefined)) {
         return;
     }
     var lastSkip = (Math.floor(totalCount / limit)) * limit;
@@ -145,7 +145,7 @@ function findLimited(req, res, collection, idName, query, sortColumn) {
     var limit = options.limit;
     var skip = options.skip; 
     collection.count(query, function (e1, totalCount) {
-        if (handleError(res, e1, totalCount, 'not found')) {
+        if (handleError(res, e1, totalCount, undefined)) {
             return;
         }
         collection.find(query, options, function(e, docs){
@@ -159,82 +159,169 @@ function findLimited(req, res, collection, idName, query, sortColumn) {
 
 
 function registerModelAPIs(type, typeMultiple, idName, isIdInteger, hasLimitCollection) {
-if (isIdInteger === undefined) isIdInteger = false; // default string
+    if (isIdInteger === undefined) isIdInteger = false; // default string
 
-/*
- * GET models.
- */
-router.get('/'+typeMultiple, function(req, res) {
-    var db = req.db;
-    var collection = db.get(typeMultiple);
-    if (hasLimitCollection) {
-        try {
-            var sortColumn = {};
-            sortColumn[idName] = 1;
-            findLimited(req, res, collection, idName, {}, sortColumn);
-        } catch (e) {
-            if (handleError(res, e, null, "no results found")) {
-                return;
+    /*
+    * GET models.
+    */
+    router.get('/'+typeMultiple, function(req, res) {
+        var db = req.db;
+        var collection = db.get(typeMultiple);
+        if (hasLimitCollection) {
+            try {
+                var sortColumn = {};
+                sortColumn[idName] = 1;
+                findLimited(req, res, collection, idName, {}, sortColumn);
+            } catch (e) {
+                if (handleError(res, e, null, "no results found")) {
+                    return;
+                }
+            }
+        } else {
+            var options = {
+                "sort": idName
+            }
+            collection.find({ }, options, function(e,docs){
+                res.json(docs)
+            });
+        }
+    });
+
+
+    if (isIdInteger) {
+        /*
+        * GET model by id (integer)
+        */
+        router.get('/'+typeMultiple+'/:id', function(req, res) {
+            var db = req.db;
+            var collection = db.get(typeMultiple);
+            if (!isNumeric(req.params.id)) {
+                return handleError(res,
+                    new RestApiError("400", 'id '+req.params.id+'is not numeric'));
+            } else {
+                var idToSearch = parseInt(req.params.id);
+                collection.findOne({ id : idToSearch }, function(e,docs){
+                    if (handleError(res, e, docs, 'No '+type+' found with id '+idToSearch)) {
+                        return;
+                    }
+                    res.json(docs)
+                });
+            } 
+        });
+        
+    } else {
+
+        /*
+        * GET model by id (string)
+        */
+        router.get('/'+typeMultiple+'/:id', function(req, res) {
+            var db = req.db;
+            var collection = db.get(typeMultiple);
+            var idToSearch = req.params.id;
+            if (idName == "_id") {
+                collection.findOne({ _id : idToSearch }, function(e,docs){
+                    if (handleError(res, e, docs, 'No '+type+' found with _id '+idToSearch)) {
+                        return;
+                    }
+                    res.json(docs);
+                });
+            } else {
+                collection.findOne({ id : idToSearch }, function(e,docs){
+                    if (handleError(res, e, docs, 'No '+type+' found with id '+idToSearch)) {
+                        return;
+                    }
+                    res.json(docs);
+                });
+            }
+        });
+    }
+
+    router.get('/'+typeMultiple+'/search/byQuery/:query/:sort', function(req, res) {
+        var db = req.db;
+        var collection = db.get(typeMultiple);
+        var queryStringToSearch = req.params.query;
+        var sortString = req.params.sort;
+        if (isEmpty(queryStringToSearch)) {
+                return handleError(res,
+                    new RestApiError("400", 'parameter query is empty'));
+        } else if (isEmpty(sortString)) {
+                return handleError(res,
+                    new RestApiError("400", 'parameter sort is empty'));
+        } else {
+            try {
+                var queryToSearch = JSON.parse(queryStringToSearch);
+                try {
+                    var sortToSearch = JSON.parse(sortString);
+                    findLimited(req, res, collection, idName, queryToSearch, sortToSearch);
+                } catch (e) {
+                    return handleError(res,
+                        new RestApiError("400", 'sort is not a valid JSON string <br>&nbsp;'+sortString));
+                }
+            } catch (e) {
+                return handleError(res,
+                    new RestApiError("400", 'query is not a valid JSON string <br>&nbsp;'+queryStringToSearch));
             }
         }
-    } else {
+    });
+
+    router.get('/'+typeMultiple+'/search/byWord/:text', function(req, res) {
+        var db = req.db;
+        var collection = db.get(typeMultiple);
         var options = {
             "sort": idName
         }
-        collection.find({ }, options, function(e,docs){
-            res.json(docs)
-        });
-    }
-});
+        var textToSearch = req.params.text;
+        if (isEmpty(textToSearch)) {
+            return handleError(res,
+                new RestApiError("400", 'parameter text is empty'));
+        } else if (isInvalidWildcard(textToSearch)) {
+            return handleError(res,
+                new RestApiError("400", 'parameter text '+req.params.name+' is not a valid wildcard. Neither can contain a * nor a .'));
+        } else {
+            var sortColumn = {};
+            sortColumn[idName] = 1;
+            findLimited(req, res, collection, idName, 
+                { "$text": { 
+                    "$search": textToSearch,
+                    "$diacriticSensitive": true
+                } }, sortColumn );
+        }
+    });
 
+    router.get('/'+typeMultiple+'/search/near/:longitude,:latitude,:meter', function(req, res) {
+        var db = req.db;
+        var collection = db.get(typeMultiple);
+        if (!isNumeric(req.params.longitude)) {
+            return handleError(res,
+                new RestApiError("400", 'longitude '+req.params.longitude+'is not numeric'));
+        }
+        if (!isNumeric(req.params.latitude)) {
+            return handleError(res,
+                new RestApiError("400", 'latitude '+req.params.latitude+'is not numeric'));
+        }
+        if (!isNumeric(req.params.meter)) {
+            return handleError(res,
+                new RestApiError("400", 'meter '+req.params.meter+'is not numeric'));
+        }
+        var longitudeSearch = parseFloat(req.params.longitude);
+        var latitudeSearch = parseFloat(req.params.latitude);
+        var meterSearch = parseInt(req.params.meter);
 
-if (isIdInteger) {
-/*
- * GET model by id (integer)
- */
-router.get('/'+typeMultiple+'/:id', function(req, res) {
-    var db = req.db;
-    var collection = db.get(typeMultiple);
-    if (!isNumeric(req.params.id)) {
-        return handleError(res,
-            new RestApiError("400", 'id '+req.params.id+'is not numeric'));
-    } else {
-        var idToSearch = parseInt(req.params.id);
-        collection.findOne({ id : idToSearch }, function(e,docs){
-            if (handleError(res, e, docs, 'No '+type+' found with id '+idToSearch)) {
-                return;
-            }
-            res.json(docs)
-        });
-    } 
-});
+        var query = {
+            "location" : {
+                "$nearSphere" :
+                    {
+                        "$geometry" : { 
+                            "type" : "Point", 
+                            "coordinates" : [ longitudeSearch, latitudeSearch ] },
+                        "$maxDistance" : meterSearch
+                    }
+        }
+        };
+
+        findLimited(req, res, collection, idName, query, {} );
+    });
     
-} else {
-
-/*
- * GET model by id (string)
- */
-router.get('/'+typeMultiple+'/:id', function(req, res) {
-    var db = req.db;
-    var collection = db.get(typeMultiple);
-    var idToSearch = req.params.id;
-    if (idName == "_id") {
-        collection.findOne({ _id : idToSearch }, function(e,docs){
-            if (handleError(res, e, docs, 'No '+type+' found with _id '+idToSearch)) {
-                return;
-            }
-            res.json(docs);
-        });
-    } else {
-        collection.findOne({ id : idToSearch }, function(e,docs){
-            if (handleError(res, e, docs, 'No '+type+' found with id '+idToSearch)) {
-                return;
-            }
-            res.json(docs);
-        });
-    }
-});
-}
 
 }
 
@@ -326,94 +413,6 @@ router.get('/customers/search/byName/:name', function(req, res) {
 
 
 
-router.get('/customers/search/byWord/:text', function(req, res) {
-    var db = req.db;
-    var collection = db.get('customers');
-    var options = {
-        "sort": "id"
-    }
-    var textToSearch = req.params.text;
-    if (isEmpty(textToSearch)) {
-        return handleError(res,
-            new RestApiError("400", 'parameter text is empty'));
-    } else if (isInvalidWildcard(textToSearch)) {
-        return handleError(res,
-            new RestApiError("400", 'parameter text '+req.params.name+' is not a valid wildcard. Neither can contain a * nor a .'));
-    } else {
-        findLimited(req, res, collection, "id", 
-//            { "$text": { "$search": textToSearch } });
-            { "$text": { 
-                "$search": textToSearch,
-                "$diacriticSensitive": true
-             } }, { "id": 1});
-    }
-});
-
-
-router.get('/customers/search/byQuery/:query/:sort', function(req, res) {
-    var db = req.db;
-    var collection = db.get('customers');
-    var queryStringToSearch = req.params.query;
-    var sortString = req.params.sort;
-    if (isEmpty(queryStringToSearch)) {
-            return handleError(res,
-                new RestApiError("400", 'parameter query is empty'));
-    } else if (isEmpty(sortString)) {
-            return handleError(res,
-                new RestApiError("400", 'parameter sort is empty'));
-    } else {
-        try {
-            var queryToSearch = JSON.parse(queryStringToSearch);
-            try {
-                var sortToSearch = JSON.parse(sortString);
-                findLimited(req, res, collection, "id", queryToSearch, sortToSearch);
-            } catch (e) {
-                return handleError(res,
-                    new RestApiError("400", 'sort is not a valid JSON string <br>&nbsp;'+sortString));
-            }
-        } catch (e) {
-            return handleError(res,
-                new RestApiError("400", 'query is not a valid JSON string <br>&nbsp;'+queryStringToSearch));
-        }
-    }
-});
-
-
-
-router.get('/customers/search/near/:longitude,:latitude,:meter', function(req, res) {
-    var db = req.db;
-    var collection = db.get('customers');
-    if (!isNumeric(req.params.longitude)) {
-        return handleError(res,
-            new RestApiError("400", 'longitude '+req.params.longitude+'is not numeric'));
-    }
-    if (!isNumeric(req.params.latitude)) {
-        return handleError(res,
-            new RestApiError("400", 'latitude '+req.params.latitude+'is not numeric'));
-    }
-    if (!isNumeric(req.params.meter)) {
-        return handleError(res,
-            new RestApiError("400", 'meter '+req.params.meter+'is not numeric'));
-    }
-    var longitudeSearch = parseFloat(req.params.longitude);
-    var latitudeSearch = parseFloat(req.params.latitude);
-    var meterSearch = parseInt(req.params.meter);
-
-    var query = {
-        "location" : {
-            "$nearSphere" :
-                {
-                    "$geometry" : { 
-                        "type" : "Point", 
-                        "coordinates" : [ longitudeSearch, latitudeSearch ] },
-                    "$maxDistance" : meterSearch
-                }
-       }
-    };
-
-    findLimited(req, res, collection, "id", query, {} );
-});
-
 
 
 
@@ -447,7 +446,9 @@ router.get('/categories/:id/subcategories', function(req, res) {
     });
 });
 
+registerModelAPIs('insuranceType', 'insuranceTypes', 'id', false, false);
 registerModelAPIs('risk', 'risks', 'id', false, false);
+
 router.get('/risks/:id/insuranceTypes', function(req, res) {
     var db = req.db;
     var collection = db.get('risks');
@@ -465,7 +466,6 @@ router.get('/risks/:id/insuranceTypes', function(req, res) {
         });
     });
 });
-registerModelAPIs('insuranceType', 'insuranceTypes', 'id', false, false);
 registerModelAPIs('favorite', 'favorites', 'id', false, false);
 
 router.get('/favorites/:id/category', function(req, res) {
@@ -488,3 +488,8 @@ router.get('/favorites/:id/category', function(req, res) {
 
 
 /************* end favorites **************************/
+
+
+/************* start contacts **************************/
+registerModelAPIs('contact', 'contacts', '_id', false, true);
+/************* end contacts **************************/
