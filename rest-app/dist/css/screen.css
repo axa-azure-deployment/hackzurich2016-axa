@@ -536,7 +536,7 @@
 .swagger-section .swagger-ui-wrap input.parameter {
   min-width: 200px;
   max-width: 300px;
-  width: 100%;
+  width: 90%;
   border: 1px solid #aaa;
 }
 .swagger-section .swagger-ui-wrap h1 {

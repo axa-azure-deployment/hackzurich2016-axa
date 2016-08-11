@@ -1,5 +1,7 @@
 var importMeta = [
     { "collection" : "customers", "file" : "./customers/customers.json"},
+    { "collection" : "profiles", "file" : "./customers/profiles.json"},
+    
     { "collection" : "trips", "file" : "./telematics/all-trips.json"},
     { "collection" : "transactions", "file" : "./transactions/transactions.json"},
 

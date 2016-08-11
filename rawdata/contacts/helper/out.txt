@@ -1,0 +1,384 @@
+  ProfileResultList:
+    description: result of Profile search used for paging
+    type: object
+    properties:
+      data:
+        $ref: '#/definitions/Profiles'
+      links:
+        $ref: '#/definitions/Link'
+
+  Profiles:
+    type: array
+    items:
+      $ref: '#/definitions/Profile'
+
+  Profile:
+    description: tbd
+    type: object
+    properties:
+      id:
+        description: tbd
+        type: string
+      customer:
+        description: tbd
+        type: string
+      profile_date:
+        description: tbd
+        type: string
+      segment_overall:
+        description: tbd
+        type: string
+      segment_age:
+        description: tbd
+        type: string
+      nof_housing_partner:
+        description: tbd
+        type: number
+        format: integer
+      nof_housing_flat:
+        description: tbd
+        type: number
+        format: integer
+      nof_housing_homeowner:
+        description: tbd
+        type: number
+        format: integer
+      nof_residents:
+        description: tbd
+        type: number
+        format: integer
+      nof_kids_total:
+        description: tbd
+        type: number
+        format: integer
+      nof_kids_under_18:
+        description: tbd
+        type: number
+        format: integer
+      nof_cars:
+        description: tbd
+        type: number
+        format: integer
+
+
+  CategoryResultList:
+    description: result of Category search used for paging
+    type: object
+    properties:
+      data:
+        $ref: '#/definitions/Categories'
+      links:
+        $ref: '#/definitions/Link'
+
+  Categories:
+    type: array
+    items:
+      $ref: '#/definitions/Category'
+
+  Category:
+    description: tbd
+    type: object
+    properties:
+      _id:
+        description: tbd
+        type: string
+      id:
+        description: tbd
+        type: string
+      value:
+        description: tbd
+        type: string
+      parent:
+        description: tbd
+        type: string
+
+
+  RiskResultList:
+    description: result of Risk search used for paging
+    type: object
+    properties:
+      data:
+        $ref: '#/definitions/Risks'
+      links:
+        $ref: '#/definitions/Link'
+
+  Risks:
+    type: array
+    items:
+      $ref: '#/definitions/Risk'
+
+  Risk:
+    description: tbd
+    type: object
+    properties:
+      _id:
+        description: tbd
+        type: string
+      id:
+        description: tbd
+        type: string
+      value:
+        description: tbd
+        type: string
+      lineOfBusiness:
+        description: tbd
+        type: string
+
+
+  FavoriteResultList:
+    description: result of Favorite search used for paging
+    type: object
+    properties:
+      data:
+        $ref: '#/definitions/Favorites'
+      links:
+        $ref: '#/definitions/Link'
+
+  Favorites:
+    type: array
+    items:
+      $ref: '#/definitions/Favorite'
+
+  Favorite:
+    description: tbd
+    type: object
+    properties:
+      id:
+        description: tbd
+        type: string
+      title:
+        description: tbd
+        type: string
+      category:
+        description: tbd
+        type: string
+      model:
+        description: tbd
+        type: string
+      price:
+        description: tbd
+        type: object
+        properties:
+          value:
+            description: tbd
+            type: string
+          currency:
+            description: tbd
+            type: string
+      currentPrice:
+        description: tbd
+        type: object
+        properties:
+          value:
+            description: tbd
+            type: string
+          currency:
+            description: tbd
+            type: string
+      purchaseDate:
+        description: tbd
+        type: object
+        properties:
+          day:
+            description: tbd
+            type: string
+          month:
+            description: tbd
+            type: string
+          year:
+            description: tbd
+            type: string
+
+
+  ContactResultList:
+    description: result of Contact search used for paging
+    type: object
+    properties:
+      data:
+        $ref: '#/definitions/Contacts'
+      links:
+        $ref: '#/definitions/Link'
+
+  Contacts:
+    type: array
+    items:
+      $ref: '#/definitions/Contact'
+
+  Contact:
+    description: tbd
+    type: object
+    properties:
+      _id:
+        description: tbd
+        type: string
+      type:
+        description: tbd
+        type: string
+      city:
+        description: tbd
+        type: string
+      language:
+        description: tbd
+        type: string
+      location:
+        description: tbd
+        type: object
+        properties:
+          type:
+            description: tbd
+            type: string
+          coordinates:
+            type: array
+            items:
+              description: tbd
+              type: number
+              format: float
+      mail:
+        description: tbd
+        type: string
+      name:
+        description: tbd
+        type: string
+      phone:
+        description: tbd
+        type: string
+      street:
+        description: tbd
+        type: string
+      zip:
+        description: tbd
+        type: string
+      openingHours:
+        description: tbd
+        type: object
+        properties:
+          days:
+            description: tbd
+            type: object
+            properties:
+              Mo:
+                description: tbd
+                type: object
+                properties:
+                  ranges:
+                    description: tbd
+                    type: object
+                    properties:
+                      8:00:
+                        description: tbd
+                        type: string
+                      13:00:
+                        description: tbd
+                        type: string
+              Di:
+                description: tbd
+                type: object
+                properties:
+                  ranges:
+                    description: tbd
+                    type: object
+                    properties:
+                      8:00:
+                        description: tbd
+                        type: string
+                      13:00:
+                        description: tbd
+                        type: string
+              Mi:
+                description: tbd
+                type: object
+                properties:
+                  ranges:
+                    description: tbd
+                    type: object
+                    properties:
+                      8:00:
+                        description: tbd
+                        type: string
+                      13:00:
+                        description: tbd
+                        type: string
+              Do:
+                description: tbd
+                type: object
+                properties:
+                  ranges:
+                    description: tbd
+                    type: object
+                    properties:
+                      8:00:
+                        description: tbd
+                        type: string
+                      13:00:
+                        description: tbd
+                        type: string
+              Fr:
+                description: tbd
+                type: object
+                properties:
+                  ranges:
+                    description: tbd
+                    type: object
+                    properties:
+                      8:00:
+                        description: tbd
+                        type: string
+                      13:00:
+                        description: tbd
+                        type: string
+              Sa:
+                description: tbd
+                type: object
+                properties:
+                  ranges:
+                    description: tbd
+                    type: object
+                    properties:
+                      8:00:
+                        description: tbd
+                        type: string
+                      13:00:
+                        description: tbd
+                        type: string
+      agents:
+        type: array
+        items:
+          description: tbd
+          type: object
+          properties:
+            agentStatus:
+              description: tbd
+              type: string
+            email:
+              description: tbd
+              type: string
+            firstname:
+              description: tbd
+              type: string
+            lastname:
+              description: tbd
+              type: string
+            mobile:
+              description: tbd
+              type: string
+            phone:
+              description: tbd
+              type: string
+      closedOnDays:
+        description: tbd
+        type: object
+        properties:
+          days:
+            type: array
+            items:
+              description: tbd
+              type: object
+              properties:
+                event:
+                  description: tbd
+                  type: string
+                date:
+                  description: tbd
+                  type: string
+
+

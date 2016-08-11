@@ -3,11 +3,248 @@
     "info": {
         "version": "0.9.2",
         "title": "hackzurich 2016 - AXA Winterthur - API",
-        "description": "AXA Winterthur is very proud to be Gold Sponsor of \"hackzurich\" http://hackzurich.ch in 2016 taken place at Technopark, Zürich, Switzerland.\n\nOur topic is __\"Insurance as simple as a Game\" aka \"Clash of claims\"__. See more detailed information about the Workshop and the competition  here (TBD)\n\n***\n__Data privacy__: all data are examples, partly generated, anonymized and cannot be linked with any existing customer or prospect of AXA. Some data is generated using [Random Point Generator](http://www.geomidpoint.com/random/). \n\n***\nThe current API represents the most used domain objects of an insurance. We provide 2 different types: static / configation data and dynamic data, based on 10'000 predefined customers.\n\n__Developers:__ here you can get the full source code, nodejs app and mongodb-load-data from our GIT repo https://github.com/lolo8304/hackzurich2016-axa\n\n__Endpoint:__ use our SaaS REST services running on https://localhost:3000/axa/... (details see swagger documentation)\n\n__Swagger:__ use (this) swagger documentation on https://localhost:3000\n- see our [JSON version](https://localhost:3000/swagger.json) and [YAML version](https://localhost:3000/swagger.yaml)\n- see our special localhost:3000 swagger [YAML version](https://localhost:3000/swagger.local.yaml) and [JSON version](https://localhost:3000/swagger.local.json) to support local development without need of a swagger web distribution\n\n***\n__Dynamic data__ (prefilled with examples)\n- **customer data**: most attributes of a customer eg naming, address, date of birth, ... (10'000 customers)\n- **profile data**: important profile data of the customer\n- **contracts**: insurance contracts of the customer\n- **trips**: telmatics data of some real trips, locations and events an (only 7 trips, >25 events, > 650 GPS positions)\n- **transactions**: financial transactions issued to (>1000 transactions)\n- **favorites**: your most valuable objects to be insured by object or overall\n\n__Static / configuration data__\n- **contacts**: all AXA agencies with GEO location, some attributes anonymized \n- **car + truck data**: some vehicle types and attributes, incl CO2 and energy attributes (>1700 cars, >350 trucks)\n- **insurance types**: list of all types of insurances, group by L&S, P&C and health (>20 types)\n- **risk types**: risks possible to be able taken for the customer (>20 risks)\n- **favorite risk object categories**: object categories to describe your favorite object (>20 categories)\n"
+        "description": "AXA Winterthur is very proud to be Gold Sponsor of \"hackzurich\" http://hackzurich.ch in 2016 taken place at Technopark, Zürich, Switzerland.\n\nOur topic is __\"Insurance as simple as a Game\" aka \"Clash of claims\"__. See more detailed information about the Workshop and the competition  here (TBD)\n\n***\n__Data privacy__: all data are examples, partly generated, anonymized and cannot be linked with any existing customer or prospect of AXA. Some data is generated using [Random Point Generator](http://www.geomidpoint.com/random/). \n\n***\nThe current API represents the most used domain objects of an insurance. We provide 2 different types: static / configation data and dynamic data, based on 10'000 predefined customers.\n\n__Developers:__ here you can get the full source code, nodejs app and mongodb-load-data from our GIT repo https://github.com/lolo8304/hackzurich2016-axa\n\n__Endpoint:__ use our SaaS REST services running on https://localhost:3000/axa/... (details see swagger documentation)\n\n__Swagger:__ use (this) swagger documentation on https://localhost:3000\n- see our [JSON version](https://localhost:3000/swagger.json) and [YAML version](https://localhost:3000/swagger.yaml)\n- see our special localhost:3000 swagger [YAML version](https://localhost:3000/swagger.local.yaml) and [JSON version](https://localhost:3000/swagger.local.json) to support local development without need of a swagger web distribution\n\n***\n__Dynamic data__ (prefilled with examples)\n- **customer data**: most attributes of a customer eg naming, address, date of birth, ... (10'000 customers)\n- **profile data**: important profile data of the customer\n- **contracts**: insurance contracts of the customer\n- **claims**: insurance claims of the customer\n- **trips**: telmatics data of some real trips, locations and events an (only 7 trips, >25 events, > 650 GPS positions)\n- **transactions**: financial transactions issued to (>1000 transactions)\n- **favorites**: your most valuable objects to be insured by object or overall\n\n__Static / configuration data__\n- **contacts**: all AXA agencies with GEO location, some attributes anonymized \n- **car + truck data**: some vehicle types and attributes, incl CO2 and energy attributes (>1700 cars, >350 trucks)\n- **insurance types**: list of all types of insurances, group by L&S, P&C and health (>20 types)\n- **risk types**: risks possible to be able taken for the customer (>20 risks)\n- **favorite risk object categories**: object categories to describe your favorite object (>20 categories)\n"
     },
     "host": "localhost:3000",
     "basePath": "/axa",
     "definitions": {
+        "ProfileResultList": {
+            "description": "result of Profile search used for paging",
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/Profiles"
+                },
+                "links": {
+                    "$ref": "#/definitions/Link"
+                }
+            }
+        },
+        "Profiles": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Profile"
+            }
+        },
+        "Profile": {
+            "description": "tbd",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "description": "tbd",
+                    "type": "string"
+                },
+                "customer": {
+                    "description": "tbd",
+                    "type": "string"
+                },
+                "profile_date": {
+                    "description": "tbd",
+                    "type": "string"
+                },
+                "segment_overall": {
+                    "description": "tbd",
+                    "type": "string"
+                },
+                "segment_age": {
+                    "description": "tbd",
+                    "type": "string"
+                },
+                "nof_housing_partner": {
+                    "description": "tbd",
+                    "type": "number",
+                    "format": "integer"
+                },
+                "nof_housing_flat": {
+                    "description": "tbd",
+                    "type": "number",
+                    "format": "integer"
+                },
+                "nof_housing_homeowner": {
+                    "description": "tbd",
+                    "type": "number",
+                    "format": "integer"
+                },
+                "nof_residents": {
+                    "description": "tbd",
+                    "type": "number",
+                    "format": "integer"
+                },
+                "nof_kids_total": {
+                    "description": "tbd",
+                    "type": "number",
+                    "format": "integer"
+                },
+                "nof_kids_under_18": {
+                    "description": "tbd",
+                    "type": "number",
+                    "format": "integer"
+                },
+                "nof_cars": {
+                    "description": "tbd",
+                    "type": "number",
+                    "format": "integer"
+                }
+            }
+        },
+        "CategoryResultList": {
+            "description": "result of Category search used for paging",
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/Categories"
+                },
+                "links": {
+                    "$ref": "#/definitions/Link"
+                }
+            }
+        },
+        "Categories": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Category"
+            }
+        },
+        "Category": {
+            "description": "tbd",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "description": "tbd",
+                    "type": "string"
+                },
+                "value": {
+                    "description": "tbd",
+                    "type": "string"
+                },
+                "parent": {
+                    "description": "tbd",
+                    "type": "string"
+                }
+            }
+        },
+        "RiskResultList": {
+            "description": "result of Risk search used for paging",
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/Risks"
+                },
+                "links": {
+                    "$ref": "#/definitions/Link"
+                }
+            }
+        },
+        "Risks": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Risk"
+            }
+        },
+        "Risk": {
+            "description": "tbd",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "description": "tbd",
+                    "type": "string"
+                },
+                "value": {
+                    "description": "tbd",
+                    "type": "string"
+                },
+                "lineOfBusiness": {
+                    "description": "tbd",
+                    "type": "string"
+                }
+            }
+        },
+        "FavoriteResultList": {
+            "description": "result of Favorite search used for paging",
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/Favorites"
+                },
+                "links": {
+                    "$ref": "#/definitions/Link"
+                }
+            }
+        },
+        "Favorites": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Favorite"
+            }
+        },
+        "Favorite": {
+            "description": "tbd",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "description": "tbd",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "tbd",
+                    "type": "string"
+                },
+                "category": {
+                    "description": "tbd",
+                    "type": "string"
+                },
+                "model": {
+                    "description": "tbd",
+                    "type": "string"
+                },
+                "price": {
+                    "description": "tbd",
+                    "type": "object",
+                    "properties": {
+                        "value": {
+                            "description": "tbd",
+                            "type": "string"
+                        },
+                        "currency": {
+                            "description": "tbd",
+                            "type": "string"
+                        }
+                    }
+                },
+                "currentPrice": {
+                    "description": "tbd",
+                    "type": "object",
+                    "properties": {
+                        "value": {
+                            "description": "tbd",
+                            "type": "string"
+                        },
+                        "currency": {
+                            "description": "tbd",
+                            "type": "string"
+                        }
+                    }
+                },
+                "purchaseDate": {
+                    "description": "tbd",
+                    "type": "object",
+                    "properties": {
+                        "day": {
+                            "description": "tbd",
+                            "type": "string"
+                        },
+                        "month": {
+                            "description": "tbd",
+                            "type": "string"
+                        },
+                        "year": {
+                            "description": "tbd",
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
         "ContactResultList": {
             "description": "result of AXA agencies search used for paging",
             "type": "object",
@@ -182,12 +419,20 @@
                     "description": "id of insurance type"
                 },
                 "name": {
+                    "description": "summary description",
                     "type": "string"
                 },
                 "lineOfBusiness": {
-                    "type": "string"
+                    "description": "line of business. P&C=Property & Casualty, L&S=Life & Savings, Health=Health",
+                    "type": "string",
+                    "enum": [
+                        "P&C",
+                        "L&S",
+                        "Health"
+                    ]
                 },
                 "description": {
+                    "description": "explanation description",
                     "type": "string"
                 }
             }
@@ -850,8 +1095,7 @@
                 "summary": "list of all customers, use ranges",
                 "description": "get all customers using. max limit 25, using skip + limit to range\n",
                 "tags": [
-                    "Customer",
-                    "Customer search"
+                    "Customer"
                 ],
                 "parameters": [
                     {
@@ -1188,6 +1432,39 @@
                 }
             }
         },
+        "/customers/{id}/profiles": {
+            "get": {
+                "summary": "get the customer profiles",
+                "description": "get all customer profiles every created\n",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of customer",
+                        "required": true,
+                        "type": "string",
+                        "format": "integer"
+                    }
+                ],
+                "tags": [
+                    "Customer"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "$ref": "#/definitions/Profiles"
+                        }
+                    },
+                    "404": {
+                        "description": "customer not found"
+                    },
+                    "500": {
+                        "description": "technical server error"
+                    }
+                }
+            }
+        },
         "/customers/{id}/trips": {
             "get": {
                 "summary": "get all telematic trips and events of the customer",
@@ -1245,6 +1522,167 @@
                         "description": "Successful response",
                         "schema": {
                             "$ref": "#/definitions/Transactions"
+                        }
+                    },
+                    "404": {
+                        "description": "customer not found"
+                    },
+                    "500": {
+                        "description": "technical server error"
+                    }
+                }
+            }
+        },
+        "/customers/{id}/favorites": {
+            "get": {
+                "summary": "get the customer favorite and valuable items",
+                "description": "get all favorite and valuable items of the customer. These objects can be insured as pocket insurance or can be part of another P&C insurance\n",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of customer",
+                        "required": true,
+                        "type": "string",
+                        "format": "integer"
+                    }
+                ],
+                "tags": [
+                    "Customer",
+                    "Favorite"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "$ref": "#/definitions/Favorites"
+                        }
+                    },
+                    "404": {
+                        "description": "customer not found"
+                    },
+                    "500": {
+                        "description": "technical server error"
+                    }
+                }
+            }
+        },
+        "/profiles": {
+            "get": {
+                "summary": "list of all profiles, use ranges",
+                "description": "get all profiles using. max limit 25, using skip + limit to range\n",
+                "tags": [
+                    "Customer"
+                ],
+                "parameters": [
+                    {
+                        "name": "skip",
+                        "in": "query",
+                        "description": "nof items skipped in result. Default = 0. Used with limit for paging",
+                        "required": false,
+                        "type": "integer",
+                        "format": "integer"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "limit no of responses. Default = 10. Used with skip for paging",
+                        "required": false,
+                        "type": "integer",
+                        "format": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "$ref": "#/definitions/ProfileResultList"
+                        }
+                    }
+                }
+            }
+        },
+        "/profiles/search/byQuery/{query}/{sort}": {
+            "get": {
+                "summary": "search profiles using mongodb query, use ranges",
+                "description": "search all profiles using a mongodb query in JSON format - see http://bit.ly/2aI9Djk, using. max limit 25, using skip + limit to range\n",
+                "parameters": [
+                    {
+                        "name": "query",
+                        "in": "path",
+                        "description": "mongodb query in JSON format - see http://bit.ly/2aI9Djk",
+                        "required": true,
+                        "default": "{ \"kilograms\" : 100 }",
+                        "type": "string",
+                        "format": "string"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "path",
+                        "description": "sort column in JSON format, use id as default - see http://bit.ly/2aIaK2I",
+                        "required": true,
+                        "default": "{\"id\" : 1}",
+                        "type": "string",
+                        "format": "string"
+                    },
+                    {
+                        "name": "skip",
+                        "in": "query",
+                        "description": "nof items skipped in result. Default = 0. Used with limit for paging",
+                        "required": false,
+                        "type": "integer",
+                        "format": "integer"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "limit no of responses. Default = 10. Used with skip for paging",
+                        "required": false,
+                        "type": "integer",
+                        "format": "integer"
+                    }
+                ],
+                "tags": [
+                    "Customer search"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "$ref": "#/definitions/ProfileResultList"
+                        }
+                    },
+                    "400": {
+                        "description": "invalid query parameter"
+                    },
+                    "500": {
+                        "description": "technical server error"
+                    }
+                }
+            }
+        },
+        "/profiles/{id}": {
+            "get": {
+                "summary": "get profile with id",
+                "description": "get all attributes of a profile based on id\n",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of customer",
+                        "required": true,
+                        "type": "string",
+                        "format": "integer"
+                    }
+                ],
+                "tags": [
+                    "Customer"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "$ref": "#/definitions/Profile"
                         }
                     },
                     "404": {
@@ -1350,48 +1788,13 @@
                 }
             }
         },
-        "/trips": {
-            "get": {
-                "summary": "get all telematic trips and events",
-                "description": "get all telematics events and positioning information of all trips\n",
-                "tags": [
-                    "Trip"
-                ],
-                "parameters": [
-                    {
-                        "name": "skip",
-                        "in": "query",
-                        "description": "nof items skipped in result. Default = 0. Used with limit for paging",
-                        "required": false,
-                        "type": "integer",
-                        "format": "integer"
-                    },
-                    {
-                        "name": "limit",
-                        "in": "query",
-                        "description": "limit no of responses. Default = 10. Used with skip for paging",
-                        "required": false,
-                        "type": "integer",
-                        "format": "integer"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successful response",
-                        "schema": {
-                            "$ref": "#/definitions/Trips"
-                        }
-                    }
-                }
-            }
-        },
         "/cars": {
             "get": {
                 "summary": "get all cars",
                 "description": "get all cars including CO2, E scores\n",
                 "tags": [
                     "Static",
-                    "Car"
+                    "Car (static)"
                 ],
                 "parameters": [
                     {
@@ -1452,7 +1855,7 @@
                     }
                 ],
                 "tags": [
-                    "Car",
+                    "Car (static)",
                     "Static"
                 ],
                 "responses": {
@@ -1512,7 +1915,7 @@
                     }
                 ],
                 "tags": [
-                    "Car",
+                    "Car (static)",
                     "Static"
                 ],
                 "responses": {
@@ -1537,7 +1940,7 @@
                 "description": "get all trucks including CO2, E scores\n",
                 "tags": [
                     "Static",
-                    "Car"
+                    "Car (static)"
                 ],
                 "parameters": [
                     {
@@ -1598,7 +2001,7 @@
                     }
                 ],
                 "tags": [
-                    "Car",
+                    "Car (static)",
                     "Static"
                 ],
                 "responses": {
@@ -1658,7 +2061,7 @@
                     }
                 ],
                 "tags": [
-                    "Car",
+                    "Car (static)",
                     "Static"
                 ],
                 "responses": {
@@ -1683,7 +2086,7 @@
                 "description": "get all types of insurance\n",
                 "tags": [
                     "Static",
-                    "Contract"
+                    "Contract (static)"
                 ],
                 "responses": {
                     "200": {
@@ -1695,12 +2098,48 @@
                 }
             }
         },
+        "/risks": {
+            "get": {
+                "summary": "get insurance risks",
+                "description": "get all insurance risks\n",
+                "tags": [
+                    "Static",
+                    "Contract (static)"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "$ref": "#/definitions/Risks"
+                        }
+                    }
+                }
+            }
+        },
+        "/categories": {
+            "get": {
+                "summary": "get object categories",
+                "description": "get all object categories to be able to structure and categorize your favorite objects\n",
+                "tags": [
+                    "Static",
+                    "Favorite (static)"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "$ref": "#/definitions/Categories"
+                        }
+                    }
+                }
+            }
+        },
         "/contacts": {
             "get": {
                 "summary": "list of all AXA agencies and contacts, use ranges",
                 "description": "get all AXA agencies and contacts using. max limit 25, using skip + limit to range\n",
                 "tags": [
-                    "Contact",
+                    "Contact (static)",
                     "Static"
                 ],
                 "parameters": [
@@ -1762,7 +2201,7 @@
                     }
                 ],
                 "tags": [
-                    "Contact",
+                    "Contact (static)",
                     "Static"
                 ],
                 "responses": {
@@ -1812,7 +2251,7 @@
                     }
                 ],
                 "tags": [
-                    "Contact",
+                    "Contact (static)",
                     "Static"
                 ],
                 "responses": {
@@ -1872,7 +2311,7 @@
                     }
                 ],
                 "tags": [
-                    "Contact",
+                    "Contact (static)",
                     "Static"
                 ],
                 "responses": {
@@ -1975,7 +2414,7 @@
                     }
                 ],
                 "tags": [
-                    "Contact",
+                    "Contact (static)",
                     "Static"
                 ],
                 "responses": {

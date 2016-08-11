@@ -113,7 +113,7 @@ function buildResponseLimited(req, res, skip, limit, e, docs, totalCount) {
     })
 }
 
-function buildOptions(req, idName, sortColumn) {
+function buildOptions(req, idName, sortColumn, fieldsFilter) {
     var limit = parseInt(req.param('limit'));
     var skip = parseInt(req.param('skip')); 
 
@@ -137,6 +137,9 @@ function buildOptions(req, idName, sortColumn) {
             "skip": skip,
             "sort": sortColumn
         }
+    }
+    if (fieldsFilter != undefined) {
+        options["fields"] = fieldsFilter;
     }
     return options;
 }
@@ -373,6 +376,19 @@ router.get('/customers/:id/trips', function(req, res) {
 });
 
 
+router.get('/customers/:id/profiles', function(req, res) {
+    var db = req.db;
+    var collection = db.get('profiles');
+    var idToSearch = req.params.id;
+    var options = {
+        "sort": "id"
+    }
+    collection.find({ customer : idToSearch }, options, function(e,docs){
+        res.json(docs)
+    });
+});
+
+
 router.get('/customers/search/byZip/:zip', function(req, res) {
     var db = req.db;
     var collection = db.get('customers');
@@ -417,6 +433,13 @@ router.get('/customers/search/byName/:name', function(req, res) {
 
 
 /************* end customers **************************/
+
+/************* start profiles **************************/
+
+registerModelAPIs('profile', 'profiles', 'id', false, true);
+
+/************* end profiles **************************/
+
 
 /************* start trips **************************/
 

@@ -22,10 +22,10 @@
             "outDir": null
         },
         {
-            "name": "Launch-contacts",
+            "name": "Launch-generator",
             "type": "node",
             "request": "launch",
-            "program": "${workspaceRoot}/rawdata/contacts/helper/run-contacts.js",
+            "program": "${workspaceRoot}/rawdata/contacts/helper/run-generator.js",
             "stopOnEntry": false,
             "args": [],
             "cwd": "${workspaceRoot}/rawdata/contacts/helper",

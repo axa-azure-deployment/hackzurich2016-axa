@@ -1,134 +1,134 @@
 [
     {
         "id": "010",
-        "name": "Life Insurance ",
+        "name": "Life Insurance",
         "lineOfBusiness": "L&S",
-        "description": " Pays out a specified figure to the insured or specified beneficiaries on a specific event such as death of the insured. "
+        "description": "Pays out a specified figure to the insured or specified beneficiaries on a specific event such as death of the insured."
     },
     {
         "id": "020",
-        "name": "Personal Accident Insurance ",
+        "name": "Personal Accident Insurance",
         "lineOfBusiness": "L&S",
-        "description": " This will compensate you if at any single time an external violent event causes you disability, injury or death."
+        "description": "This will compensate you if at any single time an external violent event causes you disability, injury or death."
     },
     {
         "id": "030",
-        "name": "Medical and Health Insurance ",
+        "name": "Medical and Health Insurance",
         "lineOfBusiness": "Health",
-        "description": " You’ll need it to ascertain continued flow of income if you fall sick or get injured to the extent that you can’t work and earn as before. It also covers cost of medication, hospitalization and surgery. "
+        "description": "You’ll need it to ascertain continued flow of income if you fall sick or get injured to the extent that you can’t work and earn as before. It also covers cost of medication, hospitalization and surgery."
     },
     {
         "id": "040",
-        "name": "Vehicle Insurance ",
+        "name": "Vehicle Insurance",
         "lineOfBusiness": "P&C",
-        "description": " If you own a car, motor cycle or any other motor vehicle, this insurance covers it against accident or theft. A compressive package covers all possible losses as well as damages to third parties such as pedestrians. "
+        "description": "If you own a car, motor cycle or any other motor vehicle, this insurance covers it against accident or theft. A compressive package covers all possible losses as well as damages to third parties such as pedestrians."
     },
     {
         "id": "050",
-        "name": "Home Insurance ",
+        "name": "Home Insurance",
         "lineOfBusiness": "P&C",
-        "description": " Take this cover to insure your home against loss or damage as a result of fire, electricity fault, plumping malfunction, flood, etc."
+        "description": "Take this cover to insure your home against loss or damage as a result of fire, electricity fault, plumping malfunction, flood, etc."
     },
     {
         "id": "060",
-        "name": "Travel Insurance ",
+        "name": "Travel Insurance",
         "lineOfBusiness": "P&C",
-        "description": " When travelling alone or with your family, this cover ensures you’re compensated for any loss, damage, injury, sickness or inconvenience that comes up as a result. It may cover personal accidents, hijackings, travel delays and more."
+        "description": "When travelling alone or with your family, this cover ensures you’re compensated for any loss, damage, injury, sickness or inconvenience that comes up as a result. It may cover personal accidents, hijackings, travel delays and more."
     },
     {
         "id": "070",
-        "name": "Burial Insurance ",
+        "name": "Burial Insurance",
         "lineOfBusiness": "L&S",
-        "description": " This is a practical way to ease the burden of your funeral expenses on your family and the loved ones you leave behind in the unfortunate event of death. The cover addresses all your funeral costs."
+        "description": "This is a practical way to ease the burden of your funeral expenses on your family and the loved ones you leave behind in the unfortunate event of death. The cover addresses all your funeral costs."
     },
     {
         "id": "080",
-        "name": "Wedding Insurance ",
+        "name": "Wedding Insurance",
         "lineOfBusiness": "P&C",
-        "description": " The cover comes in handy when certain aspects of your wedding go wrong. For instance, if a caterer you already paid goes out of touch when approaching the wedding day, the cover will provide an alternative."
+        "description": "The cover comes in handy when certain aspects of your wedding go wrong. For instance, if a caterer you already paid goes out of touch when approaching the wedding day, the cover will provide an alternative."
     },
     {
         "id": "090",
-        "name": "Dog Bite Insurance ",
+        "name": "Dog Bite Insurance",
         "lineOfBusiness": "P&C",
-        "description": " An aggressive dog may bite children, the elderly or even postal carriers within your home compound. Thus, you need this insurance to protect your assets if sued for dog bite."
+        "description": "An aggressive dog may bite children, the elderly or even postal carriers within your home compound. Thus, you need this insurance to protect your assets if sued for dog bite."
     },
     {
         "id": "100",
-        "name": "Portable Electronic Device Insurance ",
+        "name": "Portable Electronic Device Insurance",
         "lineOfBusiness": "P&C",
-        "description": " This covers portable devices such as cell phones, laptops or tablets. The cover ensures replacement or repair of such devices if they’re stolen, lost or damaged."
+        "description": "This covers portable devices such as cell phones, laptops or tablets. The cover ensures replacement or repair of such devices if they’re stolen, lost or damaged."
     },
     {
         "id": "110",
-        "name": "Crime Insurance ",
+        "name": "Crime Insurance",
         "lineOfBusiness": "P&C",
-        "description": " This covers you or your business against loss or damage as a result of criminal acts of third parties. Covered risks include loss of funds through embezzlement by employees."
+        "description": "This covers you or your business against loss or damage as a result of criminal acts of third parties. Covered risks include loss of funds through embezzlement by employees."
     },
     {
         "id": "120",
-        "name": "Political Risk Insurance ",
+        "name": "Political Risk Insurance",
         "lineOfBusiness": "P&C",
-        "description": " This cover protects your business against loss or damage arising from politically-related conditions such as civil unrest, coups, riots and revolutions."
+        "description": "This cover protects your business against loss or damage arising from politically-related conditions such as civil unrest, coups, riots and revolutions."
     },
     {
         "id": "130",
-        "name": "Workers Compensation ",
+        "name": "Workers Compensation",
         "lineOfBusiness": "L&S",
-        "description": " An employer takes this policy on behalf of their employees to cover loss of income or medical expenses resulting from a work-related injury or sickness."
+        "description": "An employer takes this policy on behalf of their employees to cover loss of income or medical expenses resulting from a work-related injury or sickness."
     },
     {
         "id": "140",
-        "name": "Disability Overhead Insurance ",
+        "name": "Disability Overhead Insurance",
         "lineOfBusiness": "L&S",
-        "description": " This is a cover against overhead expenses for business owners who are unable to work."
+        "description": "This is a cover against overhead expenses for business owners who are unable to work."
     },
     {
         "id": "150",
-        "name": "Aviation Insurance ",
+        "name": "Aviation Insurance",
         "lineOfBusiness": "P&C",
-        "description": " This covers aircraft operations against aviation risks. Specific policies will offer compensation for damaged aircraft as well as cover third party liabilities such as injured or killed passengers, damaged crops or property etc."
+        "description": "This covers aircraft operations against aviation risks. Specific policies will offer compensation for damaged aircraft as well as cover third party liabilities such as injured or killed passengers, damaged crops or property etc."
     },
     {
         "id": "160",
-        "name": "Crop Insurance ",
+        "name": "Crop Insurance",
         "lineOfBusiness": "P&C",
-        "description": " If you’re a farmer, the cover protects you from losses associated with crop failure as a result of bad weather, infection or infestation."
+        "description": "If you’re a farmer, the cover protects you from losses associated with crop failure as a result of bad weather, infection or infestation."
     },
     {
         "id": "170",
-        "name": "Earth Quake Insurance ",
+        "name": "Earth Quake Insurance",
         "lineOfBusiness": "P&C",
-        "description": " This is a good way to cover your home or property against loss or damage emanating from an earthquake."
+        "description": "This is a good way to cover your home or property against loss or damage emanating from an earthquake."
     },
     {
         "id": "180",
-        "name": "Terrorism Insurance ",
+        "name": "Terrorism Insurance",
         "lineOfBusiness": "L&S",
-        "description": " The cover duly compensates you for loss or damage that results from acts of terrorism such as bombings or mass shootings."
+        "description": "The cover duly compensates you for loss or damage that results from acts of terrorism such as bombings or mass shootings."
     },
     {
         "id": "190",
-        "name": "Kidnap and Ransom Insurance ",
+        "name": "Kidnap and Ransom Insurance",
         "lineOfBusiness": "L&S",
-        "description": " This cover comes to the rescue where ransom payment is necessary to secure the release of someone you love or associated with if they’re kidnapped, detained or hijacked."
+        "description": "This cover comes to the rescue where ransom payment is necessary to secure the release of someone you love or associated with if they’re kidnapped, detained or hijacked."
     },
     {
         "id": "200",
-        "name": "Plant Insurance ",
+        "name": "Plant Insurance",
         "lineOfBusiness": "P&C",
-        "description": " This cover protects industrial equipment, machinery and plant such as tractors and earth movers against loss or damage."
+        "description": "This cover protects industrial equipment, machinery and plant such as tractors and earth movers against loss or damage."
     },
     {
         "id": "210",
-        "name": "Professional Liability Insurance ",
+        "name": "Professional Liability Insurance",
         "lineOfBusiness": "P&C",
-        "description": " This protects professionals such as doctors and architects when their clients bring negligence claims against them."
+        "description": "This protects professionals such as doctors and architects when their clients bring negligence claims against them."
     },
     {
         "id": "220",
-        "name": "Mortgage Insurance ",
+        "name": "Mortgage Insurance",
         "lineOfBusiness": "P&C",
-        "description": " The cover comes to the aid of a lender if a homebuyer defaults."
+        "description": "The cover comes to the aid of a lender if a homebuyer defaults."
     }
 ]

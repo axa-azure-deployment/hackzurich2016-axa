@@ -26,6 +26,7 @@ info:
     - **customer data**: most attributes of a customer eg naming, address, date of birth, ... (10'000 customers)
     - **profile data**: important profile data of the customer
     - **contracts**: insurance contracts of the customer
+    - **claims**: insurance claims of the customer
     - **trips**: telmatics data of some real trips, locations and events an (only 7 trips, >25 events, > 650 GPS positions)
     - **transactions**: financial transactions issued to (>1000 transactions)
     - **favorites**: your most valuable objects to be insured by object or overall
@@ -42,6 +43,192 @@ host: localhost:3000
 
 basePath: /axa
 definitions:
+
+  ProfileResultList:
+    description: result of Profile search used for paging
+    type: object
+    properties:
+      data:
+        $ref: '#/definitions/Profiles'
+      links:
+        $ref: '#/definitions/Link'
+
+  Profiles:
+    type: array
+    items:
+      $ref: '#/definitions/Profile'
+
+  Profile:
+    description: tbd
+    type: object
+    properties:
+      id:
+        description: tbd
+        type: string
+      customer:
+        description: tbd
+        type: string
+      profile_date:
+        description: tbd
+        type: string
+      segment_overall:
+        description: tbd
+        type: string
+      segment_age:
+        description: tbd
+        type: string
+      nof_housing_partner:
+        description: tbd
+        type: number
+        format: integer
+      nof_housing_flat:
+        description: tbd
+        type: number
+        format: integer
+      nof_housing_homeowner:
+        description: tbd
+        type: number
+        format: integer
+      nof_residents:
+        description: tbd
+        type: number
+        format: integer
+      nof_kids_total:
+        description: tbd
+        type: number
+        format: integer
+      nof_kids_under_18:
+        description: tbd
+        type: number
+        format: integer
+      nof_cars:
+        description: tbd
+        type: number
+        format: integer
+
+
+  CategoryResultList:
+    description: result of Category search used for paging
+    type: object
+    properties:
+      data:
+        $ref: '#/definitions/Categories'
+      links:
+        $ref: '#/definitions/Link'
+
+  Categories:
+    type: array
+    items:
+      $ref: '#/definitions/Category'
+
+  Category:
+    description: tbd
+    type: object
+    properties:
+      id:
+        description: tbd
+        type: string
+      value:
+        description: tbd
+        type: string
+      parent:
+        description: tbd
+        type: string
+
+
+  RiskResultList:
+    description: result of Risk search used for paging
+    type: object
+    properties:
+      data:
+        $ref: '#/definitions/Risks'
+      links:
+        $ref: '#/definitions/Link'
+
+  Risks:
+    type: array
+    items:
+      $ref: '#/definitions/Risk'
+
+  Risk:
+    description: tbd
+    type: object
+    properties:
+      id:
+        description: tbd
+        type: string
+      value:
+        description: tbd
+        type: string
+      lineOfBusiness:
+        description: tbd
+        type: string
+
+
+  FavoriteResultList:
+    description: result of Favorite search used for paging
+    type: object
+    properties:
+      data:
+        $ref: '#/definitions/Favorites'
+      links:
+        $ref: '#/definitions/Link'
+
+  Favorites:
+    type: array
+    items:
+      $ref: '#/definitions/Favorite'
+
+  Favorite:
+    description: tbd
+    type: object
+    properties:
+      id:
+        description: tbd
+        type: string
+      title:
+        description: tbd
+        type: string
+      category:
+        description: tbd
+        type: string
+      model:
+        description: tbd
+        type: string
+      price:
+        description: tbd
+        type: object
+        properties:
+          value:
+            description: tbd
+            type: string
+          currency:
+            description: tbd
+            type: string
+      currentPrice:
+        description: tbd
+        type: object
+        properties:
+          value:
+            description: tbd
+            type: string
+          currency:
+            description: tbd
+            type: string
+      purchaseDate:
+        description: tbd
+        type: object
+        properties:
+          day:
+            description: tbd
+            type: string
+          month:
+            description: tbd
+            type: string
+          year:
+            description: tbd
+            type: string
+
 
   ContactResultList:
     description: result of AXA agencies search used for paging
@@ -173,10 +360,17 @@ definitions:
         format: integer
         description: id of insurance type
       name:
+        description: summary description
         type: string
       lineOfBusiness:
+        description: line of business. P&C=Property & Casualty, L&S=Life & Savings, Health=Health
         type: string
+        enum:
+          - P&C
+          - L&S
+          - Health
       description:
+        description: explanation description 
         type: string
 
 
@@ -682,7 +876,6 @@ paths:
         get all customers using. max limit 25, using skip + limit to range
       tags:
         - Customer
-        - Customer search
       parameters:
         - name: skip
           in: query
@@ -930,6 +1123,33 @@ paths:
           description: customer not found
         '500':
           description: technical server error
+
+
+
+  /customers/{id}/profiles:
+    get:
+      summary: get the customer profiles 
+      description: |
+        get all customer profiles every created
+      parameters:
+        - name: id
+          in: path
+          description: id of customer
+          required: true
+          type: string
+          format: integer
+      tags:
+        - Customer
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/Profiles'
+        '404':
+          description: customer not found
+        '500':
+          description: technical server error
+
           
   /customers/{id}/trips:
     get:
@@ -980,6 +1200,129 @@ paths:
           description: customer not found
         '500':
           description: technical server error
+
+  /customers/{id}/favorites:
+    get:
+      summary: get the customer favorite and valuable items 
+      description: |
+        get all favorite and valuable items of the customer. These objects can be insured as pocket insurance or can be part of another P&C insurance
+      parameters:
+        - name: id
+          in: path
+          description: id of customer
+          required: true
+          type: string
+          format: integer
+      tags:
+        - Customer
+        - Favorite
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/Favorites'
+        '404':
+          description: customer not found
+        '500':
+          description: technical server error
+
+
+  /profiles:
+    get:
+      summary: list of all profiles, use ranges
+      description: |
+        get all profiles using. max limit 25, using skip + limit to range
+      tags:
+        - Customer
+      parameters:
+        - name: skip
+          in: query
+          description: nof items skipped in result. Default = 0. Used with limit for paging
+          required: false
+          type: integer
+          format: integer
+        - name: limit
+          in: query
+          description: limit no of responses. Default = 10. Used with skip for paging
+          required: false
+          type: integer
+          format: integer
+
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ProfileResultList'
+
+  /profiles/search/byQuery/{query}/{sort}:
+    get:
+      summary: search profiles using mongodb query, use ranges
+      description: |
+        search all profiles using a mongodb query in JSON format - see http://bit.ly/2aI9Djk, using. max limit 25, using skip + limit to range
+      parameters:
+        - name: query
+          in: path
+          description: mongodb query in JSON format - see http://bit.ly/2aI9Djk
+          required: true
+          default: '{ "kilograms" : 100 }'
+          type: string
+          format: string
+        - name: sort
+          in: path
+          description: sort column in JSON format, use id as default - see http://bit.ly/2aIaK2I
+          required: true
+          default: '{"id" : 1}'
+          type: string
+          format: string
+        - name: skip
+          in: query
+          description: nof items skipped in result. Default = 0. Used with limit for paging
+          required: false
+          type: integer
+          format: integer
+        - name: limit
+          in: query
+          description: limit no of responses. Default = 10. Used with skip for paging
+          required: false
+          type: integer
+          format: integer
+      tags:
+        - Customer search
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ProfileResultList'
+        '400':
+          description: invalid query parameter
+        '500':
+          description: technical server error
+
+
+  /profiles/{id}:
+    get:
+      summary: get profile with id
+      description: |
+        get all attributes of a profile based on id
+      parameters:
+        - name: id
+          in: path
+          description: id of customer
+          required: true
+          type: string
+          format: integer
+      tags:
+        - Customer
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/Profile'
+        '404':
+          description: customer not found
+        '500':
+          description: technical server error
+
 
   /transactions:
     get:
@@ -1053,33 +1396,6 @@ paths:
           description: technical server error
 
 
-  /trips:
-    get:
-      summary: get all telematic trips and events
-      description: |
-        get all telematics events and positioning information of all trips
-      tags:
-        - Trip
-      parameters:
-        - name: skip
-          in: query
-          description: nof items skipped in result. Default = 0. Used with limit for paging
-          required: false
-          type: integer
-          format: integer
-        - name: limit
-          in: query
-          description: limit no of responses. Default = 10. Used with skip for paging
-          required: false
-          type: integer
-          format: integer
-
-      responses:
-        '200':
-          description: Successful response
-          schema:
-            $ref: '#/definitions/Trips'
-
   /cars:
     get:
       summary: get all cars
@@ -1087,7 +1403,7 @@ paths:
         get all cars including CO2, E scores
       tags:
         - Static
-        - Car
+        - Car (static)
       parameters:
         - name: skip
           in: query
@@ -1133,7 +1449,7 @@ paths:
           type: integer
           format: integer
       tags:
-        - Car
+        - Car (static)
         - Static
       responses:
         '200':
@@ -1179,7 +1495,7 @@ paths:
           type: integer
           format: integer
       tags:
-        - Car
+        - Car (static)
         - Static
       responses:
         '200':
@@ -1198,7 +1514,7 @@ paths:
         get all trucks including CO2, E scores
       tags:
         - Static
-        - Car
+        - Car (static)
       parameters:
         - name: skip
           in: query
@@ -1246,7 +1562,7 @@ paths:
           type: integer
           format: integer
       tags:
-        - Car
+        - Car (static)
         - Static
       responses:
         '200':
@@ -1292,7 +1608,7 @@ paths:
           type: integer
           format: integer
       tags:
-        - Car
+        - Car (static)
         - Static
       responses:
         '200':
@@ -1313,13 +1629,42 @@ paths:
         get all types of insurance
       tags:
         - Static
-        - Contract
+        - Contract (static)
       responses:
         '200':
           description: Successful response
           schema:
             $ref: '#/definitions/InsuranceTypes'
 
+
+  /risks:
+    get:
+      summary: get insurance risks
+      description: |
+        get all insurance risks
+      tags:
+        - Static
+        - Contract (static)
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/Risks'
+
+
+  /categories:
+    get:
+      summary: get object categories
+      description: |
+        get all object categories to be able to structure and categorize your favorite objects
+      tags:
+        - Static
+        - Favorite (static)
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/Categories'
 
 
 
@@ -1332,7 +1677,7 @@ paths:
       description: |
         get all AXA agencies and contacts using. max limit 25, using skip + limit to range
       tags:
-        - Contact
+        - Contact (static)
         - Static
       parameters:
         - name: skip
@@ -1379,7 +1724,7 @@ paths:
           type: integer
           format: integer
       tags:
-        - Contact
+        - Contact (static)
         - Static
       responses:
         '200':
@@ -1416,7 +1761,7 @@ paths:
           type: integer
           format: integer
       tags:
-        - Contact
+        - Contact (static)
         - Static
       responses:
         '200':
@@ -1461,7 +1806,7 @@ paths:
           type: integer
           format: integer
       tags:
-        - Contact
+        - Contact (static)
         - Static
       responses:
         '200':
@@ -1539,7 +1884,7 @@ paths:
           type: string
           format: integer
       tags:
-        - Contact
+        - Contact (static)
         - Static
       responses:
         '200':
