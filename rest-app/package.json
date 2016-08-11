@@ -33,6 +33,7 @@
     "express": "~4.13.4",
     "mongodb": "^1.4.4",
     "monk": "^1.0.1",
+    "morgan": "^1.7.0",
     "express-cors": "^0.0.3",
 
     "swagger-node-express": "2.1.3",
