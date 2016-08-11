@@ -1495,7 +1495,7 @@ paths:
           in: path
           description: define nearest area to location in meter
           required: true
-          default: 1000
+          default: 20000
           type: number
           format: integer
         - name: skip
