@@ -84,7 +84,7 @@ var profile = {
             if (this.object.age <= 45 && this.object.nof_kids_under_7 > 0) {
                 return "Young family";
             }
-            if (this.object.age >= 26 && this.object.age <= 49 && this.object.nof_kids_under_7 == 0) {
+            if (this.object.age >= 26 && this.object.age <= 49 && this.object.nof_kids_under_7 > 0) {
                 return "Established family";
             }
             if (this.object.age >= 46 && this.object.age <= 49 && this.object.nof_kids_total > 0) {
@@ -143,7 +143,7 @@ var profile = {
     },
     nof_residents: {
         function: function () {
-            return this.object.nof_housing_partner + this.object.nof_kids_total;
+            return this.object.nof_housing_partner + this.object.nof_kids_total + 1;
         }
     },
     age_segment: {
