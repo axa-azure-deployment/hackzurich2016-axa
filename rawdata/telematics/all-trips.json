@@ -1,6 +1,7 @@
 [
     {
         "id": "1",
+        "customer": "1",
         "data": {
             "events": {
                 "lengthUnit": "Km",
@@ -755,6 +756,7 @@
     },
     {
         "id": "2",
+        "customer": "2",
         "data": {
             "events": {
                 "lengthUnit": "Km",
@@ -1515,6 +1517,7 @@
     },
     {
         "id": "3",
+        "customer": "3",
         "data": {
             "events": {
                 "lengthUnit": "Km",
@@ -1666,6 +1669,7 @@
     },
     {
         "id": "4",
+        "customer": "4",
         "data": {
             "events": {
                 "lengthUnit": "Km",
@@ -2404,6 +2408,7 @@
     },
     {
         "id": "5",
+        "customer": "5",
         "data": {
             "events": {
                 "lengthUnit": "Km",
@@ -3050,6 +3055,7 @@
     },
     {
         "id": "6",
+        "customer": "6",
         "data": {
             "events": {
                 "lengthUnit": "Km",
@@ -3484,6 +3490,7 @@
     },
     {
         "id": "7",
+        "customer": "7",
         "data": {
             "events": {
                 "lengthUnit": "Km",
