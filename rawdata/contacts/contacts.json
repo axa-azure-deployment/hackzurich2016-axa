@@ -13,7 +13,7 @@
         "name": "Generalagentur M R",
         "phone": "+41 62 123 45 67",
         "street": "Schlossplatz 1",
-        "zip": "5001",
+        "zip": 5001,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -327,7 +327,7 @@
         "name": "Hauptagentur A C",
         "phone": "+41 56 123 45 67",
         "street": "Neumarktplatz 12",
-        "zip": "5201",
+        "zip": 5201,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -457,7 +457,7 @@
         "name": "Hauptagentur R M",
         "phone": "+41 41 123 45 67",
         "street": "Ennetbürgerstrasse 44",
-        "zip": "6374",
+        "zip": 6374,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -563,7 +563,7 @@
         "name": "Hauptagentur M S",
         "phone": "+41 41 123 45 67",
         "street": "Stadtstr.54",
-        "zip": "6204",
+        "zip": 6204,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -685,7 +685,7 @@
         "name": "Agentur R S",
         "phone": "+41 41 123 45 67",
         "street": "Engelbergerstr.41",
-        "zip": "6391",
+        "zip": 6391,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -775,7 +775,7 @@
         "name": "Hauptagentur P B",
         "phone": "+41 41 123 45 67",
         "street": "Seestrasse 129",
-        "zip": "6052",
+        "zip": 6052,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -865,7 +865,7 @@
         "name": "Hauptagentur S V",
         "phone": "+41 62 123 45 67",
         "street": "Winterthurerstrasse 2",
-        "zip": "5080",
+        "zip": 5080,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -987,7 +987,7 @@
         "name": "Hauptagentur P M",
         "phone": "+41 62 123 45 67",
         "street": "Hauptstrasse 53",
-        "zip": "5070",
+        "zip": 5070,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -1101,7 +1101,7 @@
         "name": "Hauptagentur P H",
         "phone": "+41 62 123 45 67",
         "street": "Sagiweg 2",
-        "zip": "5737",
+        "zip": 5737,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -1215,7 +1215,7 @@
         "name": "Hauptagentur S V",
         "phone": "+41 62 123 45 67",
         "street": "Hauptstrasse 45",
-        "zip": "6260",
+        "zip": 6260,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -1321,7 +1321,7 @@
         "name": "Generalagentur D M",
         "phone": "+41 41 123 45 67",
         "street": "Gallusstrasse 2",
-        "zip": "6010",
+        "zip": 6010,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -1499,7 +1499,7 @@
         "name": "Hauptagentur G L",
         "phone": "+41 41 123 45 67",
         "street": "Hellbühlerstrasse 12",
-        "zip": "6017",
+        "zip": 6017,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -1581,7 +1581,7 @@
         "name": "Hauptagentur C I",
         "phone": "+41 41 123 45 67",
         "street": "Marktstrasse 7a",
-        "zip": "6061",
+        "zip": 6061,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -1711,7 +1711,7 @@
         "name": "Hauptagentur H P",
         "phone": "+41 41 123 45 67",
         "street": "Hauptstrasse 10",
-        "zip": "6170",
+        "zip": 6170,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -1801,7 +1801,7 @@
         "name": "Hauptagentur Zofingen",
         "phone": "+41 62 123 45 67",
         "street": "Mühlethalstrasse 69",
-        "zip": "4800",
+        "zip": 4800,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -1907,7 +1907,7 @@
         "name": "Hauptagentur J N",
         "phone": "+41 41 123 45 67",
         "street": "Riedenmatt 1",
-        "zip": "6371",
+        "zip": 6371,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -2021,7 +2021,7 @@
         "name": "Hauptagentur R W",
         "phone": "+41 41 123 45 67",
         "street": "Chäppelimatt 8",
-        "zip": "6232",
+        "zip": 6232,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -2127,7 +2127,7 @@
         "name": "Geschäftsstelle Wolhusen - Amt Entlebuch",
         "phone": "+41 41 123 45 67",
         "street": "Entlebucherstrasse 11",
-        "zip": "6110",
+        "zip": 6110,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -2209,7 +2209,7 @@
         "name": "Generalagentur M R",
         "phone": "+41 62 123 45 67",
         "street": "Industriestrasse 12a",
-        "zip": "5036",
+        "zip": 5036,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -2273,7 +2273,7 @@
         "name": "Hauptagentur J B",
         "phone": "+41 41 123 45 67",
         "street": "Luzernstrasse 9",
-        "zip": "6144",
+        "zip": 6144,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -2395,7 +2395,7 @@
         "name": "Generalagentur E K",
         "phone": "+41 41 123 45 67",
         "street": "Bahnhofstr.38A",
-        "zip": "6210",
+        "zip": 6210,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -2565,7 +2565,7 @@
         "name": "Hauptagentur J B",
         "phone": "+41 41 123 45 67",
         "street": "Ettiswilerstrasse 33",
-        "zip": "6130",
+        "zip": 6130,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -2629,7 +2629,7 @@
         "name": "Hauptagentur V J",
         "phone": "+41 61 123 45 67",
         "street": "Kasernenstrasse 24",
-        "zip": "4410",
+        "zip": 4410,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -2751,7 +2751,7 @@
         "name": "Hauptagentur V R",
         "phone": "+41 61 123 45 67",
         "street": "Binningerstrasse 94",
-        "zip": "4123",
+        "zip": 4123,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -2857,7 +2857,7 @@
         "name": "Hauptagentur Riehen",
         "phone": "+41 61 123 45 67",
         "street": "Baselstrasse 51",
-        "zip": "4125",
+        "zip": 4125,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -2947,7 +2947,7 @@
         "name": "Geschäftsstelle Kleinbasel",
         "phone": "+41 61 123 45 67",
         "street": "Claraplatz 1",
-        "zip": "4058",
+        "zip": 4058,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -3046,7 +3046,7 @@
         "name": "Generalagentur V H",
         "phone": "+41 61 123 45 67",
         "street": "Henric Petri-Strasse 6",
-        "zip": "4010",
+        "zip": 4010,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -3240,7 +3240,7 @@
         "name": "Hauptagentur D M",
         "phone": "+41 61 123 45 67",
         "street": "Hauptstrasse 35",
-        "zip": "4127",
+        "zip": 4127,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -3338,7 +3338,7 @@
         "name": "Geschäftsstelle Laufen",
         "phone": "+41 61 123 45 67",
         "street": "Bahnhofstrasse 16",
-        "zip": "4242",
+        "zip": 4242,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -3436,7 +3436,7 @@
         "name": "Hauptagentur F G",
         "phone": "+41 61 123 45 67",
         "street": "Belchenstrasse 7",
-        "zip": "4310",
+        "zip": 4310,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -3542,7 +3542,7 @@
         "name": "Hauptagentur G R",
         "phone": "+41 61 123 45 67",
         "street": "St. Jakobs-Strasse 55",
-        "zip": "4132",
+        "zip": 4132,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -3640,7 +3640,7 @@
         "name": "Hauptagentur U G",
         "phone": "+41 61 123 45 67",
         "street": "Burggartenstrasse 6",
-        "zip": "4133",
+        "zip": 4133,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -3730,7 +3730,7 @@
         "name": "Hauptagentur T T",
         "phone": "+41 61 123 45 67",
         "street": "Gewerbestrasse 10",
-        "zip": "4450",
+        "zip": 4450,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -3844,7 +3844,7 @@
         "name": "Hauptagentur M S",
         "phone": "+41 61 123 45 67",
         "street": "Oberwilerstrasse 73",
-        "zip": "4106",
+        "zip": 4106,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -3966,7 +3966,7 @@
         "name": "Generalagentur P G",
         "phone": "+41 61 123 45 67",
         "street": "Henric Petri-Strasse 6",
-        "zip": "4010",
+        "zip": 4010,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -4232,7 +4232,7 @@
         "name": "Generalagentur R S",
         "phone": "+41 61 123 45 67",
         "street": "Christoph Merian-Ring 25",
-        "zip": "4153",
+        "zip": 4153,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -4410,7 +4410,7 @@
         "name": "Generalagentur L S",
         "phone": "+41 31 123 45 67",
         "street": "Bahnhofplatz 10 B",
-        "zip": "3001",
+        "zip": 3001,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -4676,7 +4676,7 @@
         "name": "Agentur H J",
         "phone": "+41 33 123 45 67",
         "street": "Landstrasse 9",
-        "zip": "3715",
+        "zip": 3715,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -4758,7 +4758,7 @@
         "name": "Hauptagentur P G",
         "phone": "+41 34 123 45 67",
         "street": "Schulweg 6",
-        "zip": "3422",
+        "zip": 3422,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -4880,7 +4880,7 @@
         "name": "Geschäftsstelle Visp",
         "phone": "+41 27 123 45 67",
         "street": "Balfrinstrasse 20",
-        "zip": "3930",
+        "zip": 3930,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -4962,7 +4962,7 @@
         "name": "Hauptagentur M B",
         "phone": "+41 31 123 45 67",
         "street": "Monbijoustrasse 114",
-        "zip": "3000",
+        "zip": 3000,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -5068,7 +5068,7 @@
         "name": "Hauptagentur M F",
         "phone": "+41 31 123 45 67",
         "street": "Emmentalstrasse 29",
-        "zip": "3510",
+        "zip": 3510,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -5182,7 +5182,7 @@
         "name": "Hauptagentur F F",
         "phone": "+41 31 123 45 67",
         "street": "Dorfstrasse 9",
-        "zip": "3123",
+        "zip": 3123,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -5312,7 +5312,7 @@
         "name": "Generalagentur R R",
         "phone": "+41 34 123 45 67",
         "street": "Tiergartenstrasse 14",
-        "zip": "3401",
+        "zip": 3401,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -5482,7 +5482,7 @@
         "name": "Hauptagentur T B",
         "phone": "+41 33 123 45 67",
         "street": "Hauptstrasse 62",
-        "zip": "3806",
+        "zip": 3806,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -5636,7 +5636,7 @@
         "name": "Hauptagentur K I",
         "phone": "+41 33 123 45 67",
         "street": "Hauptstrasse 133A",
-        "zip": "3855",
+        "zip": 3855,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -5726,7 +5726,7 @@
         "name": "Hauptagentur A H",
         "phone": "+41 26 123 45 67",
         "street": "Chännelmattstrasse 2",
-        "zip": "3186",
+        "zip": 3186,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -5848,7 +5848,7 @@
         "name": "Hauptagentur M M",
         "phone": "+41 33 123 45 67",
         "street": "Lochmatte 357G",
-        "zip": "3763",
+        "zip": 3763,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -5978,7 +5978,7 @@
         "name": "Hauptagentur H M",
         "phone": "+41 33 123 45 67",
         "street": "Diemtigtalstrasse 27",
-        "zip": "3753",
+        "zip": 3753,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -6092,7 +6092,7 @@
         "name": "Geschäftsstelle Fahrni",
         "phone": "+41 33 123 45 67",
         "street": "Rachholtern 66B",
-        "zip": "3617",
+        "zip": 3617,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -6166,7 +6166,7 @@
         "name": "Generalagentur D W",
         "phone": "+41 31 123 45 67",
         "street": "Morgenstrasse 136",
-        "zip": "3018",
+        "zip": 3018,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -6376,7 +6376,7 @@
         "name": "Hauptagentur A L",
         "phone": "+41 33 123 45 67",
         "street": "Kanderstegstr.11",
-        "zip": "3714",
+        "zip": 3714,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -6483,7 +6483,7 @@
         "name": "Generalagentur V B",
         "phone": "+41 33 123 45 67",
         "street": "Schulhausstrasse 2",
-        "zip": "3602",
+        "zip": 3602,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -6645,7 +6645,7 @@
         "name": "Hauptagentur B W",
         "phone": "+41 34 123 45 67",
         "street": "Rüegsaustr.7",
-        "zip": "3415",
+        "zip": 3415,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -6768,7 +6768,7 @@
         "name": "Generalagentur V H",
         "phone": "+41 31 123 45 67",
         "street": "Casinoplatz 8",
-        "zip": "3000",
+        "zip": 3000,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -7002,7 +7002,7 @@
         "name": "Hauptagentur T B",
         "phone": "+41 33 123 45 67",
         "street": "Centralstrasse 22",
-        "zip": "3800",
+        "zip": 3800,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -7066,7 +7066,7 @@
         "name": "Geschäftsstelle Jegenstorf",
         "phone": "+41 31 123 45 67",
         "street": "Bernstrasse 6",
-        "zip": "3303",
+        "zip": 3303,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -7148,7 +7148,7 @@
         "name": "Agentur M R",
         "phone": "+41 31 123 45 67",
         "street": "Kirchstrasse 24",
-        "zip": "3097",
+        "zip": 3097,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -7230,7 +7230,7 @@
         "name": "Hauptagentur F F",
         "phone": "+41 31 123 45 67",
         "street": "Könizstrasse 295",
-        "zip": "3098",
+        "zip": 3098,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -7294,7 +7294,7 @@
         "name": "Geschäftsstelle Susten",
         "phone": "+41 27 123 45 67",
         "street": "Bahnhofstrasse 4",
-        "zip": "3952",
+        "zip": 3952,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -7376,7 +7376,7 @@
         "name": "Generalagentur I S",
         "phone": "+41 27 123 45 67",
         "street": "Bahnhofstrasse 4 A",
-        "zip": "3900",
+        "zip": 3900,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -7586,7 +7586,7 @@
         "name": "Geschäftsstelle Saas Grund",
         "phone": "+41 27 123 45 67",
         "street": "Haus Castelletto",
-        "zip": "3910",
+        "zip": 3910,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -7660,7 +7660,7 @@
         "name": "Geschäftsstelle St. Niklaus",
         "phone": "+41 27 123 45 67",
         "street": "Stock 3",
-        "zip": "3924",
+        "zip": 3924,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -7734,7 +7734,7 @@
         "name": "Geschäftsstelle Saas Fee",
         "phone": "+41 27 123 45 67",
         "street": "Obere Dorfstrasse 24",
-        "zip": "3906",
+        "zip": 3906,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -7808,7 +7808,7 @@
         "name": "Hauptagentur K I",
         "phone": "+41 33 123 45 67",
         "street": "Bahnhofstrasse 2",
-        "zip": "3860",
+        "zip": 3860,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -7872,7 +7872,7 @@
         "name": "Hauptagentur J V",
         "phone": "+41 31 123 45 67",
         "street": "Oberdorfstrasse 9",
-        "zip": "3053",
+        "zip": 3053,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -7986,7 +7986,7 @@
         "name": "Hauptagentur A M",
         "phone": "+41 31 123 45 67",
         "street": "Neue Bahnhofstrasse 14",
-        "zip": "3110",
+        "zip": 3110,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -8116,7 +8116,7 @@
         "name": "Hauptagentur J S",
         "phone": "+41 31 123 45 67",
         "street": "Worbstrasse 180",
-        "zip": "3073",
+        "zip": 3073,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -8214,7 +8214,7 @@
         "name": "Hauptagentur R G",
         "phone": "+41 31 123 45 67",
         "street": "Dorfplatz 1",
-        "zip": "3176",
+        "zip": 3176,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -8320,7 +8320,7 @@
         "name": "Hauptagentur A B",
         "phone": "+41 31 123 45 67",
         "street": "Schwarzenburgstrasse 798",
-        "zip": "3145",
+        "zip": 3145,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -8427,7 +8427,7 @@
         "name": "Generalagentur V K",
         "phone": "+41 34 123 45 67",
         "street": "Tiergartenstrasse 14",
-        "zip": "3401",
+        "zip": 3401,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -8581,7 +8581,7 @@
         "name": "Hauptagentur A L",
         "phone": "+41 31 123 45 67",
         "street": "Bernstrasse 46",
-        "zip": "3072",
+        "zip": 3072,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -8711,7 +8711,7 @@
         "name": "Geschäftsstelle Uetendorf",
         "phone": "+41 33 123 45 67",
         "street": "Dorfstrasse 8",
-        "zip": "3661",
+        "zip": 3661,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -8793,7 +8793,7 @@
         "name": "Hauptagentur R W",
         "phone": "+41 33 123 45 67",
         "street": "Belairstrasse 3",
-        "zip": "3780",
+        "zip": 3780,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -8891,7 +8891,7 @@
         "name": "Geschäftsstelle Zermatt",
         "phone": "+41 27 123 45 67",
         "street": "Bahnhofstrasse 7c",
-        "zip": "3920",
+        "zip": 3920,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -8965,7 +8965,7 @@
         "name": "Hauptagentur J V",
         "phone": "+41 31 123 45 67",
         "street": "Zentrumsplatz 10",
-        "zip": "3322",
+        "zip": 3322,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -9029,7 +9029,7 @@
         "name": "Hauptagentur A B",
         "phone": "+41 31 123 45 67",
         "street": "Freiburgstrasse 2",
-        "zip": "3150",
+        "zip": 3150,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -9093,7 +9093,7 @@
         "name": "Geschäftsstelle Oberhofen",
         "phone": "+41 33 123 45 67",
         "street": "Staatsstrasse 4",
-        "zip": "3653",
+        "zip": 3653,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -9175,7 +9175,7 @@
         "name": "Hauptagentur M M",
         "phone": "+41 33 123 45 67",
         "street": "Thunstrasse 57",
-        "zip": "3700",
+        "zip": 3700,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -9239,7 +9239,7 @@
         "name": "Hauptagentur A S",
         "phone": "+41 31 123 45 67",
         "street": "Dorfmärit 14",
-        "zip": "3065",
+        "zip": 3065,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -9329,7 +9329,7 @@
         "name": "Hauptagentur C R",
         "phone": "+41 34 123 45 67",
         "street": "Schlossstrasse 2",
-        "zip": "3550",
+        "zip": 3550,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -9427,7 +9427,7 @@
         "name": "Geschäftsstelle Steffisburg",
         "phone": "+41 33 123 45 67",
         "street": "Glockentalstr.6",
-        "zip": "3612",
+        "zip": 3612,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -9509,7 +9509,7 @@
         "name": "Generalagentur P M",
         "phone": "+41 33 123 45 67",
         "street": "Schulhausstrasse 2",
-        "zip": "3602",
+        "zip": 3602,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -9711,7 +9711,7 @@
         "name": "Geschäftsstelle Wattenwil",
         "phone": "+41 33 123 45 67",
         "street": "Burgisteinstrasse 2A",
-        "zip": "3665",
+        "zip": 3665,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -9785,7 +9785,7 @@
         "name": "Hauptagentur C B",
         "phone": "+41 31 123 45 67",
         "street": "Bahnhofstrasse 28",
-        "zip": "3076",
+        "zip": 3076,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -9883,7 +9883,7 @@
         "name": "Hauptagentur B M",
         "phone": "+41 31 123 45 67",
         "street": "Bernstrasse 101",
-        "zip": "3052",
+        "zip": 3052,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -9981,7 +9981,7 @@
         "name": "Hauptagentur H M",
         "phone": "+41 33 123 45 67",
         "street": "Montreuxstrasse 5",
-        "zip": "3770",
+        "zip": 3770,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -10045,7 +10045,7 @@
         "name": "AXA Winterthur Embassy Center",
         "phone": "+41 31 123 45 67",
         "street": "Thunstrasse 99",
-        "zip": "3000",
+        "zip": 3000,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -10128,7 +10128,7 @@
         "name": "Geschäftsstelle Vorsorge \u0026 Vermögen",
         "phone": "+41 62 123 45 67",
         "street": "Dornacherstrasse 7",
-        "zip": "4603",
+        "zip": 4603,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -10218,7 +10218,7 @@
         "name": "Hauptagentur A G",
         "phone": "+41 81 123 45 67",
         "street": "Schulstrasse 6",
-        "zip": "7130",
+        "zip": 7130,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -10324,7 +10324,7 @@
         "name": "Geschäftsstelle Arosa",
         "phone": "+41 81 123 45 67",
         "street": "Oberseeplatz 736",
-        "zip": "7050",
+        "zip": 7050,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -10398,7 +10398,7 @@
         "name": "Agentura Surses",
         "phone": "+41 81 123 45 67",
         "street": "Sur Strada 4",
-        "zip": "7452",
+        "zip": 7452,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -10472,7 +10472,7 @@
         "name": "Hauptagentur Davos",
         "phone": "+41 81 123 45 67",
         "street": "Promenade 100",
-        "zip": "7270",
+        "zip": 7270,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -10562,7 +10562,7 @@
         "name": "Geschäftsstelle Amden",
         "phone": "+41 55 123 45 67",
         "street": "Dorfstrasse 23",
-        "zip": "8873",
+        "zip": 8873,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -10636,7 +10636,7 @@
         "name": "Generalagentur U T",
         "phone": "+41 55 123 45 67",
         "street": "Schweizerhofstrasse 12",
-        "zip": "8750",
+        "zip": 8750,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -10838,7 +10838,7 @@
         "name": "Agentur T A",
         "phone": "+41 81 123 45 67",
         "street": "Promenada 3",
-        "zip": "7018",
+        "zip": 7018,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -10920,7 +10920,7 @@
         "name": "Hauptagentur R M",
         "phone": "+41 55 123 45 67",
         "street": "Wildbrunnstr.3",
-        "zip": "8722",
+        "zip": 8722,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -11051,7 +11051,7 @@
         "name": "Generalagentur V G",
         "phone": "+41 81 123 45 67",
         "street": "Bahnhofplatz 10",
-        "zip": "7001",
+        "zip": 7001,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -11205,7 +11205,7 @@
         "name": "Geschäftsstelle Landquart",
         "phone": "+41 81 123 45 67",
         "street": "Kantonsstrasse 24",
-        "zip": "7302",
+        "zip": 7302,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -11279,7 +11279,7 @@
         "name": "Hauptagentur D H",
         "phone": "+41 55 123 45 67",
         "street": "Feldstrasse 5",
-        "zip": "8853",
+        "zip": 8853,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -11401,7 +11401,7 @@
         "name": "Agenzia Patrick Balzarolo",
         "phone": "+41 81 123 45 67",
         "street": "Via dal Crot 296",
-        "zip": "7742",
+        "zip": 7742,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -11483,7 +11483,7 @@
         "name": "Agentura Disentis",
         "phone": "+41 81 123 45 67",
         "street": "Via Lucmagn 6",
-        "zip": "7180",
+        "zip": 7180,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -11557,7 +11557,7 @@
         "name": "Hauptagentur H S",
         "phone": "+41 81 123 45 67",
         "street": "Via Surpunt 21",
-        "zip": "7500",
+        "zip": 7500,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -11663,7 +11663,7 @@
         "name": "Hauptagentur S G",
         "phone": "+41 81 123 45 67",
         "street": "Zürcherstrasse 1",
-        "zip": "7320",
+        "zip": 7320,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -11785,7 +11785,7 @@
         "name": "Geschäftsstelle Grüsch",
         "phone": "+41 81 123 45 67",
         "street": "Schmittnerstrasse 2",
-        "zip": "7212",
+        "zip": 7212,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -11859,7 +11859,7 @@
         "name": "Agenzia Scuol",
         "phone": "+41 81 123 45 67",
         "street": "Chasa Belvair 169",
-        "zip": "7550",
+        "zip": 7550,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -11941,7 +11941,7 @@
         "name": "Generalagentur C C",
         "phone": "+41 81 123 45 67",
         "street": "Bahnhofplatz 10",
-        "zip": "7001",
+        "zip": 7001,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -12127,7 +12127,7 @@
         "name": "Hauptagentur R T",
         "phone": "+41 81 123 45 67",
         "street": "Spitalstr.4",
-        "zip": "7430",
+        "zip": 7430,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -12217,7 +12217,7 @@
         "name": "Agentur M R",
         "phone": "+41 81 123 45 67",
         "street": "Chesa Badilatti 22",
-        "zip": "7524",
+        "zip": 7524,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -12300,7 +12300,7 @@
         "name": "Geschäftsstelle Vorsorge \u0026 Vermögen",
         "phone": "+41 55 123 45 67",
         "street": "Schweizerhofstrasse 12",
-        "zip": "8750",
+        "zip": 8750,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -12422,7 +12422,7 @@
         "name": "Generalagentur G A",
         "phone": "+41 22 123 45 67",
         "street": "Rue de Lyon 89",
-        "zip": "1211",
+        "zip": 1211,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -12720,7 +12720,7 @@
         "name": "Hauptagentur P B",
         "phone": "+41 22 123 45 67",
         "street": "Ch. de la Distillerie 2",
-        "zip": "1233",
+        "zip": 1233,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -12842,7 +12842,7 @@
         "name": "Hauptagentur J M",
         "phone": "+41 22 123 45 67",
         "street": "Bd. St-Georges 71",
-        "zip": "1205",
+        "zip": 1205,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -12956,7 +12956,7 @@
         "name": "Hauptagentur T S",
         "phone": "+41 22 123 45 67",
         "street": "Rue du Village 15",
-        "zip": "1214",
+        "zip": 1214,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -13071,7 +13071,7 @@
         "name": "Generalagentur V S",
         "phone": "+41 22 123 45 67",
         "street": "Rue de Lyon 89",
-        "zip": "1211",
+        "zip": 1211,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -13241,7 +13241,7 @@
         "name": "Hauptagentur V H",
         "phone": "+41 22 123 45 67",
         "street": "Rte de Suisse 132",
-        "zip": "1290",
+        "zip": 1290,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -13355,7 +13355,7 @@
         "name": "Partneragentur D S",
         "phone": "+41 22 123 45 67",
         "street": "Route de Chêne 5",
-        "zip": "1211",
+        "zip": 1211,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -13509,7 +13509,7 @@
         "name": "Hauptagentur P K",
         "phone": "+41 22 123 45 67",
         "street": "Route de Thonon 56",
-        "zip": "1222",
+        "zip": 1222,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -13623,7 +13623,7 @@
         "name": "Hauptagentur F C",
         "phone": "+41 22 123 45 67",
         "street": "Avenue Blanc 49",
-        "zip": "1202",
+        "zip": 1202,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -13721,7 +13721,7 @@
         "name": "Generalagentur S S",
         "phone": "+41 22 123 45 67",
         "street": "Rte de Chancy 59",
-        "zip": "1213",
+        "zip": 1213,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -14043,7 +14043,7 @@
         "name": "Hauptagentur C D",
         "phone": "+41 22 123 45 67",
         "street": "Rue de Genève 113",
-        "zip": "1226",
+        "zip": 1226,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -14158,7 +14158,7 @@
         "name": "Generalagentur V M",
         "phone": "+41 22 123 45 67",
         "street": "Rte de Chancy 59",
-        "zip": "1213",
+        "zip": 1213,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -14360,7 +14360,7 @@
         "name": "Hauptagentur Y P",
         "phone": "+41 22 123 45 67",
         "street": "Rte de St-Julien 129",
-        "zip": "1228",
+        "zip": 1228,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -14490,7 +14490,7 @@
         "name": "Hauptagentur C V",
         "phone": "+41 21 123 45 67",
         "street": "Rue de Trévelin 16",
-        "zip": "1170",
+        "zip": 1170,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -14596,7 +14596,7 @@
         "name": "Hauptagentur S R",
         "phone": "+41 26 123 45 67",
         "street": "Rue Centrale 27",
-        "zip": "1580",
+        "zip": 1580,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -14702,7 +14702,7 @@
         "name": "Hauptagentur S G",
         "phone": "+41 24 123 45 67",
         "street": "Rue du Midi 3",
-        "zip": "1860",
+        "zip": 1860,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -14840,7 +14840,7 @@
         "name": "Agentur P C",
         "phone": "+41 21 123 45 67",
         "street": "Rte d\u0027Yverdon 15",
-        "zip": "1033",
+        "zip": 1033,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -14922,7 +14922,7 @@
         "name": "Hauptagentur A P",
         "phone": "+41 26 123 45 67",
         "street": "Grand-Rue 35",
-        "zip": "1630",
+        "zip": 1630,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -15052,7 +15052,7 @@
         "name": "Geschäftsstelle Charmey",
         "phone": "+41 26 123 45 67",
         "street": "Rue du Centre 28",
-        "zip": "1637",
+        "zip": 1637,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -15116,7 +15116,7 @@
         "name": "Partneragentur R S",
         "phone": "+41 21 123 45 67",
         "street": "Rue Centrale 15",
-        "zip": "1002",
+        "zip": 1002,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -15286,7 +15286,7 @@
         "name": "Hauptagentur F R",
         "phone": "+41 21 123 45 67",
         "street": "Rte de la Blécherette 73",
-        "zip": "1052",
+        "zip": 1052,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -15408,7 +15408,7 @@
         "name": "Geschäftsstelle Courtepin",
         "phone": "+41 26 123 45 67",
         "street": "Rte de Morat 1",
-        "zip": "1784",
+        "zip": 1784,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -15482,7 +15482,7 @@
         "name": "Agentur P G",
         "phone": "+41 26 123 45 67",
         "street": "Grand Rue 88",
-        "zip": "1660",
+        "zip": 1660,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -15564,7 +15564,7 @@
         "name": "Hauptagentur P P",
         "phone": "+41 27 123 45 67",
         "street": "R. Centrale 31",
-        "zip": "3963",
+        "zip": 3963,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -15678,7 +15678,7 @@
         "name": "Agentur B M",
         "phone": "+41 24 123 45 67",
         "street": "Avenue de la Gare 6",
-        "zip": "1462",
+        "zip": 1462,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -15768,7 +15768,7 @@
         "name": "Hauptagentur G B",
         "phone": "+41 26 123 45 67",
         "street": "Rte de la Chapelle 11",
-        "zip": "1470",
+        "zip": 1470,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -15866,7 +15866,7 @@
         "name": "Generalagentur B P",
         "phone": "+41 26 123 45 67",
         "street": "Avenue de la Gare 12",
-        "zip": "1701",
+        "zip": 1701,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -16068,7 +16068,7 @@
         "name": "Agentur S B",
         "phone": "+41 21 123 45 67",
         "street": "Rte de Vevey 96",
-        "zip": "1618",
+        "zip": 1618,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -16150,7 +16150,7 @@
         "name": "Hauptagentur O D",
         "phone": "+41 21 123 45 67",
         "street": "Rte de Lausanne 1",
-        "zip": "1304",
+        "zip": 1304,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -16264,7 +16264,7 @@
         "name": "Hauptagentur L E",
         "phone": "+41 21 123 45 67",
         "street": "Pl.de l\u0027Hôtel de Ville 4",
-        "zip": "1040",
+        "zip": 1040,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -16362,7 +16362,7 @@
         "name": "Hauptagentur M F",
         "phone": "+41 21 123 45 67",
         "street": "Rte Croix-Blanche 29",
-        "zip": "1066",
+        "zip": 1066,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -16476,7 +16476,7 @@
         "name": "Hauptagentur S L",
         "phone": "+41 24 123 45 67",
         "street": "Rue Haute 10",
-        "zip": "1422",
+        "zip": 1422,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -16582,7 +16582,7 @@
         "name": "Hauptagentur M D",
         "phone": "+41 27 123 45 67",
         "street": "Av. de la Gare 21",
-        "zip": "1920",
+        "zip": 1920,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -16712,7 +16712,7 @@
         "name": "Generalagentur G F",
         "phone": "+41 21 123 45 67",
         "street": "Av. Benjamin-Constant 1",
-        "zip": "1002",
+        "zip": 1002,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -16978,7 +16978,7 @@
         "name": "Hauptagentur N I",
         "phone": "+41 21 123 45 67",
         "street": "Avenue d\u0027Ouchy 60",
-        "zip": "1006",
+        "zip": 1006,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -17108,7 +17108,7 @@
         "name": "Geschäftsstelle Leysin",
         "phone": "+41 24 123 45 67",
         "street": "Héliport",
-        "zip": "1854",
+        "zip": 1854,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -17190,7 +17190,7 @@
         "name": "Hauptagentur B G",
         "phone": "+41 21 123 45 67",
         "street": "Avenue de la Poste 3",
-        "zip": "1020",
+        "zip": 1020,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -17336,7 +17336,7 @@
         "name": "Hauptagentur J F",
         "phone": "+41 24 123 45 67",
         "street": "Pl.de l\u0027Hôtel-de-Ville 11",
-        "zip": "1870",
+        "zip": 1870,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -17483,7 +17483,7 @@
         "name": "Generalagentur V D",
         "phone": "+41 21 123 45 67",
         "street": "Av. Benjamin-Constant 1",
-        "zip": "1002",
+        "zip": 1002,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -17701,7 +17701,7 @@
         "name": "Geschäftsstelle Orsières",
         "phone": "+41 27 123 45 67",
         "street": "Pl. du Clocher 2",
-        "zip": "1937",
+        "zip": 1937,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -17775,7 +17775,7 @@
         "name": "Hauptagentur P C",
         "phone": "+41 21 123 45 67",
         "street": "R.de l\u0027Eglise Catholique",
-        "zip": "1820",
+        "zip": 1820,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -17881,7 +17881,7 @@
         "name": "Generalagentur A T",
         "phone": "+41 21 123 45 67",
         "street": "Grand Rue 77",
-        "zip": "1110",
+        "zip": 1110,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -18059,7 +18059,7 @@
         "name": "Hauptagentur A M",
         "phone": "+41 21 123 45 67",
         "street": "Rue du Temple 14",
-        "zip": "1510",
+        "zip": 1510,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -18181,7 +18181,7 @@
         "name": "Hauptagentur P V",
         "phone": "+41 27 123 45 67",
         "street": "Rue du Village 7",
-        "zip": "1908",
+        "zip": 1908,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -18295,7 +18295,7 @@
         "name": "Hauptagentur A M",
         "phone": "+41 21 123 45 67",
         "street": "Le Bourg 6",
-        "zip": "1610",
+        "zip": 1610,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -18359,7 +18359,7 @@
         "name": "Hauptagentur P D",
         "phone": "+41 26 123 45 67",
         "street": "Rue de l\u0027Eglise 94",
-        "zip": "1680",
+        "zip": 1680,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -18450,7 +18450,7 @@
         "name": "Generalagentur V T",
         "phone": "+41 27 123 45 67",
         "street": "R. des Remparts 14",
-        "zip": "1951",
+        "zip": 1951,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -18620,7 +18620,7 @@
         "name": "Hauptagentur J G",
         "phone": "+41 22 123 45 67",
         "street": "Av. Viollier 14",
-        "zip": "1260",
+        "zip": 1260,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -18742,7 +18742,7 @@
         "name": "Geschäftsstelle Payerne",
         "phone": "+41 26 123 45 67",
         "street": "Rue d\u0027Yverdon 19",
-        "zip": "1530",
+        "zip": 1530,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -18848,7 +18848,7 @@
         "name": "Hauptagentur J T",
         "phone": "+41 21 123 45 67",
         "street": "Ch. du Pré de la Tour 7",
-        "zip": "1009",
+        "zip": 1009,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -18962,7 +18962,7 @@
         "name": "Hauptagentur C O",
         "phone": "+41 26 123 45 67",
         "street": "Ch. de la Redoute 9",
-        "zip": "1752",
+        "zip": 1752,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -19060,7 +19060,7 @@
         "name": "Hauptagentur E M",
         "phone": "+41 27 123 45 67",
         "street": "Av. Général-Guisan 6",
-        "zip": "3960",
+        "zip": 3960,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -19174,7 +19174,7 @@
         "name": "Hauptagentur C R",
         "phone": "+41 21 123 45 67",
         "street": "Grand\u0027Rue 18",
-        "zip": "1180",
+        "zip": 1180,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -19296,7 +19296,7 @@
         "name": "Generalagentur C M",
         "phone": "+41 27 123 45 67",
         "street": "Rue des Remparts 16",
-        "zip": "1951",
+        "zip": 1951,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -19498,7 +19498,7 @@
         "name": "Geschäftsstelle Savièse-Grimisuat",
         "phone": "+41 27 123 45 67",
         "street": "Rue de St-Germain 29",
-        "zip": "1965",
+        "zip": 1965,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -19572,7 +19572,7 @@
         "name": "Geschäftsstelle Ste-Croix",
         "phone": "+41 24 123 45 67",
         "street": "Rue Neuve 10",
-        "zip": "1450",
+        "zip": 1450,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -19646,7 +19646,7 @@
         "name": "Generalagentur J H",
         "phone": "+41 21 123 45 67",
         "street": "Rue du Simplon 34",
-        "zip": "1800",
+        "zip": 1800,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -19848,7 +19848,7 @@
         "name": "Hauptagentur W A",
         "phone": "+41 21 123 45 67",
         "street": "Route du Village 13",
-        "zip": "1807",
+        "zip": 1807,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -19954,7 +19954,7 @@
         "name": "Agentur J K",
         "phone": "+41 21 123 45 67",
         "street": "Grand\u0027Rue 33",
-        "zip": "1347",
+        "zip": 1347,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -20045,7 +20045,7 @@
         "name": "Generalagentur V M",
         "phone": "+41 21 123 45 67",
         "street": "R. du Simplon 34",
-        "zip": "1800",
+        "zip": 1800,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -20207,7 +20207,7 @@
         "name": "Agentur O R",
         "phone": "+41 27 123 45 67",
         "street": "Rue de la Poste 21",
-        "zip": "1936",
+        "zip": 1936,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -20305,7 +20305,7 @@
         "name": "Agentur C P",
         "phone": "+41 26 123 45 67",
         "street": "Rte de Rossens 11",
-        "zip": "1726",
+        "zip": 1726,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -20387,7 +20387,7 @@
         "name": "Hauptagentur C D",
         "phone": "+41 24 123 45 67",
         "street": "Place du Marché 14",
-        "zip": "1350",
+        "zip": 1350,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -20501,7 +20501,7 @@
         "name": "Hauptagentur C D",
         "phone": "+41 21 123 45 67",
         "street": "Place du Pont 4",
-        "zip": "1337",
+        "zip": 1337,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -20565,7 +20565,7 @@
         "name": "Generalagentur A P",
         "phone": "+41 24 123 45 67",
         "street": "Rue des Remparts 16",
-        "zip": "1401",
+        "zip": 1401,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -20703,7 +20703,7 @@
         "name": "Partneragentur V S",
         "phone": "+41 27 123 45 67",
         "street": "Rte de Riddes 42",
-        "zip": "1950",
+        "zip": 1950,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -20858,7 +20858,7 @@
         "name": "Generalagentur V W",
         "phone": "+41 26 123 45 67",
         "street": "Av. de la Gare 12",
-        "zip": "1701",
+        "zip": 1701,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -21045,7 +21045,7 @@
         "name": "Generalagentur V G",
         "phone": "+41 21 123 45 67",
         "street": "Grand Rue 77",
-        "zip": "1110",
+        "zip": 1110,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -21192,7 +21192,7 @@
         "name": "Geschäftsstelle Vorsorge \u0026 Vermögen",
         "phone": "+41 24 123 45 67",
         "street": "R. des Remparts 16",
-        "zip": "1401",
+        "zip": 1401,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -21322,7 +21322,7 @@
         "name": "Generalagentur A B",
         "phone": "+41 91 123 45 67",
         "street": "Via F. Pelli 1",
-        "zip": "6901",
+        "zip": 6901,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -21604,7 +21604,7 @@
         "name": "Generalagentur M G",
         "phone": "+41 91 123 45 67",
         "street": "Via Livio 4",
-        "zip": "6830",
+        "zip": 6830,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -21790,7 +21790,7 @@
         "name": "Hauptagentur C C",
         "phone": "+41 91 123 45 67",
         "street": "Via Cantonale 44",
-        "zip": "6982",
+        "zip": 6982,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -21904,7 +21904,7 @@
         "name": "Geschäftsstelle Ascona",
         "phone": "+41 91 123 45 67",
         "street": "Viale Papio 8",
-        "zip": "6612",
+        "zip": 6612,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -21986,7 +21986,7 @@
         "name": "Agentur A G",
         "phone": "+41 91 123 45 67",
         "street": "Piazza Tarchini 67",
-        "zip": "6828",
+        "zip": 6828,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -22068,7 +22068,7 @@
         "name": "Generalagentur D P",
         "phone": "+41 91 123 45 67",
         "street": "Via della Posta 2",
-        "zip": "6600",
+        "zip": 6600,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -22262,7 +22262,7 @@
         "name": "Geschäftsstelle Tre Valli",
         "phone": "+41 91 123 45 67",
         "street": "Via A. Giovannini 26",
-        "zip": "6710",
+        "zip": 6710,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -22368,7 +22368,7 @@
         "name": "Geschäftsstelle Bissone",
         "phone": "+41 91 123 45 67",
         "street": "Piazza Borromini 17",
-        "zip": "6816",
+        "zip": 6816,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -22442,7 +22442,7 @@
         "name": "Generalagentur M L",
         "phone": "+41 91 123 45 67",
         "street": "Via dei Gaggini 3a",
-        "zip": "6500",
+        "zip": 6500,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -22676,7 +22676,7 @@
         "name": "Hauptagentur F P",
         "phone": "+41 91 123 45 67",
         "street": "Via Trevano 97",
-        "zip": "6900",
+        "zip": 6900,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -22782,7 +22782,7 @@
         "name": "Hauptagentur S S",
         "phone": "+41 91 123 45 67",
         "street": "Piazza Riforma 4",
-        "zip": "6900",
+        "zip": 6900,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -22888,7 +22888,7 @@
         "name": "Geschäftsstelle Bellinzona",
         "phone": "+41 91 123 45 67",
         "street": "Viale Stazione 16",
-        "zip": "6501",
+        "zip": 6501,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -22986,7 +22986,7 @@
         "name": "Hauptagentur N S",
         "phone": "+41 91 123 45 67",
         "street": "Via al Mulino 1",
-        "zip": "6814",
+        "zip": 6814,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -23100,7 +23100,7 @@
         "name": "Geschäftsstelle Stabio",
         "phone": "+41 91 123 45 67",
         "street": "Via Luvee 2a",
-        "zip": "6855",
+        "zip": 6855,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -23174,7 +23174,7 @@
         "name": "Geschäftsstelle Magadino",
         "phone": "+41 91 123 45 67",
         "street": "Via Cantonale 129",
-        "zip": "6573",
+        "zip": 6573,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -23256,7 +23256,7 @@
         "name": "Hauptagentur M C",
         "phone": "+41 91 123 45 67",
         "street": "Via Praella 11",
-        "zip": "6850",
+        "zip": 6850,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -23362,7 +23362,7 @@
         "name": "Geschäftsstelle Rivera",
         "phone": "+41 91 123 45 67",
         "street": "Via Cantonale Stabile FFS",
-        "zip": "6802",
+        "zip": 6802,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -23436,7 +23436,7 @@
         "name": "Agentur Roveredo",
         "phone": "+41 91 123 45 67",
         "street": "Piazzetta",
-        "zip": "6535",
+        "zip": 6535,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -23518,7 +23518,7 @@
         "name": "Agentur L M",
         "phone": "+41 91 123 45 67",
         "street": "Via San Gottardo",
-        "zip": "6598",
+        "zip": 6598,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -23600,7 +23600,7 @@
         "name": "Geschäftsstelle Vallemaggia",
         "phone": "+41 91 123 45 67",
         "street": "Via Cantonale",
-        "zip": "6675",
+        "zip": 6675,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -23682,7 +23682,7 @@
         "name": "Hauptagentur J H",
         "phone": "+41 41 123 45 67",
         "street": "Dätwylerstr.7",
-        "zip": "6460",
+        "zip": 6460,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -23812,7 +23812,7 @@
         "name": "Hauptagentur D C",
         "phone": "+41 56 123 45 67",
         "street": "Bellikerstr.1",
-        "zip": "8965",
+        "zip": 8965,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -23934,7 +23934,7 @@
         "name": "Hauptagentur P S",
         "phone": "+41 41 123 45 67",
         "street": "Seemattweg 2b",
-        "zip": "6315",
+        "zip": 6315,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -24040,7 +24040,7 @@
         "name": "Hauptagentur A M",
         "phone": "+41 55 123 45 67",
         "street": "Kronenstrasse 19",
-        "zip": "8840",
+        "zip": 8840,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -24146,7 +24146,7 @@
         "name": "Hauptagentur X W",
         "phone": "+41 41 123 45 67",
         "street": "Sinserstr.6",
-        "zip": "6330",
+        "zip": 6330,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -24252,7 +24252,7 @@
         "name": "Hauptagentur A G",
         "phone": "+41 41 123 45 67",
         "street": "Dorfstrasse 13",
-        "zip": "6340",
+        "zip": 6340,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -24358,7 +24358,7 @@
         "name": "Hauptagentur R P",
         "phone": "+41 41 123 45 67",
         "street": "Luzernerstrasse 1",
-        "zip": "6031",
+        "zip": 6031,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -24480,7 +24480,7 @@
         "name": "Hauptagentur P S",
         "phone": "+41 41 123 45 67",
         "street": "Mühlestrasse 28",
-        "zip": "6313",
+        "zip": 6313,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -24544,7 +24544,7 @@
         "name": "Geschäftsstelle Rotkreuz",
         "phone": "+41 41 123 45 67",
         "street": "Schöngrund 1",
-        "zip": "6343",
+        "zip": 6343,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -24634,7 +24634,7 @@
         "name": "Hauptagentur J L",
         "phone": "+41 41 123 45 67",
         "street": "Luzernerstr.13",
-        "zip": "6285",
+        "zip": 6285,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -24764,7 +24764,7 @@
         "name": "Geschäftsstelle Bad Zurzach",
         "phone": "+41 56 123 45 67",
         "street": "Hauptstrasse 29b",
-        "zip": "5330",
+        "zip": 5330,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -24846,7 +24846,7 @@
         "name": "Agentur R Z",
         "phone": "+41 41 123 45 67",
         "street": "Bahnhofplatz 4",
-        "zip": "6410",
+        "zip": 6410,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -24928,7 +24928,7 @@
         "name": "Hauptagentur G F",
         "phone": "+41 56 123 45 67",
         "street": "Zentralstrasse 53",
-        "zip": "5610",
+        "zip": 5610,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -25058,7 +25058,7 @@
         "name": "Hauptagentur M R",
         "phone": "+41 56 123 45 67",
         "street": "Aarauerstrasse 7",
-        "zip": "5630",
+        "zip": 5630,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -25188,7 +25188,7 @@
         "name": "Generalagentur U T",
         "phone": "+41 56 123 45 67",
         "street": "Nordhaus 1",
-        "zip": "5400",
+        "zip": 5400,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -25430,7 +25430,7 @@
         "name": "Hauptagentur J L",
         "phone": "+41 41 123 45 67",
         "street": "Hauptstrasse 25",
-        "zip": "6280",
+        "zip": 6280,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -25494,7 +25494,7 @@
         "name": "Hauptagentur T B",
         "phone": "+41 41 123 45 67",
         "street": "Kirchweg 3",
-        "zip": "6048",
+        "zip": 6048,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -25616,7 +25616,7 @@
         "name": "Hauptagentur R F",
         "phone": "+41 56 123 45 67",
         "street": "Jurastrasse 58",
-        "zip": "5430",
+        "zip": 5430,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -25754,7 +25754,7 @@
         "name": "Hauptagentur I C",
         "phone": "+41 41 123 45 67",
         "street": "Küferweg 7",
-        "zip": "6403",
+        "zip": 6403,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -25876,7 +25876,7 @@
         "name": "Hauptagentur A L",
         "phone": "+41 41 123 45 67",
         "street": "Würzenbachstr.8",
-        "zip": "6006",
+        "zip": 6006,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -25998,7 +25998,7 @@
         "name": "Geschäftsstelle Littau",
         "phone": "+41 41 123 45 67",
         "street": "Luzernerstrasse 146",
-        "zip": "6014",
+        "zip": 6014,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -26072,7 +26072,7 @@
         "name": "Geschäftsstelle Malters-Schwarzenberg",
         "phone": "+41 41 123 45 67",
         "street": "Luzernstrasse 67",
-        "zip": "6102",
+        "zip": 6102,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -26171,7 +26171,7 @@
         "name": "Generalagentur V H",
         "phone": "+41 62 123 45 67",
         "street": "Schlossplatz 1",
-        "zip": "5001",
+        "zip": 5001,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -26333,7 +26333,7 @@
         "name": "Hauptagentur M C",
         "phone": "+41 41 123 45 67",
         "street": "Gerliswilstrasse 74",
-        "zip": "6020",
+        "zip": 6020,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -26464,7 +26464,7 @@
         "name": "Generalagentur V B",
         "phone": "+41 41 123 45 67",
         "street": "Postfach 547",
-        "zip": "6301",
+        "zip": 6301,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -26529,7 +26529,7 @@
         "name": "Generalagentur V B",
         "phone": "+41 41 123 45 67",
         "street": "Hinterbergstrasse 24",
-        "zip": "6330",
+        "zip": 6330,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -26643,7 +26643,7 @@
         "name": "Hauptagentur A I",
         "phone": "+41 41 123 45 67",
         "street": "Hausmatt 1",
-        "zip": "6423",
+        "zip": 6423,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -26773,7 +26773,7 @@
         "name": "Hauptagentur R N",
         "phone": "+41 41 123 45 67",
         "street": "Luzernerstrasse 4",
-        "zip": "5643",
+        "zip": 5643,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -26864,7 +26864,7 @@
         "name": "Generalagentur V H",
         "phone": "+41 62 123 45 67",
         "street": "Industriestrasse 12a",
-        "zip": "5036",
+        "zip": 5036,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -26928,7 +26928,7 @@
         "name": "Generalagentur R S",
         "phone": "+41 41 123 45 67",
         "street": "Postfach 547",
-        "zip": "6301",
+        "zip": 6301,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -27115,7 +27115,7 @@
         "name": "Generalagentur V C",
         "phone": "+41 41 123 45 67",
         "street": "Inseliquai 10",
-        "zip": "6002",
+        "zip": 6002,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -27341,7 +27341,7 @@
         "name": "Generalagentur G S",
         "phone": "+41 41 123 45 67",
         "street": "Inseliquai 10",
-        "zip": "6005",
+        "zip": 6005,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -27536,7 +27536,7 @@
         "name": "Geschäftsstelle Vorsorge \u0026 Vermögen",
         "phone": "+41 41 123 45 67",
         "street": "Bahnhofstrasse 38A",
-        "zip": "6210",
+        "zip": 6210,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -27659,7 +27659,7 @@
         "name": "Geschäftsstelle Vorsorge \u0026 Vermögen",
         "phone": "+41 41 123 45 67",
         "street": "Hausmatt 1",
-        "zip": "6423",
+        "zip": 6423,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -27765,7 +27765,7 @@
         "name": "Hauptagentur J D",
         "phone": "+41 32 123 45 67",
         "street": "Henry-Grandjean 2",
-        "zip": "2400",
+        "zip": 2400,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -27855,7 +27855,7 @@
         "name": "Hauptagentur P T",
         "phone": "+41 32 123 45 67",
         "street": "Avenue Léopold-Robert 53",
-        "zip": "2300",
+        "zip": 2300,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -28049,7 +28049,7 @@
         "name": "Generalagentur P M",
         "phone": "+41 32 123 45 67",
         "street": "St-Honoré 2",
-        "zip": "2001",
+        "zip": 2001,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -28299,7 +28299,7 @@
         "name": "Geschäftsstelle Cernier",
         "phone": "+41 32 123 45 67",
         "street": "Rue G.-de-Vergy 2",
-        "zip": "2053",
+        "zip": 2053,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -28381,7 +28381,7 @@
         "name": "Hauptagentur G C",
         "phone": "+41 32 123 45 67",
         "street": "Route de Neuchâtel 1",
-        "zip": "2525",
+        "zip": 2525,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -28472,7 +28472,7 @@
         "name": "Generalagentur V G",
         "phone": "+41 32 123 45 67",
         "street": "St-Honoré 2",
-        "zip": "2001",
+        "zip": 2001,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -28634,7 +28634,7 @@
         "name": "Generalagentur P S",
         "phone": "+41 32 123 45 67",
         "street": "Rue des Moulins 28",
-        "zip": "2800",
+        "zip": 2800,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -28756,7 +28756,7 @@
         "name": "Hauptagentur O H",
         "phone": "+41 32 123 45 67",
         "street": "Place d\u0027Armes 9",
-        "zip": "2114",
+        "zip": 2114,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -28846,7 +28846,7 @@
         "name": "Hauptagentur M T",
         "phone": "+41 32 123 45 67",
         "street": "Rue Oscar-Huguenin 10",
-        "zip": "2017",
+        "zip": 2017,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -28976,7 +28976,7 @@
         "name": "Hauptagentur M A",
         "phone": "+41 32 123 45 67",
         "street": "Rue H.-F. Sandoz 84",
-        "zip": "2710",
+        "zip": 2710,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -29082,7 +29082,7 @@
         "name": "Geschäftsstelle Moutier",
         "phone": "+41 32 123 45 67",
         "street": "Rue Centrale 47",
-        "zip": "2740",
+        "zip": 2740,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -29172,7 +29172,7 @@
         "name": "Agentur A S",
         "phone": "+41 32 123 45 67",
         "street": "Rue de la Tour 2a",
-        "zip": "2520",
+        "zip": 2520,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -29254,7 +29254,7 @@
         "name": "Hauptagentur S F",
         "phone": "+41 32 123 45 67",
         "street": "Rue du Temple 2",
-        "zip": "2900",
+        "zip": 2900,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -29368,7 +29368,7 @@
         "name": "Hauptagentur C N",
         "phone": "+41 32 123 45 67",
         "street": "Place du 23 Juin 4",
-        "zip": "2350",
+        "zip": 2350,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -29458,7 +29458,7 @@
         "name": "Hauptagentur M A",
         "phone": "+41 32 123 45 67",
         "street": "Grand-Rue 100",
-        "zip": "2720",
+        "zip": 2720,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -29523,7 +29523,7 @@
         "name": "Geschäftsstelle Vorsorge \u0026 Vermögen",
         "phone": "+41 32 123 45 67",
         "street": "Rue des Moulins 28",
-        "zip": "2800",
+        "zip": 2800,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -29645,7 +29645,7 @@
         "name": "Hauptagentur R M",
         "phone": "+41 52 123 45 67",
         "street": "Landstr.43",
-        "zip": "8450",
+        "zip": 8450,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -29751,7 +29751,7 @@
         "name": "Hauptagentur R M",
         "phone": "+41 52 123 45 67",
         "street": "Vordergasse 12",
-        "zip": "8213",
+        "zip": 8213,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -29874,7 +29874,7 @@
         "name": "Generalagentur V S",
         "phone": "+41 52 123 45 67",
         "street": "Platz 13",
-        "zip": "8201",
+        "zip": 8201,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -29988,7 +29988,7 @@
         "name": "Hauptagentur B F",
         "phone": "+41 52 123 45 67",
         "street": "Oberstadt 9",
-        "zip": "8260",
+        "zip": 8260,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -30078,7 +30078,7 @@
         "name": "Hauptagentur R L",
         "phone": "+41 43 123 45 67",
         "street": "Märktgass 20",
-        "zip": "8197",
+        "zip": 8197,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -30184,7 +30184,7 @@
         "name": "Generalagentur T M",
         "phone": "+41 52 123 45 67",
         "street": "Platz 13",
-        "zip": "8201",
+        "zip": 8201,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -30434,7 +30434,7 @@
         "name": "Generalagentur W E",
         "phone": "+41 32 123 45 67",
         "street": "Bielstrasse 3",
-        "zip": "4502",
+        "zip": 4502,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -30612,7 +30612,7 @@
         "name": "Hauptagentur W Z",
         "phone": "+41 32 123 45 67",
         "street": "Stadtplatz 43",
-        "zip": "3270",
+        "zip": 3270,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -30718,7 +30718,7 @@
         "name": "Hauptagentur A H",
         "phone": "+41 62 123 45 67",
         "street": "Hauptstrasse 40",
-        "zip": "4702",
+        "zip": 4702,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -30848,7 +30848,7 @@
         "name": "Geschäftsstelle Biberist",
         "phone": "+41 32 123 45 67",
         "street": "Hauptstrasse 25",
-        "zip": "4562",
+        "zip": 4562,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -30938,7 +30938,7 @@
         "name": "Hauptagentur R H",
         "phone": "+41 32 123 45 67",
         "street": "Hauptstrasse 13",
-        "zip": "3250",
+        "zip": 3250,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -31060,7 +31060,7 @@
         "name": "Geschäftsstelle Biel-Schwanengasse",
         "phone": "+41 32 123 45 67",
         "street": "Schwanengasse 20",
-        "zip": "2503",
+        "zip": 2503,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -31166,7 +31166,7 @@
         "name": "Geschäftsstelle Hägendorf",
         "phone": "+41 62 123 45 67",
         "street": "Solothurnerstr.19",
-        "zip": "4614",
+        "zip": 4614,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -31240,7 +31240,7 @@
         "name": "Hauptagentur R B",
         "phone": "+41 62 123 45 67",
         "street": "Bitziusstrasse",
-        "zip": "3360",
+        "zip": 3360,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -31338,7 +31338,7 @@
         "name": "Geschäftsstelle Huttwil",
         "phone": "+41 62 123 45 67",
         "street": "Marktgasse 4",
-        "zip": "4950",
+        "zip": 4950,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -31420,7 +31420,7 @@
         "name": "Geschäftsstelle Ins",
         "phone": "+41 32 123 45 67",
         "street": "Bahnhofstrasse 87",
-        "zip": "3232",
+        "zip": 3232,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -31494,7 +31494,7 @@
         "name": "Hauptagentur R G",
         "phone": "+41 32 123 45 67",
         "street": "Marktstrasse 4",
-        "zip": "2540",
+        "zip": 2540,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -31600,7 +31600,7 @@
         "name": "Hauptagentur T G",
         "phone": "+41 62 123 45 67",
         "street": "Jurastrasse 17",
-        "zip": "4900",
+        "zip": 4900,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -31722,7 +31722,7 @@
         "name": "Hauptagentur S M",
         "phone": "+41 26 123 45 67",
         "street": "Pestalozzistrasse 10",
-        "zip": "3280",
+        "zip": 3280,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -31828,7 +31828,7 @@
         "name": "Hauptagentur D B",
         "phone": "+41 32 123 45 67",
         "street": "Hauptstrasse 54",
-        "zip": "2560",
+        "zip": 2560,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -31942,7 +31942,7 @@
         "name": "Geschäftsstelle Südkurve Lyss",
         "phone": "+41 32 123 45 67",
         "street": "Hohfuhrenweg 4",
-        "zip": "3250",
+        "zip": 3250,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -32016,7 +32016,7 @@
         "name": "Agentur K S",
         "phone": "+41 32 123 45 67",
         "street": "Müllerhof/St.Niklausstr 1",
-        "zip": "4502",
+        "zip": 4502,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -32090,7 +32090,7 @@
         "name": "Hauptagentur Rothrist",
         "phone": "+41 62 123 45 67",
         "street": "Bernstrasse 116",
-        "zip": "4852",
+        "zip": 4852,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -32188,7 +32188,7 @@
         "name": "Generalagentur R E",
         "phone": "+41 62 123 45 67",
         "street": "Dornacherstrasse 7",
-        "zip": "4603",
+        "zip": 4603,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -32374,7 +32374,7 @@
         "name": "Generalagentur M H",
         "phone": "+41 32 123 45 67",
         "street": "Bahnhofstrasse 15",
-        "zip": "2501",
+        "zip": 2501,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -32577,7 +32577,7 @@
         "name": "Generalagentur V R",
         "phone": "+41 32 123 45 67",
         "street": "Bahnhofstrasse 15",
-        "zip": "2501",
+        "zip": 2501,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -32716,7 +32716,7 @@
         "name": "Geschäftsstelle Vorsorge \u0026 Vermögen",
         "phone": "+41 32 123 45 67",
         "street": "Bielstrasse 3",
-        "zip": "4502",
+        "zip": 4502,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -32838,7 +32838,7 @@
         "name": "Generalagentur P S",
         "phone": "+41 71 123 45 67",
         "street": "Teufenerstr.20",
-        "zip": "9001",
+        "zip": 9001,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -33056,7 +33056,7 @@
         "name": "Generalagentur M C",
         "phone": "+41 71 123 45 67",
         "street": "Johann-Georg-Müllerstr.6",
-        "zip": "9500",
+        "zip": 9500,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -33250,7 +33250,7 @@
         "name": "Generalagentur P B",
         "phone": "+41 71 123 45 67",
         "street": "Trogenerstr.13",
-        "zip": "9450",
+        "zip": 9450,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -33396,7 +33396,7 @@
         "name": "Agentur J B",
         "phone": "+41 71 123 45 67",
         "street": "Dorfstrasse 7",
-        "zip": "9462",
+        "zip": 9462,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -33478,7 +33478,7 @@
         "name": "Hauptagentur J I",
         "phone": "+41 71 123 45 67",
         "street": "Wührestrasse 2a",
-        "zip": "9050",
+        "zip": 9050,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -33576,7 +33576,7 @@
         "name": "Geschäftsstelle Bazenheid",
         "phone": "+41 71 123 45 67",
         "street": "Wilerstr.59",
-        "zip": "9602",
+        "zip": 9602,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -33667,7 +33667,7 @@
         "name": "Generalagentur V M",
         "phone": "+41 71 123 45 67",
         "street": "Teufenerstrasse 20",
-        "zip": "9001",
+        "zip": 9001,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -33829,7 +33829,7 @@
         "name": "Hauptagentur H S",
         "phone": "+41 81 123 45 67",
         "street": "Bahnhofstr.57",
-        "zip": "9470",
+        "zip": 9470,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -33959,7 +33959,7 @@
         "name": "Hauptagentur R B",
         "phone": "+41 71 123 45 67",
         "street": "Bahnhofstr.24",
-        "zip": "9230",
+        "zip": 9230,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -34049,7 +34049,7 @@
         "name": "Hauptagentur A C",
         "phone": "+41 71 123 45 67",
         "street": "Bionstrasse 3",
-        "zip": "9015",
+        "zip": 9015,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -34163,7 +34163,7 @@
         "name": "Hauptagentur P S",
         "phone": "+41 71 123 45 67",
         "street": "Löwenstrasse 6",
-        "zip": "9403",
+        "zip": 9403,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -34277,7 +34277,7 @@
         "name": "Hauptagentur R S",
         "phone": "+41 71 123 45 67",
         "street": "Poststr.13",
-        "zip": "9200",
+        "zip": 9200,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -34399,7 +34399,7 @@
         "name": "Hauptagentur E S",
         "phone": "+41 71 123 45 67",
         "street": "Diepoldsauerstr.17",
-        "zip": "9443",
+        "zip": 9443,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -34505,7 +34505,7 @@
         "name": "Geschäftsstelle Heiden",
         "phone": "+41 71 123 45 67",
         "street": "Poststrasse 25",
-        "zip": "9410",
+        "zip": 9410,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -34603,7 +34603,7 @@
         "name": "Hauptagentur M P",
         "phone": "+41 71 123 45 67",
         "street": "Alte Bahnhofstr.1",
-        "zip": "9100",
+        "zip": 9100,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -34709,7 +34709,7 @@
         "name": "Geschäftsstelle Oberriet",
         "phone": "+41 71 123 45 67",
         "street": "Staatsstrasse 169",
-        "zip": "9463",
+        "zip": 9463,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -34783,7 +34783,7 @@
         "name": "Hauptagentur E G",
         "phone": "+41 71 123 45 67",
         "street": "Staatsstr.100",
-        "zip": "9445",
+        "zip": 9445,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -34889,7 +34889,7 @@
         "name": "Hauptagentur E K",
         "phone": "+41 71 123 45 67",
         "street": "Signalstrasse 17",
-        "zip": "9401",
+        "zip": 9401,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -35027,7 +35027,7 @@
         "name": "Hauptagentur S R",
         "phone": "+41 71 123 45 67",
         "street": "Alte Haslenstrasse 5",
-        "zip": "9053",
+        "zip": 9053,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -35141,7 +35141,7 @@
         "name": "Hauptagentur P B",
         "phone": "+41 71 123 45 67",
         "street": "St. Leonhardstr.4",
-        "zip": "9000",
+        "zip": 9000,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -35247,7 +35247,7 @@
         "name": "Hauptagentur H B",
         "phone": "+41 71 123 45 67",
         "street": "Neudorfstr.69",
-        "zip": "9430",
+        "zip": 9430,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -35345,7 +35345,7 @@
         "name": "Hauptagentur A A",
         "phone": "+41 71 123 45 67",
         "street": "Grünaustrasse 4",
-        "zip": "8370",
+        "zip": 8370,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -35451,7 +35451,7 @@
         "name": "Hauptagentur R S",
         "phone": "+41 71 123 45 67",
         "street": "Bahnhofstr.173",
-        "zip": "9244",
+        "zip": 9244,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -35557,7 +35557,7 @@
         "name": "Hauptagentur C K",
         "phone": "+41 71 123 45 67",
         "street": "Unterdorfstr.7",
-        "zip": "9630",
+        "zip": 9630,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -35679,7 +35679,7 @@
         "name": "Geschäftsstelle Wittenbach",
         "phone": "+41 71 123 45 67",
         "street": "Oedenhofstr.1",
-        "zip": "9300",
+        "zip": 9300,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -35761,7 +35761,7 @@
         "name": "Geschäftsstelle Zuzwil/N\u0027helfenschwil",
         "phone": "+41 71 123 45 67",
         "street": "Hinterdorfstrasse 32",
-        "zip": "9524",
+        "zip": 9524,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -35852,7 +35852,7 @@
         "name": "Geschäftsstelle Vorsorge \u0026 Vermögen",
         "phone": "+41 71 123 45 67",
         "street": "Heidenerstrasse 1a",
-        "zip": "9450",
+        "zip": 9450,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -35974,7 +35974,7 @@
         "name": "Geschäftsstelle Vaduz",
         "phone": "+41 23 123 45 67",
         "street": "Landstrasse 60",
-        "zip": "9490",
+        "zip": 9490,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -36089,7 +36089,7 @@
         "name": "Geschäftsstelle Vorsorge \u0026 Vermögen",
         "phone": "+41 23 123 45 67",
         "street": "Landstrasse 60",
-        "zip": "9490",
+        "zip": 9490,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -36179,7 +36179,7 @@
         "name": "Hauptagentur C B",
         "phone": "+41 52 123 45 67",
         "street": "Wängistrasse 12",
-        "zip": "8355",
+        "zip": 8355,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -36285,7 +36285,7 @@
         "name": "Generalagentur U S",
         "phone": "+41 52 123 45 67",
         "street": "Zürcherstrasse 12",
-        "zip": "8401",
+        "zip": 8401,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -36559,7 +36559,7 @@
         "name": "Generalagentur R G",
         "phone": "+41 52 123 45 67",
         "street": "Stadlerstrasse 11",
-        "zip": "8404",
+        "zip": 8404,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -36786,7 +36786,7 @@
         "name": "Generalagentur V H",
         "phone": "+41 52 123 45 67",
         "street": "Zürcherstrasse 12",
-        "zip": "8401",
+        "zip": 8401,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -37045,7 +37045,7 @@
         "name": "Generalagentur V K",
         "phone": "+41 52 123 45 67",
         "street": "Zürcherstrasse 310",
-        "zip": "8501",
+        "zip": 8501,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -37224,7 +37224,7 @@
         "name": "Generalagentur V P",
         "phone": "+41 55 123 45 67",
         "street": "Klaus Gebert-Strasse 2",
-        "zip": "8640",
+        "zip": 8640,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -37386,7 +37386,7 @@
         "name": "Hauptagentur M T",
         "phone": "+41 52 123 45 67",
         "street": "Riedhofstrasse 45",
-        "zip": "8408",
+        "zip": 8408,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -37484,7 +37484,7 @@
         "name": "Hauptagentur J F",
         "phone": "+41 71 123 45 67",
         "street": "Schiffländestrasse 3",
-        "zip": "9320",
+        "zip": 9320,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -37614,7 +37614,7 @@
         "name": "Generalagentur D A",
         "phone": "+41 52 123 45 67",
         "street": "Zürcherstr.310",
-        "zip": "8501",
+        "zip": 8501,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -37824,7 +37824,7 @@
         "name": "Hauptagentur M M",
         "phone": "+41 52 123 45 67",
         "street": "Kanzleistr.45",
-        "zip": "8405",
+        "zip": 8405,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -37946,7 +37946,7 @@
         "name": "Hauptagentur A G",
         "phone": "+41 71 123 45 67",
         "street": "Kirchstrasse 15",
-        "zip": "8580",
+        "zip": 8580,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -38060,7 +38060,7 @@
         "name": "Agentur H T",
         "phone": "+41 52 123 45 67",
         "street": "Kreuzlingerstrasse 46",
-        "zip": "8555",
+        "zip": 8555,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -38142,7 +38142,7 @@
         "name": "Hauptagentur S M",
         "phone": "+41 71 123 45 67",
         "street": "Konstanzerstrasse 20",
-        "zip": "8280",
+        "zip": 8280,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -38312,7 +38312,7 @@
         "name": "Hauptagentur H H",
         "phone": "+41 52 123 45 67",
         "street": "Seuzachstrasse 1",
-        "zip": "8413",
+        "zip": 8413,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -38434,7 +38434,7 @@
         "name": "Hauptagentur M F",
         "phone": "+41 71 123 45 67",
         "street": "Bahnhofstrasse 30",
-        "zip": "8590",
+        "zip": 8590,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -38540,7 +38540,7 @@
         "name": "Hauptagentur M G",
         "phone": "+41 52 123 45 67",
         "street": "Stationsstrasse 35",
-        "zip": "8472",
+        "zip": 8472,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -38646,7 +38646,7 @@
         "name": "Hauptagentur W R",
         "phone": "+41 52 123 45 67",
         "street": "Stadthausstr.131",
-        "zip": "8401",
+        "zip": 8401,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -38760,7 +38760,7 @@
         "name": "Hauptagentur S O",
         "phone": "+41 52 123 45 67",
         "street": "Tösstalstr.40",
-        "zip": "8488",
+        "zip": 8488,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -38874,7 +38874,7 @@
         "name": "Hauptagentur F D",
         "phone": "+41 71 123 45 67",
         "street": "Marktstrasse 28",
-        "zip": "8570",
+        "zip": 8570,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -38989,7 +38989,7 @@
         "name": "Geschäftsstelle Vorsorge \u0026 Vermögen",
         "phone": "+41 44 123 45 67",
         "street": "Winterthurerstrasse 18a",
-        "zip": "8610",
+        "zip": 8610,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -39128,7 +39128,7 @@
         "name": "Geschäftsstelle Vorsorge \u0026 Vermögen",
         "phone": "+41 71 123 45 67",
         "street": "Johann-Georg-Müllerstr.6",
-        "zip": "9501",
+        "zip": 9501,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -39250,7 +39250,7 @@
         "name": "Generalagentur C H",
         "phone": "+41 44 123 45 67",
         "street": "Brandschenkestrasse 18",
-        "zip": "8027",
+        "zip": 8027,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -39532,7 +39532,7 @@
         "name": "Generalagentur M K",
         "phone": "+41 55 123 45 67",
         "street": "Klaus Gebert-Str.2",
-        "zip": "8640",
+        "zip": 8640,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -39702,7 +39702,7 @@
         "name": "Generalagentur R R",
         "phone": "+41 44 123 45 67",
         "street": "Birmensdorferstrasse 140",
-        "zip": "8036",
+        "zip": 8036,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -39952,7 +39952,7 @@
         "name": "Generalagentur M O",
         "phone": "+41 44 123 45 67",
         "street": "Affolternstrasse 42",
-        "zip": "8050",
+        "zip": 8050,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -40210,7 +40210,7 @@
         "name": "Hauptagentur B K",
         "phone": "+41 44 123 45 67",
         "street": "Seestrasse 238",
-        "zip": "8810",
+        "zip": 8810,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -40341,7 +40341,7 @@
         "name": "Generalagentur V P",
         "phone": "+41 44 123 45 67",
         "street": "Brandschenkestrasse 18",
-        "zip": "8001",
+        "zip": 8001,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -40535,7 +40535,7 @@
         "name": "Hauptagentur T B",
         "phone": "+41 44 123 45 67",
         "street": "Bahnhofplatz 11",
-        "zip": "8910",
+        "zip": 8910,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -40641,7 +40641,7 @@
         "name": "Hauptagentur G R",
         "phone": "+41 44 123 45 67",
         "street": "Altstetterstrasse 123",
-        "zip": "8048",
+        "zip": 8048,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -40755,7 +40755,7 @@
         "name": "Hauptagentur H U",
         "phone": "+41 44 123 45 67",
         "street": "Bahnhofstr.3",
-        "zip": "8302",
+        "zip": 8302,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -40861,7 +40861,7 @@
         "name": "Hauptagentur M P",
         "phone": "+41 44 123 45 67",
         "street": "Mutschellenstrasse 197",
-        "zip": "8038",
+        "zip": 8038,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -41007,7 +41007,7 @@
         "name": "Generalagentur T F",
         "phone": "+41 44 123 45 67",
         "street": "Feldstr.99",
-        "zip": "8180",
+        "zip": 8180,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -41241,7 +41241,7 @@
         "name": "Hauptagentur J B",
         "phone": "+41 44 123 45 67",
         "street": "Bahnhofstrasse 10",
-        "zip": "8304",
+        "zip": 8304,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -41395,7 +41395,7 @@
         "name": "Hauptagentur M Z",
         "phone": "+41 44 123 45 67",
         "street": "Oberdorfstrasse 74",
-        "zip": "8600",
+        "zip": 8600,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -41502,7 +41502,7 @@
         "name": "Generalagentur V L",
         "phone": "+41 44 123 45 67",
         "street": "Affolternstrasse 42",
-        "zip": "8050",
+        "zip": 8050,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -41728,7 +41728,7 @@
         "name": "Hauptagentur A W",
         "phone": "+41 44 123 45 67",
         "street": "Zentrum Büelgass",
-        "zip": "8625",
+        "zip": 8625,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -41842,7 +41842,7 @@
         "name": "Hauptagentur S H",
         "phone": "+41 44 123 45 67",
         "street": "Dorfstrasse 111",
-        "zip": "8424",
+        "zip": 8424,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -41940,7 +41940,7 @@
         "name": "Hauptagentur P T",
         "phone": "+41 44 123 45 67",
         "street": "Gemeindehausstr.9",
-        "zip": "8340",
+        "zip": 8340,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -42054,7 +42054,7 @@
         "name": "Hauptagentur F I",
         "phone": "+41 43 123 45 67",
         "street": "Dorfstrasse 116",
-        "zip": "8706",
+        "zip": 8706,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -42224,7 +42224,7 @@
         "name": "Hauptagentur H H",
         "phone": "+41 44 123 45 67",
         "street": "Sonnenbergstr.3",
-        "zip": "8172",
+        "zip": 8172,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -42338,7 +42338,7 @@
         "name": "Hauptagentur R K",
         "phone": "+41 55 123 45 67",
         "street": "Churerstrasse 21",
-        "zip": "8808",
+        "zip": 8808,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -42452,7 +42452,7 @@
         "name": "Hauptagentur R B",
         "phone": "+41 44 123 45 67",
         "street": "Watterstr.33",
-        "zip": "8105",
+        "zip": 8105,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -42566,7 +42566,7 @@
         "name": "Hauptagentur P S",
         "phone": "+41 44 123 45 67",
         "street": "Oberdorfstr.3",
-        "zip": "8153",
+        "zip": 8153,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -42680,7 +42680,7 @@
         "name": "Hauptagentur S M",
         "phone": "+41 44 123 45 67",
         "street": "Bahnstrasse 18",
-        "zip": "8603",
+        "zip": 8603,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -42810,7 +42810,7 @@
         "name": "Hauptagentur D S",
         "phone": "+41 44 123 45 67",
         "street": "Silbernstrasse 12",
-        "zip": "8953",
+        "zip": 8953,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -42940,7 +42940,7 @@
         "name": "Hauptagentur F I",
         "phone": "+41 44 123 45 67",
         "street": "Grundstrasse 4",
-        "zip": "8712",
+        "zip": 8712,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -43004,7 +43004,7 @@
         "name": "Hauptagentur E B",
         "phone": "+41 44 123 45 67",
         "street": "Hottingerstrasse 52",
-        "zip": "8032",
+        "zip": 8032,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -43110,7 +43110,7 @@
         "name": "Hauptagentur O B",
         "phone": "+41 44 123 45 67",
         "street": "Bahnhofstrasse 3",
-        "zip": "8330",
+        "zip": 8330,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -43216,7 +43216,7 @@
         "name": "Hauptagentur F I",
         "phone": "+41 44 123 45 67",
         "street": "Kugelgasse 24",
-        "zip": "8708",
+        "zip": 8708,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -43280,7 +43280,7 @@
         "name": "Hauptagentur B H",
         "phone": "+41 55 123 45 67",
         "street": "Dorfstrasse 25",
-        "zip": "8630",
+        "zip": 8630,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -43394,7 +43394,7 @@
         "name": "Hauptagentur M H",
         "phone": "+41 44 123 45 67",
         "street": "Schwandelstrasse 1",
-        "zip": "8800",
+        "zip": 8800,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -43516,7 +43516,7 @@
         "name": "Generalagentur H J",
         "phone": "+41 44 123 45 67",
         "street": "Winterthurerstr.18a",
-        "zip": "8610",
+        "zip": 8610,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -43710,7 +43710,7 @@
         "name": "Hauptagentur M V",
         "phone": "+41 44 123 45 67",
         "street": "Friedbergstrasse 9",
-        "zip": "8820",
+        "zip": 8820,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -43840,7 +43840,7 @@
         "name": "Hauptagentur M H",
         "phone": "+41 43 123 45 67",
         "street": "Soodstrasse 2",
-        "zip": "8134",
+        "zip": 8134,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -43904,7 +43904,7 @@
         "name": "Hauptagentur P T",
         "phone": "+41 55 123 45 67",
         "street": "Kirchgasse 6",
-        "zip": "8636",
+        "zip": 8636,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -43968,7 +43968,7 @@
         "name": "Hauptagentur R B",
         "phone": "+41 44 123 45 67",
         "street": "Ettenbergstr.16",
-        "zip": "8907",
+        "zip": 8907,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -44066,7 +44066,7 @@
         "name": "Hauptagentur M J",
         "phone": "+41 44 123 45 67",
         "street": "Giessereistrasse 4",
-        "zip": "8620",
+        "zip": 8620,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -44180,7 +44180,7 @@
         "name": "Hauptagentur P H",
         "phone": "+41 44 123 45 67",
         "street": "Rotfluhstr.98",
-        "zip": "8702",
+        "zip": 8702,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -44302,7 +44302,7 @@
         "name": "Hauptagentur B L",
         "phone": "+41 44 123 45 67",
         "street": "Wehntalerstrasse 40",
-        "zip": "8157",
+        "zip": 8157,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -44408,7 +44408,7 @@
         "name": "Hauptagentur M B",
         "phone": "+41 43 123 45 67",
         "street": "Limmattalstrasse 170",
-        "zip": "8049",
+        "zip": 8049,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -44546,7 +44546,7 @@
         "name": "Hauptagentur R W",
         "phone": "+41 52 123 45 67",
         "street": "Usterstr.6",
-        "zip": "8308",
+        "zip": 8308,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -44636,7 +44636,7 @@
         "name": "Hauptagentur F V",
         "phone": "+41 52 123 45 67",
         "street": "Märtplatz 1",
-        "zip": "8307",
+        "zip": 8307,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -44742,7 +44742,7 @@
         "name": "Geschäftsstelle Hombrechtikon",
         "phone": "+41 55 123 45 67",
         "street": "Eichtalstrasse 55",
-        "zip": "8634",
+        "zip": 8634,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -44817,7 +44817,7 @@
         "name": "Generalagentur V K",
         "phone": "+41 44 123 45 67",
         "street": "Birmensdorferstrasse 140",
-        "zip": "8036",
+        "zip": 8036,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -45020,7 +45020,7 @@
         "name": "Geschäftsstelle Vorsorge \u0026 Vermögen",
         "phone": "+41 56 123 45 67",
         "street": "Nordhaus 1",
-        "zip": "5401",
+        "zip": 5401,
         "openingHours": {
             "days": {
                 "Mo": {
@@ -45103,7 +45103,7 @@
         "name": "Geschäftsstelle Vorsorge \u0026 Vermögen",
         "phone": "+41 44 123 45 67",
         "street": "Seestrasse 238",
-        "zip": "8810",
+        "zip": 8810,
         "openingHours": {
             "days": {
                 "Mo": {
