@@ -56,6 +56,9 @@ function isNumeric(obj) {
     // adding 1 corrects loss of precision from parseFloat (#15100)
     return !Array.isArray(obj) && (obj - parseFloat(obj) + 1) >= 0;
 }
+function isInteger(obj) {
+    return isNumeric(obj) && obj.indexOf('.') < 0;
+}
 
 function fullUrl(req, dictionary) {
     var path = req.originalUrl;
@@ -161,8 +164,10 @@ function findLimited(req, res, collection, idName, query, sortColumn, fieldFilte
 /************* start model **************************/
 
 
-function registerModelAPIs(type, typeMultiple, idName, isIdInteger, hasLimitCollection) {
+function registerModelAPIs(type, typeMultiple, idName, isIdInteger, hasLimitCollection, zipSearch, customerRelation) {
     if (isIdInteger === undefined) isIdInteger = false; // default string
+    if (zipSearch === undefined) zipSearch = { "hasZipSearch" : false, "fieldName" : "" }; // default string
+    if (customerRelation === undefined) customerRelation = { "hasRelation" : false, "sort" : "id" }; // default string
 
     /*
     * GET models.
@@ -198,9 +203,9 @@ function registerModelAPIs(type, typeMultiple, idName, isIdInteger, hasLimitColl
         router.get('/'+typeMultiple+'/:id', function(req, res) {
             var db = req.db;
             var collection = db.get(typeMultiple);
-            if (!isNumeric(req.params.id)) {
+            if (!isInteger(req.params.id)) {
                 return handleError(res,
-                    new RestApiError("400", 'id '+req.params.id+'is not numeric'));
+                    new RestApiError("400", 'id '+req.params.id+'is not integer'));
             } else {
                 var idToSearch = parseInt(req.params.id);
                 collection.findOne({ id : idToSearch }, function(e,docs){
@@ -277,6 +282,27 @@ function registerModelAPIs(type, typeMultiple, idName, isIdInteger, hasLimitColl
         }
     });
 
+    if (zipSearch.hasZipSearch) {
+        router.get('/'+typeMultiple+'/search/byZip/:zip', function(req, res) {
+            var db = req.db;
+            var collection = db.get(typeMultiple);
+            var options = {
+                "sort": idName
+            }
+            if (!isInteger(req.params.zip)) {
+                return handleError(res,
+                    new RestApiError("400", 'parameter zip '+req.params.zip+' is not integer'));
+            } else {
+                var zipToSearch = parseInt(req.params.zip);
+                var sortedColumn = {};
+                sortedColumn[idName] = 1;
+                var zipColumn = {};
+                zipColumn[zipSearch.fieldName] = zipToSearch;
+                findLimited(req, res, collection, idName, zipColumn, sortedColumn);
+            } 
+        });
+    }
+
     router.get('/'+typeMultiple+'/search/byWord/:text', function(req, res) {
         var db = req.db;
         var collection = db.get(typeMultiple);
@@ -312,9 +338,9 @@ function registerModelAPIs(type, typeMultiple, idName, isIdInteger, hasLimitColl
             return handleError(res,
                 new RestApiError("400", 'latitude '+req.params.latitude+'is not numeric'));
         }
-        if (!isNumeric(req.params.meter)) {
+        if (!isInteger(req.params.meter)) {
             return handleError(res,
-                new RestApiError("400", 'meter '+req.params.meter+'is not numeric'));
+                new RestApiError("400", 'meter '+req.params.meter+'is not integer'));
         }
         var longitudeSearch = parseFloat(req.params.longitude);
         var latitudeSearch = parseFloat(req.params.latitude);
@@ -334,8 +360,29 @@ function registerModelAPIs(type, typeMultiple, idName, isIdInteger, hasLimitColl
 
         findLimited(req, res, collection, idName, query, {} );
     });
-    
-
+    if (customerRelation.hasRelation) {
+        console.log("install customer relation using '"+typeMultiple+"'");
+        router.get('/customers/:id/'+typeMultiple, function(req, res) {
+            var db = req.db;
+            var customerCollection = db.get('customers');
+            var collection = db.get(typeMultiple);
+            var idToSearch = req.params.id;
+            var options = {
+                "sort": customerRelation.sort 
+            }
+            customerCollection.findOne({ id: idToSearch }, function(e1,docs1){
+                if (handleError(res, e1, docs1, "customer with id "+idToSearch+" not found")) {
+                    return;
+                }
+                collection.find({ customer: idToSearch }, options, function(e,docs){
+                    if (handleError(res, e, docs, undefined)) {
+                        return;
+                    }
+                    res.json(docs);
+                });
+            });
+        });
+    }
 }
 
 
@@ -358,61 +405,8 @@ registerModelAPIs('truck', 'trucks', 'id', true, true);
 
 /************* start customers **************************/
 
-registerModelAPIs('customer', 'customers', 'id', false, true);
-router.get('/customers/:id/transactions', function(req, res) {
-    var db = req.db;
-    var collection = db.get('transactions');
-    var idToSearch = req.params.id;
-    var options = {
-        "sort": "date"
-    }
+registerModelAPIs('customer', 'customers', 'id', false, true, { "hasZipSearch" : true, "fieldName" : "zipCode" }); 
 
-    collection.find({ customer : idToSearch }, options, function(e,docs){
-        res.json(docs)
-    });
-});
-
-router.get('/customers/:id/trips', function(req, res) {
-    var db = req.db;
-    var collection = db.get('trips');
-    var idToSearch = req.params.id;
-    var options = {
-        "sort": "id"
-    }
-
-    collection.find({ }, options, function(e,docs){
-        res.json(docs)
-    });
-});
-
-
-router.get('/customers/:id/profiles', function(req, res) {
-    var db = req.db;
-    var collection = db.get('profiles');
-    var idToSearch = req.params.id;
-    var options = {
-        "sort": "id"
-    }
-    collection.find({ customer : idToSearch }, options, function(e,docs){
-        res.json(docs)
-    });
-});
-
-
-router.get('/customers/search/byZip/:zip', function(req, res) {
-    var db = req.db;
-    var collection = db.get('customers');
-    var options = {
-        "sort": "id"
-    }
-    if (!isNumeric(req.params.zip)) {
-        return handleError(res,
-            new RestApiError("400", 'parameter zip '+req.params.zip+'is not numeric'));
-    } else {
-        var zipToSearch = parseInt(req.params.zip);
-        findLimited(req, res, collection, "id", { zipCode : zipToSearch }, { "id" : 1 });
-    } 
-});
 
 router.get('/customers/search/byName/:name', function(req, res) {
     var db = req.db;
@@ -430,36 +424,30 @@ router.get('/customers/search/byName/:name', function(req, res) {
     } else {
         findLimited(req, res, collection, "id", 
             { $or: [
-                { surname : {'$regex': nameToSearch } },
-                { givenName : {'$regex': nameToSearch } }
+                { surname : {'$regex': '(?i)'+nameToSearch } },
+                { givenName : {'$regex': '(?i)'+nameToSearch } }
             ]}, {"id" : 1});
     }
-
 });
-
-
-
-
-
 
 /************* end customers **************************/
 
 /************* start profiles **************************/
 
-registerModelAPIs('profile', 'profiles', 'id', false, true);
+registerModelAPIs('profile', 'profiles', 'id', true, true, undefined, { "hasRelation" : true, "sort" : "id"});
 
 /************* end profiles **************************/
 
 
 /************* start trips **************************/
 
-registerModelAPIs('trip', 'trips', 'id', true, false);
+registerModelAPIs('trip', 'trips', 'id', true, false, undefined, { "hasRelation" : true, "sort" : "id"});
 
 /************* end trips **************************/
 
 /************* start trips **************************/
 
-registerModelAPIs('transaction', 'transactions', '_id', false, true);
+registerModelAPIs('transaction', 'transactions', '_id', false, true, undefined, { "hasRelation" : true, "sort" : "date"});
 
 /************* end trips **************************/
 
@@ -524,5 +512,5 @@ router.get('/favorites/:id/category', function(req, res) {
 
 
 /************* start contacts **************************/
-registerModelAPIs('contact', 'contacts', '_id', false, true);
+registerModelAPIs('contact', 'contacts', '_id', false, true, { "hasZipSearch" : true, "fieldName" : "zip" });
 /************* end contacts **************************/
