@@ -1621,7 +1621,7 @@
                         "in": "path",
                         "description": "mongodb query in JSON format - see http://bit.ly/2aI9Djk",
                         "required": true,
-                        "default": "{ \"kilograms\" : 100 }",
+                        "default": "{ \"nof_kids_total\" : 2 }",
                         "type": "string",
                         "format": "string"
                     },
@@ -2325,7 +2325,7 @@
                         "in": "path",
                         "description": "mongodb query in JSON format - see http://bit.ly/2aI9Djk",
                         "required": true,
-                        "default": "{ \"kilograms\" : 100 }",
+                        "default": "{ \"city\" : \"Winterthur\" }",
                         "type": "string",
                         "format": "string"
                     },
