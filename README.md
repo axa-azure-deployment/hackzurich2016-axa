@@ -2,13 +2,21 @@
 AXA Winterthur at hackzurich 2016 - topic: "insurance as simple as a game" aka "Clash of claims"
 ...
 
+## use
+Our services are deployed on Microsoft AZURE cloud at https://hackzurich16.azurewebsites.net. 
+Use the swagger documentation and the REST Endpoint to send requests
+
+### security
+we do not have any security installed, no authentication needed. And our endpoints are supporting [HTTP](http://hackzurich16.azurewebsites.net) and [HTTPS](https://hackzurich16.azurewebsites.net). 
+The only restriction is a maximum limit of 25 entries per search or GET requests. Most of the services are using ranges with skip + limit 
+
 ## installation
 Our provided APIs are implemented with nodejs and using mongodb. 
 With this repo you are able to install the whole REST APIs and database locally.
 
 Please clone our repository to be able to do this.
 
-`bash` clone repo https://github.com/lolo8304/hackzurich2016-axa.git
+git clone https://github.com/lolo8304/hackzurich2016-axa.git
 
 ## install node application
 
@@ -30,7 +38,7 @@ Please clone our repository to be able to do this.
 
 
 ## install mongodb database
-
+tbd
 
 ## Links
 imteresting addional links to REST API
