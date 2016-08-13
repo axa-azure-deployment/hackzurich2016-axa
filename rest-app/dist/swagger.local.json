@@ -38,17 +38,21 @@
                     "description": "tbd",
                     "type": "string"
                 },
+                "age": {
+                    "description": "tbd",
+                    "type": "integer"
+                },
                 "profile_date": {
                     "description": "tbd",
                     "type": "string"
                 },
-                "segment_overall": {
+                "live_in_city_center": {
                     "description": "tbd",
-                    "type": "string"
+                    "type": "integer"
                 },
-                "segment_age": {
+                "job": {
                     "description": "tbd",
-                    "type": "string"
+                    "type": "integer"
                 },
                 "nof_housing_partner": {
                     "description": "tbd",
@@ -75,7 +79,7 @@
                     "type": "number",
                     "format": "integer"
                 },
-                "nof_kids_under_18": {
+                "nof_kids_under_7": {
                     "description": "tbd",
                     "type": "number",
                     "format": "integer"
@@ -84,6 +88,14 @@
                     "description": "tbd",
                     "type": "number",
                     "format": "integer"
+                },
+                "segment_overall": {
+                    "description": "tbd",
+                    "type": "string"
+                },
+                "age_segment": {
+                    "description": "tbd",
+                    "type": "string"
                 }
             }
         },

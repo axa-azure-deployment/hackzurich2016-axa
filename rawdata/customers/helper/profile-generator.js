@@ -1,15 +1,19 @@
 var mocker = require("mocker-data-generator");
 var util = require("util");
+var sample = require("./cust");
 
+var customers = sample.sample_cust().object();
 var profile = {
     id: { incrementalId: 1 },
     customer: {
         function: function () {
-            return "" + this.object.id;
+            return customers[this.object.id-1].id;
         }
     },
     age: {
-        chance: 'integer({"min": 18, "max": 66})'
+        function: function () {
+            return 2016-parseInt(customers[this.object.id-1].birthday.substr(0,4));
+        }
     },
     profile_date: {
         function: function () {
