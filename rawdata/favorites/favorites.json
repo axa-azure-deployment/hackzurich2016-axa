@@ -1,6 +1,7 @@
 [
     {
         "id": "200",
+        "customer": "1",
         "title": "my bike",
         "category": "SPORT_AND_LEISURE",
         "model": "bicicleta nova",
@@ -16,6 +17,7 @@
     },
     {
         "id": "201",
+        "customer": "1",
         "title": "my watch",
         "category": "JEWELERY_WATCHES",
         "model": "Rolex Daytona",
@@ -32,6 +34,7 @@
     },
     {
         "id": "202",
+        "customer": "1",
         "title": "my iPhone",
         "category": "CONSUMER_ELECTRONIC",
         "model": "iPhone 6 Plus",
