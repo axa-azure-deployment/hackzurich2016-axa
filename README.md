@@ -55,7 +55,7 @@ git clone https://github.com/lolo8304/hackzurich2016-axa.git
 ### Steps
 
 ```bash
-git clone repo https://github.com/lolo8304/hackzurich2016-axa.git
+git clone https://github.com/lolo8304/hackzurich2016-axa.git
 cd hackzurich2016-axa/rest-app
 npm install
 npm start (npm will start webserver on port 3000)
@@ -94,8 +94,8 @@ start another command line / bash to import
 
 ```bash
 cd rawdata
-./run-local.sh test.js
-````
+./run-local.sh any-javascript.js
+```
 
 Use the generic "run-local.sh" to call any mongodb javascript file to be executed.
 Adapt the run-local.sh if needed to import into your local database. 
@@ -148,8 +148,11 @@ $ ./run-local.sh import-no-customer.js   import all except customer + profiles
 $ ./run-local.sh drop.js                 drop all collections
 $ ./run-local.sh count.js                list all counts from any used collection
 $ ./run-local.sh test.js                 use to test connection with database
+````
 
 ## configure local mongodb database
+
+edit the rest-app/app.js file and modify
 
 ```js
 // uncomment for localhost database
