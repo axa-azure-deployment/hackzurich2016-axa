@@ -27,75 +27,98 @@
             }
         },
         "Profile": {
-            "description": "tbd",
+            "description": "customer profile with interesting scores and features",
             "type": "object",
             "properties": {
                 "id": {
-                    "description": "tbd",
+                    "description": "identifier of the profile",
                     "type": "string"
                 },
                 "customer": {
-                    "description": "tbd",
+                    "description": "referenced customer",
                     "type": "string"
                 },
                 "age": {
-                    "description": "tbd",
+                    "description": "age of the customer calc. based on profile_date",
                     "type": "integer"
                 },
                 "profile_date": {
-                    "description": "tbd",
+                    "description": "date of profile issuance",
                     "type": "string"
                 },
                 "live_in_city_center": {
-                    "description": "tbd",
-                    "type": "integer"
+                    "description": "lives in the city center, 0=false, 1=true",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
                 },
                 "job": {
-                    "description": "tbd",
+                    "description": "has a job, 0=false, 1=true",
                     "type": "integer"
                 },
                 "nof_housing_partner": {
-                    "description": "tbd",
+                    "description": "number of housing partner living at same address",
                     "type": "number",
                     "format": "integer"
                 },
                 "nof_housing_flat": {
-                    "description": "tbd",
+                    "description": "number of house rentals, 0=none, 1..n=nof flats",
                     "type": "number",
                     "format": "integer"
                 },
                 "nof_housing_homeowner": {
-                    "description": "tbd",
+                    "description": "number of houses where the customer is the owner, 0=none, 1..n=nof houses, incl. vacation houses",
                     "type": "number",
                     "format": "integer"
                 },
                 "nof_residents": {
-                    "description": "tbd",
+                    "description": "total number of residents in that location, incl customer, partner and kids",
                     "type": "number",
                     "format": "integer"
                 },
                 "nof_kids_total": {
-                    "description": "tbd",
+                    "description": "total number of kids, living at home",
                     "type": "number",
                     "format": "integer"
                 },
                 "nof_kids_under_7": {
-                    "description": "tbd",
+                    "description": "total number of kids under or equal 7, living at home",
                     "type": "number",
                     "format": "integer"
                 },
                 "nof_cars": {
-                    "description": "tbd",
+                    "description": "total number of cars of all residents",
                     "type": "number",
                     "format": "integer"
                 },
                 "segment_overall": {
-                    "description": "tbd",
-                    "type": "string"
+                    "description": "overall segment based on age, family and kids",
+                    "type": "string",
+                    "enum": [
+                        "Millenials",
+                        "Young professional",
+                        "Young family",
+                        "Established family",
+                        "Independent",
+                        "Pre-retirement",
+                        "Active retirement",
+                        "Passive retirement"
+                    ]
                 },
                 "age_segment": {
-                    "description": "tbd",
-                    "type": "string"
+                    "description": "segement just based on age",
+                    "type": "string",
+                    "enum": [
+                        "<= 25",
+                        "26-35",
+                        "36-45",
+                        "46-55",
+                        "56-65",
+                        "65-80",
+                        "> 80"
+                    ]
                 }
             }
         },
@@ -118,19 +141,19 @@
             }
         },
         "Category": {
-            "description": "tbd",
+            "description": "category object of favorite objects",
             "type": "object",
             "properties": {
                 "id": {
-                    "description": "tbd",
+                    "description": "identifier of category",
                     "type": "string"
                 },
                 "value": {
-                    "description": "tbd",
+                    "description": "textual description",
                     "type": "string"
                 },
                 "parent": {
-                    "description": "tbd",
+                    "description": "reference id to parent category, empty if root category",
                     "type": "string"
                 }
             }
@@ -154,19 +177,19 @@
             }
         },
         "Risk": {
-            "description": "tbd",
+            "description": "risk definition where an insurance offers a coverage in a contract to a customer",
             "type": "object",
             "properties": {
                 "id": {
-                    "description": "tbd",
+                    "description": "identifier of risk",
                     "type": "string"
                 },
                 "value": {
-                    "description": "tbd",
+                    "description": "textual description",
                     "type": "string"
                 },
                 "lineOfBusiness": {
-                    "description": "tbd",
+                    "description": "overall line of business reference of risk",
                     "type": "string"
                 }
             }
@@ -190,70 +213,68 @@
             }
         },
         "Favorite": {
-            "description": "tbd",
+            "description": "favorite object per customer",
             "type": "object",
             "properties": {
                 "id": {
-                    "description": "tbd",
+                    "description": "identifier",
                     "type": "string"
                 },
                 "title": {
-                    "description": "tbd",
+                    "description": "title and name of favorite",
                     "type": "string"
                 },
                 "category": {
-                    "description": "tbd",
+                    "description": "reference to category identifier",
                     "type": "string"
                 },
                 "model": {
-                    "description": "tbd",
+                    "description": "brand and model information",
                     "type": "string"
                 },
                 "price": {
-                    "description": "tbd",
+                    "description": "price information at purchase time",
                     "type": "object",
                     "properties": {
                         "value": {
-                            "description": "tbd",
-                            "type": "string"
+                            "description": "price without any decimals",
+                            "type": "number",
+                            "format": "integer"
                         },
                         "currency": {
-                            "description": "tbd",
-                            "type": "string"
+                            "description": "currency of price",
+                            "type": "string",
+                            "enum": [
+                                "EUR",
+                                "CHF",
+                                "USD"
+                            ]
                         }
                     }
                 },
                 "currentPrice": {
-                    "description": "tbd",
+                    "description": "current price of object",
                     "type": "object",
                     "properties": {
                         "value": {
-                            "description": "tbd",
-                            "type": "string"
+                            "description": "price without any decimals",
+                            "type": "number",
+                            "format": "integer"
                         },
                         "currency": {
-                            "description": "tbd",
-                            "type": "string"
+                            "description": "currency of price",
+                            "type": "string",
+                            "enum": [
+                                "EUR",
+                                "CHF",
+                                "USD"
+                            ]
                         }
                     }
                 },
                 "purchaseDate": {
-                    "description": "tbd",
-                    "type": "object",
-                    "properties": {
-                        "day": {
-                            "description": "tbd",
-                            "type": "string"
-                        },
-                        "month": {
-                            "description": "tbd",
-                            "type": "string"
-                        },
-                        "year": {
-                            "description": "tbd",
-                            "type": "string"
-                        }
-                    }
+                    "description": "yyyy-mm-dd form of purchase date",
+                    "type": "string"
                 }
             }
         },

@@ -5,18 +5,14 @@
         "category": "SPORT_AND_LEISURE",
         "model": "bicicleta nova",
         "price": {
-            "value": "950",
+            "value": 950,
             "currency": "EUR"
         },
         "currentPrice": {
-            "value": "800",
+            "value": 800,
             "currency": "EUR"
         },
-        "purchaseDate": {
-            "day": "04",
-            "month": "08",
-            "year": "2015"
-        }
+        "purchaseDate": "2015-08-04"
     },
     {
         "id": "201",
@@ -24,19 +20,15 @@
         "category": "JEWELERY_WATCHES",
         "model": "Rolex Daytona",
         "price": {
-            "value": "9550",
+            "value": 9550,
             "currency": "EUR"
         },
         "currentPrice": {
-            "value": "10200",
+            "value": 10200,
             "currency": "EUR"
         },
         "brand": "Rolex",
-        "purchaseDate": {
-            "day": "01",
-            "month": "04",
-            "year": "2013"
-        }
+        "purchaseDate": "2013-04-01"
     },
     {
         "id": "202",
@@ -45,20 +37,16 @@
         "model": "iPhone 6 Plus",
         "price": {
             "type": "EXACT",
-            "value": "700",
+            "value": 700,
             "currency": "EUR"
         },
         "currentPrice": {
             "type": "EXACT",
-            "value": "450",
+            "value": 450,
             "currency": "EUR"
         },
         "brand": "Apple",
-        "purchaseDate": {
-            "day": "07",
-            "month": "06",
-            "year": "2015"
-        },
+        "purchaseDate": "2015-06-07",
         "serialNo": "5789HJ67HGH"
     }
 ]
