@@ -54,11 +54,14 @@ exports.generator = function () {
                 this.walkElement(object, i+1, name);
             }
         },
+        isNumeric: function(n) {
+            return !Array.isArray(n) && (n - parseFloat(n) + 1) >= 0;
+        },
         isInt: function(n){
-            return Number(n) === n && n % 1 === 0;
+            return this.isNumeric(n) && n.toString().indexOf('.') < 0;
         },
         isFloat: function(n){
-            return Number(n) === n && n % 1 !== 0;
+            return this.isNumeric(n) && !this.isInt(n);
         },
         walkElement: function (object, i, name) {
             console.log(this.ind(i)+"description: tbd");

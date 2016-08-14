@@ -12,17 +12,26 @@ var swagger = require("swagger-node-express");
 var mongo = require('mongodb');
 var monk = require('monk');
 
-// Connect to remote DB
-var db = monk('HackZurich2016-user:password@40.68.213.58:27018/hackzurich2016-axa'
+// uncomment for localhost database
+//var dbURL = 'localhost:27018/hackzurich2016-axa';
+
+
+// Connect to remote DB, settings are extended due to Firefall issues between nodejs -> mongodb
+// depending on the installed mongodb driver, settings are different
+// poolSize vs maxPoolSize
+// keepAlive vs socketOptions.keepAlive
+// connectTimeoutMS vs socketOptions.connectTimeoutMS
+var dbURL = 'HackZurich2016-user:password@40.68.213.58:27018/hackzurich2016-axa'
     +'?'
     +       'maxPoolSize=10'
-    +       'poolSize=10'
+    +'&'+   'poolSize=10'
     +'&'+   'keepAlive=60000'
     +'&'+   'socketOptions.keepAlive=60000'
     +'&'+   'connectTimeoutMS=10000'
     +'&'+   'socketOptions.connectTimeoutMS=10000'
-    +'&'+   'reconnectTries=5'
-);
+    +'&'+   'reconnectTries=5';
+var db = monk(dbURL);
+console.log("mongodb connected with URL="+dbURL);
 
 // CORS issues
 var cors = require('express-cors')
