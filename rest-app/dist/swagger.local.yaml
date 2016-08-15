@@ -24,12 +24,16 @@ info:
     ***
     __Dynamic data__ (prefilled with examples)
     - **customer data**: most attributes of a customer eg naming, address, date of birth, ... (10'000 customers)
-    - **profile data**: important profile data of the customer
+    - **profile data**: important profile data of the customer (10'000 profiles, 1 per customer)
     - **contracts**: insurance contracts of the customer
     - **claims**: insurance claims of the customer
     - **trips**: telmatics data of some real trips, locations and events an (only 7 trips, >25 events, > 650 GPS positions)
     - **transactions**: financial transactions issued to (>1000 transactions)
-    - **favorites**: your most valuable objects to be insured by object or overall
+    - **favorites**: your most valuable objects to be insured by object or overall insurance (40'000 favorites)
+
+    __Actions__
+    - **Membership calculator**: calculate a membership for a customer based on customer, profile and his contracts
+    - **Favorite daily insurance calculator**: calculates a daily rate for an important and favorite object
 
     __Static / configuration data__
     - **contacts**: all AXA agencies with GEO location, some attributes anonymized 
