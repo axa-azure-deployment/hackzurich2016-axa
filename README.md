@@ -43,7 +43,7 @@ With this repo you are able to install the whole REST APIs and database locally.
 Please clone our repository to be able to do this.
 
 ```bash
-git clone https://github.com/lolo8304/hackzurich2016-axa.git
+git clone https://github.com/axa-azure-deployment/hackzurich2016-axa.git
 ```
 
 ## Install node application
@@ -55,7 +55,7 @@ git clone https://github.com/lolo8304/hackzurich2016-axa.git
 ### Steps
 
 ```bash
-git clone https://github.com/lolo8304/hackzurich2016-axa.git
+git clone https://github.com/axa-azure-deployment/hackzurich2016-axa.git
 cd hackzurich2016-axa/rest-app
 npm install
 npm start (npm will start webserver on port 3000)
