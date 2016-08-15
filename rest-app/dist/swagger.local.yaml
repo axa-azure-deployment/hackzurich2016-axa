@@ -1,7 +1,7 @@
 swagger: '2.0'
 info:
   version: 0.9.2
-  title: "hackzurich 2016 - AXA Winterthur - API (now)"
+  title: "hackzurich 2016 - AXA Winterthur - API"
   description: |
     AXA Winterthur is very proud to be Gold Sponsor of "hackzurich" http://hackzurich.ch in 2016 taken place at Technopark, Zürich, Switzerland.
     
