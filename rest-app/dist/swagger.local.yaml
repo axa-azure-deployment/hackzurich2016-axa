@@ -5,21 +5,22 @@ info:
   description: |
     AXA Winterthur is very proud to be Gold Sponsor of "hackzurich" http://hackzurich.ch in 2016 taken place at Technopark, Zürich, Switzerland.
     
-    Our topic is __"Insurance as simple as a Game" aka "Clash of claims"__. See more detailed information about the Workshop and the competition  here (TBD)
+    Our topic is __"Insurance as simple as a Game" aka "Clash of claims"__. At AXA, we are constantly redefining the future of insurance. We invite you to bring your creative vision of how insurance could be as simple and fun as a game.
+    
+      Why? Insurance can be very complex - Insurance is seeking for simplicity and customer centricity. Learn in our workshop how to use our ”hackzurich 2016 insurance API” and try out our VR and AR devices (Hololens) at our booth.
 
+    Our API represents the most used domain objects of an insurance. We provide 2 different types: static / configation data and dynamic data, based on 10'000 predefined customers.
+    
     ***
     __Data privacy__: all data are examples, partly generated, anonymized and cannot be linked with any existing customer or prospect of AXA. Some data is generated using [Random Point Generator](http://www.geomidpoint.com/random/). 
-
-    ***
-    The current API represents the most used domain objects of an insurance. We provide 2 different types: static / configation data and dynamic data, based on 10'000 predefined customers.
     
+    ***
+
     __Developers:__ here you can get the full source code, nodejs app and mongodb-load-data from our GIT repo https://github.com/axa-azure-deployment/hackzurich2016-axa
     
     __Endpoint:__ use our SaaS REST services running on https://localhost:3000/axa/... (details see swagger documentation)
     
-    __Swagger:__ use (this) swagger documentation on https://localhost:3000
-    - see our [JSON version](https://localhost:3000/swagger.json) and [YAML version](https://localhost:3000/swagger.yaml)
-    - see our special localhost:3000 swagger [YAML version](https://localhost:3000/swagger.local.yaml) and [JSON version](https://localhost:3000/swagger.local.json) to support local development without need of a swagger web distribution
+    __Swagger:__ use (this) swagger documentation on https://localhost:3000 and see our [JSON version](https://localhost:3000/swagger.json) and [YAML version](https://localhost:3000/swagger.yaml) and see our special localhost:3000 swagger [YAML version](https://localhost:3000/swagger.local.yaml) and [JSON version](https://localhost:3000/swagger.local.json) to support local development without need of a swagger web distribution
 
     ***
     __Dynamic data__ (prefilled with examples)
