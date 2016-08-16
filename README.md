@@ -1,6 +1,6 @@
 hackzurich2016-axa
 =================
-AXA Winterthur at hackzurich 2016 - topic: "insurance as simple as a game" aka "Clash of claims"
+AXA Winterthur at hackzurich 2016 - topic: "Insurance as Simple as a Game" aka "Clash of Claims"
 ...
 
 
@@ -334,7 +334,7 @@ This will produc the following YAML output
 
 
 ### Links
-imteresting addional links
+interesting addional links
 
 * [REST API tutorial - best practices](http://www.restapitutorial.com/httpstatuscodes.html)
 * [Mongodb query docu](https://docs.mongodb.com/manual/tutorial/query-documents/)
