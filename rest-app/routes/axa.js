@@ -487,7 +487,7 @@ router.get('/risks/:id/insuranceTypes', function(req, res) {
         });
     });
 });
-registerModelAPIs('favorite', 'favorites', 'id', false, true, undefined, { "hasRelation" : true, "sort" : "category"});
+registerModelAPIs('favorite', 'favorites', 'id', true, true, undefined, { "hasRelation" : true, "sort" : "category"});
 
 router.get('/favorites/:id/category', function(req, res) {
     var db = req.db;
