@@ -72,6 +72,11 @@ var favorite = {
             };
         }
     },
+    imageURL: {
+        function: function () {
+            return "/images/favorites/"+favoritesSamples[this.object.ref].file;
+        }
+    },
     purchaseDate: {
         function: function () {
             delete this.object.ref;
@@ -87,7 +92,6 @@ var favorite = {
             }
         }
     }
-    
 };
 var count = process.argv.length > 2 ? parseInt(process.argv[2]) : 10;
 mocker()
