@@ -11,9 +11,11 @@ var sample = require("./categories");
 var sampleCat = sample.sample_categories();
 var categories = sampleCat.object();
 var categoriesMap = sampleCat.map();
+var count = process.argv.length > 2 ? parseInt(process.argv[2]) : 10;
+var init = process.argv.length > 2 ? parseInt(process.argv[3]) : 1;
 
 var favorite = {
-    id: { incrementalId: 1 },
+    id: { incrementalId: init },
     ref: {
         function: function () {
             return this.chance.integer({ "min": 0, "max": favoritesSamples.length - 1 });
@@ -93,7 +95,6 @@ var favorite = {
         }
     }
 };
-var count = process.argv.length > 2 ? parseInt(process.argv[2]) : 10;
 mocker()
     .schema('favorite', favorite, count)
     .build(function (data) {

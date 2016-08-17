@@ -1728,7 +1728,7 @@
                     {
                         "name": "id",
                         "in": "path",
-                        "description": "id of customer",
+                        "description": "id of profile",
                         "required": true,
                         "type": "string",
                         "format": "integer"
@@ -1784,6 +1784,39 @@
                         "schema": {
                             "$ref": "#/definitions/FavoriteResultList"
                         }
+                    }
+                }
+            }
+        },
+        "/favorites/{id}": {
+            "get": {
+                "summary": "get favorite with id",
+                "description": "get all attributes of a favorite based on id\n",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of favorite",
+                        "required": true,
+                        "type": "string",
+                        "format": "integer"
+                    }
+                ],
+                "tags": [
+                    "Customer"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "$ref": "#/definitions/Favorite"
+                        }
+                    },
+                    "404": {
+                        "description": "favorite not found"
+                    },
+                    "500": {
+                        "description": "technical server error"
                     }
                 }
             }
