@@ -1418,7 +1418,7 @@ paths:
           type: string
           format: integer
       tags:
-        - Customer
+        - Favorite
       responses:
         '200':
           description: Successful response
