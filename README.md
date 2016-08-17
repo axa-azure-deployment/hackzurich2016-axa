@@ -143,8 +143,12 @@ use following script files to execute
 
 ```bash
 $ ./run-local.sh import.js               import all
+
+$ ./run-local.sh import-customer.js      import customers only
 $ ./run-local.sh import-profile.js       import profiles  only
-$ ./run-local.sh import-no-customer.js   import all except customer + profiles
+$ ./run-local.sh import-favorite.js      import favorites only
+$ ./run-local.sh import-no-large.js      import all except large sets
+
 $ ./run-local.sh drop.js                 drop all collections
 $ ./run-local.sh count.js                list all counts from any used collection
 $ ./run-local.sh test.js                 use to test connection with database
