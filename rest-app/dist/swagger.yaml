@@ -5,7 +5,7 @@ info:
   description: |
     AXA Winterthur is very proud to be Gold Sponsor of "hackzurich" http://hackzurich.ch in 2016 taken place at Technopark, Zürich, Switzerland.
     
-    Our topic is __"Insurance as simple as a Game" aka "Clash of claims"__. At AXA, we are constantly redefining the future of insurance. We invite you to bring your creative vision of how insurance could be as simple and fun as a game.
+    Our topic is __"Insurance - As simple as a Game" aka "Clash of Claims"__. At AXA, we are constantly redefining the future of insurance. We invite you to bring your creative vision of how insurance could be as simple and fun as a game.
     
       Why? Insurance can be very complex - Insurance is seeking for simplicity and customer centricity. Learn in our workshop how to use our ”hackzurich 2016 insurance API” and try out our VR and AR devices (Hololens) at our booth.
 
@@ -262,6 +262,9 @@ definitions:
           date:
             description: calculated date in yyyy-mm-dd
             type: string
+      imageURL:
+        description: URL to image of the favorite
+        type: string
       purchaseDate:
         description: yyyy-mm-dd form of purchase date
         type: string
