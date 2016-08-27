@@ -16,11 +16,11 @@ info:
     
     ***
 
-    __Developers:__ here you can get the full source code, nodejs app and mongodb-load-data from our GIT repo https://github.com/axa-azure-deployment/hackzurich2016-axa
+    __Developers:__ here you can get the full source code, nodejs app and mongodb-load-data from our GIT repo https://github.com/axa-azure-deployment/hackzurich2016-axa and our Hololens GIT repo https://github.com/axa-azure-deployment/hackzurich2016-axa-hololens
     
-    __Endpoint:__ use our SaaS REST services running on https://localhost:3000/axa/... (details see swagger documentation)
+    __Endpoint:__ use our SaaS REST services running on http://localhost:3000/axa/... (details see swagger documentation)
     
-    __Swagger:__ use (this) swagger documentation on https://localhost:3000 and see our [JSON version](https://localhost:3000/swagger.json) and [YAML version](https://localhost:3000/swagger.yaml) and see our special localhost:3000 swagger [YAML version](https://localhost:3000/swagger.local.yaml) and [JSON version](https://localhost:3000/swagger.local.json) to support local development without need of a swagger web distribution
+    __Swagger:__ use (this) swagger documentation on http://localhost:3000 and see our [JSON version](http://localhost:3000/swagger.json) and [YAML version](http://localhost:3000/swagger.yaml) and see our special localhost:3000 swagger [YAML version](http://localhost:3000/swagger.local.yaml) and [JSON version](http://localhost:3000/swagger.local.json) to support local development without need of a swagger web distribution
 
     ***
     __Dynamic data__ (prefilled with examples)
@@ -2080,4 +2080,3 @@ paths:
           description: customer not found
         '500':
           description: technical server error
-

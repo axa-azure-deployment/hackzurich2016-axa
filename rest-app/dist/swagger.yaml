@@ -16,7 +16,7 @@ info:
     
     ***
 
-    __Developers:__ here you can get the full source code, nodejs app and mongodb-load-data from our GIT repo https://github.com/axa-azure-deployment/hackzurich2016-axa
+    __Developers:__ here you can get the full source code, nodejs app and mongodb-load-data from our GIT repo https://github.com/axa-azure-deployment/hackzurich2016-axa and our Hololens GIT repo https://github.com/axa-azure-deployment/hackzurich2016-axa-hololens
     
     __Endpoint:__ use our SaaS REST services running on https://hackzurich16.azurewebsites.net/axa/... (details see swagger documentation)
     
@@ -2080,4 +2080,3 @@ paths:
           description: customer not found
         '500':
           description: technical server error
-
