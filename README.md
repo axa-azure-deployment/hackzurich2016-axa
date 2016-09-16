@@ -1,7 +1,7 @@
 hackzurich2016-axa
 =================
 AXA Winterthur at hackzurich 2016 - topic: "Insurance as Simple as a Game" aka "Clash of Claims"
-...
+ - at the 16. Sept 2016
 
 
 Table of Contents
