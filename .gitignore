@@ -2,3 +2,4 @@
 .idea/
 *.iml
 rest-app/node_modules
+Thumbs.db
