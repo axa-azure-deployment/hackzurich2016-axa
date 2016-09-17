@@ -1,0 +1,79 @@
+{
+  
+  "risks": [
+    {
+      "code": "FIRE_ELEMENTARY",
+      "value": "Fire/Elementary",
+      "description": "**Fire:**\nFire, smoke, lightning, explosion, implosion, scorching, crashing or emergency landing aircraft\n\n**Elementary events:**\nFlood, flood, storm, hail, avalanches, snow pressure, rockslides, falling rocks and landslides\n\n**Insurance does not cover:**\n- Snow sliding from roofs, groundwater, rising and overflowing of bodies of water that repeats according to experience\n- Water from reservoirs or other artificial bodies of water, backflow of water from the sewers",
+      "icon": "b"
+    },
+    {
+      "code": "WATER",
+      "value": "Water",
+      "description": "**Water:**\n- Leakage of water or other liquids from pipe systems, aquariums, waterbeds\n- Through the roof, from gutters or external drainpipes penetrating rain, snow or meltwater\n- Backwater from the sewage system,\n- Ingress of groundwater\n- Frost damage to the installed pipe systems inside the building and any attached devices\n\n**Insurance does not cover:**\n- Damage caused by open skylights, emergency roofs or through openings in the roof\n- Damage as a result of subsidence, poor building land, faulty building maintenance and faulty structural design, ie as a result of deficiencies in the design or execution",
+      "icon": "j"
+    },
+    {
+      "code": "THEFT",
+      "value": "Simple Theft",
+      "description": "**Simple theft:**\nAs a simple theft, the robbery applies without violence. In other words, you are robbed, without you noticing it.\n\n**Loss examples:**\n- Your bike is stolen\n- Your cloak disappear during the theatrical performance of the wardrobe",
+      "icon": "g"
+    },
+    {
+      "code": "BURGLARY_ROBBERY",
+      "value": "Burglary and Robbery",
+      "description": "**Burglary:**\nTheft (or attempted theft) by perpetrators who penetrate violently by breaking into a building or in the room of a building or in a sealed container to break.\n**Robbery:**\nTheft with the threat or use of force or incapacity to resist due to death, unconsciousness or accident.\n\n**Special feature:**\nThe break-up of vehicles of any kind is considered a simple theft.",
+      "icon": "i"
+    },
+    {
+      "code": "BROKEN_GLASS",
+      "value": "Broken glass",
+      "description": "**Supplementary cullet:**\n- Breakages to movables and buildings or glazing including sanitary facilities (sinks, Spültröge, toilets, cisterns, bidets, shower trays and baths).\n- Cooking surfaces of glass ceramic or stone coverings in kitchen and bathroom)\n- Facade and wall coverings made of glass and glass blocks\n- No deductible for glass breakage\n\n**Insurance does not cover damage to:**\n- Hand mirrors, optical glasses, glass tableware, glass figurines, hollow glass and lighting fixtures of any kind, light bulbs, fluorescent and neon lights, tiles, wall and floor tiles\n- Glasses of technical equipment and installations such as solar systems\n- Monitors and displays of all kinds",
+      "icon": "f"
+    },
+    {
+      "code": "LOST",
+      "value": "Lost",
+      "description": "Extended coverage for luggage, sports and recreational equipment:\nThe objects are insured against sudden, unforeseen loss and damage.\n\n**Baggage:**\nFor insured household goods belonging things that are carried for personal use while traveling around the world or pass a transport company for carriage\n\n**Sports and recreational equipment:**\nFor insured household appliances belonging of sports and leisure area, which are usually intended for use abroad.\n\n**Special features:**\nGlasses (incl. Glasses) are not considered as sports and leisure equipment.",
+      "icon": "a"
+    }
+  ],
+  "contexts": [
+    {
+      "code": "AT_HOME",
+      "value": "At home",
+      "icon": "l"
+    },
+    {
+      "code": "OUT_OF_HOME",
+      "value": "Outside",
+      "icon": "p"
+    }
+  ],
+  "coverages": [
+    {
+      "code": "COVERED",
+      "value": "Covered",
+      "icon": "d",
+      "color": "00AF3F"
+    },
+    {
+      "code": "PARTIALLY_COVERED",
+      "value": "Partially covered",
+      "icon": "c",
+      "color": "F0AB00"
+    },
+    {
+      "code": "NOT_COVERED",
+      "value": "Not covered",
+      "icon": "h",
+      "color": "FF1821"
+    },
+    {
+      "code": "IRRELEVANT",
+      "value": "Irrelevant",
+      "icon": "e",
+      "color": "CDCDCD"
+    }
+  ]
+}

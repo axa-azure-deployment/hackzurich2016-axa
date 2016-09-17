@@ -1,0 +1,306 @@
+{
+  "categories": [
+    {
+      "code": "ELECTRONICS",
+      "value": "Elektronik",
+      "icon": "f",
+      "categories": [
+        {
+          "code": "COMPUTER",
+          "value": "Computer & Tablet",
+          "icon": "e"
+        },
+        {
+          "code": "SMARTPHONE_WATCH",
+          "value": "Smartphone & Smartwatch",
+          "icon": "w"
+        },
+        {
+          "code": "CONSOLE",
+          "value": "Spielkonsole",
+          "icon": "t"
+        },
+        {
+          "code": "FLATSCREEN",
+          "value": "Flachbildschirm",
+          "icon": "g"
+        },
+        {
+          "code": "PHOTO_AND_VIDEO",
+          "value": "Fotoapparat & Videokamera",
+          "icon": "s"
+        },
+        {
+          "code": "PRINTER_AND_SCANNER",
+          "value": "Drucker, Scanner & Netzwerk",
+          "icon": "u"
+        },
+        {
+          "code": "HIFI",
+          "value": "HiFi-Gerät & Homecinema",
+          "icon": "i"
+        },
+        {
+          "code": "OTHER_ELECTRONICS",
+          "value": "Übrige Elektronik",
+          "icon": "o"
+        }
+      ]
+    },
+    {
+      "code": "SPORT_AND_LEISURE",
+      "value": "Sport- & Freizeitgeräte",
+      "icon": "b",
+      "categories": [
+        {
+          "code": "INDOOR",
+          "value": "Indoor",
+          "icon": "j"
+        },
+        {
+          "code": "OUTDOOR",
+          "value": "Outdoor",
+          "icon": "q"
+        },
+        {
+          "code": "E_BIKES",
+          "value": "Fahrrad, E-Bike, Moped",
+          "icon": "c"
+        },
+        {
+          "code": "R_C_MODELS",
+          "value": "Ferngesteuertes Modell",
+          "icon": "v"
+        },
+        {
+          "code": "PARAGLIDE",
+          "value": "Gleitschirm",
+          "icon": "r"
+        },
+        {
+          "code": "OTHER_SPORT",
+          "value": "Übrige Sport- & Freizeitgeräte",
+          "icon": "p"
+        }
+      ]
+    },
+    {
+      "code": "JEWELERY_WATCHES",
+      "value": "Schmuck & Uhren",
+      "icon": "k"
+    },
+    {
+      "code": "ARTWORKS",
+      "value": "Kunstobjekte",
+      "icon": "a"
+    },
+    {
+      "code": "MUSICAL_INSTRUMENTS",
+      "value": "Musikinstrumente",
+      "icon": "m"
+    },
+    {
+      "code": "CLOTHES_AND_ACCESSORIES",
+      "value": "Kleider & Accessoires",
+      "icon": "d"
+    },
+    {
+      "code": "FURNITURE_AND_APPLICANCES",
+      "value": "Möbel & Haushaltgeräte",
+      "icon": "h"
+    },
+    {
+      "code": "OTHER",
+      "value": "Übrige",
+      "icon": "n"
+    }
+  ],
+  "prices": {
+    "minValue": 0,
+    "maxValue": 9999999,
+    "currencies": [
+      {
+        "code": "CHF",
+        "symbol": "CHF"
+      }
+    ],
+    "ranges": [
+      {
+        "value": 0
+      },
+      {
+        "value": 100
+      },
+      {
+        "value": 200
+      },
+      {
+        "value": 300
+      },
+      {
+        "value": 400
+      },
+      {
+        "value": 500
+      },
+      {
+        "value": 600
+      },
+      {
+        "value": 700
+      },
+      {
+        "value": 800
+      },
+      {
+        "value": 900
+      },
+      {
+        "value": 1000
+      },
+      {
+        "value": 1500
+      },
+      {
+        "value": 2000
+      },
+      {
+        "value": 2500
+      },
+      {
+        "value": 3000
+      },
+      {
+        "value": 3500
+      },
+      {
+        "value": 4000
+      },
+      {
+        "value": 4500
+      },
+      {
+        "value": 5000
+      },
+      {
+        "value": 6000
+      },
+      {
+        "value": 7000
+      },
+      {
+        "value": 8000
+      },
+      {
+        "value": 9000
+      },
+      {
+        "value": 10000
+      }
+    ]
+  },
+  "purchaseDate": {
+    "seasons": [
+      {
+        "code": "WINTER",
+        "value": "Winter",
+        "equivalentDay": "21",
+        "equivalentMonth": "12"
+      },
+      {
+        "code": "SPRING",
+        "value": "Frühling",
+        "equivalentDay": "21",
+        "equivalentMonth": "3"
+      },
+      {
+        "code": "SUMMER",
+        "value": "Sommer",
+        "equivalentDay": "21",
+        "equivalentMonth": "6"
+      },
+      {
+        "code": "FALL",
+        "value": "Herbst",
+        "equivalentDay": "21",
+        "equivalentMonth": "9"
+      }
+    ]
+  },
+  "risks": [
+    {
+      "code": "FIRE_ELEMENTARY",
+      "value": "Feuer & Elementar",
+      "description": "**Feuer:**  \n\nBrand, Rauch, Blitzschlag, Explosion, Implosion, Versengen, abstürzende oder notlandende Luftfahrzeuge\n\n**Elementarereignisse:**  \nHochwasser, Überschwemmung, Sturm, Hagel, Lawine, Schneedruck, Felssturz, Steinschlag und Erdrutsch\n\n**Nicht versichert sind:**  \n\n* Schneerutsch von Dächern, Grundwasser, Ansteigen und Überborden von Gewässern, das sich erfahrungsgemäss wiederholt  \n\n* Wasser aus Stauseen oder sonstigen künstlichen Wasseranlagen, Rückstau von Wasser aus der Kanalisation",
+      "icon": "b"
+    },
+    {
+      "code": "WATER",
+      "value": "Wasser",
+      "description": "**Wasser:**  \n\n* Ausfliessen von Wasser oder anderen Flüssigkeiten aus Leitungsanlagen, Aquarien, Wasserbetten  \n\n* durch das Dach, aus Dachrinnen oder Aussenablaufrohren eindringendes Regen-, Schnee- oder Schmelzwasser  \n\n* Rückstau aus der Abwasserkanalisation,  \n\n* Eindringen von Grundwasser  \n\n* Frostschäden an installierten Leitungsanlagen im Innern des Gebäudes und daran angeschlossener Apparate\n\n**Nicht versichert sind:**  \n\n*  Schäden aufgrund offener Dachluken, Notdächer oder durch Öffnungen im Dach  \n\n* Schäden als Folge von Bodensenkungen, schlechtem Baugrund, mangelhaftem Gebäudeunterhalt sowie fehlerhafter baulicher Konstruktion, d.h. als Folge von Mängeln in der Konzeption oder der Ausführung",
+      "icon": "j"
+    },
+    {
+      "code": "THEFT",
+      "value": "Einfacher Diebstahl",
+      "description": "**Einfacher Diebstahl:**  \nAls einfacher Diebstahl gilt die Beraubung ohne Gewalteinwirkung. Das heisst, Sie werden bestohlen, ohne dass Sie es merken.\n\n**Schadenbeispiele:**  \n\n* Ihr Velo wird gestohlen.  \n\n* Ihr Mantel verschwindet während der Theatervorstellung aus der Garderobe.",
+      "icon": "g"
+    },
+    {
+      "code": "BURGLARY_ROBBERY",
+      "value": "Einbruch & Beraubung",
+      "description": "**Einbruch:**  \nDiebstahl (oder auch versuchter Diebstahl) durch Täter, die gewaltsam durch Aufbrechen in ein Gebäude oder in den Raum eines Gebäudes eindringen oder darin ein verschlossenes Behältnis aufbrechen.\n\n**Beraubung:**  \nDiebstahl unter Androhung oder Anwendung von Gewalt oder bei Unfähigkeit zum Widerstand infolge Tod, Ohnmacht oder Unfall.\n\n**Besonderheit:**  \nDas Aufbrechen von Fahrzeugen aller Art gilt als einfacher Diebstahl.",
+      "icon": "i"
+    },
+    {
+      "code": "BROKEN_GLASS",
+      "value": "Glasbruch",
+      "description": "**Zusatzversicherung Glasbruch**  \n\n* Bruchschäden an Mobiliar- und oder Gebäudeverglasungen inkl. Sanitäreinrichtungen (Lavabos, Spültröge, Klosetts, Spülkästen, Bidets, Dusch- und Badewannen),  \n\n* Kochflächen aus Glaskeramik oder Steinabdeckungen in Küche und Bad)  \n\n* Fassaden- und Wandverkleidungen aus Glas und Glasbausteinen  \n\n* Kein Selbstbehalt bei Glasbruch\n\n**Nicht versichert sind Schäden an:**  \n\n* Handspiegeln, optischen Gläsern, Glasgeschirren, Glasfiguren, Hohlgläsern sowie Beleuchtungskörpern jeder Art, Glühbirnen, Leucht- und Neonröhren, Kacheln, Wand- und Bodenplatten \n\n* Gläsern von technischen Geräten und Anlagen wie Solaranlagen  \n\n* Bildschirme und Displays aller Art",
+      "icon": "f"
+    },
+    {
+      "code": "LOST",
+      "value": "Verlust & Beschädigung",
+      "description": "Erweiterte Deckung für Reisegepäck, Sport- und Freizeitgeräte:  \nDie Gegenstände sind gegen plötzliche, unvorhergesehene Verluste und Beschädigung versichert.\n\n**Reisegepäck:**  \nZum versicherten Hausrat gehörende Sachen, die zum persönlichen Gebrauch während Reisen auf der ganzen Welt mitgeführt oder einer Transportunternehmung zur Beförderung übergeben werden\n\n**Sport- und Freizeitgeräte:**  \nZum versicherten Hausrat gehörende Geräte des Sport- und Freizeitbereichs, die üblicherweise für den Gebrauch auswärts bestimmt sind. \n\n**Besonderheiten:**  \nBrillen (inkl. Sonnenbrillen) gelten nicht als Sport- und Freizeitgeräte.",
+      "icon": "a"
+    }
+  ],
+  "contexts": [
+    {
+      "code": "AT_HOME",
+      "value": "Zuhause",
+      "icon": "l"
+    },
+    {
+      "code": "OUT_OF_HOME",
+      "value": "Auswärts",
+      "icon": "p"
+    }
+  ],
+  "coverages": [
+    {
+      "code": "COVERED",
+      "value": "Gedeckt",
+      "icon": "d",
+      "color": "00AF3F"
+    },
+    {
+      "code": "PARTIALLY_COVERED",
+      "value": "Teils gedeckt",
+      "icon": "c",
+      "color": "F0AB00"
+    },
+    {
+      "code": "NOT_COVERED",
+      "value": "Nicht gedeckt",
+      "icon": "h",
+      "color": "FF1821"
+    },
+    {
+      "code": "IRRELEVANT",
+      "value": "Nicht anwendbar",
+      "icon": "e",
+      "color": "CDCDCD"
+    }
+  ]
+}

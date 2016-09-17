@@ -1,0 +1,306 @@
+{
+  "categories": [
+    {
+      "code": "ELECTRONICS",
+      "value": "Electronics ",
+      "icon": "f",
+      "categories": [
+        {
+          "code": "COMPUTER",
+          "value": "Computer & Tablet",
+          "icon": "e"
+        },
+        {
+          "code": "SMARTPHONE_WATCH",
+          "value": "Smartphone and smartwatch",
+          "icon": "w"
+        },
+        {
+          "code": "CONSOLE",
+          "value": "Play-Console",
+          "icon": "t"
+        },
+        {
+          "code": "FLATSCREEN",
+          "value": "Flatscreen",
+          "icon": "g"
+        },
+        {
+          "code": "PHOTO_AND_VIDEO",
+          "value": "Photo & Video",
+          "icon": "s"
+        },
+        {
+          "code": "PRINTER_AND_SCANNER",
+          "value": "Printer, Scanner & Network",
+          "icon": "u"
+        },
+        {
+          "code": "HIFI",
+          "value": "HiFi & Homecinema",
+          "icon": "i"
+        },
+        {
+          "code": "OTHER_ELECTRONICS",
+          "value": "Others",
+          "icon": "o"
+        }
+      ]
+    },
+    {
+      "code": "SPORT_AND_LEISURE",
+      "value": "Sport and leisure",
+      "icon": "b",
+      "categories": [
+        {
+          "code": "INDOOR",
+          "value": "Indoor",
+          "icon": "j"
+        },
+        {
+          "code": "OUTDOOR",
+          "value": "Outdoor",
+          "icon": "q"
+        },
+        {
+          "code": "E_BIKES",
+          "value": "Bikes, E-Bikes & Moped",
+          "icon": "c"
+        },
+        {
+          "code": "R_C_MODELS",
+          "value": "R/C Model",
+          "icon": "v"
+        },
+        {
+          "code": "PARAGLIDE",
+          "value": "Paraglide",
+          "icon": "r"
+        },
+        {
+          "code": "OTHER_SPORT",
+          "value": "Others",
+          "icon": "p"
+        }
+      ]
+    },
+    {
+      "code": "JEWELERY_WATCHES",
+      "value": "Jewlery and traditional watches",
+      "icon": "k"
+    },
+    {
+      "code": "ARTWORKS",
+      "value": "Artworks",
+      "icon": "a"
+    },
+    {
+      "code": "MUSICAL_INSTRUMENTS",
+      "value": "Musical instruments",
+      "icon": "m"
+    },
+    {
+      "code": "CLOTHES_AND_ACCESSORIES",
+      "value": "Clothes and accessories",
+      "icon": "d"
+    },
+    {
+      "code": "FURNITURE_AND_APPLICANCES",
+      "value": "Appliances and Electrical Household",
+      "icon": "h"
+    },
+    {
+      "code": "OTHER",
+      "value": "Others",
+      "icon": "n"
+    }
+  ],
+  "prices": {
+    "minValue": 0,
+    "maxValue": 9999999,
+    "currencies": [
+      {
+        "code": "CHF",
+        "symbol": "CHF"
+      }
+    ],
+    "ranges": [
+      {
+        "value": 0
+      },
+      {
+        "value": 100
+      },
+      {
+        "value": 200
+      },
+      {
+        "value": 300
+      },
+      {
+        "value": 400
+      },
+      {
+        "value": 500
+      },
+      {
+        "value": 600
+      },
+      {
+        "value": 700
+      },
+      {
+        "value": 800
+      },
+      {
+        "value": 900
+      },
+      {
+        "value": 1000
+      },
+      {
+        "value": 1500
+      },
+      {
+        "value": 2000
+      },
+      {
+        "value": 2500
+      },
+      {
+        "value": 3000
+      },
+      {
+        "value": 3500
+      },
+      {
+        "value": 4000
+      },
+      {
+        "value": 4500
+      },
+      {
+        "value": 5000
+      },
+      {
+        "value": 6000
+      },
+      {
+        "value": 7000
+      },
+      {
+        "value": 8000
+      },
+      {
+        "value": 9000
+      },
+      {
+        "value": 10000
+      }
+    ]
+  },
+  "purchaseDate": {
+    "seasons": [
+      {
+        "code": "WINTER",
+        "value": "Winter",
+        "equivalentDay": "21",
+        "equivalentMonth": "12"
+      },
+      {
+        "code": "SPRING",
+        "value": "Spring",
+        "equivalentDay": "21",
+        "equivalentMonth": "3"
+      },
+      {
+        "code": "SUMMER",
+        "value": "Summer",
+        "equivalentDay": "21",
+        "equivalentMonth": "6"
+      },
+      {
+        "code": "FALL",
+        "value": "Fall",
+        "equivalentDay": "21",
+        "equivalentMonth": "9"
+      }
+    ]
+  },
+  "risks": [
+    {
+      "code": "FIRE_ELEMENTARY",
+      "value": "Fire/Elementary",
+      "description": "**Fire:**\nFire, smoke, lightning, explosion, implosion, scorching, crashing or emergency landing aircraft\n\n**Elementary events:**\nFlood, flood, storm, hail, avalanches, snow pressure, rockslides, falling rocks and landslides\n\n**Insurance does not cover:**\n- Snow sliding from roofs, groundwater, rising and overflowing of bodies of water that repeats according to experience\n- Water from reservoirs or other artificial bodies of water, backflow of water from the sewers",
+      "icon": "b"
+    },
+    {
+      "code": "WATER",
+      "value": "Water",
+      "description": "**Water:**\n- Leakage of water or other liquids from pipe systems, aquariums, waterbeds\n- Through the roof, from gutters or external drainpipes penetrating rain, snow or meltwater\n- Backwater from the sewage system,\n- Ingress of groundwater\n- Frost damage to the installed pipe systems inside the building and any attached devices\n\n**Insurance does not cover:**\n- Damage caused by open skylights, emergency roofs or through openings in the roof\n- Damage as a result of subsidence, poor building land, faulty building maintenance and faulty structural design, ie as a result of deficiencies in the design or execution",
+      "icon": "j"
+    },
+    {
+      "code": "THEFT",
+      "value": "Simple Theft",
+      "description": "**Simple theft:**\nAs a simple theft, the robbery applies without violence. In other words, you are robbed, without you noticing it.\n\n**Loss examples:**\n- Your bike is stolen\n- Your cloak disappear during the theatrical performance of the wardrobe",
+      "icon": "g"
+    },
+    {
+      "code": "BURGLARY_ROBBERY",
+      "value": "Burglary and Robbery",
+      "description": "**Burglary:**\nTheft (or attempted theft) by perpetrators who penetrate violently by breaking into a building or in the room of a building or in a sealed container to break.\n**Robbery:**\nTheft with the threat or use of force or incapacity to resist due to death, unconsciousness or accident.\n\n**Special feature:**\nThe break-up of vehicles of any kind is considered a simple theft.",
+      "icon": "i"
+    },
+    {
+      "code": "BROKEN_GLASS",
+      "value": "Broken glass",
+      "description": "**Supplementary cullet:**\n- Breakages to movables and buildings or glazing including sanitary facilities (sinks, Spültröge, toilets, cisterns, bidets, shower trays and baths).\n- Cooking surfaces of glass ceramic or stone coverings in kitchen and bathroom)\n- Facade and wall coverings made of glass and glass blocks\n- No deductible for glass breakage\n\n**Insurance does not cover damage to:**\n- Hand mirrors, optical glasses, glass tableware, glass figurines, hollow glass and lighting fixtures of any kind, light bulbs, fluorescent and neon lights, tiles, wall and floor tiles\n- Glasses of technical equipment and installations such as solar systems\n- Monitors and displays of all kinds",
+      "icon": "f"
+    },
+    {
+      "code": "LOST",
+      "value": "Lost",
+      "description": "Extended coverage for luggage, sports and recreational equipment:\nThe objects are insured against sudden, unforeseen loss and damage.\n\n**Baggage:**\nFor insured household goods belonging things that are carried for personal use while traveling around the world or pass a transport company for carriage\n\n**Sports and recreational equipment:**\nFor insured household appliances belonging of sports and leisure area, which are usually intended for use abroad.\n\n**Special features:**\nGlasses (incl. Glasses) are not considered as sports and leisure equipment.",
+      "icon": "a"
+    }
+  ],
+  "contexts": [
+    {
+      "code": "AT_HOME",
+      "value": "At home",
+      "icon": "l"
+    },
+    {
+      "code": "OUT_OF_HOME",
+      "value": "Outside",
+      "icon": "p"
+    }
+  ],
+  "coverages": [
+    {
+      "code": "COVERED",
+      "value": "Covered",
+      "icon": "d",
+      "color": "00AF3F"
+    },
+    {
+      "code": "PARTIALLY_COVERED",
+      "value": "Partially covered",
+      "icon": "c",
+      "color": "F0AB00"
+    },
+    {
+      "code": "NOT_COVERED",
+      "value": "Not covered",
+      "icon": "h",
+      "color": "FF1821"
+    },
+    {
+      "code": "IRRELEVANT",
+      "value": "Irrelevant",
+      "icon": "e",
+      "color": "CDCDCD"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "risks": [
+    {
+      "code": "FIRE_ELEMENTARY",
+      "value": "Feuer & Elementar",
+      "description": "**Feuer:**  \n\nBrand, Rauch, Blitzschlag, Explosion, Implosion, Versengen, abstürzende oder notlandende Luftfahrzeuge\n\n**Elementarereignisse:**  \nHochwasser, Überschwemmung, Sturm, Hagel, Lawine, Schneedruck, Felssturz, Steinschlag und Erdrutsch\n\n**Nicht versichert sind:**  \n\n* Schneerutsch von Dächern, Grundwasser, Ansteigen und Überborden von Gewässern, das sich erfahrungsgemäss wiederholt  \n\n* Wasser aus Stauseen oder sonstigen künstlichen Wasseranlagen, Rückstau von Wasser aus der Kanalisation",
+      "icon": "b"
+    },
+    {
+      "code": "WATER",
+      "value": "Wasser",
+      "description": "**Wasser:**  \n\n* Ausfliessen von Wasser oder anderen Flüssigkeiten aus Leitungsanlagen, Aquarien, Wasserbetten  \n\n* durch das Dach, aus Dachrinnen oder Aussenablaufrohren eindringendes Regen-, Schnee- oder Schmelzwasser  \n\n* Rückstau aus der Abwasserkanalisation,  \n\n* Eindringen von Grundwasser  \n\n* Frostschäden an installierten Leitungsanlagen im Innern des Gebäudes und daran angeschlossener Apparate\n\n**Nicht versichert sind:**  \n\n*  Schäden aufgrund offener Dachluken, Notdächer oder durch Öffnungen im Dach  \n\n* Schäden als Folge von Bodensenkungen, schlechtem Baugrund, mangelhaftem Gebäudeunterhalt sowie fehlerhafter baulicher Konstruktion, d.h. als Folge von Mängeln in der Konzeption oder der Ausführung",
+      "icon": "j"
+    },
+    {
+      "code": "THEFT",
+      "value": "Einfacher Diebstahl",
+      "description": "**Einfacher Diebstahl:**  \nAls einfacher Diebstahl gilt die Beraubung ohne Gewalteinwirkung. Das heisst, Sie werden bestohlen, ohne dass Sie es merken.\n\n**Schadenbeispiele:**  \n\n* Ihr Velo wird gestohlen.  \n\n* Ihr Mantel verschwindet während der Theatervorstellung aus der Garderobe.",
+      "icon": "g"
+    },
+    {
+      "code": "BURGLARY_ROBBERY",
+      "value": "Einbruch & Beraubung",
+      "description": "**Einbruch:**  \nDiebstahl (oder auch versuchter Diebstahl) durch Täter, die gewaltsam durch Aufbrechen in ein Gebäude oder in den Raum eines Gebäudes eindringen oder darin ein verschlossenes Behältnis aufbrechen.\n\n**Beraubung:**  \nDiebstahl unter Androhung oder Anwendung von Gewalt oder bei Unfähigkeit zum Widerstand infolge Tod, Ohnmacht oder Unfall.\n\n**Besonderheit:**  \nDas Aufbrechen von Fahrzeugen aller Art gilt als einfacher Diebstahl.",
+      "icon": "i"
+    },
+    {
+      "code": "BROKEN_GLASS",
+      "value": "Glasbruch",
+      "description": "**Zusatzversicherung Glasbruch**  \n\n* Bruchschäden an Mobiliar- und oder Gebäudeverglasungen inkl. Sanitäreinrichtungen (Lavabos, Spültröge, Klosetts, Spülkästen, Bidets, Dusch- und Badewannen),  \n\n* Kochflächen aus Glaskeramik oder Steinabdeckungen in Küche und Bad)  \n\n* Fassaden- und Wandverkleidungen aus Glas und Glasbausteinen  \n\n* Kein Selbstbehalt bei Glasbruch\n\n**Nicht versichert sind Schäden an:**  \n\n* Handspiegeln, optischen Gläsern, Glasgeschirren, Glasfiguren, Hohlgläsern sowie Beleuchtungskörpern jeder Art, Glühbirnen, Leucht- und Neonröhren, Kacheln, Wand- und Bodenplatten \n\n* Gläsern von technischen Geräten und Anlagen wie Solaranlagen  \n\n* Bildschirme und Displays aller Art",
+      "icon": "f"
+    },
+    {
+      "code": "LOST",
+      "value": "Verlust & Beschädigung",
+      "description": "Erweiterte Deckung für Reisegepäck, Sport- und Freizeitgeräte:  \nDie Gegenstände sind gegen plötzliche, unvorhergesehene Verluste und Beschädigung versichert.\n\n**Reisegepäck:**  \nZum versicherten Hausrat gehörende Sachen, die zum persönlichen Gebrauch während Reisen auf der ganzen Welt mitgeführt oder einer Transportunternehmung zur Beförderung übergeben werden\n\n**Sport- und Freizeitgeräte:**  \nZum versicherten Hausrat gehörende Geräte des Sport- und Freizeitbereichs, die üblicherweise für den Gebrauch auswärts bestimmt sind. \n\n**Besonderheiten:**  \nBrillen (inkl. Sonnenbrillen) gelten nicht als Sport- und Freizeitgeräte.",
+      "icon": "a"
+    }
+  ],
+  "contexts": [
+    {
+      "code": "AT_HOME",
+      "value": "Zuhause",
+      "icon": "l"
+    },
+    {
+      "code": "OUT_OF_HOME",
+      "value": "Auswärts",
+      "icon": "p"
+    }
+  ],
+  "coverages": [
+    {
+      "code": "COVERED",
+      "value": "Gedeckt",
+      "icon": "d",
+      "color": "00AF3F"
+    },
+    {
+      "code": "PARTIALLY_COVERED",
+      "value": "Teils gedeckt",
+      "icon": "c",
+      "color": "F0AB00"
+    },
+    {
+      "code": "NOT_COVERED",
+      "value": "Nicht gedeckt",
+      "icon": "h",
+      "color": "FF1821"
+    },
+    {
+      "code": "IRRELEVANT",
+      "value": "Nicht anwendbar",
+      "icon": "e",
+      "color": "CDCDCD"
+    }
+  ]
+}
