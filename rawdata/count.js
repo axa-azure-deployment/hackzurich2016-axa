@@ -10,6 +10,7 @@ var importMeta = [
     { "collection" : "insuranceTypes", "file" : "./favorites/insuranceTypes.json"},
     { "collection" : "categories", "file" : "./favorites/categories.json"},
     { "collection" : "risks", "file" : "./favorites/risks.json"},
+    { "collection" : "articles", "file" : "./favorites/articles.json"},
 
     { "collection" : "favorites", "file" : "./favorites/favorites.json"}
 

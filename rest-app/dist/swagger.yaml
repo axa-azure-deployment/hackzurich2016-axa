@@ -26,28 +26,64 @@ info:
     __Dynamic data__ (prefilled with examples)
     - **customer data**: most attributes of a customer eg naming, address, date of birth, ... (10'000 customers)
     - **profile data**: important profile data of the customer (10'000 profiles, 1 per customer)
-    - **contracts**: insurance contracts of the customer (to be defined soon)
-    - **claims**: insurance claims of the customer (to be defined soon)
     - **trips**: telmatics data of some real trips, locations and events an (only 7 trips, >25 events, > 650 GPS positions)
     - **transactions**: financial transactions issued to (>1000 transactions)
     - **favorites**: your most valuable objects to be insured by object or overall insurance (40'000 favorites)
-
-    __Actions__
-    - **Membership calculator**: calculate a membership for a customer based on customer, profile and his contracts (tbd)
-    - **Favorite daily insurance calculator**: calculates a daily rate for an important and favorite object (tbd)
 
     __Static / configuration data__
     - **contacts**: all AXA agencies with GEO location, some attributes anonymized 
     - **car + truck data**: some vehicle types and attributes, incl CO2 and energy attributes (>1700 cars, >350 trucks)
     - **insurance types**: list of all types of insurances, group by L&S, P&C and health (>20 types)
     - **risk types**: risks possible to be able taken for the customer (>20 risks)
-    - **favorite risk object categories**: object categories to describe your favorite object (>20 categories)
+    - **articles**:  (>100 product articles)
+    - **risk object categories**: object categories to describe your favorite object (>20 categories)
 
 host: hackzurich16.azurewebsites.net
 #host: localhost:3000
 
 basePath: /axa
 definitions:
+
+  ArticlesResultList:
+    description: result of Articles search used for paging
+    type: object
+    properties:
+      data:
+        $ref: '#/definitions/Article'
+      links:
+        $ref: '#/definitions/Link'
+
+  Article:
+    description: list of valuable product articles
+    type: array
+    items:
+      $ref: '#/definitions/Articles'
+
+  Articles:
+    description: valuable product article that you can buy 
+    type: object
+    properties:
+      category:
+        description: categorization of product
+        type: string
+      title:
+        description: title name
+        type: string
+      brand:
+        description: brand of product
+        type: string
+      price_from:
+        description: lower price range
+        type: number
+        format: integer
+      price_to:
+        description: higher price range
+        type: number
+        format: integer
+      file:
+        description: picture URL reference
+        type: string
+
 
   ProfileResultList:
     description: result of Profile search used for paging
@@ -1842,10 +1878,22 @@ paths:
         '200':
           description: Successful response
           schema:
+            $ref: '#/definitions/Articles'
+
+
+  /articles:
+    get:
+      summary: get product articles
+      description: |
+        get all product articles to be able to structure and categorize your favorite objects
+      tags:
+        - Static
+        - Favorite (static)
+      responses:
+        '200':
+          description: Successful response
+          schema:
             $ref: '#/definitions/Categories'
-
-
-
 
 
 

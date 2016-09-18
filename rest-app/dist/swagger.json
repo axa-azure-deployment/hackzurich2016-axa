@@ -3,11 +3,62 @@
     "info": {
         "version": "0.9.2",
         "title": "hackzurich 2016 - AXA Winterthur - API",
-        "description": "AXA Winterthur is very proud to be Gold Sponsor of \"hackzurich\" http://hackzurich.ch in 2016 taken place at Technopark, Zürich, Switzerland.\n\nOur topic is __\"Insurance - As simple as a Game\" aka \"Clash of Claims\"__. At AXA, we are constantly redefining the future of insurance. We invite you to bring your creative vision of how insurance could be as simple and fun as a game.\n\n  Why? Insurance can be very complex - Insurance is seeking for simplicity and customer centricity. Learn in our workshop how to use our ”hackzurich 2016 insurance API” and try out our VR and AR devices (Hololens) at our booth.\n\nOur API represents the most used domain objects of an insurance. We provide 2 different types: static / configation data and dynamic data, based on 10'000 predefined customers.\n\n***\n__Data privacy__: all data are examples, partly generated, anonymized and cannot be linked with any existing customer or prospect of AXA. Some data is generated using [Random Point Generator](http://www.geomidpoint.com/random/). \n\n***\n\n__Developers:__ here you can get the full source code, nodejs app and mongodb-load-data from our GIT repo https://github.com/axa-azure-deployment/hackzurich2016-axa and our Hololens GIT repo https://github.com/axa-azure-deployment/hackzurich2016-axa-hololens\n\n__Endpoint:__ use our SaaS REST services running on https://hackzurich16.azurewebsites.net/axa/... (details see swagger documentation)\n\n__Swagger:__ use (this) swagger documentation on https://hackzurich16.azurewebsites.net and see our [JSON version](https://hackzurich16.azurewebsites.net/swagger.json) and [YAML version](https://hackzurich16.azurewebsites.net/swagger.yaml) and see our special localhost:3000 swagger [YAML version](https://hackzurich16.azurewebsites.net/swagger.local.yaml) and [JSON version](https://hackzurich16.azurewebsites.net/swagger.local.json) to support local development without need of a swagger web distribution\n\n***\n__Dynamic data__ (prefilled with examples)\n- **customer data**: most attributes of a customer eg naming, address, date of birth, ... (10'000 customers)\n- **profile data**: important profile data of the customer (10'000 profiles, 1 per customer)\n- **contracts**: insurance contracts of the customer (to be defined soon)\n- **claims**: insurance claims of the customer (to be defined soon)\n- **trips**: telmatics data of some real trips, locations and events an (only 7 trips, >25 events, > 650 GPS positions)\n- **transactions**: financial transactions issued to (>1000 transactions)\n- **favorites**: your most valuable objects to be insured by object or overall insurance (40'000 favorites)\n\n__Actions__\n- **Membership calculator**: calculate a membership for a customer based on customer, profile and his contracts (tbd)\n- **Favorite daily insurance calculator**: calculates a daily rate for an important and favorite object (tbd)\n\n__Static / configuration data__\n- **contacts**: all AXA agencies with GEO location, some attributes anonymized \n- **car + truck data**: some vehicle types and attributes, incl CO2 and energy attributes (>1700 cars, >350 trucks)\n- **insurance types**: list of all types of insurances, group by L&S, P&C and health (>20 types)\n- **risk types**: risks possible to be able taken for the customer (>20 risks)\n- **favorite risk object categories**: object categories to describe your favorite object (>20 categories)\n"
+        "description": "AXA Winterthur is very proud to be Gold Sponsor of \"hackzurich\" http://hackzurich.ch in 2016 taken place at Technopark, Zürich, Switzerland.\n\nOur topic is __\"Insurance - As simple as a Game\" aka \"Clash of Claims\"__. At AXA, we are constantly redefining the future of insurance. We invite you to bring your creative vision of how insurance could be as simple and fun as a game.\n\n  Why? Insurance can be very complex - Insurance is seeking for simplicity and customer centricity. Learn in our workshop how to use our ”hackzurich 2016 insurance API” and try out our VR and AR devices (Hololens) at our booth.\n\nOur API represents the most used domain objects of an insurance. We provide 2 different types: static / configation data and dynamic data, based on 10'000 predefined customers.\n\n***\n__Data privacy__: all data are examples, partly generated, anonymized and cannot be linked with any existing customer or prospect of AXA. Some data is generated using [Random Point Generator](http://www.geomidpoint.com/random/). \n\n***\n\n__Developers:__ here you can get the full source code, nodejs app and mongodb-load-data from our GIT repo https://github.com/axa-azure-deployment/hackzurich2016-axa and our Hololens GIT repo https://github.com/axa-azure-deployment/hackzurich2016-axa-hololens\n\n__Endpoint:__ use our SaaS REST services running on https://hackzurich16.azurewebsites.net/axa/... (details see swagger documentation)\n\n__Swagger:__ use (this) swagger documentation on https://hackzurich16.azurewebsites.net and see our [JSON version](https://hackzurich16.azurewebsites.net/swagger.json) and [YAML version](https://hackzurich16.azurewebsites.net/swagger.yaml) and see our special localhost:3000 swagger [YAML version](https://hackzurich16.azurewebsites.net/swagger.local.yaml) and [JSON version](https://hackzurich16.azurewebsites.net/swagger.local.json) to support local development without need of a swagger web distribution\n\n***\n__Dynamic data__ (prefilled with examples)\n- **customer data**: most attributes of a customer eg naming, address, date of birth, ... (10'000 customers)\n- **profile data**: important profile data of the customer (10'000 profiles, 1 per customer)\n- **trips**: telmatics data of some real trips, locations and events an (only 7 trips, >25 events, > 650 GPS positions)\n- **transactions**: financial transactions issued to (>1000 transactions)\n- **favorites**: your most valuable objects to be insured by object or overall insurance (40'000 favorites)\n\n__Static / configuration data__\n- **contacts**: all AXA agencies with GEO location, some attributes anonymized \n- **car + truck data**: some vehicle types and attributes, incl CO2 and energy attributes (>1700 cars, >350 trucks)\n- **insurance types**: list of all types of insurances, group by L&S, P&C and health (>20 types)\n- **risk types**: risks possible to be able taken for the customer (>20 risks)\n- **articles**:  (>100 product articles)\n- **risk object categories**: object categories to describe your favorite object (>20 categories)\n"
     },
     "host": "hackzurich16.azurewebsites.net",
     "basePath": "/axa",
     "definitions": {
+        "ArticlesResultList": {
+            "description": "result of Articles search used for paging",
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/Article"
+                },
+                "links": {
+                    "$ref": "#/definitions/Link"
+                }
+            }
+        },
+        "Article": {
+            "description": "list of valuable product articles",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Articles"
+            }
+        },
+        "Articles": {
+            "description": "valuable product article that you can buy",
+            "type": "object",
+            "properties": {
+                "category": {
+                    "description": "categorization of product",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "title name",
+                    "type": "string"
+                },
+                "brand": {
+                    "description": "brand of product",
+                    "type": "string"
+                },
+                "price_from": {
+                    "description": "lower price range",
+                    "type": "number",
+                    "format": "integer"
+                },
+                "price_to": {
+                    "description": "higher price range",
+                    "type": "number",
+                    "format": "integer"
+                },
+                "file": {
+                    "description": "picture URL reference",
+                    "type": "string"
+                }
+            }
+        },
         "ProfileResultList": {
             "description": "result of Profile search used for paging",
             "type": "object",
@@ -2342,6 +2393,24 @@
             "get": {
                 "summary": "get object categories",
                 "description": "get all object categories to be able to structure and categorize your favorite objects\n",
+                "tags": [
+                    "Static",
+                    "Favorite (static)"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "$ref": "#/definitions/Articles"
+                        }
+                    }
+                }
+            }
+        },
+        "/articles": {
+            "get": {
+                "summary": "get product articles",
+                "description": "get all product articles to be able to structure and categorize your favorite objects\n",
                 "tags": [
                     "Static",
                     "Favorite (static)"

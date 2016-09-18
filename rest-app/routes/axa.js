@@ -469,6 +469,8 @@ router.get('/categories/:id/subcategories', function(req, res) {
 
 registerModelAPIs('insuranceType', 'insuranceTypes', 'id', false, false);
 registerModelAPIs('risk', 'risks', 'id', false, false);
+registerModelAPIs('articles', 'articles', '_id', false, false);
+
 
 router.get('/risks/:id/insuranceTypes', function(req, res) {
     var db = req.db;
