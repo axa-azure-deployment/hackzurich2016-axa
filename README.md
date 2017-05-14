@@ -84,7 +84,7 @@ We have import files that can be adapted or extended if needed or just launched 
 cd rest-app
 mkdir data\db
 cd data
-mongod --dbpath `db` --port 27018
+mongod --dbpath `pwd` --port 27018
 
 //port 27018 just to not mess up with any other default 27017 mongodb port
 //our database we are connecting to is named "hackzurich2016-axa"
